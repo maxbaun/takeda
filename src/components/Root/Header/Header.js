@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import {listUnstyled} from '../../../utils/lists';
 import {mediaBreakpointUp} from '../../../utils/responsive';
-import Icon from '../../shared/Icon/Icon';
+import _Hamburger from '../../shared/Hamburger';
+import Icon from '../../shared/Icon';
 
 const Container = styled.div`
   align-items: center;
@@ -19,6 +20,16 @@ const Container = styled.div`
   }
 `;
 
+const Hamburger = styled(_Hamburger)`
+  display: flex;
+  right: 15px;
+  top: 6px;
+
+  ${mediaBreakpointUp('lg')} {
+    display: none;
+  }
+`;
+
 const Logo = styled.img``;
 
 const LogoWrap = styled.div`
@@ -27,7 +38,12 @@ const LogoWrap = styled.div`
 `;
 
 const Nav = styled.nav`
+  display: none;
   font-size: 1.4rem;
+
+  ${mediaBreakpointUp('lg')} {
+    display: block;
+  }
 
   ul {
     ${listUnstyled()};
@@ -118,6 +134,8 @@ const Wrapper = styled.header`
 `;
 
 const Header = ({...props}) => {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <Wrapper {...props}>
       <Container>
@@ -151,6 +169,7 @@ const Header = ({...props}) => {
             </li>
           </ul>
         </Nav>
+        <Hamburger onClick={() => setNavOpen(!navOpen)} open={navOpen} />
       </Container>
     </Wrapper>
   );

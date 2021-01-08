@@ -15,7 +15,8 @@ const theme = {
   blue: '#345061',
   green: '#379F8B',
   red: '#E7131A',
-  yellow: '#EDBA19'
+  yellow: '#EDBA19',
+  blackPearl: '#212D34'
 };
 
 export default theme;
