@@ -1,12 +1,27 @@
+import './styles/index.scss';
+import 'bootstrap/dist/css/bootstrap-grid.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {ThemeProvider} from 'styled-components';
+
+import Home from './components/pages/Home';
+import Root from './components/Root';
 import reportWebVitals from './reportWebVitals';
+import theme from './theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Root>
+          <Switch>
+            <Route exact component={Home} path="/" />
+          </Switch>
+        </Root>
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

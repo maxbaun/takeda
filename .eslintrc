@@ -1,0 +1,59 @@
+{
+  "extends": [
+    "xo",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "simple-import-sort"
+  ],
+  "rules": {
+    "multiline-ternary": [
+      "off",
+      "never"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "flatTernaryExpressions": false,
+        "ignoredNodes": [
+          "ConditionalExpression",
+          "JSXElement",
+          "JSXElement > *",
+          "JSXAttribute",
+          "JSXIdentifier",
+          "JSXNamespacedName",
+          "JSXMemberExpression",
+          "JSXSpreadAttribute",
+          "JSXExpressionContainer",
+          "JSXOpeningElement",
+          "JSXClosingElement",
+          "JSXFragment",
+          "JSXOpeningFragment",
+          "JSXClosingFragment",
+          "JSXText",
+          "JSXEmptyExpression",
+          "JSXSpreadChild"
+        ]
+      }
+    ],
+    "camelcase": "off",
+    "new-cap": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "capitalized-comments": "off",
+    "operator-linebreak": "off",
+    "generator-star-spacing": "off"
+  },
+  "globals": {
+    "window": true,
+    "localStorage": true,
+    "document": true
+  }
+}
