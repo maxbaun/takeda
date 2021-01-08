@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import Icon from '../Icon';
@@ -14,7 +15,7 @@ const Wrapper = styled.button`
   cursor: pointer;
   font-size: 1.4rem;
   font-weight: 700;
-  padding: ${props => (props.hasIcon ? '0.786em 1.42em 0.786em 2.7em' : '0.786em 2.7em')};
+  padding: 0.786em 2.7em;
   text-decoration: none;
   text-transform: uppercase;
   transition-duration: 0.2s;
@@ -31,6 +32,10 @@ const Wrapper = styled.button`
     }
   }
 
+  &[data-icon] {
+    padding: 0.786em 1.42em 0.786em 2.7em;
+  }
+
   &:hover {
     i {
       &:last-child {
@@ -40,9 +45,9 @@ const Wrapper = styled.button`
   }
 `;
 
-const Button = ({children, icon, ...props}) => {
+const Button = ({children, href, icon, ...props}) => {
   return (
-    <Wrapper hasIcon={icon && icon !== ''} {...props}>
+    <Wrapper as={href ? Link : 'button'} data-icon={icon} to={href && href} {...props}>
       <span>{children}</span>
       {icon ? <Icon icon={icon} /> : null}
     </Wrapper>
@@ -50,7 +55,8 @@ const Button = ({children, icon, ...props}) => {
 };
 
 Button.propTypes = {
-  children: PropTypes.oneOfType(PropTypes.node, PropTypes.arrayOf(PropTypes.node)),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+  href: PropTypes.string,
   icon: PropTypes.string
 };
 

@@ -82,6 +82,7 @@ const Image = styled.div`
 
     ${mediaBreakpointUp('lg')} {
       height: 677px;
+      margin-left: 8rem;
       width: 601px;
     }
   }

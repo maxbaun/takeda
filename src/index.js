@@ -1,5 +1,6 @@
 import './styles/index.scss';
 import 'bootstrap/dist/css/bootstrap-grid.css';
+import 'slick-carousel/slick/slick.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

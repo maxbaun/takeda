@@ -165,7 +165,6 @@ const Wrapper = styled.div`
 
   ${mediaBreakpointUp('lg')} {
     display: grid;
-    height: 686px;
     grid-gap: 130px;
     grid-template-columns: auto 40%;
   }
@@ -196,7 +195,7 @@ const Hero = ({children, ctaText, ctaUrl, ...props}) => {
 
 Hero.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
-  ctaText: PropTypes.oneOfType([PropTypes.text, PropTypes.node]),
+  ctaText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   ctaUrl: PropTypes.string
 };
 

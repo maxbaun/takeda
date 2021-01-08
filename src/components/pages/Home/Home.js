@@ -3,6 +3,7 @@ import React from 'react';
 import {ButtonPrimary} from '../../shared/Button';
 // import PropTypes from 'prop-types'
 import Hero from './Hero';
+import PatientExamplesSection from './PatientExamplesSection';
 import RiskSection from './RiskSection';
 
 const Home = () => {
@@ -31,6 +32,35 @@ const Home = () => {
         </ul>
         <ButtonPrimary icon="chevron-right">Explore More HAE Information</ButtonPrimary>
       </RiskSection>
+      <PatientExamplesSection
+        ctaText={<>Explore More HAE Information</>}
+        ctaUrl="/"
+        examples={[
+          {
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/1-after.png`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/1-before.png`
+          },
+          {
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/2-after.png`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/2-before.png`
+          },
+          {
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/1-after.png`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/1-before.png`
+          },
+          {
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/2-after.png`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/2-before.png`
+          }
+        ]}
+        note="*Photos of symptoms are portrayed by actors"
+      >
+        <h2>Patient Examples</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+      </PatientExamplesSection>
       <h2>home page</h2>
     </div>
   );
