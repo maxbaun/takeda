@@ -7,6 +7,16 @@ import {mediaBreakpointUp} from '../../../utils/responsive';
 import _Hamburger from '../../shared/Hamburger';
 import Icon from '../../shared/Icon';
 
+const BrandWrap = styled.div`
+  align-items: center;
+  display: flex;
+
+  img {
+    height: 44px;
+    width: 129px;
+  }
+`;
+
 const Container = styled.div`
   align-items: center;
   display: flex;
@@ -28,13 +38,6 @@ const Hamburger = styled(_Hamburger)`
   ${mediaBreakpointUp('lg')} {
     display: none;
   }
-`;
-
-const Logo = styled.img``;
-
-const LogoWrap = styled.div`
-  align-items: center;
-  display: flex;
 `;
 
 const Nav = styled.nav`
@@ -139,10 +142,12 @@ const Header = ({...props}) => {
   return (
     <Wrapper {...props}>
       <Container>
-        <LogoWrap>
-          <Logo src="https://via.placeholder.com/129x44" />
+        <BrandWrap>
+          <Link to="/">
+            <img src={`${process.env.PUBLIC_URL}/img/takeda-logo.png`} />
+          </Link>
           <Tag>HAE Virtual Lab</Tag>
-        </LogoWrap>
+        </BrandWrap>
         <Nav>
           <ul>
             <li>
