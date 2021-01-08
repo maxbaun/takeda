@@ -74,7 +74,6 @@ const Home = () => {
           with our quiz.
         </h3>
       </QuizSection>
-      <h2>home page</h2>
     </div>
   );
 };
