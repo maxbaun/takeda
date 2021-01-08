@@ -1,5 +1,6 @@
 import React from 'react';
 
+import scrollToElement from '../../../utils/scrollToElement';
 import {ButtonPrimary} from '../../shared/Button';
 // import PropTypes from 'prop-types'
 import Hero from './Hero';
@@ -10,16 +11,18 @@ import RiskSection from './RiskSection';
 const Home = () => {
   return (
     <div>
-      <Hero ctaText="Start Simulation" ctaUrl="/">
+      <Hero ctaText="Start Simulation" ctaUrl="/" onScrollToClick={() => scrollToElement('riskMisdiagnosisSection')}>
         <h1>HAE Simulator</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
           labore et.
         </p>
-        <ButtonPrimary icon="chevron-right">Discover Symptom Map</ButtonPrimary>
+        <ButtonPrimary href="/symptom-map" icon="chevron-right">
+          Discover Symptom Map
+        </ButtonPrimary>
       </Hero>
-      <RiskSection>
+      <RiskSection id="riskMisdiagnosisSection">
         <h2>Risk of Misdiagnosis or Delayed Diagnosis</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -35,7 +38,7 @@ const Home = () => {
       </RiskSection>
       <PatientExamplesSection
         ctaText={<>Explore More HAE Information</>}
-        ctaUrl="/"
+        ctaUrl="/more-info"
         examples={[
           {
             after: `${process.env.PUBLIC_URL}/img/patient-examples/1-after.png`,

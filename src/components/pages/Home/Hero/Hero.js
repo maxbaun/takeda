@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 // import {hexToRgbA} from '../../../../utils/colors';
@@ -171,7 +170,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Hero = ({children, ctaText, ctaUrl, ...props}) => {
+const Hero = ({children, ctaText, ctaUrl, onScrollToClick: handleScrollToClick, ...props}) => {
   return (
     <Wrapper {...props} className="hero">
       <Content>
@@ -180,12 +179,10 @@ const Hero = ({children, ctaText, ctaUrl, ...props}) => {
       <Action className="action">
         <Cta>
           <CtaMark />
-          <Button as={Link} to={ctaUrl}>
-            {ctaText}
-          </Button>
+          <Button href={ctaUrl}>{ctaText}</Button>
           <CtaMark />
         </Cta>
-        <ScrollTo>
+        <ScrollTo onClick={handleScrollToClick}>
           Explore
           <Icon icon="chevron-down" />
         </ScrollTo>
@@ -197,7 +194,8 @@ const Hero = ({children, ctaText, ctaUrl, ...props}) => {
 Hero.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
   ctaText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  ctaUrl: PropTypes.string
+  ctaUrl: PropTypes.string,
+  onScrollToClick: PropTypes.func
 };
 
 export default Hero;

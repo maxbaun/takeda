@@ -13,6 +13,7 @@ const Wrapper = styled.button`
   display: inline-flex;
   color: #000;
   cursor: pointer;
+  font-family: ${props => props.theme.fontBody};
   font-size: 1.4rem;
   font-weight: 700;
   padding: 0.786em 2.7em;
