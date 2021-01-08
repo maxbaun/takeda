@@ -4,6 +4,7 @@ import {ButtonPrimary} from '../../shared/Button';
 // import PropTypes from 'prop-types'
 import Hero from './Hero';
 import PatientExamplesSection from './PatientExamplesSection';
+import QuizSection from './QuizSection/QuizSection';
 import RiskSection from './RiskSection';
 
 const Home = () => {
@@ -61,6 +62,18 @@ const Home = () => {
           magna aliqua.
         </p>
       </PatientExamplesSection>
+      <QuizSection>
+        <h2>Symptom Quiz</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqu consectetur adipiscing elit ipsum dolor.
+        </p>
+        <h3>
+          Test your knowledge of HAE
+          <br />
+          with our quiz.
+        </h3>
+      </QuizSection>
       <h2>home page</h2>
     </div>
   );
