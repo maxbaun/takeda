@@ -159,13 +159,15 @@ const ScrollTo = styled.button`
 
 const Wrapper = styled.div`
   background-image: ${() => `url('${Dots}')`};
-  background-size: cover;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
 
   ${mediaBreakpointUp('lg')} {
     display: grid;
     height: 686px;
     grid-gap: 130px;
-    grid-template-columns: auto 600px;
+    grid-template-columns: auto 40%;
   }
 `;
 
