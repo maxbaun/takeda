@@ -16,7 +16,8 @@ const theme = {
   green: '#379F8B',
   red: '#E7131A',
   yellow: '#EDBA19',
-  blackPearl: '#212D34'
+  blackPearl: '#212D34',
+  solitude: '#F9F9FB'
 };
 
 export default theme;
