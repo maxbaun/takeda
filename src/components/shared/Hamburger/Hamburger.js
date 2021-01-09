@@ -25,7 +25,7 @@ const StyledBurger = styled.button`
   div {
     width: 32px;
     height: 4px;
-    background: ${({open}) => (open ? '#000' : '#000')};
+    background: ${({open, theme}) => (open ? theme.red : theme.red)};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -36,8 +36,10 @@ const StyledBurger = styled.button`
     }
 
     :nth-child(2) {
+      margin-left: auto;
       opacity: ${({open}) => (open ? '0' : '1')};
       transform: ${({open}) => (open ? 'translateX(20px)' : 'translateX(0)')};
+      width: 50%;
     }
 
     :nth-child(3) {
