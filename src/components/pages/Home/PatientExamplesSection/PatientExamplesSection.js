@@ -65,7 +65,7 @@ const ExampleSeparator = styled.div`
 `;
 
 const Examples = styled(Carousel)`
-  margin: 0 0 2.5;
+  margin: 0 0 2.5rem;
 
   ${mediaBreakpointUp('sm')} {
     margin: 0 0 3rem;
