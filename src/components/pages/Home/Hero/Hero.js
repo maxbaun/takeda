@@ -7,15 +7,31 @@ import {mediaBreakpointUp} from '../../../../utils/responsive';
 import Button from '../../../shared/Button';
 import Icon from '../../../shared/Icon';
 import Dots from './hero-dots.png';
+import DotsMobile from './hero-dots-mobile.png';
 
 const Action = styled.div`
   align-items: center;
-  background-color: rgb(231, 19, 26);
   display: flex;
   height: 100%;
   justify-content: center;
   position: relative;
-  min-height: 477px;
+  min-height: 400px;
+
+  ${mediaBreakpointUp('sm')} {
+    min-height: 477px;
+  }
+
+  &::before {
+    background-color: ${props => props.theme.red};
+    content: ' ';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    mix-blend-mode: multiply;
+    z-index: 0;
+    width: 100%;
+  }
 `;
 
 const Content = styled.div`
@@ -72,13 +88,24 @@ const Content = styled.div`
 
 const Cta = styled.div`
   align-items: center;
-  background-color: ${props => props.theme.red};
   border-radius: 70px;
   display: flex;
   height: 112px;
   justify-content: center;
   position: relative;
   width: 390px;
+
+  &::before {
+    background-color: ${props => props.theme.red};
+    border-radius: 100px;
+    content: ' ';
+    height: 100%;
+    left: -40px;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    width: calc(100% + 80px);
+  }
 
   a {
     align-items: center;
@@ -90,6 +117,7 @@ const Cta = styled.div`
     font-weight: 800;
     height: 48px;
     justify-content: center;
+    position: relative;
     width: 300px;
     white-space: nowrap;
 
@@ -115,22 +143,15 @@ const CtaMark = styled.div`
   width: 38.5px;
   border-top-left-radius: 110px;
   border-bottom-left-radius: 110px;
-  border: 1px solid #000;
+  border: 1px solid #b40000;
   border-right: 0;
   position: absolute;
-  left: 34px;
-
-  ${mediaBreakpointUp('sm')} {
-    left: -36px;
-  }
-
-  ${mediaBreakpointUp('lg')} {
-    left: 16px;
-  }
+  left: -12px;
+  top: -15px;
 
   &::before,
   &::after {
-    background-color: #000;
+    background-color: #b40000;
     border-radius: 50%;
     content: ' ';
     height: 10px;
@@ -149,16 +170,8 @@ const CtaMark = styled.div`
 
   &:last-child {
     left: auto;
-    right: 34px;
+    right: -12px;
     transform: rotate(180deg);
-
-    ${mediaBreakpointUp('sm')} {
-      right: -36px;
-    }
-
-    ${mediaBreakpointUp('lg')} {
-      right: 16px;
-    }
   }
 `;
 
@@ -183,6 +196,7 @@ const ScrollTo = styled.button`
   right: 0;
   text-transform: uppercase;
   width: 192px;
+  z-index: 1;
 
   ${mediaBreakpointUp('sm')} {
     height: 106px;
@@ -213,12 +227,13 @@ const ScrollTo = styled.button`
 `;
 
 const Wrapper = styled.div`
-  background-image: ${() => `url('${Dots}')`};
+  background-image: ${() => `url('${DotsMobile}')`};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 100% 100%;
 
   ${mediaBreakpointUp('lg')} {
+    background-image: ${() => `url('${Dots}')`};
     background-position: 100% 0;
     display: grid;
     grid-gap: 130px;
@@ -234,9 +249,11 @@ const Hero = ({children, ctaText, ctaUrl, onScrollToClick: handleScrollToClick, 
       </Content>
       <Action className="action">
         <Cta>
-          <CtaMark />
-          <Button href={ctaUrl}>{ctaText}</Button>
-          <CtaMark />
+          <Button href={ctaUrl}>
+            <CtaMark />
+            {ctaText}
+            <CtaMark />
+          </Button>
         </Cta>
         <ScrollTo onClick={handleScrollToClick}>
           Explore
