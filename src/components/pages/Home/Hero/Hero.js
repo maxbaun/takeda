@@ -93,7 +93,15 @@ const Cta = styled.div`
   height: 112px;
   justify-content: center;
   position: relative;
-  width: 390px;
+  width: 320px;
+
+  ${mediaBreakpointUp('sm')} {
+    width: 484px;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    width: 390px;
+  }
 
   &::before {
     background-color: ${props => props.theme.red};
@@ -118,17 +126,15 @@ const Cta = styled.div`
     height: 48px;
     justify-content: center;
     position: relative;
-    width: 300px;
+    width: 100%;
     white-space: nowrap;
 
     ${mediaBreakpointUp('sm')} {
       font-size: 2.4rem;
-      width: 484px;
     }
 
     ${mediaBreakpointUp('lg')} {
       font-size: 1.6rem;
-      width: 328px;
     }
 
     &:hover {
@@ -146,7 +152,7 @@ const CtaMark = styled.div`
   border: 1px solid #b40000;
   border-right: 0;
   position: absolute;
-  left: -12px;
+  left: -20px;
   top: -15px;
 
   &::before,
@@ -170,7 +176,7 @@ const CtaMark = styled.div`
 
   &:last-child {
     left: auto;
-    right: -12px;
+    right: -20px;
     transform: rotate(180deg);
   }
 `;
