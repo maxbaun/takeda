@@ -65,7 +65,11 @@ const ExampleSeparator = styled.div`
 `;
 
 const Examples = styled(Carousel)`
-  margin: 0 0 2.5rem;
+  margin: 0 0 2.5;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 0 0 3rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     margin: 0 0 5rem;
@@ -89,34 +93,56 @@ const Examples = styled(Carousel)`
 `;
 
 const Footer = styled.div`
-  ${mediaBreakpointUp('md')} {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+
+  ${mediaBreakpointUp('lg')} {
     align-items: flex-end;
-    display: flex;
+    flex-flow: row nowrap;
     justify-content: space-between;
+  }
+
+  > :first-child {
+    order: 1;
+
+    ${mediaBreakpointUp('lg')} {
+      order: 0;
+    }
   }
 `;
 
 const Header = styled.div`
-  max-width: 427px;
-
-  h2 {
-    margin: 0 0 3rem;
-  }
-
-  p {
-    margin: 0 0 4.5rem;
+  ${mediaBreakpointUp('lg')} {
+    max-width: 427px;
   }
 `;
 
 const Note = styled.p`
   font-size: 1.4rem;
   font-style: italic;
-  margin-bottom: 0;
+  order: 0;
+  margin: 0 0 4rem;
+
+  ${mediaBreakpointUp('sm')} {
+    font-size: 1.8rem;
+    margin: 0 0 7rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    font-size: 1.4rem;
+    order: 1;
+    margin: 0;
+  }
 `;
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.solitude};
-  padding: 1.5rem 0 5rem;
+  padding: 1rem 0 5rem;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 1.5rem 0 12rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     padding: 2.5rem 0 10rem;

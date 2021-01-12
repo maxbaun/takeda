@@ -15,37 +15,54 @@ const Action = styled.div`
   height: 100%;
   justify-content: center;
   position: relative;
+  min-height: 477px;
 `;
 
 const Content = styled.div`
-  max-width: 490px;
+  padding: 60px 0 80px;
+  text-align: right;
 
-  ${mediaBreakpointUp('md')} {
+  ${mediaBreakpointUp('sm')} {
     margin-left: auto;
-    text-align: right;
+    padding: 140px 0 230px;
   }
 
   ${mediaBreakpointUp('lg')} {
     padding: 210px 0 30px;
+    max-width: 515px;
   }
 
   h1 {
     color: ${props => props.theme.blackPearl};
+    font-size: 6rem;
     font-weight: 800;
+    line-height: 0.91;
     margin: 0 0 3rem;
+
+    ${mediaBreakpointUp('sm')} {
+      font-size: 10rem;
+      margin: 0 0 6rem;
+    }
 
     ${mediaBreakpointUp('lg')} {
       font-size: 10rem;
-      line-height: 0.91;
       margin: 0 0 3rem;
     }
   }
 
   p {
-    font-size: 1.6rem;
-    line-height: 1.75;
+    font-size: 1.8rem;
+    line-height: 1.42;
+    margin: 0 0 4rem auto;
+
+    ${mediaBreakpointUp('sm')} {
+      font-size: 2.8rem;
+      margin: 0 0 7rem auto;
+    }
 
     ${mediaBreakpointUp('lg')} {
+      font-size: 1.6rem;
+      line-height: 1.75;
       margin: 0 0 10rem auto;
     }
   }
@@ -69,11 +86,22 @@ const Cta = styled.div`
     border-color: #fff;
     color: rgb(180, 0, 0);
     display: flex;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 800;
     height: 48px;
     justify-content: center;
-    width: 328px;
+    width: 300px;
+    white-space: nowrap;
+
+    ${mediaBreakpointUp('sm')} {
+      font-size: 2.4rem;
+      width: 484px;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      font-size: 1.6rem;
+      width: 328px;
+    }
 
     &:hover {
       background-color: transparent;
@@ -90,7 +118,15 @@ const CtaMark = styled.div`
   border: 1px solid #000;
   border-right: 0;
   position: absolute;
-  left: 16px;
+  left: 34px;
+
+  ${mediaBreakpointUp('sm')} {
+    left: -36px;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    left: 16px;
+  }
 
   &::before,
   &::after {
@@ -113,8 +149,16 @@ const CtaMark = styled.div`
 
   &:last-child {
     left: auto;
-    right: 16px;
+    right: 34px;
     transform: rotate(180deg);
+
+    ${mediaBreakpointUp('sm')} {
+      right: -36px;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      right: 16px;
+    }
   }
 `;
 
@@ -128,7 +172,7 @@ const ScrollTo = styled.button`
   color: #fff;
   cursor: pointer;
   display: flex;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   flex-flow: column nowrap;
   height: 96px;
@@ -139,6 +183,18 @@ const ScrollTo = styled.button`
   right: 0;
   text-transform: uppercase;
   width: 192px;
+
+  ${mediaBreakpointUp('sm')} {
+    height: 106px;
+    font-size: 2rem;
+    width: 212px;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    height: 96px;
+    font-size: 1.4rem;
+    width: 192px;
+  }
 
   i {
     bottom: 1rem;
@@ -160,7 +216,7 @@ const Wrapper = styled.div`
   background-image: ${() => `url('${Dots}')`};
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: 100% 100%;
 
   ${mediaBreakpointUp('lg')} {
     background-position: 100% 0;

@@ -10,30 +10,52 @@ import Icon from '../../shared/Icon';
 const BrandWrap = styled.div`
   align-items: center;
   display: flex;
+  width: calc(100% - 50px);
+
+  a {
+    width: 129px;
+
+    ${mediaBreakpointUp('sm')} {
+      width: auto;
+    }
+  }
 
   img {
-    height: 44px;
-    width: 129px;
+    /* height: 54px; */
+    max-width: 159px;
+    width: 100%;
+
+    ${mediaBreakpointUp('sm')} {
+      height: 54px;
+      width: 159px;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      height: 44px;
+      width: 129px;
+    }
   }
 `;
 
 const Container = styled.div`
   align-items: center;
   display: flex;
+  height: 101px;
+  justify-content: space-between;
   padding: 0 1.5rem;
   margin: 0 auto;
   max-width: 1505px;
 
   ${mediaBreakpointUp('lg')} {
     height: 82px;
-    justify-content: space-between;
   }
 `;
 
 const Hamburger = styled(_Hamburger)`
   display: flex;
-  right: 15px;
-  top: 6px;
+  position: relative;
+  right: 0;
+  top: 0;
 
   ${mediaBreakpointUp('lg')} {
     display: none;
@@ -54,12 +76,14 @@ const Nav = styled.nav`
     display: flex;
 
     > li {
-      ${mediaBreakpointUp('xl')} {
-        margin-right: 2rem;
-      }
+      &:not(:last-child) {
+        ${mediaBreakpointUp('lg')} {
+          margin-right: 1rem;
+        }
 
-      ${mediaBreakpointUp('xl')} {
-        margin-right: 4rem;
+        ${mediaBreakpointUp('xl')} {
+          margin-right: 4rem;
+        }
       }
 
       > a {
@@ -113,22 +137,47 @@ const Nav = styled.nav`
 const Tag = styled.span`
   align-items: center;
   display: flex;
-  font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  margin-left: 3.3rem;
+  line-height: 1.2;
   position: relative;
   text-transform: uppercase;
+
+  ${mediaBreakpointUp('sm')} {
+    font-size: 2.2rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
+
+  ${mediaBreakpointUp('xl')} {
+    margin-right: 0;
+  }
 
   &::before {
     background-color: ${props => props.theme.red};
     content: ' ';
     display: block;
+    flex: 0 0 3px;
     height: 44px;
     left: 0;
-    margin-right: 2.7rem;
+    margin: 0 1.5rem;
     top: 0;
     width: 3px;
+
+    ${mediaBreakpointUp('md')} {
+      margin: 0 4.4rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      margin: 0 1.5rem;
+    }
+
+    ${mediaBreakpointUp('xl')} {
+      margin: 0 2.7rem;
+    }
   }
 `;
 

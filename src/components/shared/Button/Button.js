@@ -3,25 +3,38 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+import {mediaBreakpointUp} from '../../../utils/responsive';
 import Icon from '../Icon';
 
 const Wrapper = styled.button`
   align-items: center;
   background: none;
   border: 1px solid #000;
-  border-radius: 1.42em;
+  border-radius: 2.6em;
   display: inline-flex;
   color: #000;
   cursor: pointer;
   font-family: ${props => props.theme.fontBody};
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  padding: 0.786em 2.7em;
+  letter-spacing: 0.2em;
+  padding: 0.5em 1.6em;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   transition-duration: 0.2s;
   transition-property: background-color, border-color, color;
   transition-timing-function: ease-in-out;
+
+  ${mediaBreakpointUp('sm')} {
+    font-size: 2.2rem;
+    padding: 0.9em 2.27em;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    font-size: 1.4rem;
+    padding: 0.786em 2.7em;
+  }
 
   i {
     display: inline-block;

@@ -5,12 +5,17 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 
 const Message = styled.p`
-  line-height: 1.857;
-  margin: 3rem auto 2rem;
+  line-height: 1.66;
+  margin: 5rem auto 4rem;
   max-width: 825px;
   text-align: center;
 
+  ${mediaBreakpointUp('sm')} {
+    margin: 10rem auto 9rem;
+  }
+
   ${mediaBreakpointUp('lg')} {
+    line-height: 1.857;
     margin: 5.5rem auto 4rem;
   }
 `;
@@ -18,11 +23,11 @@ const Message = styled.p`
 const Nav = styled.nav`
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
 
   ${mediaBreakpointUp('lg')} {
     align-items: center;
     flex-flow: row nowrap;
-    justify-content: space-between;
   }
 
   img {
@@ -35,9 +40,14 @@ const Nav = styled.nav`
     display: block;
     flex: 1;
     font-weight: 700;
-    margin: 0 1rem 1.5rem;
+    order: 1;
+    margin: 0 0 3rem;
     text-decoration: none;
     text-transform: uppercase;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 0 0 4rem;
+    }
 
     ${mediaBreakpointUp('lg')} {
       margin: 0 0 3rem;
@@ -47,10 +57,24 @@ const Nav = styled.nav`
       text-decoration: underline;
     }
 
+    &:not(.logo) {
+      &:first-child {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+
     &.logo {
       flex: 0 0 100%;
-      order: 3;
+      order: 0;
       text-align: center;
+
+      ${mediaBreakpointUp('sm')} {
+        margin: 0 0 6rem;
+      }
 
       ${mediaBreakpointUp('lg')} {
         flex: 1 1 227px;
@@ -74,9 +98,21 @@ const Wrapper = styled.footer`
   font-size: 1.4rem;
   padding: 1px 0;
 
+  ${mediaBreakpointUp('sm')} {
+    font-size: 2.4rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    font-size: 1.4rem;
+  }
+
   hr {
     border-top: 1px dashed #c5cbcf;
-    margin: 2rem auto 1.5rem;
+    margin: 4rem auto 4rem;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 7rem auto 6rem;
+    }
 
     ${mediaBreakpointUp('lg')} {
       margin: 4rem auto 3rem;

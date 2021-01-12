@@ -2,6 +2,7 @@ import React from 'react';
 
 import scrollToElement from '../../../utils/scrollToElement';
 import {ButtonPrimary} from '../../shared/Button';
+import SectionHeader from '../../shared/SectionHeader/SectionHeader';
 // import PropTypes from 'prop-types'
 import Hero from './Hero';
 import PatientExamplesSection from './PatientExamplesSection';
@@ -23,18 +24,20 @@ const Home = () => {
         </ButtonPrimary>
       </Hero>
       <RiskSection id="riskMisdiagnosisSection">
-        <h2>Risk of Misdiagnosis or Delayed Diagnosis</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
-        </p>
-        <ul>
-          <li className="green">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li className="blue">Aenean euismod bibendum laoreet</li>
-          <li className="red">Proin gravida dolor sit amet lacus accumsan et</li>
-          <li className="yellow">Viverra justo commodo proin sodales pulvinar sic tempor</li>
-        </ul>
-        <ButtonPrimary icon="chevron-right">Explore More HAE Information</ButtonPrimary>
+        <SectionHeader>
+          <h2>Risk of Misdiagnosis or Delayed Diagnosis</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+          <ul>
+            <li className="green">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li className="blue">Aenean euismod bibendum laoreet</li>
+            <li className="red">Proin gravida dolor sit amet lacus accumsan et</li>
+            <li className="yellow">Viverra justo commodo proin sodales pulvinar sic tempor</li>
+          </ul>
+          <ButtonPrimary icon="chevron-right">Explore More HAE Information</ButtonPrimary>
+        </SectionHeader>
       </RiskSection>
       <PatientExamplesSection
         ctaText={<>Explore More HAE Information</>}
@@ -59,23 +62,27 @@ const Home = () => {
         ]}
         note="*Photos of symptoms are portrayed by actors"
       >
-        <h2>Patient Examples</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
-        </p>
+        <SectionHeader>
+          <h2>Patient Examples</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+        </SectionHeader>
       </PatientExamplesSection>
       <QuizSection>
-        <h2>Symptom Quiz</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqu consectetur adipiscing elit ipsum dolor.
-        </p>
-        <h3>
-          Test your knowledge of HAE
-          <br />
-          with our quiz.
-        </h3>
+        <SectionHeader>
+          <h2>Symptom Quiz</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqu consectetur adipiscing elit ipsum dolor.
+          </p>
+          <h3>
+            Test your knowledge of HAE
+            <br />
+            with our quiz.
+          </h3>
+        </SectionHeader>
       </QuizSection>
     </div>
   );
