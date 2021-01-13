@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import {listUnstyled} from '../../../utils/lists';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import _Hamburger from '../../shared/Hamburger';
 import Icon from '../../shared/Icon';
+import Nav from './Nav';
 
 const BrandWrap = styled.div`
   align-items: center;
@@ -43,6 +43,7 @@ const Container = styled.div`
   height: 101px;
   justify-content: space-between;
   padding: 0 1.5rem;
+  position: relative;
   margin: 0 auto;
   max-width: 1505px;
 
@@ -53,84 +54,14 @@ const Container = styled.div`
 
 const Hamburger = styled(_Hamburger)`
   display: flex;
-  position: relative;
-  right: 0;
-  top: 0;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  z-index: 4;
 
   ${mediaBreakpointUp('lg')} {
     display: none;
-  }
-`;
-
-const Nav = styled.nav`
-  display: none;
-  font-size: 1.4rem;
-
-  ${mediaBreakpointUp('lg')} {
-    display: block;
-  }
-
-  ul {
-    ${listUnstyled()};
-    align-items: center;
-    display: flex;
-
-    > li {
-      &:not(:last-child) {
-        ${mediaBreakpointUp('lg')} {
-          margin-right: 1rem;
-        }
-
-        ${mediaBreakpointUp('xl')} {
-          margin-right: 4rem;
-        }
-      }
-
-      > a {
-        color: #000;
-        font-weight: 700;
-        text-transform: uppercase;
-        text-decoration: none;
-        white-space: nowrap;
-
-        &:hover {
-          color: ${props => props.theme.red};
-        }
-
-        &.has-chevron {
-          align-items: center;
-          display: flex;
-
-          &::after {
-            align-items: center;
-            background-color: ${props => props.theme.red};
-            border-radius: 50%;
-            color: #fff;
-            content: '\\e900';
-            display: inline-flex;
-            font-family: icomoon;
-            height: 2em;
-            justify-content: center;
-            width: 2em;
-          }
-        }
-
-        &.btn {
-          border: 1px solid rgb(33, 45, 52);
-          border-radius: 20px;
-          padding: 0.71em 1.07em;
-
-          &:hover {
-            border-color: ${props => props.theme.red};
-          }
-        }
-
-        &::after,
-        > i {
-          margin-left: 1.3rem;
-        }
-      }
-    }
   }
 `;
 
@@ -197,7 +128,7 @@ const Header = ({...props}) => {
           </Link>
           <Tag>HAE Virtual Lab</Tag>
         </BrandWrap>
-        <Nav>
+        <Nav isOpen={navOpen}>
           <ul>
             <li>
               <Link className="has-chevron" to="/">
