@@ -70,7 +70,6 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
     <Wrapper
       {...props}
       css={`
-        /* display: none; */
         background-color: #fff;
         height: 100vh;
         left: 0;
