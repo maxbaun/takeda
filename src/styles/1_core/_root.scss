@@ -6,7 +6,6 @@ html {
   line-height: 1.42;
   margin: 0;
   min-height: 100vh;
-  overflow: hidden;
   padding: 0;
   width: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -25,4 +24,8 @@ html {
 
 html {
   font-size: 62.5%; // Sets up the Base 10 stuff
+}
+
+body {
+  overflow-x: hidden;
 }
