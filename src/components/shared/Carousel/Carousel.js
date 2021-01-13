@@ -1,3 +1,4 @@
+import {darken} from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Slider from 'react-slick';
@@ -49,13 +50,14 @@ const Wrapper = styled.div`
 
     &::after {
       align-items: center;
-      color: #000;
+      color: #fff;
       background-color: ${props => props.theme.yellow};
       border-radius: 50%;
       display: flex;
       font-family: icomoon;
       height: 100%;
       justify-content: center;
+      transition: background-color 0.2s ease-in-out;
       width: 100%;
 
       ${mediaBreakpointUp('sm')} {
@@ -64,6 +66,12 @@ const Wrapper = styled.div`
 
       ${mediaBreakpointUp('lg')} {
         font-size: 16px;
+      }
+    }
+
+    &:hover {
+      &::after {
+        background-color: ${props => darken(0.05, props.theme.yellow)};
       }
     }
 
@@ -150,6 +158,8 @@ const Wrapper = styled.div`
         content: ' ';
         cursor: pointer;
         height: 15px;
+        overflow: hidden;
+        transition: background-color 0.2s ease-in-out;
         width: 15px;
 
         ${mediaBreakpointUp('sm')} {
@@ -162,8 +172,8 @@ const Wrapper = styled.div`
           width: 11px;
         }
 
-        &:focus {
-          outline: none;
+        &:hover {
+          background-color: ${darken(0.05, '#e3e4e7')};
         }
       }
 

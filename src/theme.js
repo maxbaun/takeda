@@ -15,6 +15,8 @@ const theme = {
   blue: '#345061',
   green: '#379F8B',
   red: '#E7131A',
+  redDark: '#C70007',
+  redDarker: '#A70007',
   yellow: '#EDBA19',
   blackPearl: '#212D34',
   solitude: '#F9F9FB'

@@ -67,7 +67,7 @@ const Content = styled.div`
 const StartQuizBtn = styled.button`
   align-items: center;
   background: none;
-  background-color: ${props => props.theme.red};
+  background-color: ${props => props.theme.redDark};
   border: none;
   border-radius: 50%;
   color: #fff;
@@ -78,6 +78,7 @@ const StartQuizBtn = styled.button`
   font-weight: 700;
   justify-content: center;
   text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out;
   width: 200px;
 
   ${mediaBreakpointUp('sm')} {
@@ -91,6 +92,10 @@ const StartQuizBtn = styled.button`
     font-size: 1.8rem;
     margin-left: -20px;
     width: 190px;
+  }
+
+  &:hover {
+    background-color: ${props => props.theme.redDarker};
   }
 `;
 
