@@ -48,7 +48,7 @@ const Wrapper = styled.nav`
 
         &.btn {
           border: 1px solid rgb(33, 45, 52);
-          border-radius: 20px;
+          border-radius: 40px;
           padding: 0.71em 1.07em;
 
           &:hover {
@@ -89,6 +89,7 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
           padding-top: 0;
           position: static;
           top: 0;
+          transform: none;
           width: auto;
         }
 
