@@ -35,17 +35,16 @@ const Action = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 60px 0 80px;
+  padding: 60px 1.5rem 80px;
   text-align: right;
 
   ${mediaBreakpointUp('sm')} {
     margin-left: auto;
-    padding: 140px 0 230px;
+    padding: 140px 1.5rem 230px;
   }
 
   ${mediaBreakpointUp('lg')} {
-    padding: 210px 0 30px;
-    max-width: 515px;
+    padding: 210px 1.5rem 30px;
   }
 
   h1 {
@@ -53,16 +52,23 @@ const Content = styled.div`
     font-size: 6rem;
     font-weight: 800;
     line-height: 0.91;
-    margin: 0 0 3rem;
+    margin: 0 0 3rem auto;
+    text-transform: uppercase;
 
     ${mediaBreakpointUp('sm')} {
+      font-size: 9rem;
+      margin: 0 0 6rem auto;
+    }
+
+    ${mediaBreakpointUp('md')} {
       font-size: 10rem;
-      margin: 0 0 6rem;
+      max-width: 80%;
     }
 
     ${mediaBreakpointUp('lg')} {
       font-size: 10rem;
-      margin: 0 0 3rem;
+      margin: 0 0 3rem auto;
+      max-width: none;
     }
   }
 
@@ -80,6 +86,7 @@ const Content = styled.div`
       font-size: 1.6rem;
       line-height: 1.75;
       margin: 0 0 10rem auto;
+      max-width: 490px;
     }
   }
 `;
@@ -93,6 +100,7 @@ const Cta = styled.div`
   height: 112px;
   justify-content: center;
   position: relative;
+  max-width: 100%;
   width: 320px;
 
   ${mediaBreakpointUp('sm')} {
@@ -100,6 +108,10 @@ const Cta = styled.div`
   }
 
   ${mediaBreakpointUp('lg')} {
+    width: 300px;
+  }
+
+  ${mediaBreakpointUp('xl')} {
     width: 390px;
   }
 
@@ -109,6 +121,7 @@ const Cta = styled.div`
     content: ' ';
     height: 100%;
     left: -40px;
+    max-width: 100%;
     position: absolute;
     top: 0;
     z-index: 0;
@@ -125,6 +138,7 @@ const Cta = styled.div`
     font-weight: 800;
     height: 48px;
     justify-content: center;
+    max-width: 100%;
     position: relative;
     width: 100%;
     white-space: nowrap;
@@ -246,6 +260,11 @@ const Wrapper = styled.div`
     background-image: ${() => `url('${Dots}')`};
     background-position: 100% 0;
     display: grid;
+    grid-gap: 60px;
+    grid-template-columns: auto 45%;
+  }
+
+  ${mediaBreakpointUp('xl')} {
     grid-gap: 130px;
     grid-template-columns: auto 40%;
   }
@@ -254,9 +273,7 @@ const Wrapper = styled.div`
 const Hero = ({children, ctaText, ctaUrl, onScrollToClick: handleScrollToClick, ...props}) => {
   return (
     <Wrapper {...props} className="hero">
-      <Content>
-        <div className="container">{children}</div>
-      </Content>
+      <Content>{children}</Content>
       <Action className="action">
         <Cta>
           <Button href={ctaUrl}>
