@@ -200,6 +200,7 @@ const ScrollTo = styled.button`
   margin: 0 auto;
   position: absolute;
   right: 0;
+  text-align: center;
   text-transform: uppercase;
   width: 192px;
   z-index: 1;
@@ -220,7 +221,10 @@ const ScrollTo = styled.button`
     bottom: 1rem;
     color: ${props => props.theme.red};
     font-size: 1.5em;
+    left: 0;
+    margin: 0 auto;
     position: absolute;
+    right: 0;
     transition: transform 0.2s ease-in-out;
     transform: translate3d(0, 0, 0);
   }
