@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+import routes from '../../../routes';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import _Hamburger from '../../shared/Hamburger';
 import Icon from '../../shared/Icon';
@@ -123,7 +124,7 @@ const Header = ({...props}) => {
     <Wrapper {...props}>
       <Container>
         <BrandWrap>
-          <Link to="/">
+          <Link to={routes.Home}>
             <img src={`${process.env.PUBLIC_URL}/img/takeda-logo.png`} />
           </Link>
           <Tag>HAE Virtual Lab</Tag>
@@ -131,7 +132,7 @@ const Header = ({...props}) => {
         <Nav isOpen={navOpen}>
           <ul>
             <li>
-              <Link className="has-chevron" to="/">
+              <Link className="has-chevron" to={routes.HaeDiseaseBg}>
                 HAE Disease Background
               </Link>
             </li>

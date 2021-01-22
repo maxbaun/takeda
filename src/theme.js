@@ -12,13 +12,16 @@ const theme = {
     'Segoe UI Symbol'
   ].join(','),
   // colors
+  blackPearl: '#212D34',
   blue: '#345061',
+  'blue--active': '#506C7D',
   green: '#379F8B',
+  'green--active': '#56C4AF',
   red: '#E7131A',
   redDark: '#C70007',
   redDarker: '#A70007',
   yellow: '#EDBA19',
-  blackPearl: '#212D34',
+  'yellow--active': '#FAD769',
   solitude: '#F9F9FB'
 };
 
