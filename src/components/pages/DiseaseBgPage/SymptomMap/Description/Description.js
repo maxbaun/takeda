@@ -6,7 +6,7 @@ const Title = styled.h3`
   border: 2px solid ${props => props.theme[props.color]};
   background-color: ${props => props.theme[`${props.color}--active`]};
   border-radius: 40px;
-  color: #fff;
+  color: ${props => (props.color === 'blue' ? '#fff' : '#19262e')};
   display: inline-block;
   font-size: 1.8rem;
   font-weight: 600;

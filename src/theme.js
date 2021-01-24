@@ -21,6 +21,7 @@ const theme = {
   red: '#E7131A',
   redDark: '#C70007',
   redDarker: '#A70007',
+  redAccent: '#DD4B41',
   yellow: '#EDBA19',
   'yellow--active': '#FAD769',
   solitude: '#F9F9FB'

@@ -50,16 +50,17 @@ const DiseaseBgPage = props => {
             burden of disease
           </h2>
           <p>
-            Hereditary angioedema (HAE) can be divided into three types: HAE Type I, HAE Type II, and HAE with normal C1
-            inhibitor (C1-INH).<sup>1</sup>
+            Hereditary angioedema (HAE) can be divided into three types:{' '}
+            <strong className="accent">HAE Type I, HAE Type II, and HAE with normal C1 inhibitor</strong> (C1-INH).
+            <sup>1</sup>
           </p>
           <p>
             The estimated prevalence of HAE is 1:50,000 globally but is likely to be higher due to delayed diagnosis/
             misdiagnosis.<sup>2–4</sup>
           </p>
           <p>
-            HAE is a debilitating illness that can have long-term effects and substantially impact a patient’s quality
-            of life.<sup>5,6</sup>
+            HAE is a debilitating illness that can have <strong className="accent">long-term effects</strong> and
+            substantially impact a patient’s <strong className="accent">quality of life</strong>.<sup>5,6</sup>
           </p>
           <p>Please watch video 1 to learn more about HAE!</p>
         </VideoSection.Content>
@@ -79,7 +80,8 @@ const DiseaseBgPage = props => {
         >
           <VideoSection.Content>
             <p>
-              C1-INH is a naturally occurring protein that inhibits plasma kallikrein, a key mediator of inflammation.
+              <strong className="accent">C1-INH</strong> is a naturally occurring protein that inhibits plasma
+              kallikrein, a key mediator of inflammation.
               <sup>7–10</sup>
             </p>
 
@@ -88,7 +90,9 @@ const DiseaseBgPage = props => {
               vasoactive peptide bradykinin.<sup>7–10</sup>
             </p>
 
-            <p>Decreased or dysfunctional C1-INH impacts the kallikrein–kinin system.</p>
+            <p>
+              Decreased or dysfunctional C1-INH impacts the <strong className="accent">kallikrein–kinin system</strong>.
+            </p>
 
             <p>Please watch video 2 to learn about the role of C1-INH in more detail!</p>
           </VideoSection.Content>
@@ -112,8 +116,10 @@ const DiseaseBgPage = props => {
             </p>
 
             <p>
-              Bradykinin has been shown to be elevated during HAE attacks and is responsible for edema formation and the
-              related clinical signs and symptoms of swelling and pain.<sup>12</sup>
+              <strong className="accent">Bradykinin</strong> has been shown to be{' '}
+              <strong className="accent">elevated</strong> during <strong className="accent">HAE attacks</strong> and is
+              responsible for edema formation and the related clinical signs and symptoms of swelling and pain.
+              <sup>12</sup>
             </p>
 
             <p>Please watch video 3 for further information about the role of plasma kallikrein in HAE!</p>
@@ -123,8 +129,9 @@ const DiseaseBgPage = props => {
       <SymptomMap>
         <h2>Symptom map</h2>
         <p>
-          Angioedema attacks vary in location, frequency, duration, and severity,13 and are often painful,
-          unpredictable, debilitating, and sometimes life-threatening.5
+          Angioedema attacks <strong className="accent">vary in location</strong>, frequency, duration, and severity,
+          <sup>13</sup> and are often <strong className="accent">painful, unpredictable, debilitating</strong>, and
+          sometimes <strong className="accent">life-threatening</strong>.<sup>5</sup>
         </p>
       </SymptomMap>
       <CommonTriggers

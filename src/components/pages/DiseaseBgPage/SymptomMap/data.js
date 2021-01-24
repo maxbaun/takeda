@@ -21,14 +21,15 @@ const skinSwelling = {
   description: (
     <>
       <p>
-        Skin swelling, most commonly affects the extremities and is the defining feature of HAE in the vast majority of
-        patients. Upper extremities are affected more than lower extremities, followed by the face (characterized by
-        generalized swelling of facial features), genitals, and, more rarely, the trunk and neck.
+        <strong className="accent">Skin swelling,</strong> most{' '}
+        <strong className="accent">commonly affects the extremities</strong> and is the defining feature of HAE in the
+        vast majority of patients. Upper extremities are affected more than lower extremities, followed by the face
+        (characterized by generalized swelling of facial features), genitals, and, more rarely, the trunk and neck.
       </p>
 
       <p>
-        Skin edema in HAE is nonpitting and nonpruritic; blisters and compartment syndromes may accompany particularly
-        severe cases.{' '}
+        Skin edema in HAE is <strong className="accent">nonpitting and nonpruritic</strong>; blisters and compartment
+        syndromes may accompany particularly severe cases.
       </p>
 
       <p>
@@ -37,10 +38,11 @@ const skinSwelling = {
       </p>
 
       <p>
-        Approximately one-third of cutaneous HAE attacks are preceded by erythema marginatum, a nonpruritic, serpiginous
+        Approximately one-third of cutaneous HAE attacks are preceded by erythema marginatum, a nonpruritic, serpiginous
         rash that produces a map-like pattern on the skin. This symptom occurs more frequently in pediatric patients and
-        is a potential diagnostic hindrance, as it can be mistaken for similar rashes accompanying childhood viral or
-        bacterial illnesses or may be misdiagnosed as urticaria.
+        is a <strong className="accent">potential diagnostic hindrance</strong>, as it can be{' '}
+        <strong className="accent">mistaken for similar rashes</strong> accompanying childhood viral or bacterial
+        illnesses or may be misdiagnosed as urticaria.
       </p>
     </>
   ),
@@ -66,8 +68,8 @@ export default [
     description: (
       <>
         <p>
-          Recurrent abdominal pain resulting from edema of the gastrointestinal wall is frequently reported in patients
-          with HAE.
+          <strong className="accent">Recurrent abdominal pain</strong> resulting from edema of the gastrointestinal wall
+          is <strong className="accent">frequently reported</strong> in patients with HAE.
         </p>
 
         <p>
@@ -77,15 +79,15 @@ export default [
         </p>
 
         <p>
-          Abdominal episodes of HAE can mimic a number of other conditions, including gastroenteritis, acute
-          appendicitis, mesenteric lymphadenitis, and intussusception, which can lead to unnecessary emergency abdominal
-          surgery.
+          <strong className="accent">Abdominal episodes of HAE can mimic a number of other conditions</strong>,
+          including gastroenteritis, acute appendicitis, mesenteric lymphadenitis, and intussusception,{' '}
+          <strong className="accent">which can lead to unnecessary emergency abdominal surgery.</strong>
         </p>
 
         <p>
-          Abdominal ultrasound and computer-assisted tomography scans help with the differential diagnosis by detecting
-          free peritoneal fluid, edematous intestinal mucosa, and liver structure abnormalities, but these signs are not
-          clearly specific to angioedema.
+          <strong className="accent">Abdominal ultrasound and computer-assisted tomography</strong> scans help with the{' '}
+          <strong className="accent">differential diagnosis</strong> by detecting free peritoneal fluid, edematous
+          intestinal mucosa, and liver structure abnormalities, but these signs are not clearly specific to angioedema.
         </p>
       </>
     ),
@@ -113,26 +115,32 @@ export default [
         </p>
 
         <p>
-          Pediatric patients present a particular diagnostic challenge because laryngeal edema may be misdiagnosed as
-          allergic asthma or epiglottitis. Further, compared with adults, asphyxiation in children may develop more
-          quickly due to their smaller airway diameter.
+          <strong className="accent">Pediatric patients present a particular diagnostic challenge</strong> because
+          laryngeal edema may be <strong className="accent">misdiagnosed</strong> as allergic asthma or epiglottitis.
+          Further, compared with adults, asphyxiation in children may{' '}
+          <strong className="accent">develop more quickly due to their smaller airway diameter.</strong>
         </p>
 
         <p>
-          An important diagnostic feature is that standard medications for alleviating acute airway edema are generally
-          ineffective for laryngeal attacks.{' '}
+          An important diagnostic feature is that{' '}
+          <strong className="accent">
+            standard medications for alleviating acute airway edema are generally ineffective
+          </strong>{' '}
+          for laryngeal attacks.
         </p>
 
         <p>
-          Clinical symptoms of laryngeal edema include voice changes (such as hoarseness or deepening of the voice), a
-          feeling of tightness or a lump in the throat, and dysphagia. Patients with advanced swelling often have
-          aphonia (loss of voice) and fear of asphyxiation with substantial anxiety. Upper airway obstruction is usually
-          caused by laryngeal and glottal edema.
+          Clinical symptoms of laryngeal edema include <strong className="accent">voice changes</strong> (such as
+          hoarseness or deepening of the voice), a feeling of <strong className="accent">tightness</strong> or a lump in
+          the throat, and dysphagia. Patients with advanced swelling often have aphonia (loss of voice) and{' '}
+          <strong className="accent">fear of asphyxiation</strong> with substantial anxiety. Upper airway obstruction is
+          usually caused by laryngeal and glottal edema.
         </p>
 
         <p>
-          The time from onset of laryngeal edema to maximal swelling has been reported to range from 8 to 12 hours but
-          may be shorter or considerably longer.
+          The time from <strong className="accent">onset of laryngeal edema to maximal swelling</strong> has been
+          reported to range from <strong className="accent">8 to 12 hours</strong> but may be shorter or considerably
+          longer.
         </p>
       </>
     ),

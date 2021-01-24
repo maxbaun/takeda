@@ -20,9 +20,16 @@ const Content = styled.div`
 `;
 
 const Content__Inner = styled.div`
+  height: 100%;
+
   ${mediaBreakpointUp('lg')} {
     max-width: 544px;
   }
+`;
+
+const Content__Item = styled.div`
+  align-items: ${props => (props.centered ? 'center' : 'initial')};
+  display: ${props => (props.centered ? 'flex' : 'block')};
 
   > div {
     > p {
@@ -162,14 +169,23 @@ const ClinicalManagement = ({data, pageTitle, title, ...props}) => {
         <Content>
           <Content__Inner>
             {data.map((item, index) => (
-              <div key={index} style={{display: index === activeIndex ? 'block' : 'none'}}>
-                {item.description}
-                {item.video ? (
-                  <Content__Video>
-                    <Video {...item.video} />
-                  </Content__Video>
-                ) : null}
-              </div>
+              <Content__Item
+                centered={item.centered}
+                key={index}
+                style={{
+                  display: index === activeIndex ? (item.centered ? 'flex' : 'block') : 'none',
+                  height: item.centered ? '100%' : 'auto'
+                }}
+              >
+                <div>
+                  {item.description}
+                  {item.video ? (
+                    <Content__Video>
+                      <Video {...item.video} />
+                    </Content__Video>
+                  ) : null}
+                </div>
+              </Content__Item>
             ))}
           </Content__Inner>
         </Content>

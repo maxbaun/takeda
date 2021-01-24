@@ -15,11 +15,13 @@ import ManagementPage from './components/pages/ManagementPage';
 import Root from './components/Root';
 import reportWebVitals from './reportWebVitals';
 import routes from './routes';
+import GlobalStyle from './styles';
 import theme from './theme';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <BrowserRouter>
         <Root>
           <Switch>
