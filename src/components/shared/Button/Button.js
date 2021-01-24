@@ -17,7 +17,8 @@ const Wrapper = styled.button`
   font-family: ${props => props.theme.fontBody};
   font-size: 1.6rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
+  line-height: normal;
   padding: 0.5em 1.6em;
   text-align: center;
   text-decoration: none;

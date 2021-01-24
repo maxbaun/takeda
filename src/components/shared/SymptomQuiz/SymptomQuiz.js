@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
-import SectionHeader from '../SectionHeader/SectionHeader';
+import SectionHeader from '../SectionHeader';
 import Dots from './dot-pattern-quiz.png';
+import Quiz from './Quiz';
 
 const Background = styled.img`
   position: absolute;
@@ -104,9 +105,12 @@ const Wrapper = styled.div`
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 1600px auto; */
+  position: relative;
 `;
 
 const SymptomQuiz = ({children, ...props}) => {
+  const [quizOpen, setQuizOpen] = useState(false);
+
   return (
     <Wrapper {...props}>
       <Background src={Dots} />
@@ -116,9 +120,10 @@ const SymptomQuiz = ({children, ...props}) => {
             <h2>Symptom Quiz</h2>
             <h3>Test your knowledge on HAE!</h3>
           </SectionHeader>
-          <StartQuizBtn>Start Quiz</StartQuizBtn>
+          <StartQuizBtn onClick={() => setQuizOpen(true)}>Start Quiz</StartQuizBtn>
         </Content>
       </div>
+      <Quiz style={{display: quizOpen ? 'flex' : 'none'}} />
     </Wrapper>
   );
 };
