@@ -24,7 +24,8 @@ const Wrapper = styled.nav`
         text-decoration: none;
         white-space: nowrap;
 
-        &:hover {
+        &:hover,
+        &.active {
           color: ${props => props.theme.red};
         }
 

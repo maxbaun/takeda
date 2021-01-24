@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 
 import routes from '../../../routes';
@@ -134,26 +134,26 @@ const Header = ({...props}) => {
         <Nav isOpen={navOpen}>
           <ul>
             <li>
-              <Link className="has-chevron" onClick={handleLinkClick} to={routes.HaeDiseaseBg}>
+              <NavLink className="has-chevron" onClick={handleLinkClick} to={routes.HaeDiseaseBg}>
                 HAE Disease Background
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="has-chevron" onClick={handleLinkClick} to={routes.Management}>
+              <NavLink className="has-chevron" onClick={handleLinkClick} to={routes.Management}>
                 Management of HAE
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="btn" onClick={handleLinkClick} to="/">
+              <a className="btn" href="https://google.com" onClick={handleLinkClick}>
                 Back to HAE CONNECT
                 <Icon icon="external-link-alt" />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link className="btn" onClick={handleLinkClick} to="/">
+              <NavLink exact className="btn" onClick={handleLinkClick} to="/">
                 ENG
                 <Icon icon="chevron-down" />
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </Nav>
