@@ -1,7 +1,6 @@
 import React from 'react';
 
 import scrollToElement from '../../../utils/scrollToElement';
-import {ButtonPrimary} from '../../shared/Button';
 import References from '../../shared/References/References';
 import SectionHeader from '../../shared/SectionHeader/SectionHeader';
 import SymptomQuiz from '../../shared/SymptomQuiz';
@@ -13,31 +12,67 @@ import RiskSection from './RiskSection';
 const Home = () => {
   return (
     <div>
-      <Hero ctaText="Start Simulation" ctaUrl="/" onScrollToClick={() => scrollToElement('riskMisdiagnosisSection')}>
+      <Hero ctaText="Start" ctaUrl="/" onScrollToClick={() => scrollToElement('riskMisdiagnosisSection')}>
         <h1>HAE Simulator</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et.
+          Hereditary angioedema (HAE) is a rare but debilitating and life-threatening condition. Explore the symptoms of
+          HAE. Use our filter to experience a facial attack from a patient’s perspective.
         </p>
-        <ButtonPrimary href="/symptom-map" icon="chevron-right">
-          Discover Symptom Map
-        </ButtonPrimary>
+        <small>
+          <em>
+            You must have a webcam in order to use this tool. Images are not saved or stored in this application, so
+            please ensure you download your image.
+          </em>
+        </small>
       </Hero>
       <RiskSection id="riskMisdiagnosisSection">
         <SectionHeader>
-          <h2>Risk of Misdiagnosis or Delayed Diagnosis</h2>
+          <img src={`${process.env.PUBLIC_URL}/img/icon-sandtimer.png`} />
+          <h2>Misdiagnosis / delayed diagnosis</h2>
+          <p className="lead">
+            HAE is <strong className="accent">under-recognized</strong> and often{' '}
+            <strong className="accent">misdiagnosed</strong>, resulting in significant morbidity and mortality.
+            <sup>2</sup>
+          </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+            The <strong className="accent">rarity</strong> and <strong className="accent">variability</strong> of HAE
+            symptoms makes diagnosis challenging among non-HAE specialists.<sup>7</sup> Episodes of swelling involving
+            the skin are frequently mistaken as allergic reactions, and abdominal attacks are mistaken for appendicitis
+            or irritable bowel syndrome.<sup>2</sup> A misdiagnosis can result in{' '}
+            <strong className="accent">
+              delayed diagnosis, inadequate treatment, and unnecessary surgical procedures
+            </strong>
+            , all of which impact patients’ <strong className="accent">quality of life</strong>.<sup>7</sup>
           </p>
           <ul>
-            <li className="green">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            <li className="blue">Aenean euismod bibendum laoreet</li>
-            <li className="red">Proin gravida dolor sit amet lacus accumsan et</li>
-            <li className="yellow">Viverra justo commodo proin sodales pulvinar sic tempor</li>
+            <li className="green">
+              Many patients experience long delays (over 10 years) between the onset of symptoms and diagnosis
+              <sup>8,9</sup>
+            </li>
+            <li className="blue">
+              Diagnostic <strong className="accent">delays vary considerably</strong> between countries and according to
+              the decade of birth<sup>9,10</sup>
+            </li>
+            <li className="red">
+              Most patients are diagnosed by specialists in adulthood, despite symptoms{' '}
+              <strong className="accent">typically presenting in childhood or adolescence</strong>
+              <sup>11</sup>
+            </li>
+            <li className="yellow">
+              Laryngeal edema can cause <strong className="accent">fatal asphyxiation</strong>.<sup>1</sup> Therefore, a
+              timely diagnosis and access to treatment is vital to prevent morbidity and mortality<sup>12</sup>
+              <ul>
+                <li className="empty blue">
+                  The{' '}
+                  <strong className="accent">
+                    lifespan of individuals with undiagnosed HAE who die from laryngeal attacks
+                  </strong>{' '}
+                  is on average <strong className="accent">31 years shorter</strong> than undiagnosed patients with HAE
+                  who die from other causes<sup>4</sup>
+                </li>
+              </ul>
+            </li>
           </ul>
-          <ButtonPrimary icon="chevron-right">Explore More HAE Information</ButtonPrimary>
         </SectionHeader>
       </RiskSection>
       <PatientExamplesSection
@@ -66,8 +101,13 @@ const Home = () => {
         <SectionHeader>
           <h2>Patient Examples</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+            HAE is a rare genetic disorder characterized by{' '}
+            <strong className="accent">recurrent episodes of localized subcutaneous</strong> or mucosal swelling,
+            typically involving the{' '}
+            <strong className="accent">
+              arms, legs, hands, feet, bowels, genitalia, trunk, face, tongue, or larynx
+            </strong>
+            .<sup>1,13</sup>
           </p>
         </SectionHeader>
       </PatientExamplesSection>

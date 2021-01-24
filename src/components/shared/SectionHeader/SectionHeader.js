@@ -35,8 +35,13 @@ const SectionHeader = styled.div`
     margin: 0 0 4rem;
 
     ${mediaBreakpointUp('sm')} {
-      margin: 0 0 6rem;
+      margin: 0 0 5.3rem;
     }
+  }
+
+  p.lead {
+    font-weight: 700;
+    margin: 0 0 2.4rem;
   }
 `;
 

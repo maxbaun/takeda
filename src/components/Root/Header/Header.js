@@ -150,10 +150,10 @@ const Header = ({...props}) => {
               </a>
             </li>
             <li>
-              <NavLink exact className="btn" onClick={handleLinkClick} to="/">
+              <a className="btn" href="#" onClick={handleLinkClick}>
                 ENG
                 <Icon icon="chevron-down" />
-              </NavLink>
+              </a>
             </li>
           </ul>
         </Nav>

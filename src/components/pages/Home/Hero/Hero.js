@@ -40,11 +40,11 @@ const Content = styled.div`
 
   ${mediaBreakpointUp('sm')} {
     margin-left: auto;
-    padding: 140px 1.5rem 230px;
+    padding: 14rem 1.5rem 23rem;
   }
 
   ${mediaBreakpointUp('lg')} {
-    padding: 210px 1.5rem 30px;
+    padding: 12rem 1.5rem 15.3rem;
   }
 
   h1 {
@@ -75,18 +75,29 @@ const Content = styled.div`
   p {
     font-size: 1.8rem;
     line-height: 1.42;
-    margin: 0 0 4rem auto;
+    margin: 0 0 2.5rem auto;
 
     ${mediaBreakpointUp('sm')} {
       font-size: 2.8rem;
-      margin: 0 0 7rem auto;
+      margin: 0 0 2.5rem auto;
     }
 
     ${mediaBreakpointUp('lg')} {
       font-size: 1.6rem;
       line-height: 1.75;
-      margin: 0 0 10rem auto;
+      margin: 0 0 2.5rem auto;
       max-width: 490px;
+    }
+  }
+
+  small {
+    display: block;
+
+    ${mediaBreakpointUp('lg')} {
+      font-size: 1.2rem;
+      line-height: 1.67;
+      margin-left: auto;
+      max-width: 380px;
     }
   }
 `;
@@ -138,6 +149,7 @@ const Cta = styled.div`
     font-weight: 800;
     height: 48px;
     justify-content: center;
+    letter-spacing: 0.1em;
     max-width: 100%;
     position: relative;
     width: 100%;
@@ -206,16 +218,15 @@ const ScrollTo = styled.button`
   cursor: pointer;
   display: flex;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   flex-flow: column nowrap;
   height: 96px;
-  justify-content: center;
   left: 0;
   margin: 0 auto;
+  padding-top: 25px;
   position: absolute;
   right: 0;
   text-align: center;
-  text-transform: uppercase;
   width: 192px;
   z-index: 1;
 
@@ -283,7 +294,9 @@ const Hero = ({children, ctaText, ctaUrl, onScrollToClick: handleScrollToClick, 
           </Button>
         </Cta>
         <ScrollTo onClick={handleScrollToClick}>
-          Explore
+          Discover
+          <br />
+          more below
           <Icon icon="chevron-down" />
         </ScrollTo>
       </Action>

@@ -114,7 +114,19 @@ const Footer = styled.div`
 
 const Header = styled.div`
   ${mediaBreakpointUp('lg')} {
-    max-width: 427px;
+    max-width: 600px;
+  }
+
+  h2 {
+    ${mediaBreakpointUp('lg')} {
+      margin: 0 0 2.4rem;
+    }
+  }
+
+  p {
+    ${mediaBreakpointUp('lg')} {
+      margin: 0 0 4.2rem;
+    }
   }
 `;
 

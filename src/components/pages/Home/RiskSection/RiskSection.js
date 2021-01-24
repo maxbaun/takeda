@@ -9,6 +9,7 @@ import HumanImage from './human-dots.png';
 const Content = styled.div`
   margin: 0 0 5rem;
   order: 0;
+  position: relative;
 
   ${mediaBreakpointUp('md')} {
     margin: 0 0 10rem;
@@ -18,6 +19,20 @@ const Content = styled.div`
     margin: 0;
     max-width: 480px;
     order: 1;
+  }
+
+  img {
+    ${mediaBreakpointUp('lg')} {
+      left: -68px;
+      position: absolute;
+      top: 2px;
+    }
+  }
+
+  h2 {
+    ${mediaBreakpointUp('lg')} {
+      margin: 0 0 1.8rem;
+    }
   }
 
   ul {
@@ -34,10 +49,9 @@ const Content = styled.div`
     }
 
     li {
-      display: flex;
-      font-weight: 600;
       font-size: 0.875em;
-      line-height: 1.1;
+      line-height: 1.857;
+      padding-left: 32px;
       position: relative;
 
       ${mediaBreakpointUp('sm')} {
@@ -46,21 +60,21 @@ const Content = styled.div`
 
       ${mediaBreakpointUp('lg')} {
         font-size: 1em;
-        line-height: 0.875;
+        line-height: 1.857;
       }
 
       &::before {
         border-radius: 50%;
         content: ' ';
-        display: block;
-        height: 11.92px;
-        margin-right: 2rem;
-        margin-top: 0.5rem;
-        width: 11.92px;
+        height: 12px;
+        left: 0;
+        position: absolute;
+        top: 12px;
+        width: 12px;
       }
 
       &:not(:last-child) {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
       }
 
       &.green {
@@ -85,6 +99,19 @@ const Content = styled.div`
         &::before {
           background-color: ${props => props.theme.yellow};
         }
+      }
+
+      &.empty {
+        &.blue {
+          &::before {
+            background-color: transparent;
+            border: 2px solid ${props => props.theme.blue};
+          }
+        }
+      }
+
+      ul {
+        margin: 2rem 0 0 0;
       }
     }
   }
