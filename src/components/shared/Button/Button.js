@@ -44,6 +44,11 @@ const Wrapper = styled.button`
       margin-left: 1.42em;
       transform: translate3d(0, 0, 0);
     }
+
+    &:first-child {
+      margin-right: 1.42em;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   &[data-icon] {
@@ -55,23 +60,40 @@ const Wrapper = styled.button`
       &:last-child {
         transform: translate3d(2px, 0, 0);
       }
+      &:first-child {
+        transform: translate3d(-2px, 0, 0);
+      }
     }
   }
 `;
 
-const Button = ({children, href, icon, ...props}) => {
+const Button = ({children, external, href, icon, iconRight, ...props}) => {
   return (
-    <Wrapper as={href ? Link : 'button'} data-icon={icon} to={href && href} {...props}>
+    <Wrapper
+      as={href ? (external ? 'a' : Link) : 'button'}
+      data-icon={icon}
+      href={href && external && href ? href : null}
+      to={href && !external && href ? href : null}
+      {...props}
+    >
+      {icon && iconRight ? <Icon icon={icon} /> : null}
       <span>{children}</span>
-      {icon ? <Icon icon={icon} /> : null}
+      {icon && iconRight === false ? <Icon icon={icon} /> : null}
     </Wrapper>
   );
 };
 
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+  external: PropTypes.bool,
   href: PropTypes.string,
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  iconRight: PropTypes.bool
+};
+
+Button.defaultProps = {
+  external: false,
+  iconRight: false
 };
 
 export default Button;

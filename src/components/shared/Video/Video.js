@@ -5,6 +5,18 @@ import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import Icon from '../Icon';
+import EmbededVideo from './EmbededVideo';
+
+const Caption = styled.p`
+  bottom: 1.4rem;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  left: 1.6rem;
+  line-height: 1.375;
+  margin: 0;
+  position: absolute;
+`;
 
 const Circle = styled.div`
   background-color: ${props => props.theme[props.color]};
@@ -33,7 +45,7 @@ const CircleBottomRight = styled(Circle)`
 const PlayBtn = styled.a`
   align-items: center;
   background-color: ${props => rgba(props.theme.blackPearl, 0.3)};
-  border: none;
+  border: 1px solid #fff;
   border-radius: 50%;
   bottom: 0;
   color: #fff;
@@ -57,8 +69,8 @@ const PlayBtn = styled.a`
   }
 
   ${mediaBreakpointUp('lg')} {
-    height: 195px;
-    width: 195px;
+    height: ${props => (props.circleSize === 'lg' ? '195px' : props.circleSize === 'md' ? '155px' : '125px')};
+    width: ${props => (props.circleSize === 'lg' ? '195px' : props.circleSize === 'md' ? '155px' : '125px')};
   }
 
   i {
@@ -81,7 +93,7 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const Video = ({circleColor, circlePosition, circleSize, id, thumbnail, ...props}) => {
+const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumbnail, ...props}) => {
   const CircleComponent = circlePosition === 'bottom-left' ? CircleBottomLeft : CircleBottomRight;
 
   useEffect(() => {
@@ -91,23 +103,26 @@ const Video = ({circleColor, circlePosition, circleSize, id, thumbnail, ...props
   return (
     <Wrapper {...props}>
       <Thumbnail src={thumbnail} />
-      <PlayBtn className={id} href={`#${id}`}>
+      <PlayBtn circleSize={circleSize} className={id} href={`#${id}`}>
         <Icon icon="play" />
         <span>Play</span>
       </PlayBtn>
       <CircleComponent className="circle" color={circleColor} size={circleSize} />
+      {caption && <Caption>{caption}</Caption>}
       <div id={id} style={{display: 'none'}}>
-        modal
+        {src ? <EmbededVideo src={src} /> : null}
       </div>
     </Wrapper>
   );
 };
 
 Video.propTypes = {
+  caption: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   circleColor: PropTypes.oneOf(['red', 'yellow', 'blue']),
   circlePosition: PropTypes.oneOf(['bottom-left', 'bottom-right']),
   circleSize: PropTypes.oneOf(['md', 'lg']),
   id: PropTypes.string.isRequired,
+  src: PropTypes.string,
   thumbnail: PropTypes.string
 };
 

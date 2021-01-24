@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import {mediaBreakpointUp} from '../../../../utils/responsive';
+import {mediaBreakpointUp} from '../../../utils/responsive';
+import SectionHeader from '../SectionHeader/SectionHeader';
 import Dots from './dot-pattern-quiz.png';
 
 const Background = styled.img`
@@ -12,7 +13,7 @@ const Background = styled.img`
 
   ${mediaBreakpointUp('lg')} {
     right: 50%;
-    min-width: 809px;
+    min-width: 817px;
     width: 50%;
   }
 `;
@@ -31,7 +32,7 @@ const Content = styled.div`
   ${mediaBreakpointUp('lg')} {
     margin-left: 50%;
     max-width: 490px;
-    padding: 12rem 0 15rem;
+    padding: 11vw 0;
   }
 
   h2 {
@@ -40,10 +41,9 @@ const Content = styled.div`
 
   h3 {
     font-size: 1.8rem;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1.42;
     margin: 0 0 4rem;
-    text-transform: uppercase;
 
     ${mediaBreakpointUp('sm')} {
       font-size: 2.8rem;
@@ -106,13 +106,16 @@ const Wrapper = styled.div`
   background-size: 1600px auto; */
 `;
 
-const QuizSection = ({children, ...props}) => {
+const SymptomQuiz = ({children, ...props}) => {
   return (
     <Wrapper {...props}>
       <Background src={Dots} />
       <div className="container">
         <Content>
-          {children}
+          <SectionHeader>
+            <h2>Symptom Quiz</h2>
+            <h3>Test your knowledge on HAE!</h3>
+          </SectionHeader>
           <StartQuizBtn>Start Quiz</StartQuizBtn>
         </Content>
       </div>
@@ -120,8 +123,8 @@ const QuizSection = ({children, ...props}) => {
   );
 };
 
-QuizSection.propTypes = {
+SymptomQuiz.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)])
 };
 
-export default QuizSection;
+export default SymptomQuiz;

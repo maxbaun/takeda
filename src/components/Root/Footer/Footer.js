@@ -4,19 +4,34 @@ import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
 
-const Message = styled.p`
+const Message = styled.div`
   line-height: 1.66;
-  margin: 5rem auto 4rem;
+  margin: 5rem auto 0;
   max-width: 825px;
   text-align: center;
 
   ${mediaBreakpointUp('sm')} {
-    margin: 10rem auto 9rem;
+    margin: 10rem auto 0;
   }
 
   ${mediaBreakpointUp('lg')} {
     line-height: 1.857;
-    margin: 5.5rem auto 4rem;
+    margin: 2.3rem auto 0;
+  }
+
+  p {
+    margin: 0;
+
+    &:first-child {
+      font-size: 1.4rem;
+      line-height: 1.42;
+      margin: 0 0 1rem;
+    }
+
+    &:last-child {
+      font-size: 1.2rem;
+      line-height: 1.58;
+    }
   }
 `;
 
@@ -41,17 +56,8 @@ const Nav = styled.nav`
     flex: 1;
     font-weight: 700;
     order: 1;
-    margin: 0 0 3rem;
     text-decoration: none;
     text-transform: uppercase;
-
-    ${mediaBreakpointUp('sm')} {
-      margin: 0 0 4rem;
-    }
-
-    ${mediaBreakpointUp('lg')} {
-      margin: 0 0 3rem;
-    }
 
     &:hover {
       text-decoration: underline;
@@ -69,6 +75,7 @@ const Nav = styled.nav`
 
     &.logo {
       flex: 0 0 100%;
+      margin: 0 0 3rem;
       order: 0;
       text-align: center;
 
@@ -78,6 +85,7 @@ const Nav = styled.nav`
 
       ${mediaBreakpointUp('lg')} {
         flex: 1 1 227px;
+        margin: 0;
         order: 2;
       }
     }
@@ -96,14 +104,16 @@ const Nav = styled.nav`
 const Wrapper = styled.footer`
   background-color: ${props => props.theme.solitude};
   font-size: 1.4rem;
-  padding: 1px 0;
+  padding: 4.3rem 0 5.8rem;
 
   ${mediaBreakpointUp('sm')} {
     font-size: 2.4rem;
+    padding: 4.3rem 0 5.8rem;
   }
 
   ${mediaBreakpointUp('lg')} {
     font-size: 1.4rem;
+    padding: 4.3rem 0 5.8rem;
   }
 
   hr {
@@ -115,7 +125,7 @@ const Wrapper = styled.footer`
     }
 
     ${mediaBreakpointUp('lg')} {
-      margin: 4rem auto 3rem;
+      margin: 4rem auto 2.3rem;
     }
   }
 `;
@@ -124,14 +134,6 @@ const Footer = ({...props}) => {
   return (
     <Wrapper {...props}>
       <div className="container">
-        <Message>
-          This program is organized and funded by Takeda. Presenters may be paid an honorarium by Takeda for their
-          participation in this program. This program is only open to healthcare professionals (HCPs) who register to
-          attend and is not intended for HCPs in the United Kingdom or the United States. Copyright © 2020 Takeda
-          Pharmaceutical Company Limited. All rights reserved. Takeda and the Takeda logo are registered trademarks of
-          Takeda Pharmaceutical Company Limited.
-        </Message>
-        <hr />
         <Nav>
           <Link className="terms" to="/terms-of-use">
             Terms of Use
@@ -143,6 +145,18 @@ const Footer = ({...props}) => {
             Privacy Policy
           </Link>
         </Nav>
+        <hr />
+        <Message>
+          <p>
+            This website is intended for users outside of the US and UK. The website has been developed by Takeda in
+            accordance with industry and legal standards. Takeda makes every reasonable effort to include accurate and
+            current information.{' '}
+          </p>
+          <p>
+            Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the Takeda Logo
+            are trademarks of Takeda Pharmaceutical Company Limited, used under license. Shire is now part of Takeda.{' '}
+          </p>
+        </Message>
       </div>
     </Wrapper>
   );

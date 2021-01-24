@@ -1,8 +1,8 @@
-import './styles/index.scss';
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import 'slick-carousel/slick/slick.css';
 import 'modaal/dist/css/modaal.min.css';
 import 'modaal/dist/js/modaal';
+import './styles/index.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,6 +11,7 @@ import {ThemeProvider} from 'styled-components';
 
 import DiseaseBgPage from './components/pages/DiseaseBgPage';
 import Home from './components/pages/Home';
+import ManagementPage from './components/pages/ManagementPage';
 import Root from './components/Root';
 import reportWebVitals from './reportWebVitals';
 import routes from './routes';
@@ -24,6 +25,7 @@ ReactDOM.render(
           <Switch>
             <Route exact component={Home} path={routes.Home} />
             <Route exact component={DiseaseBgPage} path={routes.HaeDiseaseBg} />
+            <Route exact component={ManagementPage} path={routes.Management} />
           </Switch>
         </Root>
       </BrowserRouter>

@@ -11,6 +11,7 @@ const theme = {
     'Segoe UI Emoji',
     'Segoe UI Symbol'
   ].join(','),
+  fontAlt: 'Myriad Pro',
   // colors
   blackPearl: '#212D34',
   blue: '#345061',

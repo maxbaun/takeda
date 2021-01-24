@@ -120,11 +120,13 @@ const Wrapper = styled.header`
 const Header = ({...props}) => {
   const [navOpen, setNavOpen] = useState(false);
 
+  const handleLinkClick = () => setNavOpen(false);
+
   return (
     <Wrapper {...props}>
       <Container>
         <BrandWrap>
-          <Link to={routes.Home}>
+          <Link onClick={handleLinkClick} to={routes.Home}>
             <img src={`${process.env.PUBLIC_URL}/img/takeda-logo.png`} />
           </Link>
           <Tag>HAE Virtual Lab</Tag>
@@ -132,23 +134,23 @@ const Header = ({...props}) => {
         <Nav isOpen={navOpen}>
           <ul>
             <li>
-              <Link className="has-chevron" to={routes.HaeDiseaseBg}>
+              <Link className="has-chevron" onClick={handleLinkClick} to={routes.HaeDiseaseBg}>
                 HAE Disease Background
               </Link>
             </li>
             <li>
-              <Link className="has-chevron" to="/">
+              <Link className="has-chevron" onClick={handleLinkClick} to={routes.Management}>
                 Management of HAE
               </Link>
             </li>
             <li>
-              <Link className="btn" to="/">
+              <Link className="btn" onClick={handleLinkClick} to="/">
                 Back to HAE CONNECT
                 <Icon icon="external-link-alt" />
               </Link>
             </li>
             <li>
-              <Link className="btn" to="/">
+              <Link className="btn" onClick={handleLinkClick} to="/">
                 ENG
                 <Icon icon="chevron-down" />
               </Link>
