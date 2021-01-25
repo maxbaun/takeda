@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
+import Simulator from '../../Simulator';
 import imgDotPattern from './dot-pattern-simulation.png';
 import Header from './Header';
 
@@ -9,6 +10,8 @@ const Container = styled.div`
   margin: 0 auto;
   max-width: 1460px;
 `;
+
+const SimulatorWrap = styled.div``;
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.solitude};
@@ -33,6 +36,9 @@ const SimulationPage = props => {
             HAE simulator is for illustrative purposes only and is not a clinical diagnostic tool.
           </p>
         </Header>
+        <SimulatorWrap>
+          <Simulator />
+        </SimulatorWrap>
       </Container>
     </Wrapper>
   );

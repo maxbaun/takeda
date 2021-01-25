@@ -27,6 +27,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-camera:before {
+  content: '\e907';
+}
 .icon-minus:before {
   content: '\e905';
 }

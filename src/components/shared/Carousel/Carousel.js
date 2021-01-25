@@ -1,6 +1,6 @@
 import {darken} from 'polished';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {forwardRef} from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 
@@ -186,7 +186,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Carousel = ({children, slickOptions, ...props}) => {
+const Carousel = forwardRef(({children, slickOptions, ...props}, ref) => {
   const defaultOptions = {
     dots: true,
     draggable: false,
@@ -195,10 +195,14 @@ const Carousel = ({children, slickOptions, ...props}) => {
 
   return (
     <Wrapper {...props}>
-      <Slider {...Object.assign(defaultOptions, slickOptions)}>{children}</Slider>
+      <Slider {...Object.assign(defaultOptions, slickOptions)} ref={ref}>
+        {children}
+      </Slider>
     </Wrapper>
   );
-};
+});
+
+Carousel.displayName = 'Carousel';
 
 Carousel.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
