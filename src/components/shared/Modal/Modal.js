@@ -24,7 +24,7 @@ const CloseBtn = styled.button`
 
     &::before,
     &::after {
-      background: ${props => props.theme.red};
+      background-color: ${props => props.theme.red};
     }
   }
 
@@ -41,7 +41,7 @@ const CloseBtn = styled.button`
 
   &::before,
   &::after {
-    background: #fff;
+    background-color: #fff;
     border-radius: 4px;
     content: ' ';
     display: block;
@@ -50,8 +50,8 @@ const CloseBtn = styled.button`
     position: absolute;
     top: 14px;
     width: 4px;
-    -webkit-transition: background 0.2s ease-in-out;
-    transition: background 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
   }
 
   &::before {
