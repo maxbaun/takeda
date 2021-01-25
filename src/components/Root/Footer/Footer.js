@@ -22,15 +22,22 @@ const Message = styled.div`
   p {
     margin: 0;
 
-    &:first-child {
+    &.note {
       font-size: 1.4rem;
-      line-height: 1.42;
-      margin: 0 0 1rem;
+      line-height: 1.428;
+      margin: 0 0 0.8rem;
     }
 
-    &:last-child {
+    &.copy {
       font-size: 1.2rem;
-      line-height: 1.58;
+      line-height: 1.583;
+      margin: 0 0 3rem;
+    }
+
+    &.prep {
+      font-size: 1.3rem;
+      line-height: 1.53;
+      margin: 0;
     }
   }
 `;
@@ -147,14 +154,18 @@ const Footer = ({...props}) => {
         </Nav>
         <hr />
         <Message>
-          <p>
+          <p className="note">
             This website is intended for users outside of the US and UK. The website has been developed by Takeda in
             accordance with industry and legal standards. Takeda makes every reasonable effort to include accurate and
-            current information.{' '}
+            current information.
           </p>
-          <p>
+          <p className="copy">
             Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the Takeda Logo
-            are trademarks of Takeda Pharmaceutical Company Limited, used under license. Shire is now part of Takeda.{' '}
+            are trademarks of Takeda Pharmaceutical Company Limited, used under license. Shire is now part of Takeda.
+          </p>
+          <p className="prep">
+            <span style={{marginRight: 14}}>VV-MEDMAT-37228</span>
+            Date of preparation: January 2021
           </p>
         </Message>
       </div>
