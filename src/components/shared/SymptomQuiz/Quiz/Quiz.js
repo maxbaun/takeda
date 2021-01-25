@@ -88,6 +88,7 @@ const Quiz = ({...props}) => {
 
   const handleNextClick = () => {
     if (questionIndex + 1 < data.length) {
+      setSelectedOptions([]);
       setView('options');
       setQuestionIndex(questionIndex + 1);
     }
