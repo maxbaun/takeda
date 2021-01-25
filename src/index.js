@@ -1,11 +1,10 @@
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import 'slick-carousel/slick/slick.css';
-import 'modaal/dist/css/modaal.min.css';
-import 'modaal/dist/js/modaal';
 import './styles/index.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactModal from 'react-modal';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {ThemeProvider} from 'styled-components';
 
@@ -18,6 +17,8 @@ import reportWebVitals from './reportWebVitals';
 import routes from './routes';
 import GlobalStyle from './styles';
 import theme from './theme';
+
+ReactModal.setAppElement('#root');
 
 ReactDOM.render(
   <React.StrictMode>

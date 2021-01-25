@@ -1,11 +1,12 @@
 import {rgba} from 'polished';
 import PropTypes from 'prop-types';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import Icon from '../Icon';
 import Media from '../Media';
+import Modal from '../Modal';
 import EmbededVideo from './EmbededVideo';
 
 const Caption = styled.p`
@@ -95,10 +96,11 @@ const Wrapper = styled.div`
 `;
 
 const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumbnail, thumbnailRatio, ...props}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const CircleComponent = circlePosition === 'bottom-left' ? CircleBottomLeft : CircleBottomRight;
 
   useEffect(() => {
-    window.jQuery(`.${id}`).modaal(id);
+    // window.jQuery(`.${id}`).modaal(id);
   }, [id]);
 
   return (
@@ -106,15 +108,19 @@ const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumb
       <Media ratio={thumbnailRatio}>
         <Thumbnail src={thumbnail} />
       </Media>
-      <PlayBtn circleSize={circleSize} className={id} href={`#${id}`}>
+      <PlayBtn
+        circleSize={circleSize}
+        // href={`#${id}`}
+        onClick={() => setIsModalOpen(true)}
+      >
         <Icon icon="play" />
         <span>Play</span>
       </PlayBtn>
       <CircleComponent className="circle" color={circleColor} size={circleSize} />
       {caption && <Caption>{caption}</Caption>}
-      <div id={id} style={{display: 'none'}}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         {src ? <EmbededVideo src={src} /> : null}
-      </div>
+      </Modal>
     </Wrapper>
   );
 };
