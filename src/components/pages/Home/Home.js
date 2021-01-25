@@ -1,5 +1,6 @@
 import React from 'react';
 
+import routes from '../../../routes';
 import scrollToElement from '../../../utils/scrollToElement';
 import References from '../../shared/References/References';
 import SectionHeader from '../../shared/SectionHeader/SectionHeader';
@@ -12,7 +13,11 @@ import RiskSection from './RiskSection';
 const Home = () => {
   return (
     <div>
-      <Hero ctaText="Start" ctaUrl="/" onScrollToClick={() => scrollToElement('riskMisdiagnosisSection')}>
+      <Hero
+        ctaText="Start"
+        ctaUrl={routes.Simulator}
+        onScrollToClick={() => scrollToElement('riskMisdiagnosisSection')}
+      >
         <h1>HAE Simulator</h1>
         <p>
           Hereditary angioedema (HAE) is a rare but debilitating and life-threatening condition. Explore the symptoms of

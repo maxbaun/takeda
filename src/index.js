@@ -12,6 +12,7 @@ import {ThemeProvider} from 'styled-components';
 import DiseaseBgPage from './components/pages/DiseaseBgPage';
 import Home from './components/pages/Home';
 import ManagementPage from './components/pages/ManagementPage';
+import SimulatorPage from './components/pages/SimulationPage';
 import Root from './components/Root';
 import reportWebVitals from './reportWebVitals';
 import routes from './routes';
@@ -28,6 +29,7 @@ ReactDOM.render(
             <Route exact component={Home} path={routes.Home} />
             <Route exact component={DiseaseBgPage} path={routes.HaeDiseaseBg} />
             <Route exact component={ManagementPage} path={routes.Management} />
+            <Route exact component={SimulatorPage} path={routes.Simulator} />
           </Switch>
         </Root>
       </BrowserRouter>
