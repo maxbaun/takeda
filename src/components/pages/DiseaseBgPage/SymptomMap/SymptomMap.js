@@ -6,6 +6,7 @@ import {mediaBreakpointUp} from '../../../../utils/responsive';
 import BodyMap from './BodyMap';
 import data from './data';
 import _Description from './Description';
+import imgDotPattern from './dot-pattern-symptom-map.png';
 import _Examples from './Examples';
 
 const Content = styled.div`
@@ -70,6 +71,9 @@ const Inner = styled.div`
 `;
 
 const Wrapper = styled.div`
+  background-image: ${() => `url(${imgDotPattern})`};
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
   padding: 6.8rem 0 5.7rem;
 `;
 

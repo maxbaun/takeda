@@ -27,6 +27,7 @@ const Wrapper = styled.div`
   background-blend-mode: soft-light;
   background-color: ${props => props.theme.blue};
   background-image: ${() => `url('${imgDotPattern}')`};
+  background-size: auto 100%;
   background-position: 100% 0;
   background-repeat: no-repeat;
   padding: 7rem 0;

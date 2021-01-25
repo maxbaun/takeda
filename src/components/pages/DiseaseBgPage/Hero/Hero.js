@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import VideoSection from '../../../shared/VideoSection/VideoSection';
+import imgDotPattern from './dot-pattern-about-hae-hero.png';
 
 // import {mediaBreakpointUp} from '../../../../utils/responsive';
 
@@ -14,6 +15,8 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  background-image: ${() => `url(${imgDotPattern})`};
+  background-repeat: no-repeat;
   padding: 0 0 5rem;
 
   ${mediaBreakpointUp('lg')} {

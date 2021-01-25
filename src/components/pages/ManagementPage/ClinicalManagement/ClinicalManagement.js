@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 import {listUnstyled} from '../../../../utils/lists';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
-import Video from '../../../shared/Video/Video';
+import Video from '../../../shared/Video';
+import imgDotPattern from './dot-pattern-clinical-management.png';
 
 const Content = styled.div`
   border-left: 1px dashed #c5cbcf;
@@ -135,6 +136,9 @@ const PageTitle = styled.div`
 `;
 
 const Wrapper = styled.div`
+  background-image: ${() => `url(${imgDotPattern})`};
+  background-repeat: no-repeat;
+  background-position: 100% 0;
   padding: 5rem 7rem;
 
   ${mediaBreakpointUp('lg')} {

@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
+import imgDotPattern from './dot-pattern-pathophysiology.png';
 
 const Inner = styled.div`
   h2 {
@@ -19,6 +20,9 @@ const Inner = styled.div`
 `;
 
 const Wrapper = styled.div`
+  background-image: ${() => `url(${imgDotPattern})`};
+  background-position: 100% 0;
+  background-repeat: no-repeat;
   position: relative;
 
   ${mediaBreakpointUp('lg')} {
