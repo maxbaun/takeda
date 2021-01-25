@@ -2,23 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 */
-  position: relative;
+import Media from '../Media';
 
-  iframe {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-`;
+const Wrapper = styled(Media)``;
 
 const EmbededVideo = ({src, ...props}) => {
   return (
-    <Wrapper {...props}>
+    <Wrapper {...props} ratio="16:9">
       {src ? (
         <iframe
           frameBorder="0"

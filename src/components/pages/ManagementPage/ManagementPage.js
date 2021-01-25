@@ -134,11 +134,13 @@ const ManagementPage = () => {
         <VideoSection
           media={
             <Video
-              circleColor="yellow"
-              circlePosition="bottom-left"
+              circleColor="red"
+              circlePosition="bottom-right"
+              circleSize="lg"
               id="video-2"
               src="https://www.youtube.com/embed/vR4HIUdE7ak"
               thumbnail="https://via.placeholder.com/588x364"
+              thumbnailRatio="853:528"
             />
           }
         >

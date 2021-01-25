@@ -32,6 +32,11 @@ const BrandWrap = styled.div`
     }
 
     ${mediaBreakpointUp('lg')} {
+      height: auto;
+      width: 10vw;
+    }
+
+    ${mediaBreakpointUp('xl')} {
       height: 44px;
       width: 129px;
     }
@@ -71,7 +76,7 @@ const Tag = styled.span`
   display: flex;
   font-weight: 700;
   letter-spacing: 0.2em;
-  line-height: 1.2;
+  line-height: 1;
   position: relative;
   text-transform: uppercase;
 
@@ -80,11 +85,12 @@ const Tag = styled.span`
   }
 
   ${mediaBreakpointUp('lg')} {
-    font-size: 1.8rem;
-    margin-right: 1rem;
+    font-size: 1.5vw;
+    margin-right: 0.5rem;
   }
 
   ${mediaBreakpointUp('xl')} {
+    font-size: 1.8rem;
     margin-right: 0;
   }
 
@@ -104,7 +110,7 @@ const Tag = styled.span`
     }
 
     ${mediaBreakpointUp('lg')} {
-      margin: 0 1.5rem;
+      margin: 0 1vw;
     }
 
     ${mediaBreakpointUp('xl')} {

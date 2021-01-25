@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import Icon from '../Icon';
+import Media from '../Media';
 import EmbededVideo from './EmbededVideo';
 
 const Caption = styled.p`
@@ -93,7 +94,7 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumbnail, ...props}) => {
+const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumbnail, thumbnailRatio, ...props}) => {
   const CircleComponent = circlePosition === 'bottom-left' ? CircleBottomLeft : CircleBottomRight;
 
   useEffect(() => {
@@ -102,7 +103,9 @@ const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumb
 
   return (
     <Wrapper {...props}>
-      <Thumbnail src={thumbnail} />
+      <Media ratio={thumbnailRatio}>
+        <Thumbnail src={thumbnail} />
+      </Media>
       <PlayBtn circleSize={circleSize} className={id} href={`#${id}`}>
         <Icon icon="play" />
         <span>Play</span>
@@ -123,13 +126,15 @@ Video.propTypes = {
   circleSize: PropTypes.oneOf(['md', 'lg']),
   id: PropTypes.string.isRequired,
   src: PropTypes.string,
-  thumbnail: PropTypes.string
+  thumbnail: PropTypes.string,
+  thumbnailRatio: PropTypes.string
 };
 
 Video.defaultProps = {
   circleColor: 'red',
   circlePosition: 'bottom-right',
-  circleSize: 'md'
+  circleSize: 'md',
+  thumbnailRatio: '21:13'
 };
 
 export default Video;

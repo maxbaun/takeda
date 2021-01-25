@@ -31,6 +31,7 @@ const DiseaseBgPage = props => {
             id="video-1"
             src="https://www.youtube.com/embed/vR4HIUdE7ak"
             thumbnail="https://via.placeholder.com/853x528"
+            thumbnailRatio="853:528"
           />
         }
         title={

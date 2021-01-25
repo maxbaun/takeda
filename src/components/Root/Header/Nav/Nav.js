@@ -106,10 +106,10 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
 
             &:not(:last-child) {
               ${mediaBreakpointUp('lg')} {
-                margin-right: 1rem;
+                margin-right: 0.5rem;
               }
 
-              ${mediaBreakpointUp('xl')} {
+              ${mediaBreakpointUp(1300)} {
                 margin-right: 4rem;
               }
             }

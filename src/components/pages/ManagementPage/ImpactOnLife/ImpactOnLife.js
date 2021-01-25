@@ -11,11 +11,22 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: ${props => props.theme.solitude};
   padding: 10rem 0;
+  position: relative;
 
   ${mediaBreakpointUp('lg')} {
     padding: 22.7rem 0;
+  }
+
+  &::before {
+    background-color: ${props => props.theme.solitude};
+    content: ' ';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    width: 100%;
   }
 `;
 
