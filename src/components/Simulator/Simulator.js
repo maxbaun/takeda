@@ -9,12 +9,10 @@ import FaceEffect from './FaceEffect';
 import Tutorial from './Tutorial';
 
 const Inner = styled.div`
-  box-shadow: -16px 46px 84px 17px rgba(0, 0, 0, 0.13);
-
   margin: 0 auto;
 
   ${mediaBreakpointUp('lg')} {
-    max-width: 1000px;
+    max-width: 800px;
   }
 `;
 
@@ -35,7 +33,10 @@ const ViewInner = styled.div`
   width: 100%;
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  background-color: ${props => props.theme.blackPearl};
+  box-shadow: -16px 46px 84px 17px rgba(0, 0, 0, 0.13);
+`;
 
 const getPaddingBottomPercentage = viewRatio => {
   if (!viewRatio) {
@@ -62,6 +63,7 @@ const Simulator = props => {
   const [viewRatio, setViewRatio] = useState('4:3');
   const [stream, setStream] = useState(null);
   const [version, setVersion] = useState(0);
+  const [videoSize, setVideoSize] = useState(null);
 
   const _mount = async () => {
     await faceapi.nets.ssdMobilenetv1.loadFromUri('/weights');
@@ -109,8 +111,8 @@ const Simulator = props => {
     if (camera && camera.current && camera.current.video) {
       const {videoHeight: height, videoWidth: width} = camera.current.video;
 
+      setVideoSize({height, width});
       setViewRatio(`${width}:${height}`);
-      // setViewRatio('16:9');
     }
   }, [stream]);
 
@@ -120,7 +122,7 @@ const Simulator = props => {
 
   return (
     <Wrapper {...props}>
-      <Inner>
+      <Inner style={{maxWidth: videoSize?.width ? videoSize.width : null}}>
         <View style={{paddingBottom: getPaddingBottomPercentage(viewRatio)}}>
           <ViewInner>
             {rendering ? <h1 style={{position: 'absolute', zIndex: 10}}>loading</h1> : null}
@@ -143,14 +145,14 @@ const Simulator = props => {
             ) : null}
           </ViewInner>
         </View>
-        <ActionBar
-          isDisabled={!tutorialComplete}
-          mode={mode}
-          onDownloadClick={handleDownload}
-          onRedoClick={handleRedo}
-          onTakeClick={handleTake}
-        />
       </Inner>
+      <ActionBar
+        isDisabled={!tutorialComplete}
+        mode={mode}
+        onDownloadClick={handleDownload}
+        onRedoClick={handleRedo}
+        onTakeClick={handleTake}
+      />
     </Wrapper>
   );
 };

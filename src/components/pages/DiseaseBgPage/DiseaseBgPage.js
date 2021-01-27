@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useLocation} from 'react-router-dom';
 import styled from 'styled-components';
 
+import scrollToElement from '../../../utils/scrollToElement';
 import HaeConnectCta from '../../shared/HaeConnectCta';
 import References from '../../shared/References';
 import SymptomQuiz from '../../shared/SymptomQuiz';
@@ -24,6 +26,22 @@ import imgVideo3 from './video-3-thumbnail.png';
 const Wrapper = styled.div``;
 
 const DiseaseBgPage = props => {
+  const location = useLocation();
+  useEffect(() => {
+    console.log(location.hash);
+
+    if (location.hash) {
+      const [, elId] = location.hash.split('#');
+      if (elId) {
+        const el = document.getElementById(elId);
+
+        if (el) {
+          scrollToElement(elId);
+        }
+      }
+    }
+  }, [location.hash]);
+
   return (
     <Wrapper {...props}>
       <Hero
@@ -133,7 +151,7 @@ const DiseaseBgPage = props => {
           </VideoSection.Content>
         </VideoSection>
       </PhysiologySection>
-      <SymptomMap>
+      <SymptomMap id="symptomMap">
         <h2>Symptom map</h2>
         <p>
           Angioedema attacks <strong className="accent">vary in location</strong>, frequency, duration, and severity,
@@ -143,12 +161,12 @@ const DiseaseBgPage = props => {
       </SymptomMap>
       <CommonTriggers
         icons={[
-          {caption: 'Physical activity / exercise', image: iconPhysical},
-          {caption: 'Anxiety / stress / fear', image: iconAnxiety},
-          {caption: 'Injury / disease / illness', image: iconInjury},
-          {caption: 'Pregnancy', image: iconPregnancy},
-          {caption: 'No known trigger', image: iconUnknown},
-          {caption: 'Medication', image: iconMedication}
+          {caption: 'Physical activity / exercise', color: 'green', image: iconPhysical},
+          {caption: 'Anxiety / stress / fear', color: 'blue', image: iconAnxiety},
+          {caption: 'Injury / disease / illness', color: 'blue', image: iconInjury},
+          {caption: 'Pregnancy', color: 'green', image: iconPregnancy},
+          {caption: 'No known trigger', color: 'green', image: iconUnknown},
+          {caption: 'Medication', color: 'blue', image: iconMedication}
         ]}
       >
         <h2>Common triggers</h2>

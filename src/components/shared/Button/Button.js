@@ -85,6 +85,8 @@ const Wrapper = styled.button`
 `;
 
 const Button = ({children, external, href, icon, iconRight, ...props}) => {
+  console.log(href);
+
   return (
     <Wrapper
       as={href ? (external ? 'a' : Link) : 'button'}

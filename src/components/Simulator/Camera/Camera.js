@@ -16,7 +16,7 @@ const Helper = styled.div`
 `;
 
 const Overlay = styled.div`
-  background-color: ${props => rgba(props.theme.blackPearl, 0.9)};
+  background-color: ${props => rgba(props.theme.blackPearl, 0.8)};
   height: 100%;
   left: 0;
   position: absolute;

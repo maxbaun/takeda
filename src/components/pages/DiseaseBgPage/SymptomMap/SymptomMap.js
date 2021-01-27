@@ -13,6 +13,7 @@ const Content = styled.div`
   text-align: right;
 
   ${mediaBreakpointUp('lg')} {
+    margin-left: auto;
     max-width: 260px;
   }
 
@@ -65,7 +66,7 @@ const Inner = styled.div`
 
   ${mediaBreakpointUp('xl')} {
     grid-column-gap: 80px;
-    grid-template-columns: 260px auto 386px;
+    grid-template-columns: 1fr auto 1fr;
     min-height: 725px;
   }
 `;

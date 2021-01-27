@@ -73,12 +73,12 @@ const Inner = styled.div`
   ${mediaBreakpointUp('lg')} {
     align-items: center;
     grid-column-gap: 100px;
-    grid-template-columns: 25% auto;
+    grid-template-columns: auto 50%;
   }
 
   ${mediaBreakpointUp('xl')} {
     grid-column-gap: 200px;
-    grid-template-columns: 400px auto;
+    grid-template-columns: auto 50%;
   }
 `;
 
@@ -99,8 +99,8 @@ const CommonTriggers = ({children, icons, ...props}) => {
           <IconList>
             {icons &&
               icons.map((icon, index) => (
-                <Icon color={icon.color} key={index}>
-                  <Icon__Image>
+                <Icon key={index}>
+                  <Icon__Image color={icon.color}>
                     <img src={icon.image} />
                   </Icon__Image>
                   <p>{icon.caption}</p>

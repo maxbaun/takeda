@@ -30,7 +30,7 @@ const Grid = styled.div`
   ${mediaBreakpointUp('lg')} {
     align-items: center;
     grid-column-gap: 50px;
-    grid-template-columns: ${props => (props.size === 'normal' ? '54% auto' : '40% auto')};
+    grid-template-columns: ${props => (props.size === 'normal' ? '50% auto' : '40% auto')};
   }
 
   ${mediaBreakpointUp('xl')} {
@@ -40,7 +40,7 @@ const Grid = styled.div`
 
 const GridMediaRight = styled(Grid)`
   ${mediaBreakpointUp('lg')} {
-    grid-template-columns: ${props => (props.size === 'normal' ? 'auto 54%' : 'auto 40%')};
+    grid-template-columns: ${props => (props.size === 'normal' ? 'auto 50%' : 'auto 40%')};
   }
 `;
 

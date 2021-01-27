@@ -69,6 +69,8 @@ const FaceEffect = ({onComplete: handleComplete, snapshot, version, ...props}) =
 
       const resources = await loadResources();
 
+      console.log(version);
+
       const shouldShowEyes = version === 0 || version === 1;
       const shouldShowMouth = version === 0 || version === 2;
       const shouldShowChin = version === 0 || version === 3;

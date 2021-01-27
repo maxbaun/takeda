@@ -12,7 +12,7 @@ import imgGenitals from './images/genitals.png';
 import imgHandSwelling from './images/handSwelling.png';
 import imgHandSwellingExample from './images/handSwellingExample.png';
 import imgLayngeal from './images/layngeal.png';
-import imgNeck from './images/neck.png';
+// import imgNeck from './images/neck.png';
 import imgRash from './images/rash.png';
 import imgTrunk from './images/trunk.png';
 // IMG SIZE 280 X 677
@@ -49,7 +49,7 @@ const skinSwelling = {
   descriptionImage: {
     caption: (
       <>
-        Image of erythema marginatum from Gower et al. 2011.<sup>14</sup>
+        Image of erythema marginatum from Gower et al. 2011.<sup>15</sup>
       </>
     ),
     src: imgRash
@@ -194,13 +194,13 @@ export default [
     exampleNote: 'Swelling of the trunk and back is a type of skin swelling.',
     x: '26%',
     y: '19.6%'
-  },
-  {
-    ...skinSwelling,
-    body: imgNeck,
-    color: 'green',
-    exampleNote: 'Swelling of the neck is a type of skin swelling.',
-    x: '64.2%',
-    y: '9%'
   }
+  // {
+  //   ...skinSwelling,
+  //   body: imgNeck,
+  //   color: 'green',
+  //   exampleNote: 'Swelling of the neck is a type of skin swelling.',
+  //   x: '64.2%',
+  //   y: '9%'
+  // }
 ];

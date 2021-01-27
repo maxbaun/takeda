@@ -1,14 +1,16 @@
 import {rgba} from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+import routes from '../../../routes';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import Icon from '../../shared/Icon';
 
 const BtnMain = styled.button`
   align-items: center;
-  background-color: #9d9d9d;
+  background-color: ${props => props.theme.red};
   border: none;
   border-radius: 50%;
   color: #fff;
@@ -41,11 +43,12 @@ const BtnSecondary = styled.button`
   align-items: center;
   background: none;
   border: none;
+  color: #000;
   display: flex;
   flex-flow: column nowrap;
   grid-row: 2/2;
-  justify-content: space-between;
   position: relative;
+  text-decoration: none;
 
   ${mediaBreakpointUp('lg')} {
     flex-flow: row nowrap;
@@ -65,9 +68,9 @@ const BtnSecondary = styled.button`
 
   .icon {
     align-items: center;
-    border: 2px solid ${props => props.theme.red};
+    border: 2px solid ${props => props.theme.redDark};
     border-radius: 50%;
-    color: ${props => props.theme.red};
+    color: ${props => props.theme.redDark};
     display: flex;
     font-size: 2rem;
     height: 30px;
@@ -108,7 +111,7 @@ const BtnSecondary = styled.button`
   }
 `;
 
-const Inner = styled.div`
+const BtnGrid = styled.div`
   align-items: center;
   display: grid;
   grid-column-gap: 2rem;
@@ -120,8 +123,32 @@ const Inner = styled.div`
 
   ${mediaBreakpointUp('lg')} {
     grid-column-gap: 45px;
-    grid-template-columns: auto 85px auto;
+    grid-template-columns: 1fr 85px 1fr;
     padding: 2rem 0;
+  }
+`;
+
+const Inner = styled.div``;
+
+const RetakeNote = styled.button`
+  align-items: center;
+  background-color: #eeeeee;
+  border: none;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: inline-flex;
+  font-size: 1.6rem;
+  height: 41px;
+  justify-content: center;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: -41px;
+  width: 223px;
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 
@@ -151,6 +178,14 @@ const Wrapper = styled.div`
     opacity: ${props => (props.isDisabled ? 1 : 0)};
     z-index: 0;
   }
+
+  ${BtnMain} {
+    background-color: ${props => (props.isDisabled ? '#9d9d9d' : props.theme.redDark)};
+
+    &:hover {
+      background-color: ${props => props.theme.redDarker};
+    }
+  }
 `;
 
 const ActionBar = ({
@@ -175,17 +210,20 @@ const ActionBar = ({
         ) : null}
         {mode === 'result' ? (
           <>
-            <BtnSecondary>
-              <span className="text">Discover Symptom Map</span>
-              <Icon className="icon" icon="male" />
-            </BtnSecondary>
-            <BtnMain onClick={handleRedoClick}>
-              <Icon icon="redo" style={{transform: 'rotateY(180deg)'}} />
-            </BtnMain>
-            <BtnSecondary onClick={handleDownloadClick}>
-              <Icon className="icon" icon="download" />
-              <span className="text">Download Photo</span>
-            </BtnSecondary>
+            <BtnGrid>
+              <BtnSecondary as={Link} to={`${routes.HaeDiseaseBg}#symptomMap`}>
+                <span className="text">Discover Symptom Map</span>
+                <Icon className="icon" icon="male" />
+              </BtnSecondary>
+              <BtnMain onClick={handleRedoClick}>
+                <Icon icon="redo" style={{transform: 'rotateY(180deg)'}} />
+              </BtnMain>
+              <BtnSecondary onClick={handleDownloadClick}>
+                <Icon className="icon" icon="download" />
+                <span className="text">Download Photo</span>
+              </BtnSecondary>
+            </BtnGrid>
+            <RetakeNote onClick={handleRedoClick}>Retake photo</RetakeNote>
           </>
         ) : null}
       </Inner>
