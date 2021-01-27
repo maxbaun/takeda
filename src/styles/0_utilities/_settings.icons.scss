@@ -26,7 +26,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-check:before {
+  content: '\e908';
+}
 .icon-camera:before {
   content: '\e907';
 }
