@@ -26,6 +26,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-male:before {
+  content: '\e90b';
+}
+.icon-download:before {
+  content: '\e90c';
+}
+.icon-redo:before {
+  content: '\e90a';
+}
 .icon-times:before {
   content: '\e909';
 }
