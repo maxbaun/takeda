@@ -156,6 +156,7 @@ const Wrapper = styled.div`
   background-color: #eeeeee;
   display: flex;
   justify-content: center;
+  padding: 2rem 0;
   position: relative;
 
   button {

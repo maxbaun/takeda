@@ -6,6 +6,7 @@ import {mediaBreakpointUp} from '../../utils/responsive';
 import ActionBar from './ActionBar';
 import Camera from './Camera';
 import FaceEffect from './FaceEffect';
+import LearnMore from './LearnMore';
 import Tutorial from './Tutorial';
 
 const Inner = styled.div`
@@ -36,6 +37,7 @@ const ViewInner = styled.div`
 const Wrapper = styled.div`
   background-color: ${props => props.theme.blackPearl};
   box-shadow: -16px 46px 84px 17px rgba(0, 0, 0, 0.13);
+  position: relative;
 `;
 
 const getPaddingBottomPercentage = viewRatio => {
@@ -146,6 +148,7 @@ const Simulator = props => {
           </ViewInner>
         </View>
       </Inner>
+      {mode === 'result' ? <LearnMore /> : null}
       <ActionBar
         isDisabled={!tutorialComplete}
         mode={mode}
