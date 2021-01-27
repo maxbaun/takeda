@@ -14,9 +14,10 @@ const ButtonGreen = styled(Button)`
     border-color: ${props => darken(0.05, props.theme.green)};
   }
 
-  &.selected {
+  &.active {
     background-color: ${props => props.theme.greenDark};
     border-color: ${props => props.theme.greenDark};
+    outline: none;
   }
 `;
 

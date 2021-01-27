@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     height: 44px;
     justify-content: center;
     line-height: 0;
-    outline: none !important;
+    outline: none;
     overflow: hidden;
     padding: 0;
     position: absolute;
@@ -73,6 +73,14 @@ const Wrapper = styled.div`
       &::after {
         background-color: ${props => darken(0.05, props.theme.yellow)};
       }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: -webkit-focus-ring-color auto 1px;
     }
 
     &.slick-prev {
@@ -174,6 +182,14 @@ const Wrapper = styled.div`
 
         &:hover {
           background-color: ${darken(0.05, '#e3e4e7')};
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus-visible {
+          outline: -webkit-focus-ring-color auto 1px;
         }
       }
 

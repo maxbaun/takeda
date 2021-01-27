@@ -255,9 +255,21 @@ const ScrollTo = styled.button`
   }
 
   &:hover {
+    span {
+      text-decoration: underline;
+    }
+
     i {
       transform: translate3d(0, 5px, 0);
     }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
   }
 `;
 
@@ -294,9 +306,11 @@ const Hero = ({children, ctaText, ctaUrl, onScrollToClick: handleScrollToClick, 
           </Button>
         </Cta>
         <ScrollTo onClick={handleScrollToClick}>
-          Discover
-          <br />
-          more below
+          <span>
+            Discover
+            <br />
+            more below
+          </span>
           <Icon icon="chevron-down" />
         </ScrollTo>
       </Action>

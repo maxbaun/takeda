@@ -29,7 +29,27 @@ const Wrapper = styled.div`
         justify-content: center;
         padding-left: 1.3rem;
         padding-right: 1.3rem;
+        position: relative;
         width: 100%;
+
+        i {
+          left: 2rem;
+          opacity: 0;
+          position: absolute;
+          transition: opacity 0.2s ease-in-out;
+        }
+
+        &.active {
+          i {
+            opacity: 1;
+          }
+        }
+
+        &:hover {
+          i:first-child {
+            transform: none;
+          }
+        }
       }
     }
   }
@@ -43,7 +63,9 @@ const Options = ({onSubmit: handleSubmit, onToggle: handleToggle, options, selec
         {options.map((o, index) => (
           <li key={index}>
             <ButtonGreen
-              className={[selectedOptions.indexOf(o) > -1 ? 'selected' : ''].join('')}
+              iconRight={false}
+              className={[selectedOptions.indexOf(o) > -1 ? 'active' : ''].join('')}
+              icon="check"
               onClick={() => handleToggle(o)}
             >
               {o}

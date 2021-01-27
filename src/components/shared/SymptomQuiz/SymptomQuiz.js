@@ -97,6 +97,11 @@ const StartQuizBtn = styled.button`
 
   &:hover {
     background-color: ${props => props.theme.redDarker};
+    text-decoration: underline;
+
+    &:focus {
+      outline: none;
+    }
   }
 `;
 

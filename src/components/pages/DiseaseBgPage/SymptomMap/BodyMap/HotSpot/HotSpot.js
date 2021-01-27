@@ -34,6 +34,7 @@ const Wrapper = styled.button`
 
   &:hover {
     background-color: ${props => darken(0.05, props.theme[props.color])};
+    text-decoration: underline;
   }
 `;
 

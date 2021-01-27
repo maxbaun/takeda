@@ -57,6 +57,10 @@ const Wrapper = styled.button`
   }
 
   &:hover {
+    > span {
+      text-decoration: underline;
+    }
+
     i {
       &:last-child {
         transform: translate3d(2px, 0, 0);
@@ -65,6 +69,18 @@ const Wrapper = styled.button`
         transform: translate3d(-2px, 0, 0);
       }
     }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
   }
 `;
 
@@ -77,9 +93,9 @@ const Button = ({children, external, href, icon, iconRight, ...props}) => {
       to={href && !external && href ? href : null}
       {...props}
     >
-      {icon && iconRight ? <Icon icon={icon} /> : null}
-      <span>{children}</span>
       {icon && iconRight === false ? <Icon icon={icon} /> : null}
+      <span>{children}</span>
+      {icon && iconRight ? <Icon icon={icon} /> : null}
     </Wrapper>
   );
 };
@@ -94,7 +110,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   external: false,
-  iconRight: false
+  iconRight: true
 };
 
 export default Button;

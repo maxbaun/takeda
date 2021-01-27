@@ -44,14 +44,13 @@ const CircleBottomRight = styled(Circle)`
   right: ${props => (props.size === 'lg' ? '-49px' : props.size === 'md' ? '-41px' : null)};
 `;
 
-const PlayBtn = styled.a`
+const PlayBtn = styled.button`
   align-items: center;
   background-color: ${props => rgba(props.theme.blackPearl, 0.3)};
   border: 1px solid #fff;
   border-radius: 50%;
   bottom: 0;
   color: #fff;
-  cursor: pointer;
   display: flex;
   flex-flow: column nowrap;
   height: 100px;
@@ -68,6 +67,10 @@ const PlayBtn = styled.a`
 
   &:hover {
     background-color: ${props => rgba(props.theme.blackPearl, 0.5)};
+
+    span {
+      text-decoration: underline;
+    }
   }
 
   ${mediaBreakpointUp('lg')} {

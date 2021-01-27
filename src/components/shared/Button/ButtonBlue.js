@@ -9,8 +9,8 @@ const ButtonBlue = styled(Button)`
   color: #fff;
 
   &:hover {
-    background-color: ${props => darken(0.05, props.theme.green)};
-    border-color: ${props => darken(0.05, props.theme.green)};
+    background-color: ${props => darken(0.05, props.theme.blue)};
+    border-color: ${props => darken(0.05, props.theme.blue)};
   }
 `;
 

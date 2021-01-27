@@ -141,23 +141,23 @@ const Header = ({...props}) => {
           <ul>
             <li>
               <NavLink className="has-chevron" onClick={handleLinkClick} to={routes.HaeDiseaseBg}>
-                HAE Disease Background
+                <span>HAE Disease Background</span>
               </NavLink>
             </li>
             <li>
               <NavLink className="has-chevron" onClick={handleLinkClick} to={routes.Management}>
-                Management of HAE
+                <span>Management of HAE</span>
               </NavLink>
             </li>
             <li>
               <a className="btn" href="https://google.com" onClick={handleLinkClick}>
-                Back to HAE CONNECT
+                <span>Back to HAE CONNECT</span>
                 <Icon icon="external-link-alt" />
               </a>
             </li>
             <li>
               <a className="btn" href="#" onClick={handleLinkClick}>
-                ENG
+                <span>ENG</span>
                 <Icon icon="chevron-down" />
               </a>
             </li>

@@ -27,6 +27,10 @@ const Wrapper = styled.nav`
         &:hover,
         &.active {
           color: ${props => props.theme.red};
+
+          span {
+            text-decoration: underline;
+          }
         }
 
         &.has-chevron {

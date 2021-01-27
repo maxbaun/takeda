@@ -48,7 +48,7 @@ const HaeConnectCta = props => {
         <Inner>
           <h4>Learn more about HAE from experts in the field via the HAE CONNECT platform!</h4>
           <CtaWrap>
-            <ButtonPrimary external iconRight href="https://google.com" icon="chevron-left">
+            <ButtonPrimary external iconRight={false} href="https://google.com" icon="chevron-left">
               Return to HAE CONNECT platform
             </ButtonPrimary>
           </CtaWrap>
