@@ -27,7 +27,9 @@ const Wrapper = styled.nav`
         &:hover,
         &.active {
           color: ${props => props.theme.red};
+        }
 
+        &:hover {
           span {
             text-decoration: underline;
           }

@@ -1,11 +1,27 @@
+import PropTypes from 'prop-types';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import {ButtonEmpty, ButtonGreen, ButtonPrimary} from '../../Button';
+import Icon from '../../Icon';
 import Answer from './Answer';
 import data from './data';
 import Options from './Options';
+
+const CloseBtn = styled.button`
+  align-items: center;
+  background: none;
+  border: none;
+  display: flex;
+  font-size: 3rem;
+  height: 44px;
+  justify-content: center;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 44px;
+`;
 
 const ColAnswer = styled.div``;
 
@@ -26,7 +42,7 @@ const ColQuestion = styled.div`
 
   .question-text {
     ${mediaBreakpointUp('lg')} {
-      font-size: 2.4rem;
+      font-size: 3.4rem;
       line-height: 1.29;
       margin: 0;
     }
@@ -40,21 +56,23 @@ const Container = styled.div`
   width: 100%;
 
   ${mediaBreakpointUp('lg')} {
+    align-items: center;
     grid-column-gap: 60px;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 35% auto;
     padding: 0 1.5rem 0 20rem;
   }
 
   ${mediaBreakpointUp('xl')} {
-    grid-column-gap: 200px;
+    grid-column-gap: 100px;
   }
 `;
 
 const Wrapper = styled.div`
   background-color: #fff;
+  box-shadow: 0px 49px 163px 0px rgba(0, 0, 0, 0.08);
   display: flex;
-  height: calc(100% - 100px);
   left: 0;
+  min-height: calc(100% - 100px);
   margin: 0 auto;
   position: absolute;
   max-width: 1450px;
@@ -63,11 +81,12 @@ const Wrapper = styled.div`
 
   ${mediaBreakpointUp('lg')} {
     align-items: center;
+    min-height: 600px;
     top: 8rem;
   }
 `;
 
-const Quiz = ({...props}) => {
+const Quiz = ({onClose: handleClose, ...props}) => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [view, setView] = useState('options');
@@ -75,6 +94,13 @@ const Quiz = ({...props}) => {
   const question = data[questionIndex];
 
   const isLastQuestion = questionIndex + 1 >= data.length;
+
+  const _handleClose = () => {
+    handleClose();
+    setQuestionIndex(0);
+    setSelectedOptions([]);
+    setView('options');
+  };
 
   const handleToggle = option => {
     const index = selectedOptions.indexOf(option);
@@ -122,6 +148,9 @@ const Quiz = ({...props}) => {
   return (
     <Wrapper {...props}>
       <Container>
+        <CloseBtn onClick={_handleClose}>
+          <Icon icon="times" />
+        </CloseBtn>
         <ColQuestion>
           <p className="question-number">Question {questionIndex + 1}</p>
           <p className="question-text">{question.question}</p>
@@ -170,6 +199,10 @@ const Quiz = ({...props}) => {
       </Container>
     </Wrapper>
   );
+};
+
+Quiz.propTypes = {
+  onClose: PropTypes.func
 };
 
 export default Quiz;

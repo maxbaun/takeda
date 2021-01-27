@@ -26,6 +26,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-times:before {
+  content: '\e909';
+}
 .icon-check:before {
   content: '\e908';
 }

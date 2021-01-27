@@ -134,6 +134,7 @@ const ManagementPage = () => {
         <VideoSection
           media={
             <Video
+              caption="Assessment of QoL in patients with HAE: unmet needs"
               circleColor="red"
               circlePosition="bottom-right"
               circleSize="lg"

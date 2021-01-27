@@ -17,6 +17,9 @@ import iconUnknown from './images/icon-unknown.png';
 import PhysiologySection from './PhysiologySection';
 import SymptomMap from './SymptomMap';
 import Title from './Title';
+import imgVideo1 from './video-1-thumbnail.png';
+import imgVideo2 from './video-2-thumbnail.png';
+import imgVideo3 from './video-3-thumbnail.png';
 
 const Wrapper = styled.div``;
 
@@ -26,11 +29,12 @@ const DiseaseBgPage = props => {
       <Hero
         media={
           <Video
+            caption="Video 1: Introduction to hereditary angioedema"
             circlePosition="bottom-right"
             circleSize="lg"
             id="video-1"
             src="https://www.youtube.com/embed/vR4HIUdE7ak"
-            thumbnail="https://via.placeholder.com/853x528"
+            thumbnail={imgVideo1}
             thumbnailRatio="853:528"
           />
         }
@@ -71,11 +75,12 @@ const DiseaseBgPage = props => {
         <VideoSection
           media={
             <Video
+              caption="Video 2: The role of C1 inhibitor in HAE"
               circleColor="yellow"
               circlePosition="bottom-left"
               id="video-2"
               src="https://www.youtube.com/embed/vR4HIUdE7ak"
-              thumbnail="https://via.placeholder.com/588x364"
+              thumbnail={imgVideo2}
             />
           }
         >
@@ -101,11 +106,12 @@ const DiseaseBgPage = props => {
         <VideoSection
           media={
             <Video
+              caption="Video 3: The role of plasma kallikrein in HAE"
               circleColor="blue"
               circlePosition="bottom-right"
               id="video-3"
               src="https://www.youtube.com/embed/vR4HIUdE7ak"
-              thumbnail="https://via.placeholder.com/588x364"
+              thumbnail={imgVideo3}
             />
           }
           mediaLeft={false}

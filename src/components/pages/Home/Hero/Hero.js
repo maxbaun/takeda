@@ -68,7 +68,7 @@ const Content = styled.div`
     ${mediaBreakpointUp('lg')} {
       font-size: 10rem;
       margin: 0 0 3rem auto;
-      max-width: none;
+      max-width: 700px;
     }
   }
 

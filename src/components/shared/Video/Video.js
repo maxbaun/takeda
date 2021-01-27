@@ -17,7 +17,9 @@ const Caption = styled.p`
   left: 1.6rem;
   line-height: 1.375;
   margin: 0;
+  min-height: 40px;
   position: absolute;
+  z-index: 1;
 `;
 
 const Circle = styled.div`
@@ -42,6 +44,16 @@ const CircleBottomLeft = styled(Circle)`
 const CircleBottomRight = styled(Circle)`
   bottom: ${props => (props.size === 'lg' ? '-64px' : props.size === 'md' ? '-43px' : null)};
   right: ${props => (props.size === 'lg' ? '-49px' : props.size === 'md' ? '-41px' : null)};
+`;
+
+const Overlay = styled.div`
+  background: linear-gradient(to bottom, rgba(60, 60, 60, 0), #000);
+  height: 50%;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 0;
 `;
 
 const PlayBtn = styled.button`
@@ -120,6 +132,7 @@ const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumb
         <span>Play</span>
       </PlayBtn>
       <CircleComponent className="circle" color={circleColor} size={circleSize} />
+      <Overlay />
       {caption && <Caption>{caption}</Caption>}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         {src ? <EmbededVideo src={src} /> : null}
