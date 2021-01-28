@@ -8,6 +8,10 @@ import Popups from './Popups';
 
 const Root = ({children}) => {
   const [popups, setPopups] = useState({
+    intro: {
+      data: null,
+      open: false
+    },
     leaving: {
       data: null,
       open: false
@@ -46,6 +50,15 @@ const Root = ({children}) => {
       }
     });
   };
+
+  useEffect(() => {
+    // If cookie bar has not been viewed, open it
+    const cookieBarViewed = localStorage.getItem('takeda_cookieBar_viewed');
+
+    if (!cookieBarViewed) {
+      openPopup('cookieBar');
+    }
+  }, []);
 
   useEffect(() => {
     // Check for camera

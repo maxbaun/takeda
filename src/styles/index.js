@@ -6,6 +6,17 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
   }
 
+  a:not(.btn) {
+    color: #000;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: ${props => props.theme.redDark};
+    }
+  }
+  
   .ReactModal__Overlay {
     opacity: 0;
     transition: opacity 200ms ease-in-out;
@@ -44,6 +55,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     -webkit-appearance: none;
   }
+
 `;
 
 export default GlobalStyle;

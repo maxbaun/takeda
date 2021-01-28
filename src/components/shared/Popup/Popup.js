@@ -8,15 +8,24 @@ import imgDotPattern from './dot-pattern-popup.png';
 
 const Content = styled.div``;
 
+const Footer = styled.div`
+  grid-column: 1/3;
+`;
+
 const Grid = styled.div`
   align-items: center;
   display: grid;
   height: 100%;
+  padding: 12rem 0 9rem;
 
   ${mediaBreakpointUp('lg')} {
     grid-column-gap: 40px;
+    grid-row-gap: 50px;
     grid-template-columns: repeat(2, minmax(0, 50%));
+    margin: 0 auto;
+    max-width: 580px;
     min-height: 366px;
+    padding: 12rem 0 9rem;
   }
 `;
 
@@ -25,12 +34,12 @@ const Inner = styled.div`
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 100% auto;
-  border: 1px solid rgb(177, 185, 194);
   height: 100%;
-  padding: 0 10rem;
+  padding: 0 1.5rem;
 
   ${mediaBreakpointUp('lg')} {
-    padding: 0 10rem;
+    border: 1px solid rgb(177, 185, 194);
+    padding: 0 1.5rem;
   }
 `;
 
@@ -50,6 +59,10 @@ const Title = styled.div`
   h2 + p {
     margin: 0 0 2rem;
   }
+
+  a {
+    font-weight: 700;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -63,7 +76,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Popup = ({children, isOpen, onClose: handleClose, title, ...props}) => {
+const Popup = ({children, footer, isOpen, onClose: handleClose, title, ...props}) => {
   return (
     <ReactModal
       {...props}
@@ -88,22 +101,25 @@ const Popup = ({children, isOpen, onClose: handleClose, title, ...props}) => {
       }}
     >
       <Wrapper>
-        <Inner>
-          <Grid>
-            <Title>{title}</Title>
-            <Content>{children}</Content>
-          </Grid>
-        </Inner>
+        <Inner>{children}</Inner>
       </Wrapper>
     </ReactModal>
   );
 };
 
+Popup.Content = Content;
+Popup.Footer = Footer;
+Popup.Grid = Grid;
+Popup.Title = Title;
+
 Popup.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+  footer: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)])
 };
+
+Popup.defaultProps = {};
 
 export default Popup;

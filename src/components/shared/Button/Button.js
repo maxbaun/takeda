@@ -6,7 +6,9 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import Icon from '../Icon';
 
-const Wrapper = styled.button`
+const Wrapper = styled.button.attrs({
+  className: 'btn'
+})`
   align-items: center;
   background: none;
   border: 1px solid #000;
