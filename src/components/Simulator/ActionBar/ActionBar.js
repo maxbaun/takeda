@@ -214,10 +214,10 @@ const ActionBar = ({
             <BtnGrid>
               <BtnSecondary as={Link} to={`${routes.HaeDiseaseBg}#symptomMap`}>
                 <span className="text">Discover Symptom Map</span>
-                <Icon className="icon" icon="male" />
+                <Icon className="icon" icon="body" />
               </BtnSecondary>
               <BtnMain onClick={handleRedoClick}>
-                <Icon icon="redo" style={{transform: 'rotateY(180deg)'}} />
+                <Icon icon="repeat-arrow" />
               </BtnMain>
               <BtnSecondary onClick={handleDownloadClick}>
                 <Icon className="icon" icon="download" />

@@ -26,23 +26,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-male:before {
+.icon-camera:before {
+  content: '\e90c';
+}
+.icon-repeat-arrow:before {
+  content: '\e90a';
+}
+.icon-body:before {
   content: '\e90b';
 }
 .icon-download:before {
-  content: '\e90c';
-}
-.icon-redo:before {
-  content: '\e90a';
+  content: '\e907';
 }
 .icon-times:before {
   content: '\e909';
 }
 .icon-check:before {
   content: '\e908';
-}
-.icon-camera:before {
-  content: '\e907';
 }
 .icon-minus:before {
   content: '\e905';

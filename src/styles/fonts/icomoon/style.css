@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?mklzw');
-  src:  url('fonts/icomoon.eot?mklzw#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.woff2?mklzw') format('woff2'),
-    url('fonts/icomoon.ttf?mklzw') format('truetype'),
-    url('fonts/icomoon.woff?mklzw') format('woff'),
-    url('fonts/icomoon.svg?mklzw#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?e8xjeo');
+  src:  url('fonts/icomoon.eot?e8xjeo#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff2?e8xjeo') format('woff2'),
+    url('fonts/icomoon.ttf?e8xjeo') format('truetype'),
+    url('fonts/icomoon.woff?e8xjeo') format('woff'),
+    url('fonts/icomoon.svg?e8xjeo#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,23 +26,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-male:before {
+.icon-camera:before {
+  content: "\e90c";
+}
+.icon-repeat-arrow:before {
+  content: "\e90a";
+}
+.icon-body:before {
   content: "\e90b";
 }
 .icon-download:before {
-  content: "\e90c";
-}
-.icon-redo:before {
-  content: "\e90a";
+  content: "\e907";
 }
 .icon-times:before {
   content: "\e909";
 }
 .icon-check:before {
   content: "\e908";
-}
-.icon-camera:before {
-  content: "\e907";
 }
 .icon-minus:before {
   content: "\e905";
