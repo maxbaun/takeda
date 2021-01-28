@@ -138,7 +138,7 @@ const Simulator = props => {
             <Camera
               onUserMedia={setStream}
               showHelper={tutorialComplete && mode === 'camera'}
-              showOverlay={tutorialComplete === false}
+              // showOverlay={tutorialComplete === false}
               ref={camera}
             />
 

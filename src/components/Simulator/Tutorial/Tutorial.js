@@ -98,7 +98,7 @@ const CarouselPaging = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: ${props => rgba(props.theme.blackPearl, 0.8)};
+  background-color: ${props => rgba(props.theme.blackPearl, 0.93)};
   height: 100%;
   left: 0;
   position: absolute;
