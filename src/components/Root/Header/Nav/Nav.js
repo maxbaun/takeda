@@ -82,7 +82,7 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
         left: 0;
         opacity: ${isOpen ? 1 : 0};
         padding-top: 101px;
-        position: absolute;
+        position: fixed;
         top: 0;
         width: 100%;
         transform: ${isOpen ? 'translate3d(0, 0, 0)' : 'translate3d(100%, 0, 0)'};

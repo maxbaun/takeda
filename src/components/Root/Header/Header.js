@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import routes from '../../../routes';
 import {mediaBreakpointUp} from '../../../utils/responsive';
+import ExternalLink from '../../shared/ExternalLink';
 import _Hamburger from '../../shared/Hamburger';
 import Icon from '../../shared/Icon';
 import Nav from './Nav';
@@ -128,6 +129,8 @@ const Header = ({...props}) => {
 
   const handleLinkClick = () => setNavOpen(false);
 
+  console.log(navOpen);
+
   return (
     <Wrapper {...props}>
       <Container>
@@ -150,10 +153,10 @@ const Header = ({...props}) => {
               </NavLink>
             </li>
             <li>
-              <a className="btn" href="https://google.com" onClick={handleLinkClick}>
+              <ExternalLink className="btn" href="https://google.com" onClick={handleLinkClick}>
                 <span>Back to HAE CONNECT</span>
                 <Icon icon="external-link-alt" />
-              </a>
+              </ExternalLink>
             </li>
             <li>
               <a className="btn" href="#" onClick={handleLinkClick}>

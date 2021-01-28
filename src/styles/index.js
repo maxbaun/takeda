@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
   .ReactModal__Content {
     inset: 80px 25px !important;
     opacity: 0;
-    transition: opacity 500ms 200ms ease-in-out;
+    transition: opacity 300ms 200ms ease-in-out;
 
     @media screen and (max-height: 1000px) {
       inset: 60px 25px !important;

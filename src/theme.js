@@ -25,7 +25,8 @@ const theme = {
   redAccent: '#DD4B41',
   yellow: '#EDBA19',
   'yellow--active': '#FAD769',
-  solitude: '#F9F9FB'
+  solitude: '#F9F9FB',
+  solitude2: '#EAEDEF'
 };
 
 export default theme;
