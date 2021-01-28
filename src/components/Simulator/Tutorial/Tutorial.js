@@ -46,7 +46,7 @@ const CarouselButtons = styled.div`
   .next {
     &:not(:last-child) {
       ${mediaBreakpointUp('lg')} {
-        margin: 0 auto 1.5rem;
+        margin: 0 auto 2rem;
       }
     }
   }
@@ -79,15 +79,17 @@ const CarouselControls = styled.div`
 const CarouselPaging = styled.div`
   display: flex;
   justify-content: center;
-  margin: 2rem 0 0;
+  margin: 5rem 0 0;
 
   button {
     background: none;
     border: 1px solid #fff;
     border-radius: 50%;
-    height: 15px;
+    display: block;
+    height: 8px;
     margin: 0 5px;
-    width: 15px;
+    padding: 0;
+    width: 8px;
 
     &:hover {
       background-color: #fff;
@@ -96,7 +98,7 @@ const CarouselPaging = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: ${props => rgba(props.theme.blackPearl, 0.5)};
+  background-color: ${props => rgba(props.theme.blackPearl, 0.8)};
   height: 100%;
   left: 0;
   position: absolute;
@@ -153,11 +155,13 @@ const Tutorial = ({onComplete: handleComplete, ...props}) => {
           <ButtonGreen className="next" onClick={() => (isLastSlide ? handleComplete() : slider.current.slickNext())}>
             Next
           </ButtonGreen>
-          {isLastSlide === false ? (
-            <button className="skip" onClick={handleComplete}>
-              Skip
-            </button>
-          ) : null}
+          <button
+            className="skip"
+            onClick={handleComplete}
+            style={{opacity: isLastSlide ? 0 : 1, pointerEvents: isLastSlide ? 'none' : 'initial'}}
+          >
+            Skip
+          </button>
         </CarouselButtons>
         <CarouselPaging>
           {steps.map((_, index) => (

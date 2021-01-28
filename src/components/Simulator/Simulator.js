@@ -124,16 +124,16 @@ const Simulator = props => {
 
   return (
     <Wrapper {...props}>
+      <Tutorial
+        onComplete={() => {
+          setTutorialComplete(true);
+        }}
+        style={{display: tutorialComplete ? 'none' : 'block'}}
+      />
       <Inner style={{maxWidth: videoSize?.width ? videoSize.width : null}}>
         <View style={{paddingBottom: getPaddingBottomPercentage(viewRatio)}}>
           <ViewInner>
             {rendering ? <h1 style={{position: 'absolute', zIndex: 10}}>loading</h1> : null}
-            <Tutorial
-              onComplete={() => {
-                setTutorialComplete(true);
-              }}
-              style={{display: tutorialComplete ? 'none' : 'block'}}
-            />
 
             <Camera
               onUserMedia={setStream}

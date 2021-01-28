@@ -175,7 +175,7 @@ const Wrapper = styled.div`
   }
 
   &::before {
-    background-color: ${() => rgba('#eeeeee', 0.5)};
+    background-color: ${() => rgba('#eeeeee', 0.8)};
     opacity: ${props => (props.isDisabled ? 1 : 0)};
     z-index: 0;
   }
