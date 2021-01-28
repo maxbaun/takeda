@@ -3,9 +3,97 @@ import PropTypes from 'prop-types';
 import React, {useRef, useState} from 'react';
 import styled from 'styled-components';
 
-import Carousel from '../../shared/Carousel';
+import {mediaBreakpointUp} from '../../../utils/responsive';
+import {ButtonGreen} from '../../shared/Button';
+import _Carousel from '../../shared/Carousel';
 import Step from './Step';
 import steps from './steps';
+
+const Carousel = styled(_Carousel)`
+  height: 100%;
+
+  .slick-slider {
+    height: 100%;
+  }
+
+  .slick-list {
+    height: 100%;
+  }
+
+  .slick-track {
+    display: flex;
+    height: 100%;
+  }
+
+  .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center; //optional
+    justify-content: center; //optional
+  }
+`;
+
+const CarouselButtons = styled.div`
+  color: #fff;
+  margin: 3rem 0 0;
+
+  button {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .next {
+    &:not(:last-child) {
+      ${mediaBreakpointUp('lg')} {
+        margin: 0 auto 1.5rem;
+      }
+    }
+  }
+
+  .skip {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.8rem;
+    line-height: 1.55;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const CarouselControls = styled.div`
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+
+  ${mediaBreakpointUp('lg')} {
+    bottom: 3rem;
+  }
+`;
+
+const CarouselPaging = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 0;
+
+  button {
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    height: 15px;
+    margin: 0 5px;
+    width: 15px;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+`;
 
 const Wrapper = styled.div`
   background-color: ${props => rgba(props.theme.blackPearl, 0.5)};
@@ -36,37 +124,57 @@ const Wrapper = styled.div`
   }
 `;
 
-const Tutorial = ({onSkipClick: handleSkip, ...props}) => {
+const Tutorial = ({onComplete: handleComplete, ...props}) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const slider = useRef();
+
+  const isLastSlide = slideIndex >= steps.length - 1;
 
   return (
     <Wrapper {...props}>
       <Carousel
         ref={slider}
-        slickOptions={{arrows: false, beforeChange: (current, next) => setSlideIndex(next), centerMode: true}}
+        slickOptions={{
+          arrows: false,
+          beforeChange: (current, next) => setSlideIndex(next),
+          centerMode: true,
+          dots: false,
+          infinite: false
+        }}
       >
         {steps.map((step, index) => (
-          <Step
-            canSkip={slideIndex + 1 < steps.length}
-            image={step.image}
-            key={index}
-            nextText="Next"
-            onNextClick={() => {
-              slider.current.slickNext();
-            }}
-            onSkipClick={handleSkip}
-          >
+          <Step image={step.image} key={index}>
             {step.text}
           </Step>
         ))}
       </Carousel>
+      <CarouselControls>
+        <CarouselButtons>
+          <ButtonGreen className="next" onClick={() => (isLastSlide ? handleComplete() : slider.current.slickNext())}>
+            Next
+          </ButtonGreen>
+          {isLastSlide === false ? (
+            <button className="skip" onClick={handleComplete}>
+              Skip
+            </button>
+          ) : null}
+        </CarouselButtons>
+        <CarouselPaging>
+          {steps.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => slider.current.slickGoTo(index)}
+              style={{backgroundColor: index === slideIndex ? '#fff' : 'transparent'}}
+            />
+          ))}
+        </CarouselPaging>
+      </CarouselControls>
     </Wrapper>
   );
 };
 
 Tutorial.propTypes = {
-  onSkipClick: PropTypes.func
+  onComplete: PropTypes.func
 };
 
 export default Tutorial;

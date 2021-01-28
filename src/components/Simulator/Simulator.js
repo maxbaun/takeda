@@ -129,7 +129,7 @@ const Simulator = props => {
           <ViewInner>
             {rendering ? <h1 style={{position: 'absolute', zIndex: 10}}>loading</h1> : null}
             <Tutorial
-              onSkipClick={() => {
+              onComplete={() => {
                 setTutorialComplete(true);
               }}
               style={{display: tutorialComplete ? 'none' : 'block'}}
