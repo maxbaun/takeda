@@ -1,7 +1,8 @@
 import * as faceapi from 'face-api.js';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 
+import Context from '../../context';
 import {mediaBreakpointUp} from '../../utils/responsive';
 import ActionBar from './ActionBar';
 import Camera from './Camera';
@@ -66,6 +67,7 @@ const Simulator = props => {
   const [stream, setStream] = useState(null);
   const [version, setVersion] = useState(0);
   const [videoSize, setVideoSize] = useState(null);
+  const {openPopup} = useContext(Context);
 
   const _mount = async () => {
     await faceapi.nets.ssdMobilenetv1.loadFromUri('/weights');
@@ -105,6 +107,10 @@ const Simulator = props => {
     }
   };
 
+  const handleCameraError = () => {
+    openPopup('noCamera');
+  };
+
   useEffect(() => {
     _mount();
   }, []);
@@ -137,6 +143,7 @@ const Simulator = props => {
 
             <Camera
               onUserMedia={setStream}
+              onUserMediaError={handleCameraError}
               showHelper={tutorialComplete && mode === 'camera'}
               // showOverlay={tutorialComplete === false}
               ref={camera}

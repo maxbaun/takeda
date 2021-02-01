@@ -10,6 +10,8 @@ import NoCamera from './NoCamera';
 const Popups = () => {
   const {popups, closePopup} = useContext(Context);
 
+  console.log(popups);
+
   return (
     <>
       <Popup isOpen={popups.noCamera.open} onClose={() => closePopup('noCamera')}>

@@ -30,6 +30,7 @@ const QuestionRow = styled.div`
   display: flex;
   margin: 2rem 0;
 
+  a,
   button {
     align-items: center;
     display: flex;
@@ -66,7 +67,9 @@ const Intro = ({onNo: handleNo, onYes: handleYes}) => {
       <PopupFooter>
         <Questions>
           <QuestionRow>
-            <ButtonGray onClick={handleNo}>No</ButtonGray>
+            <ButtonGray external href="http://takeda.com" onClick={handleNo}>
+              No
+            </ButtonGray>
             <span>I am not a healthcare provider</span>
           </QuestionRow>
           <QuestionRow>

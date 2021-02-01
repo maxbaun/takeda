@@ -4,7 +4,7 @@
 
 [x] Note in simulator when helper box is showing
 [] Download photo
-[] Read more buttons in quiz answere go to Background page
+[x] Read more buttons in quiz answere go to Background page
 [] NO in intro modal should go to http://takeda.com
 [] All answers required in question 4 of quiz?
 

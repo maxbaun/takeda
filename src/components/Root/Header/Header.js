@@ -129,8 +129,6 @@ const Header = ({...props}) => {
 
   const handleLinkClick = () => setNavOpen(false);
 
-  console.log(navOpen);
-
   return (
     <Wrapper {...props}>
       <Container>

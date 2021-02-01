@@ -8,6 +8,10 @@ import Popups from './Popups';
 
 const Root = ({children}) => {
   const [popups, setPopups] = useState({
+    cookieBar: {
+      open: false,
+      data: null
+    },
     intro: {
       data: null,
       open: false
@@ -22,33 +26,34 @@ const Root = ({children}) => {
     }
   });
 
-  const openPopup = (key, data = null) =>
-    setPopups({
-      ...popups,
+  const openPopup = (key, data = null) => {
+    return setPopups(prev => ({
+      ...prev,
       [key]: {
         data,
         open: true
       }
-    });
+    }));
+  };
 
   const closePopup = key => {
     if (popups[key]) {
-      return setPopups({
-        ...popups,
+      return setPopups(prev => ({
+        ...prev,
         [key]: {
           ...popups[key],
           open: false
         }
-      });
+      }));
     }
 
-    return setPopups({
-      ...popups,
+    return setPopups(prev => ({
+      ...prev,
       [key]: {
         data: null,
         open: false
       }
-    });
+    }));
   };
 
   useEffect(() => {
@@ -58,24 +63,6 @@ const Root = ({children}) => {
     if (!cookieBarViewed) {
       openPopup('cookieBar');
     }
-  }, []);
-
-  useEffect(() => {
-    // Check for camera
-    window.navigator.getUserMedia(
-      {video: true},
-      videoStream => {
-        if (!videoStream.getVideoTracks().length) {
-          return openPopup('noCamera');
-        }
-
-        // Video stream exists
-      },
-      () => {
-        // No cams found or user blocked
-        openPopup('noCamera');
-      }
-    );
   }, []);
 
   return (
