@@ -4,23 +4,28 @@ import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import {ButtonEmpty, ButtonGreen, ButtonPrimary} from '../../Button';
-import Icon from '../../Icon';
+import DialogClose from '../../DialogClose';
 import Answer from './Answer';
 import data from './data';
 import Options from './Options';
 
-const CloseBtn = styled.button`
-  align-items: center;
-  background: none;
-  border: none;
-  display: flex;
-  font-size: 3rem;
-  height: 44px;
-  justify-content: center;
+const Close = styled(DialogClose)`
+  background-color: ${props => props.theme.red};
   position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 44px;
+
+  &::before,
+  &::after {
+    background-color: #fff;
+  }
+
+  &:hover {
+    background-color: ${props => props.theme.redDarker};
+
+    &::before,
+    &::after {
+      background-color: #fff;
+    }
+  }
 `;
 
 const ColAnswer = styled.div``;
@@ -148,9 +153,7 @@ const Quiz = ({onClose: handleClose, ...props}) => {
   return (
     <Wrapper {...props}>
       <Container>
-        <CloseBtn onClick={_handleClose}>
-          <Icon icon="times" />
-        </CloseBtn>
+        <Close onClick={_handleClose} />
         <ColQuestion>
           <p className="question-number">Question {questionIndex + 1}</p>
           <p className="question-text">{question.question}</p>

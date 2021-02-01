@@ -5,8 +5,8 @@
 [x] Note in simulator when helper box is showing
 [] Download photo
 [x] Read more buttons in quiz answere go to Background page
-[] NO in intro modal should go to http://takeda.com
-[] All answers required in question 4 of quiz?
+[x] NO in intro modal should go to http://takeda.com
+[x] All answers required in question 4 of quiz?
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

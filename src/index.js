@@ -13,6 +13,7 @@ import Home from './components/pages/Home';
 import ManagementPage from './components/pages/ManagementPage';
 import SimulatorPage from './components/pages/SimulationPage';
 import Root from './components/Root';
+import ScrollToTop from './components/shared/ScrollToTop';
 import reportWebVitals from './reportWebVitals';
 import routes from './routes';
 import GlobalStyle from './styles';
@@ -25,6 +26,7 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter>
+        <ScrollToTop />
         <Root>
           <Switch>
             <Route exact component={Home} path={routes.Home} />

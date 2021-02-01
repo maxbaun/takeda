@@ -3,69 +3,7 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 
-const CloseBtn = styled.button`
-  background: rgba(0, 0, 0, 0);
-  border-radius: 100%;
-  color: #fff;
-  cursor: pointer;
-  height: 50px;
-  opacity: 1;
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  width: 50px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-
-  &:focus,
-  &:hover {
-    background: #fff;
-    outline: none;
-
-    &::before,
-    &::after {
-      background-color: ${props => props.theme.red};
-    }
-  }
-
-  span {
-    border: 0 !important;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px !important;
-    overflow: hidden;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important;
-  }
-
-  &::before,
-  &::after {
-    background-color: #fff;
-    border-radius: 4px;
-    content: ' ';
-    display: block;
-    height: 22px;
-    left: 23px;
-    position: absolute;
-    top: 14px;
-    width: 4px;
-    -webkit-transition: background-color 0.2s ease-in-out;
-    transition: background-color 0.2s ease-in-out;
-  }
-
-  &::before {
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
-
-  &::after {
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-`;
+import DialogClose from '../DialogClose';
 
 const Container = styled.div`
   /* display: table-cell;
@@ -101,14 +39,8 @@ const Modal = ({children, isOpen, onClose: handleClose, ...props}) => {
         }
       }}
     >
-      <CloseBtn
-        type="button"
-        className="ReactModal__Close"
-        aria-label="Close (Press escape to close)"
-        onClick={handleClose}
-      >
-        <span>Close</span>
-      </CloseBtn>
+      <DialogClose onClick={handleClose} />
+
       <Inner>
         <Container>{children}</Container>
       </Inner>

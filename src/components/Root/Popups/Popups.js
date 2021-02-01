@@ -10,19 +10,23 @@ import NoCamera from './NoCamera';
 const Popups = () => {
   const {popups, closePopup} = useContext(Context);
 
-  console.log(popups);
-
   return (
     <>
       <Popup isOpen={popups.noCamera.open} onClose={() => closePopup('noCamera')}>
         <NoCamera />
       </Popup>
-      <Popup isOpen={popups.intro.open}>
+      <Popup isOpen={popups.intro.open} onClose={() => closePopup('noCamera')}>
         <Intro onNo={() => closePopup('intro')} onYes={() => closePopup('intro')} />
       </Popup>
       <Popup isOpen={popups.leaving.open}>
         <Leaving
-          confirmProps={{href: popups.leaving.data?.href || null, external: true}}
+          confirmProps={{
+            href: popups.leaving.data?.href || null,
+            external: true,
+            renderAs: 'a',
+            rel: 'noopener noreferrer',
+            target: '__blank'
+          }}
           onCancel={() => closePopup('leaving')}
         />
       </Popup>

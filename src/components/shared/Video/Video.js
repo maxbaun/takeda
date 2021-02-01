@@ -76,6 +76,7 @@ const PlayBtn = styled.button`
   transform: translateY(-50%);
   transition: background-color 0.2s ease-in-out;
   width: 100px;
+  z-index: 1;
 
   &:hover {
     background-color: ${props => rgba(props.theme.blackPearl, 0.5)};

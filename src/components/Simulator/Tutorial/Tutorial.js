@@ -1,7 +1,7 @@
 import {rgba} from 'polished';
 import PropTypes from 'prop-types';
 import React, {useRef, useState} from 'react';
-import styled from 'styled-components';
+import styled, {useTheme} from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import {ButtonGreen} from '../../shared/Button';
@@ -129,6 +129,7 @@ const Wrapper = styled.div`
 const Tutorial = ({onComplete: handleComplete, ...props}) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const slider = useRef();
+  const theme = useTheme();
 
   const isLastSlide = slideIndex >= steps.length - 1;
 
@@ -168,7 +169,10 @@ const Tutorial = ({onComplete: handleComplete, ...props}) => {
             <button
               key={index}
               onClick={() => slider.current.slickGoTo(index)}
-              style={{backgroundColor: index === slideIndex ? '#fff' : 'transparent'}}
+              style={{
+                backgroundColor: index === slideIndex ? '#fff' : index < slideIndex ? theme.green : 'transparent',
+                borderColor: index < slideIndex ? theme.green : '#fff'
+              }}
             />
           ))}
         </CarouselPaging>

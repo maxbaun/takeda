@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
+import ExternalLink from '../../shared/ExternalLink';
 import Icon from '../Icon';
 
 const Wrapper = styled.button.attrs({
@@ -86,10 +87,10 @@ const Wrapper = styled.button.attrs({
   }
 `;
 
-const Button = ({children, external, href, icon, iconRight, ...props}) => {
+const Button = ({children, external, href, icon, iconRight, renderAs, ...props}) => {
   return (
     <Wrapper
-      as={href ? (external ? 'a' : Link) : 'button'}
+      as={href ? (external ? (renderAs ? renderAs : ExternalLink) : Link) : 'button'}
       data-icon={icon}
       href={href && external && href ? href : null}
       to={href && !external && href ? href : null}
@@ -107,7 +108,8 @@ Button.propTypes = {
   external: PropTypes.bool,
   href: PropTypes.string,
   icon: PropTypes.string,
-  iconRight: PropTypes.bool
+  iconRight: PropTypes.bool,
+  renderAs: PropTypes.string
 };
 
 Button.defaultProps = {

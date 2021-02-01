@@ -53,18 +53,10 @@ const data = [
       </p>
     ),
     allRequired: true,
-    correctOptions: [
-      'Attacks are idiopathic',
-      'Infection',
-      'Stress',
-      'Underlying conditions',
-      'Trauma',
-      'Medication',
-      'Estrogen'
-    ],
+    correctOptions: ['Stress', 'Underlying conditions', 'Trauma', 'Medication', 'Estrogen'],
     options: [
-      'Attacks are idiopathic',
-      'Infection',
+      'Food Allergies',
+      'Low Vitamin D Levels',
       'Stress',
       'Underlying conditions',
       'Trauma',
@@ -91,7 +83,7 @@ const data = [
         hospitalized and out of employment.<sup>2,14</sup>
       </p>
     ),
-    allRequired: false,
+    allRequired: true,
     correctOptions: ['Psychological', 'Social', 'Socioeconomic'],
     options: ['Psychological', 'Social', 'Reproductive', 'Socioeconomic'],
     readMoreUrl: Routes.HaeDiseaseBg,

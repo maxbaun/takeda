@@ -94,7 +94,7 @@ const Home = () => {
       </RiskSection>
       <PatientExamplesSection
         ctaText={<>Explore More HAE Information</>}
-        ctaUrl="/more-info"
+        ctaUrl={routes.HaeDiseaseBg}
         examples={[
           {
             after: `${process.env.PUBLIC_URL}/img/patient-examples/1-after.png`,
