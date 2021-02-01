@@ -15,6 +15,19 @@ const Helper = styled.div`
   z-index: 1;
 `;
 
+const HelperNote = styled.div`
+  bottom: 3rem;
+  color: #fff;
+  font-size: 1.4rem;
+  font-style: italic;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  right: 0;
+  z-index: 1;
+`;
+
 const Overlay = styled.div`
   background-color: ${props => rgba(props.theme.blackPearl, 0.8)};
   height: 100%;
@@ -44,7 +57,12 @@ const Camera = forwardRef(({onUserMedia, onUserMediaError, showHelper, showOverl
   return (
     <Wrapper {...props}>
       <Webcam onUserMedia={onUserMedia} onUserMediaError={onUserMediaError} ref={ref} />
-      {showHelper ? <Helper /> : null}
+      {showHelper ? (
+        <>
+          <Helper />
+          <HelperNote>Please have your face fill up as much of this rectangle as possible</HelperNote>
+        </>
+      ) : null}
       {showOverlay ? <Overlay /> : null}
     </Wrapper>
   );
