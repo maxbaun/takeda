@@ -23,7 +23,7 @@ const data = [
         <p>
           <strong>Presentation:</strong>Swelling in the throat, or a laryngeal attack, happens{' '}
           <span className="accent">less frequently</span> than other attacks, but it is the{' '}
-          <span className="accent">most fatal clinical</span> manifestation of HAE.<sup>1</sup> Laryngeal attacks are{' '}
+          <span className="accent">most fatal clinical manifestation</span> of HAE.<sup>1</sup> Laryngeal attacks are{' '}
           <span className="accent">life-threatening</span> as they can lead to asphyxiation if untreated.<sup>1</sup>
         </p>
         <p>
