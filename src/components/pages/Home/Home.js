@@ -93,7 +93,7 @@ const Home = () => {
         </SectionHeader>
       </RiskSection>
       <PatientExamplesSection
-        ctaText={<>Explore More HAE Information</>}
+        ctaText={<>Learn More About HAE</>}
         ctaUrl={routes.HaeDiseaseBg}
         examples={[
           {
