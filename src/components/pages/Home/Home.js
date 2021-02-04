@@ -33,7 +33,7 @@ const Home = () => {
         <h1>HAE Simulator</h1>
         <p>
           Hereditary angioedema (HAE) is a rare but debilitating and life-threatening condition. Explore the symptoms of
-          HAE. Use our filter to experience a facial attack from a patient’s perspective.
+          HAE. Use our filter to visualize a facial attack.
         </p>
         <small>
           <em>
