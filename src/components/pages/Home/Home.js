@@ -113,7 +113,12 @@ const Home = () => {
             before: `${process.env.PUBLIC_URL}/img/patient-examples/4B.jpg`
           }
         ]}
-        note="*Photos of symptoms are portrayed by actors"
+        note={
+          <>
+            These are not real patients but actors with prosthetic make-up.
+            <br /> Takeda owns the rights to these images.
+          </>
+        }
       >
         <SectionHeader>
           <h2>Patient Examples</h2>

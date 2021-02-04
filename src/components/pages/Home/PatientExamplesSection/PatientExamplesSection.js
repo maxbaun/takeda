@@ -135,6 +135,7 @@ const Note = styled.p`
   font-style: italic;
   order: 0;
   margin: 0 0 4rem;
+  text-align: right;
 
   ${mediaBreakpointUp('sm')} {
     font-size: 1.8rem;
