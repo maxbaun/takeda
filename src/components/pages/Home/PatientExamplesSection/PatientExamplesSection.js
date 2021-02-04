@@ -168,6 +168,7 @@ const PatientExamplesSection = ({children, ctaText, ctaUrl, examples, note, ...p
         <Header>{children}</Header>
         <Examples
           slickOptions={{
+            infinite: false,
             slidesToShow: 2,
             responsive: [
               {

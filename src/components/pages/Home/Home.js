@@ -97,20 +97,20 @@ const Home = () => {
         ctaUrl={routes.HaeDiseaseBg}
         examples={[
           {
-            after: `${process.env.PUBLIC_URL}/img/patient-examples/1-after.png`,
-            before: `${process.env.PUBLIC_URL}/img/patient-examples/1-before.png`
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/1A.jpg`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/1B.jpg`
           },
           {
-            after: `${process.env.PUBLIC_URL}/img/patient-examples/2-after.png`,
-            before: `${process.env.PUBLIC_URL}/img/patient-examples/2-before.png`
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/2A.jpg`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/2B.jpg`
           },
           {
-            after: `${process.env.PUBLIC_URL}/img/patient-examples/1-after.png`,
-            before: `${process.env.PUBLIC_URL}/img/patient-examples/1-before.png`
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/3A.jpg`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/3B.jpg`
           },
           {
-            after: `${process.env.PUBLIC_URL}/img/patient-examples/2-after.png`,
-            before: `${process.env.PUBLIC_URL}/img/patient-examples/2-before.png`
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/4A.jpg`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/4B.jpg`
           }
         ]}
         note="*Photos of symptoms are portrayed by actors"
