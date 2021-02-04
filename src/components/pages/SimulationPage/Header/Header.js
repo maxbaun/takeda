@@ -6,7 +6,7 @@ import {mediaBreakpointUp} from '../../../../utils/responsive';
 
 const Wrapper = styled.div`
   margin: 0 auto 4rem;
-  max-width: 550px;
+  max-width: 630px;
   text-align: center;
 
   ${mediaBreakpointUp('lg')} {

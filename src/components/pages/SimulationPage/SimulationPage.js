@@ -30,10 +30,15 @@ const SimulationPage = props => {
       <Container>
         <Header>
           <h1>HAE SIMULATOR</h1>
-          <p>Use our filter to experience a facial attack from a patient’s perspective.</p>
+          <p>
+            Hereditary Angioedema (HAE) is a rare but debilitating and life-threatening condition.
+            <br />
+            Use our filter to visualize an HAE facial attack.
+          </p>
           <p className="note">
-            Images are never saved or stored in this application. You must have a webcam in order to use this tool. The
-            HAE simulator is for illustrative purposes only and is not a clinical diagnostic tool.
+            Images are never saved or stored in this application. You must have a webcam in order to use this tool.
+            <br />
+            The HAE simulator is for illustrative purposes only and is not a clinical diagnostic tool.
           </p>
         </Header>
         <SimulatorWrap>
