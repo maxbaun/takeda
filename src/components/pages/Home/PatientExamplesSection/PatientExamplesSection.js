@@ -34,9 +34,9 @@ const ExampleBlock = styled.div`
     letter-spacing: 0.3em;
     max-width: 100%;
     position: absolute;
-    padding: 3rem 0 0 1.6rem;
+    padding: 1.6rem 0 0 1.6rem;
     text-transform: uppercase;
-    width: 225px;
+    width: 245px;
 
     > span {
       position: relative;
@@ -184,12 +184,12 @@ const PatientExamplesSection = ({children, ctaText, ctaUrl, examples, note, ...p
               <Example>
                 <ExampleBlock before>
                   <img src={example.before} />
-                  <span>Before</span>
+                  <span>Before HAE Attack</span>
                 </ExampleBlock>
                 <ExampleBlock after>
                   <img src={example.after} />
                   <span>
-                    <span>After</span>
+                    <span>After HAE Attack</span>
                   </span>
                   <ExampleSeparator />
                 </ExampleBlock>
