@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+import routes from '../../../routes';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 
 const Message = styled.div`
@@ -61,10 +62,13 @@ const Nav = styled.nav`
     color: #000;
     display: block;
     flex: 1;
-    font-weight: 700;
+    font-weight: 600;
     order: 1;
-    text-decoration: none;
     text-transform: uppercase;
+
+    &:not(.btn) {
+      text-decoration: none;
+    }
 
     &:hover {
       text-decoration: underline;
@@ -145,11 +149,11 @@ const Footer = ({...props}) => {
           <Link className="terms" to="/terms-of-use">
             Terms of Use
           </Link>
-          <Link className="logo" to="/">
+          <Link className="logo" to={routes.TermsOfUse}>
             <img src={`${process.env.PUBLIC_URL}/img/takeda-logo.png`} />
           </Link>
-          <Link className="privacy" to="/privacy-policy">
-            Privacy Policy
+          <Link className="privacy" to={routes.PrivacyNotice}>
+            Privacy Notice
           </Link>
         </Nav>
         <hr />

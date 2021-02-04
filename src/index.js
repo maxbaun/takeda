@@ -11,7 +11,9 @@ import {ThemeProvider} from 'styled-components';
 import DiseaseBgPage from './components/pages/DiseaseBgPage';
 import Home from './components/pages/Home';
 import ManagementPage from './components/pages/ManagementPage';
+import PrivacyNotice from './components/pages/PrivacyNotice';
 import SimulatorPage from './components/pages/SimulationPage';
+import TermsOfUse from './components/pages/TermsOfUse';
 import Root from './components/Root';
 import ScrollToTop from './components/shared/ScrollToTop';
 import reportWebVitals from './reportWebVitals';
@@ -33,6 +35,8 @@ ReactDOM.render(
             <Route exact component={DiseaseBgPage} path={routes.HaeDiseaseBg} />
             <Route exact component={ManagementPage} path={routes.Management} />
             <Route exact component={SimulatorPage} path={routes.Simulator} />
+            <Route exact component={TermsOfUse} path={routes.TermsOfUse} />
+            <Route exact component={PrivacyNotice} path={routes.PrivacyNotice} />
           </Switch>
         </Root>
       </BrowserRouter>
