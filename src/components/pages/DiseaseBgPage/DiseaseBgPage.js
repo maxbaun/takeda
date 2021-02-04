@@ -47,7 +47,7 @@ const DiseaseBgPage = props => {
       <Hero
         media={
           <Video
-            caption="Video 1: Introduction to hereditary angioedema"
+            caption="Video 1: introduction to hereditary angioedema"
             circlePosition="bottom-right"
             circleSize="lg"
             id="video-1"
@@ -93,7 +93,7 @@ const DiseaseBgPage = props => {
         <VideoSection
           media={
             <Video
-              caption="Video 2: The role of C1 inhibitor in HAE"
+              caption="Video 2: the role of C1 inhibitor in HAE"
               circleColor="yellow"
               circlePosition="bottom-left"
               id="video-2"
@@ -124,7 +124,7 @@ const DiseaseBgPage = props => {
         <VideoSection
           media={
             <Video
-              caption="Video 3: The role of plasma kallikrein in HAE"
+              caption="Video 3: the role of plasma kallikrein in HAE"
               circleColor="blue"
               circlePosition="bottom-right"
               id="video-3"
