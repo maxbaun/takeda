@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   ul {
     ${listUnstyled()}
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 248px));
+    grid-template-columns: repeat(2, minmax(0, 280px));
 
     ${mediaBreakpointUp('lg')} {
       grid-column-gap: 4rem;

@@ -47,9 +47,10 @@ const data = [
   {
     answer: (
       <p>
-        All of the above. Genetics, accident/injury/trauma, disease/illness, physical activity/exercise, stress,
-        pregnancy, certain medications (including hormone therapy), anxiety, and fear.<sup>2</sup> Additionally, there
-        may be no known trigger.<sup>2</sup>
+        The following can trigger a HAE attack: genetics, accident/injury/trauma, disease/illness, physical
+        activity/exercise, stress, pregnancy, certain medications (including hormone therapy), anxiety, and fear.
+        <sup>2</sup>
+        Additionally, there may be no known trigger (idiopathic).<sup>2</sup>
       </p>
     ),
     allRequired: true,
@@ -66,7 +67,7 @@ const data = [
     readMoreUrl: Routes.HaeDiseaseBg,
     references: (
       <>
-        1. Lumry WR. <em>Am J Manag Care</em> 2013;19:S111–S118; 2. Bygum A, et al. <em>Acta Derm Venereol</em>
+        1. Lumry WR. <em>Am J Manag Care</em> 2013;19:S111–S118; 2. Bygum A, et al. <em>Acta Derm Venereol</em>{' '}
         2015;95:706–710; 3. Banerji A. <em>Ann Allergy Asthma Immunol</em> 2013;111:329–336.
       </>
     ),
