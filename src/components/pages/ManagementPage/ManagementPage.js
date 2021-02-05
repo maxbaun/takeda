@@ -21,9 +21,7 @@ const ManagementPage = () => {
             description: (
               <>
                 <p>
-                  <strong>
-                    Personalized care<sup>1-3</sup>
-                  </strong>
+                  <strong>Personalized care</strong>
                 </p>
 
                 <p>
