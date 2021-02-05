@@ -78,10 +78,10 @@ const data = [
       <p>
         The impact of HAE is multifaceted. HAE can affect multiple aspects throughout a patient’s life, including
         psychological factors, such as anxiety about passing on the condition to their children, and physical
-        limitations on exercise.<sup>2,14</sup> HAE can impact career and education through factors such as absenteeism
+        limitations on exercise.<sup>2,3</sup> HAE can impact career and education through factors such as absenteeism
         affecting professional development and difficulty explaining their situation to employers and colleagues.
-        <sup>2,14</sup> There can also be a financial impact, including travel expenses for appointments, and time spent
-        hospitalized and out of employment.<sup>2,14</sup>
+        <sup>2,3</sup> There can also be a financial impact, including travel expenses for appointments, and time spent
+        hospitalized and out of employment.<sup>2,3</sup>
       </p>
     ),
     allRequired: true,
