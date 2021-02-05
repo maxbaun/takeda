@@ -74,16 +74,19 @@ const DiseaseBgPage = props => {
           </h2>
           <p>
             Hereditary angioedema (HAE) can be divided into three types:{' '}
-            <strong className="accent">HAE Type I, HAE Type II, and HAE with normal C1 inhibitor</strong> (C1-INH).
-            <sup>1</sup>
+            <span className="accent">HAE Type I, HAE Type II, and HAE with normal C1 inhibitor</span> (HAE-nC1-INH).
+            <sup>1</sup> HAE-nC1-INH is much less prevalent than HAE Type I and HAE Type II and has many variants
+            including: hereditary angioedema angiopoietin 1 gene variant (HAE-ANGPT1), hereditary angioedema coagulation
+            factor 12 gene variant (HAE-FXII), hereditary angioedema plasminogen gene variant (HAE-PLG), hereditary
+            angioedema unknown gene variant (HAE-UNK).<sup>1</sup>
           </p>
           <p>
-            The estimated prevalence of HAE is 1:50,000 globally but is likely to be higher due to delayed diagnosis/
-            misdiagnosis.<sup>2–4</sup>
+            The estimated prevalence of HAE is 1:50,000 globally but is likely to be higher due to delayed
+            diagnosis/misdiagnosis.<sup>2–4</sup>
           </p>
           <p>
-            HAE is a debilitating illness that can have <strong className="accent">long-term effects</strong> and
-            substantially impact a patient’s <strong className="accent">quality of life</strong>.<sup>5,6</sup>
+            HAE is a debilitating illness that can have <span className="accent">long-term effects</span> and
+            substantially impact a patient’s <span className="accent">quality of life</span>.<sup>5,6</sup>
           </p>
           <p>Please watch video 1 to learn more about HAE!</p>
         </VideoSection.Content>

@@ -156,12 +156,12 @@ const Header = ({...props}) => {
                 <Icon icon="external-link-alt" />
               </ExternalLink>
             </li>
-            {/* <li>
+            <li>
               <a className="btn" href="#" onClick={handleLinkClick}>
                 <span>ENG</span>
                 <Icon icon="chevron-down" />
               </a>
-            </li> */}
+            </li>
           </ul>
         </Nav>
         <Hamburger onClick={() => setNavOpen(!navOpen)} open={navOpen} />

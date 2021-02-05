@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
-import VideoSection from '../../../shared/VideoSection/VideoSection';
+import _VideoSection from '../../../shared/VideoSection/VideoSection';
 import imgDotPattern from './dot-pattern-about-hae-hero.png';
 
 // import {mediaBreakpointUp} from '../../../../utils/responsive';
@@ -13,6 +13,8 @@ const Container = styled.div`
   max-width: 1608px;
   padding: 0 1.5rem;
 `;
+
+const VideoSection = styled(_VideoSection)``;
 
 const Wrapper = styled.div`
   background-image: ${() => `url(${imgDotPattern})`};
@@ -40,8 +42,10 @@ const Hero = ({children, media, title, ...props}) => {
   return (
     <Wrapper {...props}>
       <Container>
-        <VideoSection media={title} />
-        <VideoSection media={media}>{children}</VideoSection>
+        <VideoSection media={title} size="large" />
+        <VideoSection media={media} size="large">
+          {children}
+        </VideoSection>
       </Container>
     </Wrapper>
   );
