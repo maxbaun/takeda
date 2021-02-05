@@ -92,7 +92,7 @@ const Wrapper = styled.div`
 `;
 
 const Quiz = ({onClose: handleClose, ...props}) => {
-  const [questionIndex, setQuestionIndex] = useState(0);
+  const [questionIndex, setQuestionIndex] = useState(3);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [view, setView] = useState('options');
 
@@ -135,7 +135,7 @@ const Quiz = ({onClose: handleClose, ...props}) => {
 
     // ALL answers required
     if (question.allRequired) {
-      if (selectedOptions.length === question.correctOptions.length) {
+      if (correctAnswers.length === question.correctOptions.length) {
         return setView('correct');
       }
 
