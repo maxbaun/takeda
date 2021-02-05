@@ -169,9 +169,7 @@ const Quiz = ({onClose: handleClose, ...props}) => {
           <Answer
             actions={
               <>
-                <ButtonEmpty external href={question.readMoreUrl}>
-                  Read More
-                </ButtonEmpty>
+                <ButtonEmpty href={question.readMoreUrl}>Read More</ButtonEmpty>
                 {isLastQuestion === false ? <ButtonGreen onClick={handleNextClick}>Next Question</ButtonGreen> : null}
               </>
             }
@@ -186,9 +184,7 @@ const Quiz = ({onClose: handleClose, ...props}) => {
             actions={
               <>
                 <ButtonPrimary onClick={handleTryAgain}>Try Again</ButtonPrimary>
-                <ButtonEmpty external href={question.readMoreUrl}>
-                  Read More
-                </ButtonEmpty>
+                <ButtonEmpty href={question.readMoreUrl}>Read More</ButtonEmpty>
                 {isLastQuestion === false ? <ButtonGreen onClick={handleNextClick}>Next Question</ButtonGreen> : null}
               </>
             }
