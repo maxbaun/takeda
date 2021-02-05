@@ -76,15 +76,17 @@ const ManagementPage = () => {
             description: (
               <>
                 <p>
-                  <strong>
-                    Long-term prophylaxis management<sup>1–3</sup>
-                  </strong>
+                  <strong>Long-term prophylaxis management</strong>
                 </p>
                 <p>
-                  Long-term prophylaxis is recommended for patients who may benefit from this treatment strategy{' '}
-                  <strong className="accent">in addition to on-demand treatment.</strong> Prophylactic{' '}
-                  <strong className="accent">options should be discussed</strong> with each patient, and
-                  <strong className="accent">individualized factors should be taken into account.</strong>
+                  Long-term prophylaxis (LTP) may be considered for patients with{' '}
+                  <span className="accent">recurrent episodes</span> of angioedema to{' '}
+                  <span className="accent">reduce the frequency</span>,{' '}
+                  <span className="accent">duration and severity of attacks</span>.<sup>2,3</sup> Patients should be{' '}
+                  <span className="accent">evaluated for LTP at every visit</span>, taking disease burden and patient
+                  preference into consideration.<sup>2</sup> The increased availability of LTP is anticipated to shift
+                  the management paradigm towards an <span className="accent">expanded adoption</span> of LTP.
+                  <sup>1</sup>
                 </p>
               </>
             ),
