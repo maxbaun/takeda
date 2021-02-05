@@ -164,8 +164,8 @@ const Footer = ({...props}) => {
             current information.
           </p>
           <p className="copy">
-            Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the Takeda Logo
-            are trademarks of Takeda Pharmaceutical Company Limited, used under license. Shire is now part of Takeda.
+            Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the Takeda logo
+            are registered trademarks of Takeda Pharmaceutical Company Limited.
           </p>
           <p className="prep">
             <span style={{marginRight: 14}}>VV-MEDMAT-37228</span>
