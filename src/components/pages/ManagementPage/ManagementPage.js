@@ -104,11 +104,17 @@ const ManagementPage = () => {
                 </p>
                 <p>
                   Guidelines recommend that patients should have access to effective on-demand therapy.{' '}
-                  <strong className="accent">Every patient</strong>
-                  diagnosed with HAE must have{' '}
-                  <strong className="accent">constant reliable access to effective acute treatment</strong> without
-                  exception due to the <strong className="accent">unpredictable and life-threatening nature</strong> of
-                  HAE attacks.
+                  <span className="accent">Every patient</span> diagnosed with HAE must have{' '}
+                  <span className="accent">constant reliable access to effective acute treatment</span> without
+                  exception due to the <span className="accent">unpredictable and life-threatening nature</span> of HAE
+                  attacks.
+                </p>
+                <p>
+                  On-demand treatment of attacks is most effective when{' '}
+                  <span className="accent">administered early</span> after attack onset. Early treatment may result in{' '}
+                  <span className="accent">rapid symptom resolution, reducing the morbidity and mortality</span>{' '}
+                  associated with HAE attacks. The key to reducing HAE morbidity is to arrest the progression of
+                  swelling to <span className="accent">prevent disruption to a patient’s life</span>.
                 </p>
               </>
             ),
