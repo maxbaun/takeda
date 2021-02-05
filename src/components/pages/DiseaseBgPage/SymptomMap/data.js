@@ -110,11 +110,17 @@ export default [
     color: 'yellow',
     description: (
       <>
-        <p>Laryngeal edema is a rare but potentially fatal clinical manifestation of HAE. </p>
+        <p>
+          Laryngeal edema is a <strong className="accent">rare</strong> but potentially{' '}
+          <strong className="accent">fatal</strong> clinical manifestation of HAE.{' '}
+        </p>
 
         <p>
-          While less than 1% of all swelling episodes involve the larynx, approximately half of all patients with HAE
-          have a laryngeal attack at some point in their lives.
+          While less than 1% of all swelling episodes involve the larynx,{' '}
+          <strong className="accent">
+            approximately half of all patients with HAE have a laryngeal attack at some point in their lives
+          </strong>
+          .
         </p>
 
         <p>
@@ -135,7 +141,8 @@ export default [
         <p>
           Clinical symptoms of laryngeal edema include <strong className="accent">voice changes</strong> (such as
           hoarseness or deepening of the voice), a feeling of <strong className="accent">tightness</strong> or a lump in
-          the throat, and dysphagia. Patients with advanced swelling often have aphonia (loss of voice) and{' '}
+          the throat, and <strong className="accent">dysphagia</strong>. Patients with advanced swelling often have{' '}
+          <strong className="accent">aphonia</strong> (loss of voice) and{' '}
           <strong className="accent">fear of asphyxiation</strong> with substantial anxiety. Upper airway obstruction is
           usually caused by laryngeal and glottal edema.
         </p>
@@ -152,8 +159,8 @@ export default [
         Laryngeal attacks<sup>13</sup>
       </>
     ),
-    x: '12%',
-    y: '7%'
+    x: '41%',
+    y: '10.2%'
   },
   {
     ...skinSwelling,
