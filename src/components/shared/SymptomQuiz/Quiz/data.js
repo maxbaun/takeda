@@ -6,9 +6,9 @@ const data = [
   {
     answer: (
       <p>
-        Atttacks can occur in all these locations.1 Less common but clinically important manifestations of HAE may
-        include neurological (such as severe headache), pulmonary (such as shortness of breath), renal, urinary (such as
-        pain on urination), and musculoskeletal symptoms (such as pain in the shoulder joints).
+        Attacks can occur in all these locations.<sup>1</sup> Less common but clinically important manifestations of HAE
+        may include neurological (such as severe headache), pulmonary (such as shortness of breath), renal, urinary
+        (such as pain on urination), and musculoskeletal symptoms (such as pain in the shoulder joints).
         <sup>1</sup>
       </p>
     ),
