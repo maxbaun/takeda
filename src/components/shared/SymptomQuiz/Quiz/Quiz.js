@@ -10,7 +10,7 @@ import data from './data';
 import Options from './Options';
 
 const Close = styled(DialogClose)`
-  background-color: ${props => props.theme.red};
+  background-color: ${props => props.theme.red} !important;
   position: absolute;
 
   &::before,
@@ -19,7 +19,7 @@ const Close = styled(DialogClose)`
   }
 
   &:hover {
-    background-color: ${props => props.theme.redDarker};
+    background-color: ${props => props.theme.redDarker} !important;
 
     &::before,
     &::after {
