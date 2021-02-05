@@ -92,7 +92,7 @@ const Wrapper = styled.div`
 `;
 
 const Quiz = ({onClose: handleClose, ...props}) => {
-  const [questionIndex, setQuestionIndex] = useState(3);
+  const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [view, setView] = useState('options');
 
