@@ -136,6 +136,8 @@ const ManagementPage = () => {
           </h2>
         }
       />
+      <HaeConnectCta />
+
       <ImpactOnLife>
         <VideoSection
           media={
@@ -167,7 +169,6 @@ const ManagementPage = () => {
         </VideoSection>
       </ImpactOnLife>
       <SymptomQuiz />
-      <HaeConnectCta />
       <References>
         <>
           1. Busse PJ, et al. <em>J Allergy Clin Immunol Pract</em> 2020;S2213–2198:30878–3; 2. Maurer M, et al.{' '}
