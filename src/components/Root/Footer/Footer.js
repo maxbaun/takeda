@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import routes from '../../../routes';
 import {mediaBreakpointUp} from '../../../utils/responsive';
+import Logo from '../../shared/Logo';
 
 const Message = styled.div`
   line-height: 1.66;
@@ -53,7 +54,7 @@ const Nav = styled.nav`
     flex-flow: row nowrap;
   }
 
-  img {
+  svg {
     margin: 0 auto;
     width: 227px;
   }
@@ -150,7 +151,7 @@ const Footer = ({...props}) => {
             Terms of Use
           </Link>
           <Link className="logo" to={routes.TermsOfUse}>
-            <img src={`${process.env.PUBLIC_URL}/img/takeda-logo.png`} />
+            <Logo />
           </Link>
           <Link className="privacy" to={routes.PrivacyNotice}>
             Privacy Notice

@@ -7,6 +7,7 @@ import {mediaBreakpointUp} from '../../../utils/responsive';
 import ExternalLink from '../../shared/ExternalLink';
 import _Hamburger from '../../shared/Hamburger';
 import Icon from '../../shared/Icon';
+import Logo from '../../shared/Logo';
 import Nav from './Nav';
 
 const BrandWrap = styled.div`
@@ -22,13 +23,13 @@ const BrandWrap = styled.div`
     }
   }
 
-  img {
+  svg {
     /* height: 54px; */
     max-width: 159px;
     width: 100%;
 
     ${mediaBreakpointUp('sm')} {
-      height: 54px;
+      height: auto;
       width: 159px;
     }
 
@@ -38,7 +39,7 @@ const BrandWrap = styled.div`
     }
 
     ${mediaBreakpointUp('xl')} {
-      height: 44px;
+      height: auto;
       width: 129px;
     }
   }
@@ -134,7 +135,7 @@ const Header = ({...props}) => {
       <Container>
         <BrandWrap>
           <Link onClick={handleLinkClick} to={routes.Home}>
-            <img src={`${process.env.PUBLIC_URL}/img/takeda-logo.png`} />
+            <Logo />
           </Link>
           <Tag>HAE Virtual Lab</Tag>
         </BrandWrap>
