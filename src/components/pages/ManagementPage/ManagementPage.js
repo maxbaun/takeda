@@ -58,7 +58,7 @@ const ManagementPage = () => {
               <>
                 <p>
                   <strong>
-                    Short-term or event-based prevention<sup>1–3</sup>
+                    Short-term prophylaxis<sup>1–3</sup>
                   </strong>
                 </p>
                 <p>
