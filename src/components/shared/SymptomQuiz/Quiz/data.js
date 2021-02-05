@@ -86,7 +86,7 @@ const data = [
     ),
     allRequired: true,
     correctOptions: ['Psychological', 'Social', 'Socioeconomic'],
-    options: ['Psychological', 'Social', 'Reproductive', 'Socioeconomic'],
+    options: ['Psychological', 'Social', 'Fertility', 'Socioeconomic'],
     readMoreUrl: Routes.HaeDiseaseBg,
     references: (
       <>
