@@ -21,14 +21,16 @@ const skinSwelling = {
   description: (
     <>
       <p>
-        <strong className="accent">Skin swelling,</strong> most{' '}
-        <strong className="accent">commonly affects the extremities</strong> and is the defining feature of HAE in the
-        vast majority of patients. Upper extremities are affected more than lower extremities, followed by the face
-        (characterized by generalized swelling of facial features), genitals, and, more rarely, the trunk and neck.
+        <span className="accent">Skin swelling</span>, most{' '}
+        <span className="accent">commonly affects the extremities</span> (usually{' '}
+        <span className="accent">asymmetrically</span>)<sup>14</sup> and is the defining feature of HAE in the vast
+        majority of patients. Upper extremities are affected more than lower extremities, followed by the face
+        (characterized by generalized swelling of facial features), genitals, and, more rarely, the trunk. Skin edema in
+        HAE is nonpitting and nonpruritic; blisters and compartment syndromes may accompany particularly severe cases.
       </p>
 
       <p>
-        Skin edema in HAE is <strong className="accent">nonpitting and nonpruritic</strong>; blisters and compartment
+        Skin edema in HAE is <span className="accent">nonpitting and nonpruritic</span>; blisters and compartment
         syndromes may accompany particularly severe cases.
       </p>
 
@@ -38,11 +40,12 @@ const skinSwelling = {
       </p>
 
       <p>
-        Approximately one-third of cutaneous HAE attacks are preceded by erythema marginatum, a nonpruritic, serpiginous
-        rash that produces a map-like pattern on the skin. This symptom occurs more frequently in pediatric patients and
-        is a <strong className="accent">potential diagnostic hindrance</strong>, as it can be{' '}
-        <strong className="accent">mistaken for similar rashes</strong> accompanying childhood viral or bacterial
-        illnesses or may be misdiagnosed as urticaria.
+        Approximately one-third of cutaneous HAE attacks are preceded by{' '}
+        <span className="accent">erythema marginatum</span>, a nonpruritic, serpiginous rash that produces a map-like
+        pattern on the skin. This symptom occurs more frequently in pediatric patients and is a{' '}
+        <span className="accent">potential diagnostic hindrance</span>, as it can be{' '}
+        <span className="accent">mistaken for similar rashes</span> accompanying childhood viral or bacterial illnesses
+        or may be misdiagnosed as urticaria.
       </p>
     </>
   ),
