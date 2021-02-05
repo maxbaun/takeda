@@ -177,7 +177,7 @@ const DiseaseBgPage = props => {
           All patients with HAE should be educated about possible triggers that may cause a HAE attack.<sup>16</sup>{' '}
           Although a number of triggers have been identified, many HAE attacks occur without an obvious trigger, and the
           same trigger may not always provoke a HAE attack.<sup>5</sup> Therefore, HAE attacks may be unpredictable, and
-          a personalized management plan should be created in case of emergency.
+          a personalized management plan should be created in case of emergency.
         </p>
       </CommonTriggers>
       <SymptomQuiz />

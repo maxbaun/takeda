@@ -147,13 +147,13 @@ const Footer = ({...props}) => {
     <Wrapper {...props}>
       <div className="container">
         <Nav>
-          <Link className="terms" to="/terms-of-use">
+          <Link external className="terms" href="http://www.takeda.com/terms-of-use/">
             Terms of Use
           </Link>
-          <Link className="logo" to={routes.TermsOfUse}>
+          <Link className="logo" to={routes.Home}>
             <Logo />
           </Link>
-          <Link className="privacy" to={routes.PrivacyNotice}>
+          <Link external className="privacy" href="http://www.takeda.com/privacy-notice/">
             Privacy Notice
           </Link>
         </Nav>

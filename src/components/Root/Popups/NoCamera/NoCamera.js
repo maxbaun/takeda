@@ -26,7 +26,7 @@ const NoCamera = () => {
           <br />
           detected.
         </h2>
-        <p>Please install a webcam to use this tool. Or scan the QR code to use on amobile device.</p>
+        <p>Please install a webcam to use this tool. Or scan the QR code to use on a mobile device.</p>
       </PopupTitle__NoCam>
       <PopupContent__NoCam>
         <img src={`${process.env.PUBLIC_URL}/img/qrcode.png`} />
