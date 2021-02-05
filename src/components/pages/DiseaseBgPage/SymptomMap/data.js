@@ -95,8 +95,8 @@ export default [
       </>
     ),
     exampleImages: [imgAbdominalExample, imgAbdominalExample2],
-    exampleNote:
-      'These are not real patients but actors with prosthetic make-up.  Takeda owns the rights to these images.',
+    // exampleNote:
+    //   'These are not real patients but actors with prosthetic make-up. Takeda owns the rights to these images.',
     title: (
       <>
         Abdominal attacks<sup>13</sup>
