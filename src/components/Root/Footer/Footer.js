@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import routes from '../../../routes';
 import {mediaBreakpointUp} from '../../../utils/responsive';
+import ExternalLink from '../../shared/ExternalLink';
 import Logo from '../../shared/Logo';
 
 const Message = styled.div`
@@ -147,15 +148,25 @@ const Footer = ({...props}) => {
     <Wrapper {...props}>
       <div className="container">
         <Nav>
-          <Link external className="terms" href="http://www.takeda.com/terms-of-use/">
+          <ExternalLink
+            className="terms"
+            href="http://www.takeda.com/terms-of-use/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Terms of Use
-          </Link>
+          </ExternalLink>
           <Link className="logo" to={routes.Home}>
             <Logo />
           </Link>
-          <Link external className="privacy" href="http://www.takeda.com/privacy-notice/">
+          <ExternalLink
+            className="privacy"
+            href="http://www.takeda.com/privacy-notice/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Privacy Notice
-          </Link>
+          </ExternalLink>
         </Nav>
         <hr />
         <Message>
