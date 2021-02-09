@@ -194,8 +194,8 @@ export default [
     body: imgGenitals,
     color: 'green',
     exampleNote: 'Swelling of the genitals is a type of skin swelling.',
-    x: '26.7%',
-    y: '47.5%'
+    x: '42%',
+    y: '48.2%'
   },
   {
     ...skinSwelling,
