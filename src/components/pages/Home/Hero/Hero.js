@@ -66,6 +66,11 @@ const Content = styled.div`
     }
 
     ${mediaBreakpointUp('lg')} {
+      font-size: 8rem;
+      max-width: none;
+    }
+
+    ${mediaBreakpointUp('xl')} {
       font-size: 10rem;
       margin: 0 0 3rem auto;
       max-width: 700px;
@@ -283,8 +288,8 @@ const Wrapper = styled.div`
     background-image: ${() => `url('${Dots}')`};
     background-position: 100% 0;
     display: grid;
-    grid-gap: 60px;
-    grid-template-columns: auto 45%;
+    grid-gap: 30px;
+    grid-template-columns: 1fr minmax(380px, 45%);
   }
 
   ${mediaBreakpointUp('xl')} {
