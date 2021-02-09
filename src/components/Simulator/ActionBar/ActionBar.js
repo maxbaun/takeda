@@ -55,6 +55,10 @@ const BtnSecondary = styled.button`
     grid-row: initial;
   }
 
+  &:not(.btn) {
+    text-decoration: none;
+  }
+
   &:hover {
     .text {
       text-decoration: underline;

@@ -79,7 +79,7 @@ const CarouselControls = styled.div`
 const CarouselPaging = styled.div`
   display: flex;
   justify-content: center;
-  margin: 5rem 0 0;
+  margin: 3rem 0 0;
 
   button {
     background: none;

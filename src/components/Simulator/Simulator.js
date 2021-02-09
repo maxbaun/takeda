@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Context from '../../context';
 import {mediaBreakpointUp} from '../../utils/responsive';
+import Loader from '../shared/Loader';
 import ActionBar from './ActionBar';
 import Camera from './Camera';
 import FaceEffect from './FaceEffect';
@@ -92,9 +93,9 @@ const Simulator = props => {
   };
 
   const handleTake = () => {
+    setRendering(true);
     const snapshot = camera.current.getScreenshot();
     setSnapshot(snapshot);
-    setRendering(true);
     setMode('result');
   };
 
@@ -139,7 +140,7 @@ const Simulator = props => {
       <Inner style={{maxWidth: videoSize?.width ? videoSize.width : null}}>
         <View style={{paddingBottom: getPaddingBottomPercentage(viewRatio)}}>
           <ViewInner>
-            {rendering ? <h1 style={{position: 'absolute', zIndex: 10}}>loading</h1> : null}
+            <Loader loading={rendering} />
 
             <Camera
               onUserMedia={setStream}
