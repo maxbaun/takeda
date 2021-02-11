@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, {useState} from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import {ButtonEmpty, ButtonGreen, ButtonPrimary} from '../../Button';
@@ -8,6 +8,34 @@ import DialogClose from '../../DialogClose';
 import Answer from './Answer';
 import data from './data';
 import Options from './Options';
+
+const bounce = keyframes`
+  0% {
+    transform: scale3d(0.1,0.1,1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+  }
+  55% {
+    transform: scale3d(1.08,1.08,1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0);
+  }
+  75% {
+    transform: scale3d(0.95,0.95,1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  }
+  100% {
+    transform: scale3d(1,1,1);
+    box-shadow: 0px 49px 163px 0px rgba(0, 0, 0, 0.08);
+  }
+`;
+
+const minimize = keyframes`
+  0% {
+    -webkit-transform: scale3d(1,1,1);
+  }
+  100% {
+    -webkit-transform: scale3d(0.1,0.1,1);
+  }
+`;
 
 const Close = styled(DialogClose)`
   background-color: ${props => props.theme.red} !important;
@@ -20,6 +48,17 @@ const Close = styled(DialogClose)`
 
   &:hover {
     background-color: ${props => props.theme.redDarker} !important;
+
+    &::before,
+    &::after {
+      background-color: #fff;
+    }
+  }
+
+  &:focus {
+    span {
+      background-color: #fff;
+    }
 
     &::before,
     &::after {
@@ -73,25 +112,37 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: #fff;
-  box-shadow: 0px 49px 163px 0px rgba(0, 0, 0, 0.08);
   display: flex;
   left: 0;
   min-height: calc(100% - 100px);
   margin: 0 auto;
+  opacity: ${props => (props.isOpen ? 1 : 0)};
+  pointer-events: ${props => (props.isOpen ? 'auto' : 'none')};
   position: absolute;
   max-width: 1450px;
   right: 0;
+  transition: opacity 500ms ease-in;
   width: 100%;
+  z-index: 2;
 
   ${mediaBreakpointUp('lg')} {
     align-items: center;
     min-height: 600px;
     top: 8rem;
   }
+
+  > div {
+    animation: ${props => (props.isOpen ? bounce : minimize)} 500ms linear;
+    background-color: #fff;
+    box-shadow: 0px 49px 163px 0px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    position: absolute;
+    transition: box-shadow 0s 500ms;
+    width: 100%;
+  }
 `;
 
-const Quiz = ({onClose: handleClose, ...props}) => {
+const Quiz = ({isOpen, onClose: handleClose, ...props}) => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [view, setView] = useState('options');
@@ -151,7 +202,7 @@ const Quiz = ({onClose: handleClose, ...props}) => {
   };
 
   return (
-    <Wrapper {...props}>
+    <Wrapper {...props} isOpen={isOpen}>
       <Container>
         <Close onClick={_handleClose} />
         <ColQuestion>
@@ -201,6 +252,7 @@ const Quiz = ({onClose: handleClose, ...props}) => {
 };
 
 Quiz.propTypes = {
+  isOpen: PropTypes.bool,
   onClose: PropTypes.func
 };
 

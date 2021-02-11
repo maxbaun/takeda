@@ -185,7 +185,7 @@ const SymptomQuiz = ({children, ...props}) => {
           <StartQuizBtn onClick={() => setQuizOpen(true)}>Start Quiz</StartQuizBtn>
         </Content>
       </div>
-      <Quiz onClose={() => setQuizOpen(false)} style={{display: quizOpen ? 'flex' : 'none'}} />
+      <Quiz isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
     </Wrapper>
   );
 };
