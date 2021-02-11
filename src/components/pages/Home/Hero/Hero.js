@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 // import {hexToRgbA} from '../../../../utils/colors';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
@@ -8,6 +8,15 @@ import Button from '../../../shared/Button';
 import Icon from '../../../shared/Icon';
 import Dots from './hero-dots.png';
 import DotsMobile from './hero-dots-mobile.png';
+
+const bounceUpAndDown = keyframes`
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+`;
 
 const Action = styled.div`
   align-items: center;
@@ -255,7 +264,7 @@ const ScrollTo = styled.button`
     margin: 0 auto;
     position: absolute;
     right: 0;
-    transition: transform 0.2s ease-in-out;
+    /* transition: transform 0.2s ease-in-out; */
     transform: translate3d(0, 0, 0);
   }
 
@@ -265,7 +274,7 @@ const ScrollTo = styled.button`
     }
 
     i {
-      transform: translate3d(0, 5px, 0);
+      animation: ${bounceUpAndDown} 0.6s ease-in-out infinite;
     }
   }
 
