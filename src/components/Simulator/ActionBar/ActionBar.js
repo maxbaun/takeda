@@ -10,7 +10,6 @@ import Icon from '../../shared/Icon';
 
 const BtnMain = styled.button`
   align-items: center;
-  background-color: ${props => props.theme.red};
   border: none;
   border-radius: 50%;
   color: #fff;
@@ -21,7 +20,7 @@ const BtnMain = styled.button`
   justify-content: center;
   grid-column: 1/3;
   margin: 0 auto;
-  width: 50px;
+  position: relative;
 
   ${mediaBreakpointUp('lg')} {
     font-size: 4rem;
@@ -30,8 +29,31 @@ const BtnMain = styled.button`
     width: 83px;
   }
 
+  &::before {
+    background-color: ${props => props.theme.red};
+    border-radius: 50%;
+    content: ' ';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+    width: 100%;
+    z-index: 0;
+  }
+
+  i {
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+
   &:hover {
-    background-color: ${props => props.theme.redDark};
+    &::before {
+      background-color: ${props => props.theme.redDark};
+      transform: scale(1.2);
+    }
   }
 
   &:disabled {
@@ -165,7 +187,7 @@ const Wrapper = styled.div`
 
   button {
     pointer-events: ${props => (props.isDisabled ? 'none' : 'initial')};
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease;
   }
 
   &::before {
