@@ -78,8 +78,10 @@ const StartQuizBtn = styled.button`
   font-size: 2rem;
   font-weight: 700;
   justify-content: center;
+  position: relative;
   text-transform: uppercase;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.4s, transform 0.4s;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
   width: 200px;
 
   ${mediaBreakpointUp('sm')} {
@@ -95,12 +97,67 @@ const StartQuizBtn = styled.button`
     width: 190px;
   }
 
+  &::after {
+    content: '';
+    height: 198px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 ${props => props.theme.redDarker};
+    transition: box-shadow 0.4s 0.1s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 5);
+    width: 198px;
+
+    ${mediaBreakpointUp('sm')} {
+      height: 333px;
+      width: 333px;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      height: 188px;
+      width: 188px;
+    }
+  }
+
+  &::before {
+    content: '';
+    width: 206px;
+    height: 206px;
+    position: absolute;
+    top: -2.5px;
+    left: -2.5px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 ${props => props.theme.red};
+    transition: box-shadow 0.4s 0.2s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+
+    ${mediaBreakpointUp('sm')} {
+      height: 341px;
+      width: 341px;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      height: 196px;
+      width: 196px;
+    }
+  }
+
   &:hover {
     background-color: ${props => props.theme.redDarker};
     text-decoration: underline;
+    transform: scale(1.1);
 
     &:focus {
       outline: none;
+    }
+
+    &::after {
+      box-shadow: 0 0 0 5px ${props => props.theme.redDarker};
+    }
+
+    &::before {
+      box-shadow: 0 0 0 15px ${props => props.theme.red};
     }
   }
 `;
