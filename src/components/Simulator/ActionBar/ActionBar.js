@@ -216,6 +216,7 @@ const Wrapper = styled.div`
 `;
 
 const ActionBar = ({
+  canDownload,
   isDisabled,
   mode,
   onDownloadClick: handleDownloadClick,
@@ -245,7 +246,7 @@ const ActionBar = ({
               <BtnMain onClick={handleRedoClick}>
                 <Icon icon="repeat-arrow" />
               </BtnMain>
-              <BtnSecondary onClick={handleDownloadClick}>
+              <BtnSecondary disabled={!canDownload} onClick={handleDownloadClick}>
                 <Icon className="icon" icon="download" />
                 <span className="text">Download Photo</span>
               </BtnSecondary>
@@ -259,6 +260,7 @@ const ActionBar = ({
 };
 
 ActionBar.propTypes = {
+  canDownload: PropTypes.bool,
   isDisabled: PropTypes.bool,
   mode: PropTypes.oneOf(['camera', 'result']),
   onDownloadClick: PropTypes.func,

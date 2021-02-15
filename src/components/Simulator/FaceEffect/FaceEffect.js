@@ -69,8 +69,6 @@ const FaceEffect = ({onComplete: handleComplete, snapshot, version, ...props}) =
 
       const resources = await loadResources();
 
-      console.log(version);
-
       const shouldShowEyes = version === 0 || version === 1;
       const shouldShowMouth = version === 0 || version === 2;
       const shouldShowChin = version === 0 || version === 3;
@@ -137,7 +135,14 @@ const FaceEffect = ({onComplete: handleComplete, snapshot, version, ...props}) =
       ].filter(f => f);
 
       if (typeof handleComplete === 'function') {
-        handleComplete();
+        const renderTexture = PIXI.RenderTexture.create(width, height);
+        const extract = pixiApp.renderer.extract.canvas(pixiApp.stage, renderTexture);
+
+        extract.toBlob(blob => {
+          var url = URL.createObjectURL(blob);
+
+          handleComplete(url);
+        });
       }
     };
 

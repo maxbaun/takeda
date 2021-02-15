@@ -68,6 +68,7 @@ const Simulator = props => {
   const [stream, setStream] = useState(null);
   const [version, setVersion] = useState(0);
   const [videoSize, setVideoSize] = useState(null);
+  const [downloadUrl, setDownloadUrl] = useState(null);
   const {openPopup} = useContext(Context);
 
   const _mount = async () => {
@@ -78,7 +79,7 @@ const Simulator = props => {
 
   const handleDownload = () => {
     var link = document.createElement('a');
-    link.download = 'filename.png';
+    link.download = 'hae-simulator-result.png';
 
     const resultCanvas = document.getElementById('resultCanvas');
 
@@ -86,7 +87,7 @@ const Simulator = props => {
       console.error('Unable to find result canvas');
     }
 
-    link.href = resultCanvas.toDataURL('image/jpg');
+    link.href = downloadUrl;
 
     document.body.appendChild(link);
     link.click();
@@ -101,6 +102,7 @@ const Simulator = props => {
 
   const handleRedo = () => {
     setMode('camera');
+    setDownloadUrl(null);
     if (version + 1 <= 3) {
       setVersion(version + 1);
     } else {
@@ -151,13 +153,21 @@ const Simulator = props => {
             />
 
             {mode === 'result' ? (
-              <FaceEffect onComplete={() => setRendering(false)} snapshot={snapshot} version={version} />
+              <FaceEffect
+                onComplete={url => {
+                  setRendering(false);
+                  setDownloadUrl(url);
+                }}
+                snapshot={snapshot}
+                version={version}
+              />
             ) : null}
           </ViewInner>
         </View>
       </Inner>
       {mode === 'result' ? <LearnMore /> : null}
       <ActionBar
+        canDownload={Boolean(downloadUrl)}
         isDisabled={!tutorialComplete}
         mode={mode}
         onDownloadClick={handleDownload}
