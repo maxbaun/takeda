@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 
 const Content = styled.div`
+  opacity: ${props => (props.inView ? 1 : 0)};
   order: 0;
+  transform: ${props => (props.inView ? 'translate3d(0, 0, 0)' : 'translate3d(20px, 0, 0)')};
+  transition: all 0.8s ease-in-out;
 
   ${mediaBreakpointUp('lg')} {
     max-width: 360px;
@@ -19,7 +23,10 @@ const Content = styled.div`
 
 const Icon = styled.div`
   margin: 0;
+  opacity: ${props => (props.inView ? 1 : 0)};
   text-align: center;
+  transform: ${props => (props.inView ? 'translate3d(0, 0, 0)' : 'translate3d(0, 20px, 0)')};
+  transition: all 0.4s ease-in-out;
 
   p {
     color: ${props => props.theme.blue};
@@ -92,25 +99,47 @@ const Wrapper = styled.div`
 `;
 
 const CommonTriggers = ({children, icons, ...props}) => {
+  const [inView, setInView] = useState(false);
+  const [offset, setOffset] = useState(470);
+  const ref = useRef();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (ref.current) {
+        setOffset(ref.current.offsetHeight / 2);
+      }
+    };
+
+    handleResize();
+
+    document.addEventListener('resize', handleResize);
+
+    return () => {
+      document.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <Wrapper {...props}>
-      <div className="container">
-        <Inner>
-          <IconList>
-            {icons &&
-              icons.map((icon, index) => (
-                <Icon key={index}>
-                  <Icon__Image color={icon.color}>
-                    <img src={icon.image} />
-                  </Icon__Image>
-                  <p>{icon.caption}</p>
-                </Icon>
-              ))}
-          </IconList>
-          <Content>{children}</Content>
-        </Inner>
-      </div>
-    </Wrapper>
+    <VisibilitySensor partialVisibility active={!inView} onChange={setInView} minTopValue={offset}>
+      <Wrapper {...props} ref={ref}>
+        <div className="container">
+          <Inner>
+            <IconList>
+              {icons &&
+                icons.map((icon, index) => (
+                  <Icon inView={inView} key={index} style={{transitionDelay: `${index * 200 + 800}ms`}}>
+                    <Icon__Image color={icon.color}>
+                      <img src={icon.image} />
+                    </Icon__Image>
+                    <p>{icon.caption}</p>
+                  </Icon>
+                ))}
+            </IconList>
+            <Content inView={inView}>{children}</Content>
+          </Inner>
+        </div>
+      </Wrapper>
+    </VisibilitySensor>
   );
 };
 

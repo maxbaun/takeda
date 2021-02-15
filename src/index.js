@@ -24,24 +24,22 @@ import theme from './theme';
 ReactModal.setAppElement('#root');
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Root>
-          <Switch>
-            <Route exact component={Home} path={routes.Home} />
-            <Route exact component={DiseaseBgPage} path={routes.HaeDiseaseBg} />
-            <Route exact component={ManagementPage} path={routes.Management} />
-            <Route exact component={SimulatorPage} path={routes.Simulator} />
-            <Route exact component={TermsOfUse} path={routes.TermsOfUse} />
-            <Route exact component={PrivacyNotice} path={routes.PrivacyNotice} />
-          </Switch>
-        </Root>
-      </BrowserRouter>
-    </ThemeProvider>
-  </React.StrictMode>,
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <BrowserRouter>
+      <ScrollToTop />
+      <Root>
+        <Switch>
+          <Route exact component={Home} path={routes.Home} />
+          <Route exact component={DiseaseBgPage} path={routes.HaeDiseaseBg} />
+          <Route exact component={ManagementPage} path={routes.Management} />
+          <Route exact component={SimulatorPage} path={routes.Simulator} />
+          <Route exact component={TermsOfUse} path={routes.TermsOfUse} />
+          <Route exact component={PrivacyNotice} path={routes.PrivacyNotice} />
+        </Switch>
+      </Root>
+    </BrowserRouter>
+  </ThemeProvider>,
   document.getElementById('root')
 );
 
