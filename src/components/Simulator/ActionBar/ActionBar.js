@@ -21,6 +21,7 @@ const BtnMain = styled.button`
   grid-column: 1/3;
   margin: 0 auto;
   position: relative;
+  width: 50px;
 
   ${mediaBreakpointUp('lg')} {
     font-size: 4rem;

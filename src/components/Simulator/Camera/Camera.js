@@ -4,6 +4,8 @@ import React, {forwardRef} from 'react';
 import Webcam from 'react-webcam';
 import styled from 'styled-components';
 
+import {mediaBreakpointUp} from '../../../utils/responsive';
+
 const Helper = styled.div`
   border: 1px solid #fff;
   box-shadow: 0px 0px 0px 999px ${props => rgba(props.theme.blackPearl, 0.8)};
@@ -16,7 +18,7 @@ const Helper = styled.div`
 `;
 
 const HelperNote = styled.div`
-  bottom: 3rem;
+  bottom: 1rem;
   color: #fff;
   font-size: 1.4rem;
   font-style: italic;
@@ -26,6 +28,10 @@ const HelperNote = styled.div`
   text-align: center;
   right: 0;
   z-index: 1;
+
+  ${mediaBreakpointUp('sm')} {
+    bottom: 3rem;
+  }
 `;
 
 const Overlay = styled.div`
