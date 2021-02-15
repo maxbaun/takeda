@@ -28,8 +28,6 @@ const Wrapper = styled.div``;
 const DiseaseBgPage = props => {
   const location = useLocation();
   useEffect(() => {
-    console.log(location.hash);
-
     if (location.hash) {
       const [, elId] = location.hash.split('#');
       if (elId) {

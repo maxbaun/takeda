@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import routes from '../../../routes';
 import {mediaBreakpointUp} from '../../../utils/responsive';
+import Dropdown from '../../shared/Dropdown';
 import ExternalLink from '../../shared/ExternalLink';
 import _Hamburger from '../../shared/Hamburger';
 import Icon from '../../shared/Icon';
@@ -157,12 +158,19 @@ const Header = ({...props}) => {
                 <Icon icon="external-link-alt" />
               </ExternalLink>
             </li>
-            {/* <li>
-              <a className="btn" href="#" onClick={handleLinkClick}>
+            <Dropdown as="li" id="languageSelector">
+              <Dropdown.Toggle className="btn" onClick={handleLinkClick} title="Change Language">
                 <span>ENG</span>
                 <Icon icon="chevron-down" />
-              </a>
-            </li> */}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <ul>
+                  <li>
+                    <a href="/">English</a>
+                  </li>
+                </ul>
+              </Dropdown.Menu>
+            </Dropdown>
           </ul>
         </Nav>
         <Hamburger onClick={() => setNavOpen(!navOpen)} open={navOpen} />

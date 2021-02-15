@@ -10,13 +10,15 @@ import {mediaBreakpointUp} from '../../../../utils/responsive';
 const Wrapper = styled.nav`
   font-size: 1.4rem;
 
-  ul {
+  > ul {
     ${listUnstyled()};
     align-items: center;
     display: flex;
 
     > li {
-      > a {
+      > a,
+      > button {
+        background: none;
         color: #000;
         display: block;
         font-weight: 700;
@@ -56,7 +58,8 @@ const Wrapper = styled.nav`
         &.btn {
           border: 1px solid rgb(33, 45, 52);
           border-radius: 40px;
-          padding: 0.71em 1.07em;
+          line-height: 1;
+          padding: 0.7857em 1.07em 0.857em;
 
           &:hover {
             border-color: ${props => props.theme.red};
