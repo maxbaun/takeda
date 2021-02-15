@@ -25,7 +25,7 @@ const Icon = styled.div`
   margin: 0;
   opacity: ${props => (props.inView ? 1 : 0)};
   text-align: center;
-  transform: ${props => (props.inView ? 'translate3d(0, 0, 0)' : 'translate3d(0, 20px, 0)')};
+  transform: ${props => (props.inView ? 'scale(1)' : 'scale(0.5)')};
   transition: all 0.4s ease-in-out;
 
   p {
