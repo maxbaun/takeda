@@ -1,6 +1,7 @@
 import {rgba} from 'polished';
 import PropTypes from 'prop-types';
 import React, {useEffect, useState} from 'react';
+import {Parallax} from 'react-parallax';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
@@ -132,7 +133,17 @@ const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumb
         <Icon icon="play" />
         <span>Play</span>
       </PlayBtn>
-      <CircleComponent className="circle" color={circleColor} size={circleSize} />
+      <Parallax
+        renderLayer={percentage => (
+          <CircleComponent
+            className="circle"
+            color={circleColor}
+            size={circleSize}
+            style={{transform: `translate3d(0, ${percentage * -100}%, 0)`}}
+          />
+        )}
+        style={{overflow: 'visible'}}
+      />
       <Overlay />
       {caption && <Caption>{caption}</Caption>}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
