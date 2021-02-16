@@ -71,7 +71,7 @@ const data = [
         2015;95:706–710; 3. Banerji A. <em>Ann Allergy Asthma Immunol</em> 2013;111:329–336.
       </>
     ),
-    question: 'What triggers can increase HAE attack frequency and/or severity?'
+    question: 'Based on evidence reported in the literature, what can trigger a HAE attack?'
   },
   {
     answer: (
