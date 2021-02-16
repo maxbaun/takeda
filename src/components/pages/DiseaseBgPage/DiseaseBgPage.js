@@ -49,7 +49,7 @@ const DiseaseBgPage = props => {
             circlePosition="bottom-right"
             circleSize="lg"
             id="video-1"
-            src="https://www.youtube.com/embed/vR4HIUdE7ak"
+            src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232483060001"
             thumbnail={imgVideo1}
             thumbnailRatio="853:528"
           />
@@ -97,7 +97,7 @@ const DiseaseBgPage = props => {
               circleColor="yellow"
               circlePosition="bottom-left"
               id="video-2"
-              src="https://www.youtube.com/embed/vR4HIUdE7ak"
+              src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232482387001"
               thumbnail={imgVideo2}
             />
           }
@@ -129,7 +129,7 @@ const DiseaseBgPage = props => {
               circleColor="blue"
               circlePosition="bottom-right"
               id="video-3"
-              src="https://www.youtube.com/embed/vR4HIUdE7ak"
+              src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232479654001"
               thumbnail={imgVideo3}
             />
           }

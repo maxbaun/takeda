@@ -47,7 +47,7 @@ const ManagementPage = () => {
                   insights from healthcare professionals
                 </>
               ),
-              src: 'https://www.youtube.com/embed/vR4HIUdE7ak',
+              src: 'https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232479553001',
               thumbnail: 'https://via.placeholder.com/588x364'
             }
           },
@@ -143,7 +143,7 @@ const ManagementPage = () => {
               circlePosition="bottom-right"
               circleSize="lg"
               id="video-2"
-              src="https://www.youtube.com/embed/vR4HIUdE7ak"
+              src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232484369001"
               thumbnail="https://via.placeholder.com/588x364"
               thumbnailRatio="853:528"
             />

@@ -11,9 +11,9 @@ const EmbededVideo = ({src, ...props}) => {
     <Wrapper {...props} ratio="16:9">
       {src ? (
         <iframe
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          frameBorder="0"
           src={src}
         />
       ) : null}
