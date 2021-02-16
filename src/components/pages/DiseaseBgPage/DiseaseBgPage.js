@@ -191,7 +191,7 @@ const DiseaseBgPage = props => {
           <em>Clinic Rev Allerg Immunol</em> 2016;51:216–229; 10. Hofman ZLM, et al. <em>J Allergy Clin Immunol</em>{' '}
           2016;138:359–366; 11. Busse PJ, et al. <em>J Allergy Clin Immunol Pract</em> 2020;S2213–2198:30878–3; 12.
           Busse PJ & Christiansen SC. <em>N Engl J Med</em> 2020;382:1136–1148; 13. Lumry WR. <em>Am J Manag Care</em>{' '}
-          2013;19:S111–S118; 14. Ghazi A & Grant JA. <em>Biologics</em> 2013;7:103–113; 15. Gower RG, et al.{' '}
+          2013:19;S103-S110; 14. Ghazi A & Grant JA. <em>Biologics</em> 2013;7:103–113; 15. Gower RG, et al.{' '}
           <em>World Allergy Organ</em> J 2011;4:S9–S21; 16. Maurer M, et al. <em>Allergy</em> 2018;73:1575–1596.
         </>
       </References>
