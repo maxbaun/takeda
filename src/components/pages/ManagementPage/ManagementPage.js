@@ -96,16 +96,14 @@ const ManagementPage = () => {
             description: (
               <>
                 <p>
-                  <strong>
-                    On-demand therapy<sup>1–3</sup>
-                  </strong>
+                  <strong>On-demand therapy</strong>
                 </p>
                 <p>
                   Guidelines recommend that patients should have access to effective on-demand therapy.{' '}
                   <span className="accent">Every patient</span> diagnosed with HAE must have{' '}
                   <span className="accent">constant reliable access to effective acute treatment</span> without
                   exception due to the <span className="accent">unpredictable and life-threatening nature</span> of HAE
-                  attacks.
+                  attacks.<sup>1–3</sup>
                 </p>
                 <p>
                   On-demand treatment of attacks is most effective when{' '}
