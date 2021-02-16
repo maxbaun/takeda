@@ -100,7 +100,7 @@ const Wrapper = styled.div`
 
 const CommonTriggers = ({children, icons, ...props}) => {
   const [inView, setInView] = useState(false);
-  const [offset, setOffset] = useState(470);
+  const [offset, setOffset] = useState(0);
   const ref = useRef();
 
   useEffect(() => {
