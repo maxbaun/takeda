@@ -156,7 +156,7 @@ const DiseaseBgPage = props => {
         <h2>Symptom map</h2>
         <p>
           Angioedema attacks <strong className="accent">vary in location</strong>, frequency, duration, and severity,
-          <sup>13</sup> and are often <strong className="accent">painful, unpredictable, debilitating</strong>, and
+          <sup>5,13</sup> and are often <strong className="accent">painful, unpredictable, debilitating</strong>, and
           sometimes <strong className="accent">life-threatening</strong>.<sup>5</sup>
         </p>
       </SymptomMap>
