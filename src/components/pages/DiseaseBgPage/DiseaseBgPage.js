@@ -116,6 +116,7 @@ const DiseaseBgPage = props => {
 
             <p>
               Decreased or dysfunctional C1-INH impacts the <strong className="accent">kallikrein–kinin system</strong>.
+              <sup>7–10</sup>
             </p>
 
             <p>Please watch video 2 to learn about the role of C1-INH in more detail!</p>
