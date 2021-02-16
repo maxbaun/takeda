@@ -180,8 +180,8 @@ const Footer = ({...props}) => {
             are registered trademarks of Takeda Pharmaceutical Company Limited.
           </p>
           <p className="prep">
-            <span style={{marginRight: 14}}>VV-MEDMAT-37228</span>
-            Date of preparation: January 2021
+            <span style={{marginRight: 14}}>VV-MEDMAT-37983</span>
+            Date of preparation: February 2021
           </p>
         </Message>
       </div>
