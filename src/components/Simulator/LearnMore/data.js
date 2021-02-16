@@ -11,7 +11,7 @@ const data = [
         <p>
           <strong>Impact:</strong>Facial swelling is <span className="accent">commonly misdiagnosed</span> and treated
           as an allergic reaction.<sup>2</sup> However, patients with HAE do not respond to medications used to treat
-          allergic reactions such as corticosteroids, antihistamines, and adrenalin.<sup>3</sup>
+          allergic reactions such as corticosteroids, antihistamines, and adrenaline.<sup>3</sup>
         </p>
       </>
     ),
