@@ -19,13 +19,13 @@ function calculateScrollOffset(element, offset, alignment) {
       scrollPosition = elementRect.top;
       break;
     case 'middle':
-      scrollPosition = elementRect.bottom - clientHeight / 2 - elementRect.height / 2; // eslint-disable-line no-mixed-operators
+      scrollPosition = elementRect.bottom - clientHeight / 2 - elementRect.height / 2;
       break;
     case 'bottom':
       scrollPosition = elementRect.bottom - clientHeight;
       break;
     default:
-      scrollPosition = elementRect.bottom - clientHeight / 2 - elementRect.height / 2; // eslint-disable-line no-mixed-operators
+      scrollPosition = elementRect.bottom - clientHeight / 2 - elementRect.height / 2;
       break; // defaul to middle
   }
 

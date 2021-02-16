@@ -19,9 +19,9 @@ const steps = [
     image: imgStep2,
     text: (
       <p>
-        Make sure {`you're`} in a spot with good lighting, {/* eslint-disable-line quotes */}
+        Make sure {`you're`} in a spot with good lighting,
         <br />
-        no glare and the background {"shouldn't"} be too busy. {/* eslint-disable-line quotes */}
+        no glare and the background {"shouldn't"} be too busy.
       </p>
     )
   },
