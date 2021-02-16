@@ -42,7 +42,7 @@ const data = [
         2015;95:706–710; 3. Banerji A. <em>Ann Allergy Asthma Immunol</em> 2013;111:329–336.
       </>
     ),
-    question: 'What are the common symptoms of a HAE attack?'
+    question: 'What are some of the symptoms of a HAE attack?'
   },
   {
     answer: (
