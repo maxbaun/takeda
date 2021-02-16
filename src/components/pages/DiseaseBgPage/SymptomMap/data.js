@@ -133,7 +133,7 @@ export default [
         <p>
           An important diagnostic feature is that{' '}
           <strong className="accent">
-            standard medications for alleviating acute airway edema are generally ineffective
+            standard medications for alleviating acute airway edema in children are generally ineffective
           </strong>{' '}
           for laryngeal attacks.
         </p>
