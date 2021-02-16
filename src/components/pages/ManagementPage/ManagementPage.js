@@ -57,14 +57,12 @@ const ManagementPage = () => {
             description: (
               <>
                 <p>
-                  <strong>
-                    Short-term prophylaxis<sup>1–3</sup>
-                  </strong>
+                  <strong>Short-term prophylaxis</strong>
                 </p>
                 <p>
                   Guidelines recommend short-term prophylaxis prior to{' '}
                   <strong className="accent"> medical procedures</strong> or other{' '}
-                  <strong className="accent">events at high risk of triggering HAE attacks.</strong>
+                  <strong className="accent">events at high risk of triggering HAE attacks</strong>.<sup>1–3</sup>
                 </p>
               </>
             ),
