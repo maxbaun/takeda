@@ -135,7 +135,7 @@ const Home = () => {
       </PatientExamplesSection>
       <SymptomQuiz />
       <References>
-        1. Lumry WR. <em>Am J Manag Care</em> 2013;19:S111–S118; 2. Banerji A. <em>Ann Allergy Asthma Immunol</em>{' '}
+        1. Lumry WR. <em>Am J Manag Care</em> 2013:19;S103-S110; 2. Banerji A. <em>Ann Allergy Asthma Immunol</em>{' '}
         2013;111:329–336; 3. Longhurst HJ & Bork K. <em>Br J Hosp Med</em> (Lond) 2019;80:391–398; 4. Bork K, et al.{' '}
         <em>J Allergy Clin Immunol</em>
         2012;130:692–697; 5. Agostoni A, et al. <em>J Allergy Clin Immunol</em> 2004;114:S51–S131; 6. Bork K, et al.{' '}
