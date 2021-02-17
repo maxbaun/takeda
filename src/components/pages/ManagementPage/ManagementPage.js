@@ -108,10 +108,12 @@ const ManagementPage = () => {
                 </p>
                 <p>
                   On-demand treatment of attacks is most effective when{' '}
-                  <span className="accent">administered early</span> after attack onset. Early treatment may result in{' '}
+                  <span className="accent">administered early</span> after attack onset.<sup>1</sup> Early treatment may
+                  result in{' '}
                   <span className="accent">rapid symptom resolution, reducing the morbidity and mortality</span>{' '}
-                  associated with HAE attacks. The key to reducing HAE morbidity is to arrest the progression of
-                  swelling to <span className="accent">prevent disruption to a patient’s life</span>.
+                  associated with HAE attacks.<sup>1,3</sup> The key to reducing HAE morbidity is to arrest the
+                  progression of swelling to <span className="accent">prevent disruption to a patient’s life</span>.
+                  <sup>1</sup>
                 </p>
               </>
             ),
