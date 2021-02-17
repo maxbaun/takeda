@@ -10,6 +10,9 @@ import Video from '../../shared/Video/Video';
 import VideoSection from '../../shared/VideoSection';
 import CommonTriggers from './CommonTriggers';
 import Hero from './Hero';
+import imgVideo1 from './images/HAE-BG-Video-1.jpg';
+import imgVideo2 from './images/HAE-BG-Video-2.jpg';
+import imgVideo3 from './images/HAE-BG-Video-3.jpg';
 import iconAnxiety from './images/icon-anxiety.png';
 import iconInjury from './images/icon-injury.png';
 import iconMedication from './images/icon-medication.png';
@@ -19,9 +22,6 @@ import iconUnknown from './images/icon-unknown.png';
 import PhysiologySection from './PhysiologySection';
 import SymptomMap from './SymptomMap';
 import Title from './Title';
-import imgVideo1 from './video-1-thumbnail.png';
-import imgVideo2 from './video-2-thumbnail.png';
-import imgVideo3 from './video-3-thumbnail.png';
 
 const Wrapper = styled.div``;
 

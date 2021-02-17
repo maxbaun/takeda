@@ -7,6 +7,7 @@ import SymptomQuiz from '../../shared/SymptomQuiz';
 import Video from '../../shared/Video';
 import VideoSection from '../../shared/VideoSection';
 import ClinicalManagement from './ClinicalManagement';
+import imgVideoThumb from './HAE-Management-Video-1-2.jpg';
 import ImpactOnLife from './ImpactOnLife';
 
 const Wrapper = styled.div``;
@@ -48,7 +49,7 @@ const ManagementPage = () => {
                 </>
               ),
               src: 'https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232479553001',
-              thumbnail: 'https://via.placeholder.com/588x364'
+              thumbnail: imgVideoThumb
             }
           },
           {
@@ -144,7 +145,7 @@ const ManagementPage = () => {
               circleSize="lg"
               id="video-2"
               src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232484369001"
-              thumbnail="https://via.placeholder.com/588x364"
+              thumbnail={imgVideoThumb}
               thumbnailRatio="853:528"
             />
           }
