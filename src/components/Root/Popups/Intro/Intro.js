@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import {ButtonBlue, ButtonGray} from '../../../shared/Button';
-import ExternalLink from '../../../shared/ExternalLink';
+// import ExternalLink from '../../../shared/ExternalLink';
 import Popup from '../../../shared/Popup';
 
 const PopupContent = styled(Popup.Content)`
@@ -60,9 +60,13 @@ const Intro = ({onNo: handleNo, onYes: handleYes}) => {
       </Popup.Title>
       <PopupContent>
         <p>
+          This site is intended for use by healthcare professionals outside the US and UK who are registered for HAE
+          CONNECT.
+        </p>
+        {/* <p>
           This site is only intended for use by healthcare professionals outside the US and UK. If you are a patient,
           you can visit <ExternalLink href="http://www.takeda.com/">Takeda.com</ExternalLink> to learn more about HAE.
-        </p>
+        </p> */}
       </PopupContent>
       <PopupFooter>
         <Questions>
@@ -74,7 +78,7 @@ const Intro = ({onNo: handleNo, onYes: handleYes}) => {
           </QuestionRow>
           <QuestionRow>
             <ButtonBlue onClick={handleYes}>Yes</ButtonBlue>
-            <span>I am a healthcare provider outside of the US and UK</span>
+            <span>I am a HCP outside of the US and UK</span>
           </QuestionRow>
         </Questions>
       </PopupFooter>
