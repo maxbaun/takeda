@@ -57,6 +57,10 @@ const Overlay = styled.div`
   z-index: 0;
 `;
 
+const Disclaimer = styled.p`
+  color: #fff;
+`;
+
 const PlayBtn = styled.button`
   align-items: center;
   background-color: ${props => rgba(props.theme.blackPearl, 0.3)};
@@ -112,7 +116,18 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumbnail, thumbnailRatio, ...props}) => {
+const Video = ({
+  caption,
+  circleColor,
+  circlePosition,
+  circleSize,
+  disclaimer,
+  id,
+  src,
+  thumbnail,
+  thumbnailRatio,
+  ...props
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const CircleComponent = circlePosition === 'bottom-left' ? CircleBottomLeft : CircleBottomRight;
 
@@ -148,6 +163,7 @@ const Video = ({caption, circleColor, circlePosition, circleSize, id, src, thumb
       {caption && <Caption>{caption}</Caption>}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         {src ? <EmbededVideo src={src} /> : null}
+        {disclaimer ? <Disclaimer>{disclaimer}</Disclaimer> : null}
       </Modal>
     </Wrapper>
   );
@@ -158,6 +174,7 @@ Video.propTypes = {
   circleColor: PropTypes.oneOf(['red', 'yellow', 'blue']),
   circlePosition: PropTypes.oneOf(['bottom-left', 'bottom-right']),
   circleSize: PropTypes.oneOf(['md', 'lg']),
+  disclaimer: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   id: PropTypes.string.isRequired,
   src: PropTypes.string,
   thumbnail: PropTypes.string,

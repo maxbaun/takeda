@@ -143,6 +143,7 @@ const ManagementPage = () => {
               circleColor="red"
               circlePosition="bottom-right"
               circleSize="lg"
+              disclaimer={<>This is the dislaimer text.</>}
               id="video-2"
               src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232484369001"
               thumbnail={imgVideoThumb}
