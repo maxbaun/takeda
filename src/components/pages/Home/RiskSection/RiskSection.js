@@ -3,9 +3,9 @@ import React from 'react';
 import styled, {keyframes} from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
-import imgBodyCircle from './body-circle.png';
-import imgBodyDots from './body-dots.png';
 import Dots from './dot-pattern-risk-of-misdiagnosis.png';
+import imgBodyCircle from './line-pattern-animate.png';
+import imgBodyDots from './person-static.png';
 
 const rotate = keyframes`
   from {
