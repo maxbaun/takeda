@@ -170,11 +170,7 @@ const Footer = ({...props}) => {
         </Nav>
         <hr />
         <Message>
-          <p className="note">
-            This website is intended for users outside of the US and UK. The website has been developed by Takeda in
-            accordance with industry and legal standards. Takeda makes every reasonable effort to include accurate and
-            current information.
-          </p>
+          <p className="note">This website is intended for users outside of the US and UK.</p>
           <p className="copy">
             Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the Takeda logo
             are registered trademarks of Takeda Pharmaceutical Company Limited.
