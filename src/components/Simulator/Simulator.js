@@ -13,6 +13,15 @@ import Tutorial from './Tutorial';
 
 const Inner = styled.div`
   margin: 0 auto;
+  padding: 50px 0;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 75px 0;
+  }
+
+  ${mediaBreakpointUp('md')} {
+    padding: 0;
+  }
 
   ${mediaBreakpointUp('lg')} {
     max-width: 800px;
