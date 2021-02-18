@@ -48,6 +48,12 @@ const DiseaseBgPage = props => {
             caption="Video 1: introduction to hereditary angioedema"
             circlePosition="bottom-right"
             circleSize="lg"
+            disclaimer={
+              <>
+                Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the Takeda
+                logo are registered trademarks of Takeda Pharmaceutical Company Limited.
+              </>
+            }
             id="video-1"
             src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232483060001"
             thumbnail={imgVideo1}
@@ -96,6 +102,12 @@ const DiseaseBgPage = props => {
               caption="Video 2: the role of C1 inhibitor in HAE"
               circleColor="yellow"
               circlePosition="bottom-left"
+              disclaimer={
+                <>
+                  Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the
+                  Takeda logo are registered trademarks of Takeda Pharmaceutical Company Limited.
+                </>
+              }
               id="video-2"
               src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232482387001"
               thumbnail={imgVideo2}
@@ -128,6 +140,12 @@ const DiseaseBgPage = props => {
               caption="Video 3: the role of plasma kallikrein in HAE"
               circleColor="blue"
               circlePosition="bottom-right"
+              disclaimer={
+                <>
+                  Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the
+                  Takeda logo are registered trademarks of Takeda Pharmaceutical Company Limited.
+                </>
+              }
               id="video-3"
               src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232479654001"
               thumbnail={imgVideo3}
