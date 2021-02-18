@@ -216,15 +216,15 @@ const Wrapper = styled.div`
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  padding: 20rem 1.5rem 1.5rem 1rem;
+  padding: 20rem 0 1.5rem 0;
 
   ${mediaBreakpointUp('sm')} {
-    padding: 35rem 1.5rem 13rem 1.5rem;
+    padding: 35rem 0 13rem;
   }
 
   ${mediaBreakpointUp('lg')} {
     background-size: 58% auto;
-    padding: 8rem 1.5rem 2.5rem;
+    padding: 8rem 0 2.5rem;
   }
 `;
 
@@ -237,7 +237,9 @@ const RiskSection = ({children, ...props}) => {
           <ImgBodyCircle src={imgBodyCircle} />
           <ImgBodyDots src={imgBodyDots} />
         </Image>
-        <Content>{children}</Content>
+        <Content>
+          <div className="container">{children}</div>
+        </Content>
       </Grid>
       {/* </div> */}
     </Wrapper>

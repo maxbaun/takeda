@@ -49,16 +49,19 @@ const Content = styled.div`
 
   ${mediaBreakpointUp('sm')} {
     margin-left: auto;
+    margin-right: auto;
+    max-width: 625px;
     padding: 14rem 1.5rem 23rem;
   }
 
   ${mediaBreakpointUp('lg')} {
+    margin-right: 0;
     padding: 12rem 1.5rem 15.3rem;
   }
 
   h1 {
     color: ${props => props.theme.blackPearl};
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 800;
     line-height: 0.91;
     margin: 0 0 3rem auto;
@@ -71,7 +74,7 @@ const Content = styled.div`
 
     ${mediaBreakpointUp('md')} {
       font-size: 10rem;
-      max-width: 80%;
+      max-width: 100%;
     }
 
     ${mediaBreakpointUp('lg')} {
