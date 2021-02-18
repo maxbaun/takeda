@@ -2,15 +2,79 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import {listUnstyled} from '../../../../../utils/lists';
 import {mediaBreakpointUp} from '../../../../../utils/responsive';
 
 const Actions = styled.div`
   margin: 6rem 0 0;
 
+  ${mediaBreakpointUp('sm')} {
+    margin: 10.4rem 0 0;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    margin: 6rem 0 0;
+  }
+
+  ul {
+    ${listUnstyled()};
+    display: inline-flex;
+    flex-flow: column nowrap;
+
+    ${mediaBreakpointUp('lg')} {
+      flex-flow: row wrap;
+    }
+  }
+
   button,
   a {
-    &:not(:last-child) {
+    margin: 0 0 3rem 0;
+    order: 1;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 0 0 4.8rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
       margin: 0 2.5rem 1rem 0;
+      order: 0;
+    }
+
+    > span {
+      width: 100%;
+    }
+
+    &.try-again,
+    &.next {
+      min-width: 100%;
+
+      ${mediaBreakpointUp('sm')} {
+        min-width: 308px;
+      }
+
+      ${mediaBreakpointUp('lg')} {
+        min-width: 0;
+      }
+    }
+
+    &.try-again {
+      order: 0;
+    }
+
+    &.read-more {
+      order: 1;
+
+      ${mediaBreakpointUp('lg')} {
+        order: 1;
+      }
+    }
+
+    &.next {
+      order: 0;
+
+      ${mediaBreakpointUp('lg')} {
+        order: 2;
+      }
     }
   }
 `;
@@ -24,9 +88,20 @@ const Content = styled.div`
     margin: 0 0 3rem;
 
     &.title {
-      font-size: 4.9rem;
+      font-size: 2.4rem;
       font-weight: 600;
-      line-height: 0.63;
+      line-height: 1;
+      margin: 0 0 2rem;
+
+      ${mediaBreakpointUp('sm')} {
+        font-size: 4.3rem;
+        margin: 0 0 2.9rem;
+      }
+
+      ${mediaBreakpointUp('lg')} {
+        font-size: 4.9rem;
+        margin: 0 0 2rem;
+      }
 
       &.correct {
         color: ${props => props.theme.green};
@@ -49,7 +124,17 @@ const References = styled.p`
   }
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  margin: 5rem 0 0;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 5.1rem 0 0;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    margin: 0;
+  }
+`;
 
 const Answer = ({actions, children, references, title, titleClass, ...props}) => {
   return (

@@ -17,8 +17,8 @@ const Wrapper = styled.button.attrs({
   right: 20px;
   top: 20px;
   width: 50px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 
   &:focus,
   &:hover {

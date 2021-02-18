@@ -7,21 +7,36 @@ import {mediaBreakpointUp} from '../../../../../utils/responsive';
 import {ButtonBlue, ButtonGreen} from '../../../Button';
 
 const Note = styled.p`
-  font-size: 1.4rem;
   font-style: italic;
-  line-height: 1.428;
-  margin: 0 0 3rem;
+  line-height: 1.11;
+  margin: 0 0 5rem;
+
+  ${mediaBreakpointUp('sm')} {
+    font-size: 1.8rem;
+    margin: 0 0 8.6rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    font-size: 1.4rem;
+    line-height: 1.428;
+  }
 `;
 
 const Wrapper = styled.div`
   ul {
     ${listUnstyled()}
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 280px));
+    grid-template-rows: 1fr;
+    grid-row-gap: 3rem;
+
+    ${mediaBreakpointUp('sm')} {
+      grid-row-gap: 5rem;
+    }
 
     ${mediaBreakpointUp('lg')} {
       grid-column-gap: 4rem;
       grid-row-gap: 3rem;
+      grid-template-columns: repeat(2, minmax(0, 280px));
     }
 
     li {
