@@ -27,17 +27,34 @@ const Wrapper = styled.div`
   background-blend-mode: soft-light;
   background-color: ${props => props.theme.blue};
   background-image: ${() => `url('${imgDotPattern}')`};
-  background-size: auto 100%;
   background-position: 100% 0;
   background-repeat: no-repeat;
-  padding: 7rem 0;
+  background-size: auto 100%;
+  padding: 6rem 0 6.4rem;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 8rem 0 8.4rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    padding: 7rem 0;
+  }
 
   h4 {
     color: #fff;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 1.571;
+    line-height: 1.42;
     margin: 0;
+
+    ${mediaBreakpointUp('sm')} {
+      font-size: 3.8rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      font-size: 28px;
+      line-height: 1.571;
+    }
   }
 `;
 

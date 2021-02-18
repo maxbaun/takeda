@@ -12,12 +12,21 @@ const Content = styled.div`
   transition: all 0.8s ease-in-out;
 
   ${mediaBreakpointUp('lg')} {
+    margin: 0;
     max-width: 360px;
     order: 1;
   }
 
   h2 {
     margin: 0 0 3rem;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 0 0 3.6rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      margin: 0 0 3rem;
+    }
   }
 `;
 
@@ -32,8 +41,17 @@ const Icon = styled.div`
     color: ${props => props.theme.blue};
     font-size: 1.8rem;
     font-weight: 600;
-    line-height: 1.38;
+    line-height: 1.4;
     margin: 0;
+
+    ${mediaBreakpointUp('sm')} {
+      font-size: 2.7rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      font-size: 1.8rem;
+      line-height: 1.38;
+    }
   }
 `;
 
@@ -66,6 +84,11 @@ const IconList = styled.div`
   grid-template-columns: repeat(2, minmax(0, 50%));
   order: 1;
 
+  ${mediaBreakpointUp('sm')} {
+    grid-column-gap: 8rem;
+    grid-row-gap: 5.1rem;
+  }
+
   ${mediaBreakpointUp('lg')} {
     grid-column-gap: 5rem;
     grid-row-gap: 3rem;
@@ -76,6 +99,10 @@ const IconList = styled.div`
 const Inner = styled.div`
   display: grid;
   grid-row-gap: 4rem;
+
+  ${mediaBreakpointUp('sm')} {
+    grid-row-gap: 10.4rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     align-items: center;
@@ -92,6 +119,10 @@ const Inner = styled.div`
 const Wrapper = styled.div`
   background-color: ${props => props.theme.solitude};
   padding: 7rem 0 8rem;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 12rem 0 24.3rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     padding: 11rem 0 12rem;

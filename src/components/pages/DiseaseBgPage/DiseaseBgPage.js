@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
 import styled from 'styled-components';
 
+import {mediaBreakpointUp} from '../../../utils/responsive';
 import scrollToElement from '../../../utils/scrollToElement';
 import HaeConnectCta from '../../shared/HaeConnectCta';
 import References from '../../shared/References';
@@ -22,6 +23,12 @@ import iconUnknown from './images/icon-unknown.png';
 import PhysiologySection from './PhysiologySection';
 import SymptomMap from './SymptomMap';
 import Title from './Title';
+
+const HeroVideoSectionContent = styled(VideoSection.Content)`
+  ${mediaBreakpointUp('lg')} {
+    max-width: 385px;
+  }
+`;
 
 const Wrapper = styled.div``;
 
@@ -70,7 +77,7 @@ const DiseaseBgPage = props => {
           </Title>
         }
       >
-        <VideoSection.Content style={{maxWidth: 385}}>
+        <HeroVideoSectionContent>
           <h2>
             HAE etiology and
             <br />
@@ -92,7 +99,7 @@ const DiseaseBgPage = props => {
             substantially impact a patient’s <span className="accent">quality of life</span>.<sup>5,6</sup>
           </p>
           <p>Please watch video 1 to learn more about HAE!</p>
-        </VideoSection.Content>
+        </HeroVideoSectionContent>
       </Hero>
       <PhysiologySection>
         <h2>Pathophysiology of HAE</h2>

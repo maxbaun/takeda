@@ -7,12 +7,24 @@ import imgDotPattern from './dot-pattern-pathophysiology.png';
 
 const Inner = styled.div`
   h2 {
+    margin: 0 0 5rem;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 0 0 8rem;
+    }
+
     ${mediaBreakpointUp('lg')} {
       margin: 0 0 10rem;
     }
   }
 
   > *:not(h2):not(:last-child) {
+    margin: 0 0 5rem;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 0 0 15.3rem;
+    }
+
     ${mediaBreakpointUp('lg')} {
       margin: 0 0 11rem;
     }
@@ -23,7 +35,12 @@ const Wrapper = styled.div`
   background-image: ${() => `url(${imgDotPattern})`};
   background-position: 100% 0;
   background-repeat: no-repeat;
+  padding: 26.2rem 0 11rem;
   position: relative;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 26.2rem 0 11rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     padding: 13.4rem 0 15.4rem;

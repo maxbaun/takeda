@@ -10,15 +10,29 @@ import imgDotPattern from './dot-pattern-symptom-map.png';
 import _Examples from './Examples';
 
 const Content = styled.div`
+  margin: 0 0 6rem;
   text-align: right;
 
+  ${mediaBreakpointUp('sm')} {
+    margin: 0 0 12.7rem;
+  }
+
   ${mediaBreakpointUp('lg')} {
+    margin-bottom: 0;
     margin-left: auto;
     max-width: 260px;
   }
 
   h2 {
     margin: 0 0 2.2rem;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 0 0 3.6rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      margin: 0 0 2.2rem;
+    }
   }
 `;
 
@@ -41,7 +55,7 @@ const HelpCircle = styled.div`
   border: 1px solid #d7d7d7;
   border-radius: 50%;
   color: ${props => props.theme.blue};
-  display: flex;
+  display: none;
   font-size: 1.6rem;
   height: 233px;
   left: 0;
@@ -54,6 +68,10 @@ const HelpCircle = styled.div`
   transform: translateY(-50%);
   width: 233px;
   z-index: -1;
+
+  ${mediaBreakpointUp('lg')} {
+    display: flex;
+  }
 `;
 
 const Inner = styled.div`
@@ -72,10 +90,18 @@ const Inner = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-image: ${() => `url(${imgDotPattern})`};
   background-position: 100% 100%;
   background-repeat: no-repeat;
   padding: 6.8rem 0 5.7rem;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 12.8rem 0 17.7rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    background-image: ${() => `url(${imgDotPattern})`};
+    padding: 5.2rem 0 5.7rem;
+  }
 `;
 
 const SymptomMap = ({children, ...props}) => {

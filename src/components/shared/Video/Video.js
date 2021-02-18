@@ -13,7 +13,6 @@ import EmbededVideo from './EmbededVideo';
 const Caption = styled.p`
   bottom: 1.4rem;
   color: #fff;
-  font-size: 1.6rem;
   font-weight: 600;
   left: 1.6rem;
   line-height: 1.375;
@@ -21,15 +20,27 @@ const Caption = styled.p`
   min-height: 40px;
   position: absolute;
   z-index: 1;
+
+  ${mediaBreakpointUp('sm')} {
+    font-size: 1.8rem;
+  }
+  ${mediaBreakpointUp('lg')} {
+    font-size: 1.6rem;
+  }
 `;
 
 const Circle = styled.div`
   background-color: ${props => props.theme[props.color]};
   border-radius: 50%;
-  height: ${props => (props.size === 'lg' ? '244px' : props.size === 'md' ? '167px' : null)};
+  height: ${props => (props.size === 'lg' ? '98px' : props.size === 'md' ? '98px' : null)};
   position: absolute;
-  width: ${props => (props.size === 'lg' ? '244px' : props.size === 'md' ? '167px' : null)};
+  width: ${props => (props.size === 'lg' ? '98px' : props.size === 'md' ? '98px' : null)};
   z-index: -1;
+
+  ${mediaBreakpointUp('sm')} {
+    height: ${props => (props.size === 'lg' ? '171px' : props.size === 'md' ? '171px' : null)};
+    width: ${props => (props.size === 'lg' ? '171px' : props.size === 'md' ? '171px' : null)};
+  }
 
   ${mediaBreakpointUp('lg')} {
     height: ${props => (props.size === 'lg' ? '244px' : props.size === 'md' ? '167px' : null)};
@@ -70,7 +81,7 @@ const PlayBtn = styled.button`
   color: #fff;
   display: flex;
   flex-flow: column nowrap;
-  height: 100px;
+  height: 80px;
   justify-content: center;
   left: 0;
   margin: 0 auto;
@@ -80,7 +91,7 @@ const PlayBtn = styled.button`
   top: 50%;
   transform: translateY(-50%);
   transition: background-color 0.2s ease-in-out;
-  width: 100px;
+  width: 80px;
   z-index: 1;
 
   &:hover {
@@ -89,6 +100,11 @@ const PlayBtn = styled.button`
     span {
       text-decoration: underline;
     }
+  }
+
+  ${mediaBreakpointUp('sm')} {
+    height: 137px;
+    width: 137px;
   }
 
   ${mediaBreakpointUp('lg')} {

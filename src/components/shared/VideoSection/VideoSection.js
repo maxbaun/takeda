@@ -5,13 +5,21 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 
 const Content = styled.div`
+  margin: 3rem 0 0;
   order: 1;
 
+  ${mediaBreakpointUp('sm')} {
+    margin: 7.8rem 0 0;
+  }
+
   ${mediaBreakpointUp('lg')} {
+    margin: 0;
     order: initial;
   }
 
   h2 {
+    margin-top: 0;
+
     ${mediaBreakpointUp('lg')} {
       margin: 0 0 4rem;
     }

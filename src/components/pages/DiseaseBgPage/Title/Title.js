@@ -5,12 +5,28 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 
 const Wrapper = styled.div`
+  padding: 8rem 0 5rem;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 14rem 0 9rem;
+  }
+
   ${mediaBreakpointUp('lg')} {
     padding: 15.7rem 0 9.1rem;
   }
 
   h1 {
+    font-size: 3.56em;
+    margin: 0;
     text-align: right;
+
+    ${mediaBreakpointUp('sm')} {
+      font-size: 8rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      font-size: 3.56em;
+    }
   }
 `;
 

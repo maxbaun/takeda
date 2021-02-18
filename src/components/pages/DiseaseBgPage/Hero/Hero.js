@@ -10,8 +10,27 @@ import imgDotPattern from './dot-pattern-about-hae-hero.png';
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 1608px;
   padding: 0 1.5rem;
+
+  ${mediaBreakpointUp('lg')} {
+    max-width: none;
+  }
+
+  ${mediaBreakpointUp('xl')} {
+    max-width: 1608px;
+  }
+`;
+
+const Content = styled.div`
+  /* margin: 2rem 0 0;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 6.3rem 0 0;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    margin: 0;
+  } */
 `;
 
 const VideoSection = styled(_VideoSection)``;
@@ -20,6 +39,10 @@ const Wrapper = styled.div`
   background-image: ${() => `url(${imgDotPattern})`};
   background-repeat: no-repeat;
   padding: 0 0 5rem;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 0 0 12.3rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     padding: 0 0 11.2rem;
@@ -41,10 +64,10 @@ const Wrapper = styled.div`
 const Hero = ({children, media, title, ...props}) => {
   return (
     <Wrapper {...props}>
-      <Container>
+      <Container className="container">
         <VideoSection media={title} size="large" />
         <VideoSection media={media} size="large">
-          {children}
+          <Content>{children}</Content>
         </VideoSection>
       </Container>
     </Wrapper>
