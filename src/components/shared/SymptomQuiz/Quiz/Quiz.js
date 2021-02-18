@@ -174,7 +174,6 @@ const Wrapper = styled.div`
   left: 0;
   min-height: calc(100% - 100px);
   margin: 0 auto;
-  max-width: calc(100% - 30px);
   opacity: ${props => (props.isOpen ? 1 : 0)};
   pointer-events: ${props => (props.isOpen ? 'auto' : 'none')};
   position: absolute;
@@ -186,9 +185,13 @@ const Wrapper = styled.div`
 
   ${mediaBreakpointUp('lg')} {
     align-items: center;
-    max-width: 1450px;
+    max-width: calc(100% - 30px);
     min-height: 600px;
     top: 8rem;
+  }
+
+  ${mediaBreakpointUp(1450)} {
+    max-width: 1450px;
   }
 
   > div {
