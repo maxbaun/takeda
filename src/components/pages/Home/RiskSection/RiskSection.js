@@ -1,10 +1,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
+import imgBodyCircle from './body-circle.png';
+import imgBodyDots from './body-dots.png';
 import Dots from './dot-pattern-risk-of-misdiagnosis.png';
-import HumanImage from './human-dots.png';
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+`;
 
 const Content = styled.div`
   margin: 0 0 5rem;
@@ -119,33 +129,67 @@ const Content = styled.div`
 
 const Image = styled.div`
   order: 1;
+  position: relative;
   text-align: center;
 
+  ${mediaBreakpointUp('md')} {
+    margin: 0 auto;
+    max-width: 624px;
+  }
+
   ${mediaBreakpointUp('lg')} {
+    max-width: 677px;
     order: 0;
   }
 
   img {
-    height: auto;
+    /* position: absolute; */
+  }
+`;
+
+const ImgBodyCircle = styled.img`
+  animation: ${rotate} 12s infinite linear;
+  height: auto;
+  margin: 0 auto;
+  max-width: 90%;
+  width: 100%;
+
+  ${mediaBreakpointUp('md')} {
     margin: 0 auto;
-    max-width: 90%;
+    max-width: 624px;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    height: auto;
     width: 100%;
+  }
 
-    ${mediaBreakpointUp('md')} {
-      margin: 0 auto;
-      max-width: 624px;
-    }
+  ${mediaBreakpointUp('xl')} {
+    margin-left: 8rem;
+    width: calc(100% - 8rem);
+  }
+`;
 
-    ${mediaBreakpointUp('lg')} {
-      height: auto;
-      max-width: 677px;
-      width: 100%;
-    }
+const ImgBodyDots = styled.img`
+  left: 0;
+  position: absolute;
+  margin: 0 auto;
+  max-width: 40%;
+  right: 0;
+  top: -2%;
 
-    ${mediaBreakpointUp('xl')} {
-      margin-left: 8rem;
-      width: calc(100% - 8rem);
-    }
+  ${mediaBreakpointUp('sm')} {
+    max-width: 43%;
+    top: -6%;
+  }
+
+  ${mediaBreakpointUp('md')} {
+    max-width: 47%;
+    top: -6%;
+  }
+
+  ${mediaBreakpointUp('xl')} {
+    left: 8rem;
   }
 `;
 
@@ -190,7 +234,8 @@ const RiskSection = ({children, ...props}) => {
       {/* <div className="container"> */}
       <Grid>
         <Image>
-          <img src={HumanImage} />
+          <ImgBodyCircle src={imgBodyCircle} />
+          <ImgBodyDots src={imgBodyDots} />
         </Image>
         <Content>{children}</Content>
       </Grid>
