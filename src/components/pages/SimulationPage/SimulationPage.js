@@ -18,6 +18,11 @@ const Wrapper = styled.div`
   background-image: ${() => `url(${imgDotPattern})`};
   background-repeat: no-repeat;
   background-position: 100% 0;
+  padding: 10rem 0 3rem;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 14.3rem 0 5rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     padding: 13.8rem 0 15.3rem;

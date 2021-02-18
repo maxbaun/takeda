@@ -17,8 +17,12 @@ const Wrapper = styled.div`
   text-align: center;
 
   img {
-    margin: 0 auto;
-    width: 116px;
+    margin: 0 auto 2rem;
+    width: 75px;
+
+    ${mediaBreakpointUp('sm')} {
+      width: 116px;
+    }
 
     ${mediaBreakpointUp('lg')} {
       margin: 0 auto 4.2rem;
@@ -26,7 +30,12 @@ const Wrapper = styled.div`
   }
 
   p {
+    font-size: 1.8rem;
     margin: 0;
+
+    ${mediaBreakpointUp('sm')} {
+      font-size: 1.8rem;
+    }
 
     ${mediaBreakpointUp('lg')} {
       font-size: 1.8rem;

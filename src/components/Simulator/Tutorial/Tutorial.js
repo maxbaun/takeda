@@ -28,8 +28,17 @@ const Carousel = styled(_Carousel)`
   .slick-slide {
     display: flex;
     height: auto;
-    align-items: center; //optional
     justify-content: center; //optional
+    padding: 2rem 1.5rem 0;
+
+    ${mediaBreakpointUp('sm')} {
+      padding: 10rem 1.5rem 0;
+    }
+
+    ${mediaBreakpointUp('md')} {
+      align-items: center; //optional
+      padding: 0 1.5rem;
+    }
   }
 `;
 
@@ -44,7 +53,24 @@ const CarouselButtons = styled.div`
   }
 
   .next {
+    font-size: 1.8rem;
+    line-height: 1;
+
+    ${mediaBreakpointUp('md')} {
+      font-size: 1.8rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      font-size: 1.4rem;
+    }
+
     &:not(:last-child) {
+      margin: 0 auto 1rem;
+
+      ${mediaBreakpointUp('sm')} {
+        margin: 0 auto 3rem;
+      }
+
       ${mediaBreakpointUp('lg')} {
         margin: 0 auto 2rem;
       }
@@ -65,11 +91,19 @@ const CarouselButtons = styled.div`
 `;
 
 const CarouselControls = styled.div`
-  bottom: 0;
+  bottom: 2rem;
   left: 0;
   margin: 0 auto;
   position: absolute;
   right: 0;
+
+  ${mediaBreakpointUp('sm')} {
+    bottom: 4rem;
+  }
+
+  ${mediaBreakpointUp('md')} {
+    bottom: 5rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     bottom: 3rem;
@@ -79,17 +113,35 @@ const CarouselControls = styled.div`
 const CarouselPaging = styled.div`
   display: flex;
   justify-content: center;
-  margin: 3rem 0 0;
+  margin: 1.5rem 0 0;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 4rem 0 0;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    margin: 3rem 0 0;
+  }
 
   button {
     background: none;
     border: 1px solid #fff;
     border-radius: 50%;
     display: block;
-    height: 8px;
+    height: 12px;
     margin: 0 5px;
     padding: 0;
-    width: 8px;
+    width: 12px;
+
+    ${mediaBreakpointUp('sm')} {
+      height: 16px;
+      width: 16px;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      height: 8px;
+      width: 8px;
+    }
 
     &:hover {
       background-color: #fff;
@@ -141,8 +193,11 @@ const Tutorial = ({onComplete: handleComplete, ...props}) => {
           arrows: false,
           beforeChange: (current, next) => setSlideIndex(next),
           centerMode: true,
+          centerPadding: 0,
           dots: false,
-          infinite: false
+          infinite: false,
+          slidesToShow: 1,
+          slidesToScroll: 1
         }}
       >
         {steps.map((step, index) => (
