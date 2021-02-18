@@ -148,7 +148,7 @@ const Image = styled.div`
 `;
 
 const ImgBodyCircle = styled.img`
-  animation: ${rotate} 24s infinite linear;
+  animation: ${rotate} 200s infinite linear;
   height: auto;
   margin: 0 auto;
   max-width: 90%;
