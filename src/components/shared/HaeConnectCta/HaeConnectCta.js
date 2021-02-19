@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import {ButtonPrimary} from '../Button';
 import imgDotPattern from './dot-pattern-hae-connect-cta.png';
+import imgDotPatternMobile from './dot-pattern-hae-connect-cta-mobile.png';
 
 const CtaWrap = styled.div`
   align-items: center;
@@ -18,7 +19,12 @@ const Inner = styled.div`
   display: grid;
   grid-gap: 3rem;
 
+  ${mediaBreakpointUp('sm')} {
+    grid-gap: 3.6rem;
+  }
+
   ${mediaBreakpointUp('lg')} {
+    grid-gap: 3rem;
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -26,7 +32,7 @@ const Inner = styled.div`
 const Wrapper = styled.div`
   background-blend-mode: soft-light;
   background-color: ${props => props.theme.blue};
-  background-image: ${() => `url('${imgDotPattern}')`};
+  background-image: ${() => `url('${imgDotPatternMobile}')`};
   background-position: 100% 0;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -37,6 +43,7 @@ const Wrapper = styled.div`
   }
 
   ${mediaBreakpointUp('lg')} {
+    background-image: ${() => `url('${imgDotPattern}')`};
     padding: 7rem 0;
   }
 
