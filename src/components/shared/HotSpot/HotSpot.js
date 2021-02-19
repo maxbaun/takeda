@@ -38,6 +38,13 @@ const Wrapper = styled.button`
   z-index: 2;
 
   ${mediaBreakpointUp('lg')} {
+    height: 91px;
+    width: 91px;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    height: 50px;
+    width: 50px;
   }
 
   &::before {

@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const Wrapper = styled.button.attrs({type: 'button'})``;
 
 const DropdownToggle = ({buttonId, children, isOpen, onToggleClick: handleToggleClick, ...props}) => {
-  console.log(buttonId);
   return (
     <Wrapper {...props} aria-haspopup="true" aria-expanded={isOpen} id={buttonId} onClick={handleToggleClick}>
       {children}
