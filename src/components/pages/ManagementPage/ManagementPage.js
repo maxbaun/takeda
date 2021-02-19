@@ -21,9 +21,9 @@ const ManagementPage = () => {
             color: 'red',
             description: (
               <>
-                <p>
+                <h5>
                   <strong>Personalized care</strong>
-                </p>
+                </h5>
 
                 <p>
                   As recommended by clinical guidelines, the management of hereditary angioedema (HAE) should be
@@ -63,9 +63,9 @@ const ManagementPage = () => {
             color: 'yellow',
             description: (
               <>
-                <p>
+                <h5>
                   <strong>Short-term prophylaxis</strong>
-                </p>
+                </h5>
                 <p>
                   Guidelines recommend short-term prophylaxis prior to{' '}
                   <strong className="accent"> medical procedures</strong> or other{' '}
@@ -80,9 +80,9 @@ const ManagementPage = () => {
             color: 'green',
             description: (
               <>
-                <p>
+                <h5>
                   <strong>Long-term prophylaxis management</strong>
-                </p>
+                </h5>
                 <p>
                   Long-term prophylaxis (LTP) may be considered for patients with{' '}
                   <span className="accent">recurrent episodes</span> of angioedema to{' '}
@@ -102,9 +102,9 @@ const ManagementPage = () => {
             color: 'blue',
             description: (
               <>
-                <p>
+                <h5>
                   <strong>On-demand therapy</strong>
-                </p>
+                </h5>
                 <p>
                   Guidelines recommend that patients should have access to effective on-demand therapy.{' '}
                   <span className="accent">Every patient</span> diagnosed with HAE must have{' '}

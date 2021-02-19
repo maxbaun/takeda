@@ -8,10 +8,19 @@ import Video from '../../../shared/Video';
 import imgDotPattern from './dot-pattern-clinical-management.png';
 
 const Content = styled.div`
-  border-left: 1px dashed #c5cbcf;
+  border: 0px dashed #c5cbcf;
+  border-top-width: 1px;
+  padding-top: 6.2rem;
+
+  ${mediaBreakpointUp('sm')} {
+    padding-top: 9.2rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
+    border-left-width: 1px;
+    border-top-width: 0;
     padding-left: 11%;
+    padding-top: 0;
     min-height: 632px;
   }
 
@@ -33,8 +42,29 @@ const Content__Item = styled.div`
   display: ${props => (props.centered ? 'flex' : 'block')};
 
   > div {
+    > h5 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.33;
+
+      ${mediaBreakpointUp('sm')} {
+        font-size: 2.4rem;
+        margin: 0 0 3.4rem;
+      }
+
+      ${mediaBreakpointUp('lg')} {
+        font-size: 1.6rem;
+        margin: 0 0 2.8rem;
+      }
+    }
+
     > p {
+      line-height: 1.35;
       margin: 0 0 2rem;
+
+      ${mediaBreakpointUp('sm')} {
+        font-size: 2.8rem;
+      }
 
       ${mediaBreakpointUp('lg')} {
         font-size: 1.6rem;
@@ -45,6 +75,13 @@ const Content__Item = styled.div`
 `;
 
 const Content__Video = styled.div`
+  margin: 6.8rem 0 0;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 9.8rem 0 0;
+    max-width: 100%;
+  }
+
   ${mediaBreakpointUp('lg')} {
     margin: 6.6rem 0 0;
     max-width: 465px;
@@ -73,19 +110,33 @@ const Menu__Button = styled.button`
   align-items: center;
   background: none;
   border: 3px solid ${props => (props.isActive ? props.theme[props.color] : 'transparent')};
-  border-radius: 30px;
+  border-radius: 50px;
   box-sizing: border-box;
   color: ${props => props.theme.blue};
   cursor: pointer;
   display: flex;
-  font-size: 1.8rem;
+  font-size: 2rem;
   justify-content: space-between;
-  line-height: 1.4;
+  line-height: 1;
   margin-left: auto;
   min-width: 280px;
-  padding: 0.4rem 3.1rem 0.4rem 1.3rem;
+  padding: 1rem 3.4rem 1.2rem 1.5rem;
   position: relative;
   transition: border-color 0.2s ease-in-out;
+
+  ${mediaBreakpointUp('sm')} {
+    border-radius: 50px;
+    font-size: 3rem;
+    padding: 1.6rem 3.4rem 1.9rem 1.8rem;
+    width: 468px;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    border-radius: 30px;
+    font-size: 1.8rem;
+    padding: 0.8rem 3.1rem 1rem 1.3rem;
+    width: auto;
+  }
 
   span {
     background-color: ${props => props.theme[props.color]};
@@ -94,6 +145,16 @@ const Menu__Button = styled.button`
     opacity: ${props => (props.isActive ? 1 : 0)};
     transition: opacity 0.2s ease-in-out;
     width: 15px;
+
+    ${mediaBreakpointUp('sm')} {
+      height: 25px;
+      width: 25px;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      height: 15px;
+      width: 15px;
+    }
   }
 
   &:hover {
@@ -102,15 +163,29 @@ const Menu__Button = styled.button`
 `;
 
 const Menu = styled.div`
+  margin: 0 0 4rem;
   text-align: right;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 0 0 5rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     padding-top: 10.2rem;
+    margin: 0;
   }
 
   > h2 {
+    margin: 4rem 0 3rem;
+    padding-right: 3.7rem;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 9.7rem 0 5.1rem;
+    }
+
     ${mediaBreakpointUp('lg')} {
       margin: 0 0 6.4rem;
+      padding-right: 0;
     }
   }
 
@@ -132,6 +207,11 @@ const PageTitle = styled.div`
 
   h1 {
     margin: 0;
+    padding-right: 3.7rem;
+
+    ${mediaBreakpointUp('lg')} {
+      padding-right: 0;
+    }
   }
 `;
 
@@ -139,10 +219,20 @@ const Wrapper = styled.div`
   background-image: ${() => `url(${imgDotPattern})`};
   background-repeat: no-repeat;
   background-position: 100% 0;
-  padding: 5rem 7rem;
+  padding: 8rem 0 8.1rem;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 14rem 0 14.1rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
     padding: 11.3rem 0 13.5rem;
+  }
+
+  .container {
+    ${mediaBreakpointUp('lg')} {
+      max-width: 1300px;
+    }
   }
 `;
 
@@ -150,50 +240,52 @@ const ClinicalManagement = ({data, pageTitle, title, ...props}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <Wrapper {...props}>
-      <Inner>
-        <PageTitle>{pageTitle}</PageTitle>
-        <div />
-        <Menu>
-          {title}
-          <ul>
-            {data.map((menuItem, index) => (
-              <li key={index}>
-                <Menu__Button
-                  color={menuItem.color}
-                  isActive={index === activeIndex}
-                  onClick={() => setActiveIndex(index)}
+      <div className="container">
+        <Inner>
+          <PageTitle>{pageTitle}</PageTitle>
+          <div />
+          <Menu>
+            {title}
+            <ul>
+              {data.map((menuItem, index) => (
+                <li key={index}>
+                  <Menu__Button
+                    color={menuItem.color}
+                    isActive={index === activeIndex}
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    <span className="dot" />
+                    {menuItem.title}
+                  </Menu__Button>
+                </li>
+              ))}
+            </ul>
+          </Menu>
+          <Content>
+            <Content__Inner>
+              {data.map((item, index) => (
+                <Content__Item
+                  centered={item.centered}
+                  key={index}
+                  style={{
+                    display: index === activeIndex ? (item.centered ? 'flex' : 'block') : 'none',
+                    height: item.centered ? '100%' : 'auto'
+                  }}
                 >
-                  <span className="dot" />
-                  {menuItem.title}
-                </Menu__Button>
-              </li>
-            ))}
-          </ul>
-        </Menu>
-        <Content>
-          <Content__Inner>
-            {data.map((item, index) => (
-              <Content__Item
-                centered={item.centered}
-                key={index}
-                style={{
-                  display: index === activeIndex ? (item.centered ? 'flex' : 'block') : 'none',
-                  height: item.centered ? '100%' : 'auto'
-                }}
-              >
-                <div>
-                  {item.description}
-                  {item.video ? (
-                    <Content__Video>
-                      <Video {...item.video} />
-                    </Content__Video>
-                  ) : null}
-                </div>
-              </Content__Item>
-            ))}
-          </Content__Inner>
-        </Content>
-      </Inner>
+                  <div>
+                    {item.description}
+                    {item.video ? (
+                      <Content__Video>
+                        <Video {...item.video} />
+                      </Content__Video>
+                    ) : null}
+                  </div>
+                </Content__Item>
+              ))}
+            </Content__Inner>
+          </Content>
+        </Inner>
+      </div>
     </Wrapper>
   );
 };
