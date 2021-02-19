@@ -14,14 +14,15 @@ const PopupContent = styled(Popup.Content)`
 `;
 const PopupFooter = styled(Popup.Footer)`
   ${mediaBreakpointUp('lg')} {
-    padding-left: calc(48% - 170px);
+    /* padding-left: calc(48% - 170px); */
+    grid-column: 2/3;
   }
 `;
 
 const PopupGrid = styled(Popup.Grid)`
   ${mediaBreakpointUp('lg')} {
-    grid-template-columns: 48% auto;
-    max-width: none;
+    grid-template-columns: auto 1fr;
+    max-width: 510px;
   }
 `;
 
@@ -46,7 +47,12 @@ const QuestionRow = styled.div`
   }
 `;
 
-const Questions = styled.div``;
+const Questions = styled.div`
+  a,
+  button {
+    margin: 0 1.5rem 1rem 0;
+  }
+`;
 
 const Intro = ({onNo: handleNo, onYes: handleYes}) => {
   return (
@@ -70,16 +76,15 @@ const Intro = ({onNo: handleNo, onYes: handleYes}) => {
       </PopupContent>
       <PopupFooter>
         <Questions>
-          <QuestionRow>
-            <ButtonGray external href="http://takeda.com" onClick={handleNo}>
-              No
-            </ButtonGray>
-            <span>I am not a healthcare provider</span>
-          </QuestionRow>
-          <QuestionRow>
-            <ButtonBlue onClick={handleYes}>Yes</ButtonBlue>
+          <p>
             <span>I am a HCP outside of the US and UK</span>
-          </QuestionRow>
+          </p>
+          <ButtonGray external href="http://takeda.com" onClick={handleNo}>
+            No
+          </ButtonGray>
+          <ButtonBlue onClick={handleYes}>Yes</ButtonBlue>
+          <QuestionRow>{/* <span>I am not a healthcare provider</span> */}</QuestionRow>
+          <QuestionRow>{/* <span>I am a HCP outside of the US and UK</span> */}</QuestionRow>
         </Questions>
       </PopupFooter>
     </PopupGrid>
