@@ -148,7 +148,7 @@ const ManagementPage = () => {
           media={
             <Video
               caption="Assessment of QoL in patients with HAE: unmet needs"
-              circleColor="red"
+              circleColor="blue"
               circlePosition="bottom-right"
               circleSize="lg"
               disclaimer={
