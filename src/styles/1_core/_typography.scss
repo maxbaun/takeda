@@ -1,6 +1,14 @@
 h1 {
-  font-size: 2.85em;
+  font-size: 2em;
   line-height: 1;
+
+  @media (min-width: 400px) {
+    font-size: 2.55em;
+  }
+
+  @media (min-width: 576px) {
+    font-size: 2.85em;
+  }
 
   @media (min-width: 992px) {
     font-size: 3.125em;

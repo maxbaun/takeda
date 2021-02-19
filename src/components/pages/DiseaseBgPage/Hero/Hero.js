@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import _VideoSection from '../../../shared/VideoSection/VideoSection';
 import imgDotPattern from './dot-pattern-about-hae-hero.png';
+import imgDotPatternMobile from './dot-pattern-about-hae-hero-mobile.png';
 
 // import {mediaBreakpointUp} from '../../../../utils/responsive';
 
@@ -36,15 +37,19 @@ const Content = styled.div`
 const VideoSection = styled(_VideoSection)``;
 
 const Wrapper = styled.div`
-  background-image: ${() => `url(${imgDotPattern})`};
+  background-image: ${() => `url(${imgDotPatternMobile})`};
+  background-position: left 0 top -40px;
   background-repeat: no-repeat;
   padding: 0 0 5rem;
 
   ${mediaBreakpointUp('sm')} {
+    background-position: 0 0;
     padding: 0 0 12.3rem;
   }
 
   ${mediaBreakpointUp('lg')} {
+    background-image: ${() => `url(${imgDotPattern})`};
+    background-position: 0 0;
     padding: 0 0 11.2rem;
   }
 

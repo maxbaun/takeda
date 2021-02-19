@@ -6,6 +6,7 @@ import {listUnstyled} from '../../../../utils/lists';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import Video from '../../../shared/Video';
 import imgDotPattern from './dot-pattern-clinical-management.png';
+import imgDotPatternMobile from './dot-pattern-clinical-management-mobile.png';
 
 const Content = styled.div`
   border: 0px dashed #c5cbcf;
@@ -90,7 +91,6 @@ const Content__Video = styled.div`
 
 const Inner = styled.div`
   display: grid;
-  padding: 0 1.5rem;
   margin: 0 auto;
   max-width: 1300px;
 
@@ -176,11 +176,10 @@ const Menu = styled.div`
   }
 
   > h2 {
-    margin: 4rem 0 3rem;
-    padding-right: 3.7rem;
+    margin: 4rem 3.7rem 3rem 0;
 
     ${mediaBreakpointUp('sm')} {
-      margin: 9.7rem 0 5.1rem;
+      margin: 9.7rem 3.7rem 5.1rem 0;
     }
 
     ${mediaBreakpointUp('lg')} {
@@ -206,26 +205,32 @@ const PageTitle = styled.div`
   } */
 
   h1 {
-    margin: 0;
-    padding-right: 3.7rem;
+    margin: 0 3.7rem 0 0;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 0 3.7rem 0 0;
+    }
 
     ${mediaBreakpointUp('lg')} {
+      margin: 0;
       padding-right: 0;
     }
   }
 `;
 
 const Wrapper = styled.div`
-  background-image: ${() => `url(${imgDotPattern})`};
+  background-image: ${() => `url(${imgDotPatternMobile})`};
   background-repeat: no-repeat;
-  background-position: 100% 0;
+  background-position: 100% -40px;
   padding: 8rem 0 8.1rem;
 
   ${mediaBreakpointUp('sm')} {
+    background-position: 100% 0;
     padding: 14rem 0 14.1rem;
   }
 
   ${mediaBreakpointUp('lg')} {
+    background-image: ${() => `url(${imgDotPattern})`};
     padding: 11.3rem 0 13.5rem;
   }
 
