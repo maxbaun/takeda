@@ -46,8 +46,9 @@ const Message = styled.div`
 `;
 
 const Nav = styled.nav`
+  align-items: center;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: space-between;
 
   ${mediaBreakpointUp('lg')} {
@@ -58,6 +59,14 @@ const Nav = styled.nav`
   svg {
     margin: 0 auto;
     width: 227px;
+
+    ${mediaBreakpointUp('sm')} {
+      width: 369px;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      width: 227px;
+    }
   }
 
   a {
@@ -65,10 +74,12 @@ const Nav = styled.nav`
     display: block;
     flex: 1;
     font-weight: 600;
+    line-height: 1.08;
     order: 1;
     text-transform: uppercase;
 
     &:not(.btn) {
+      font-weight: 600;
       text-decoration: none;
     }
 
@@ -76,30 +87,33 @@ const Nav = styled.nav`
       text-decoration: underline;
     }
 
-    &:not(.logo) {
-      &:first-child {
-        text-align: left;
-      }
-
-      &:last-child {
-        text-align: right;
-      }
-    }
-
     &.logo {
       flex: 0 0 100%;
-      margin: 0 0 3rem;
+      margin: 0 0 5rem;
       order: 0;
       text-align: center;
 
       ${mediaBreakpointUp('sm')} {
-        margin: 0 0 6rem;
+        margin: 0 0 11.4rem;
       }
 
       ${mediaBreakpointUp('lg')} {
         flex: 1 1 227px;
         margin: 0;
         order: 2;
+      }
+    }
+
+    &.terms {
+      margin: 0 0 4.2rem;
+
+      ${mediaBreakpointUp('sm')} {
+        margin: 0 0 7.2rem;
+      }
+
+      ${mediaBreakpointUp('lg')} {
+        margin: 0;
+        text-align: left;
       }
     }
 
@@ -117,11 +131,11 @@ const Nav = styled.nav`
 const Wrapper = styled.footer`
   background-color: ${props => props.theme.solitude};
   font-size: 1.4rem;
-  padding: 4.3rem 0 5.8rem;
+  padding: 4.3rem 0 3rem;
 
   ${mediaBreakpointUp('sm')} {
     font-size: 2.4rem;
-    padding: 4.3rem 0 5.8rem;
+    padding: 13.7rem 0 6.6rem;
   }
 
   ${mediaBreakpointUp('lg')} {
@@ -134,7 +148,7 @@ const Wrapper = styled.footer`
     margin: 4rem auto 4rem;
 
     ${mediaBreakpointUp('sm')} {
-      margin: 7rem auto 6rem;
+      margin: 9.4rem auto 8rem;
     }
 
     ${mediaBreakpointUp('lg')} {
