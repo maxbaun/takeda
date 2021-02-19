@@ -6,7 +6,7 @@ import {mediaBreakpointUp} from '../../../../utils/responsive';
 
 const Wrapper = styled.div`
   margin: 0 auto 4rem;
-  max-width: 630px;
+  max-width: 640px;
   padding: 0 1.5rem;
   text-align: center;
 
@@ -62,7 +62,7 @@ const Wrapper = styled.div`
       ${mediaBreakpointUp('lg')} {
         font-size: 0.75em;
         line-height: 1.6667;
-        max-width: none;
+        max-width: 550px;
       }
     }
   }

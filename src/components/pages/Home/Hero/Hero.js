@@ -234,7 +234,7 @@ const ScrollTo = styled.button`
   color: #fff;
   cursor: pointer;
   display: flex;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
   flex-flow: column nowrap;
   height: 96px;
@@ -249,7 +249,7 @@ const ScrollTo = styled.button`
 
   ${mediaBreakpointUp('sm')} {
     height: 106px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     width: 212px;
   }
 
@@ -260,7 +260,7 @@ const ScrollTo = styled.button`
   }
 
   i {
-    bottom: 1rem;
+    bottom: 0.7rem;
     color: ${props => props.theme.red};
     font-size: 1.5em;
     left: 0;
@@ -291,10 +291,13 @@ const ScrollTo = styled.button`
 `;
 
 const Wrapper = styled.div`
-  background-image: ${() => `url('${DotsMobile}')`};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 100% 100%;
+
+  ${mediaBreakpointUp('sm')} {
+    background-image: ${() => `url('${DotsMobile}')`};
+  }
 
   ${mediaBreakpointUp('lg')} {
     background-image: ${() => `url('${Dots}')`};

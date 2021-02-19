@@ -178,7 +178,7 @@ const Wrapper = styled.div`
   pointer-events: ${props => (props.isOpen ? 'auto' : 'none')};
   position: absolute;
   right: 0;
-  top: 4rem;
+  top: 0;
   transition: opacity 500ms ease-in;
   width: 100%;
   z-index: 2;

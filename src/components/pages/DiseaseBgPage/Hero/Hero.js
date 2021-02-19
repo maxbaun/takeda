@@ -38,7 +38,7 @@ const VideoSection = styled(_VideoSection)``;
 
 const Wrapper = styled.div`
   background-image: ${() => `url(${imgDotPatternMobile})`};
-  background-position: left 0 top -40px;
+  background-position: left -30px top -60px;
   background-repeat: no-repeat;
   padding: 0 0 5rem;
 

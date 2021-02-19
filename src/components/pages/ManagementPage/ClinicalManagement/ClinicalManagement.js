@@ -220,12 +220,14 @@ const PageTitle = styled.div`
 
 const Wrapper = styled.div`
   background-image: ${() => `url(${imgDotPatternMobile})`};
-  background-repeat: no-repeat;
   background-position: 100% -40px;
+  background-repeat: no-repeat;
+  background-size: 20% auto;
   padding: 8rem 0 8.1rem;
 
   ${mediaBreakpointUp('sm')} {
     background-position: 100% 0;
+    background-size: auto;
     padding: 14rem 0 14.1rem;
   }
 

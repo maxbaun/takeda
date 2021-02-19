@@ -134,18 +134,21 @@ const Note = styled.p`
   font-size: 1.4rem;
   font-style: italic;
   order: 0;
-  margin: 0 0 4rem;
-  text-align: right;
+  margin: 0 auto 4rem;
+  max-width: 500px;
+  text-align: center;
 
   ${mediaBreakpointUp('sm')} {
     font-size: 1.8rem;
-    margin: 0 0 7rem;
+    margin: 0 auto 5.8rem;
   }
 
   ${mediaBreakpointUp('lg')} {
     font-size: 1.4rem;
     order: 1;
     margin: 0;
+    max-width: 385px;
+    text-align: right;
   }
 `;
 

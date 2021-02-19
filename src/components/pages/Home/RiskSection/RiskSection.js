@@ -17,21 +17,48 @@ const rotate = keyframes`
 `;
 
 const Content = styled.div`
-  margin: 0 0 5rem;
-  order: 0;
-  position: relative;
+  margin: 0 0 10.8rem;
 
   ${mediaBreakpointUp('md')} {
-    margin: 0 0 10rem;
+    margin: 0 0 20.8rem;
   }
 
   ${mediaBreakpointUp('lg')} {
     margin: 0;
     max-width: 480px;
-    order: 1;
+  }
+
+  .risk-section-content {
+    display: flex;
+    position: relative;
+
+    ${mediaBreakpointUp('lg')} {
+      display: block;
+    }
+  }
+
+  .risk-section-icon {
+    padding-top: 7px;
+    margin-right: 1rem;
+
+    ${mediaBreakpointUp('sm')} {
+      margin-right: 2.5rem;
+      padding-top: 10px;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      margin: 0;
+      padding-top: 0;
+    }
   }
 
   img {
+    width: 23px;
+
+    ${mediaBreakpointUp('sm')} {
+      width: 43px;
+    }
+
     ${mediaBreakpointUp('lg')} {
       left: -68px;
       position: absolute;
@@ -122,24 +149,31 @@ const Content = styled.div`
 
       ul {
         margin: 2rem 0 0 0;
+
+        li {
+          font-size: 1em;
+        }
       }
     }
   }
 `;
 
 const Image = styled.div`
-  order: 1;
+  margin: 0 auto 8.1rem;
   position: relative;
   text-align: center;
 
+  ${mediaBreakpointUp('sm')} {
+    margin: 0 auto 13.1rem;
+  }
+
   ${mediaBreakpointUp('md')} {
-    margin: 0 auto;
+    margin: 0 auto 13.1rem;
     max-width: 624px;
   }
 
   ${mediaBreakpointUp('lg')} {
     max-width: 677px;
-    order: 0;
   }
 
   img {

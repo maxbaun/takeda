@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 
-import {mediaBreakpointUp} from '../../../utils/responsive';
 import Icon from '../Icon';
 
 const pulseRing = keyframes`
@@ -36,16 +35,6 @@ const Wrapper = styled.button`
   position: absolute;
   width: 50px;
   z-index: 2;
-
-  ${mediaBreakpointUp('lg')} {
-    height: 91px;
-    width: 91px;
-  }
-
-  ${mediaBreakpointUp('lg')} {
-    height: 50px;
-    width: 50px;
-  }
 
   &::before {
     background-color: ${props => getBackgroundColor(props)};

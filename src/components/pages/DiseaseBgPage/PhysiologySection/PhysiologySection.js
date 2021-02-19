@@ -35,14 +35,17 @@ const Wrapper = styled.div`
   background-image: ${() => `url(${imgDotPattern})`};
   background-position: 100% 0;
   background-repeat: no-repeat;
-  padding: 26.2rem 0 11rem;
+  background-size: 80% auto;
+  padding: 15.2rem 0 11rem;
   position: relative;
 
   ${mediaBreakpointUp('sm')} {
+    background-size: 90% auto;
     padding: 26.2rem 0 11rem;
   }
 
   ${mediaBreakpointUp('lg')} {
+    background-size: 50% auto;
     padding: 13.4rem 0 15.4rem;
   }
 

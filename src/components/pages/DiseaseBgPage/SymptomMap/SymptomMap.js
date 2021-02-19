@@ -40,7 +40,12 @@ const Content = styled.div`
 const Description = styled(_Description)`
   background-color: #fff;
   left: 0;
+  padding: 5rem 0;
   top: 0;
+
+  ${mediaBreakpointUp('lg')} {
+    padding: 0;
+  }
 `;
 
 const DescriptionTitleWrap = styled.div`
@@ -65,12 +70,10 @@ const DescriptionTitleWrap = styled.div`
 `;
 
 const DescriptionWrap = styled.div`
-  background-color: #fff;
   left: 0;
-  padding: 5rem 0;
   position: absolute;
   width: 100%;
-  top: 25rem;
+  top: 23rem;
   z-index: 2;
 
   ${mediaBreakpointUp('sm')} {

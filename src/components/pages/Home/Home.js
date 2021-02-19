@@ -30,7 +30,11 @@ const Home = () => {
         ctaUrl={routes.Simulator}
         onScrollToClick={() => scrollToElement('riskMisdiagnosisSection')}
       >
-        <h1>HAE Simulator</h1>
+        <h1>
+          HAE
+          <br />
+          Simulator
+        </h1>
         <p>
           Hereditary angioedema (HAE) is a rare but debilitating and life-threatening condition. Explore the symptoms of
           HAE. Use our filter to visualize a facial attack.
@@ -44,23 +48,29 @@ const Home = () => {
       </Hero>
       <RiskSection id="riskMisdiagnosisSection">
         <SectionHeader>
-          <img src={`${process.env.PUBLIC_URL}/img/icon-sandtimer.png`} />
-          <h2>Misdiagnosis / delayed diagnosis</h2>
-          <p className="lead">
-            HAE is <strong className="accent">under-recognized</strong> and often{' '}
-            <strong className="accent">misdiagnosed</strong>, resulting in significant morbidity and mortality.
-            <sup>2</sup>
-          </p>
-          <p>
-            The <strong className="accent">rarity</strong> and <strong className="accent">variability</strong> of HAE
-            symptoms makes diagnosis challenging among non-HAE specialists.<sup>7</sup> Episodes of swelling involving
-            the skin are frequently mistaken as allergic reactions, and abdominal attacks are mistaken for appendicitis
-            or irritable bowel syndrome.<sup>2</sup> A misdiagnosis can result in{' '}
-            <strong className="accent">
-              delayed diagnosis, inadequate treatment, and unnecessary surgical procedures
-            </strong>
-            , all of which impact patients’ <strong className="accent">quality of life</strong>.<sup>7</sup>
-          </p>
+          <div className="risk-section-content">
+            <div className="risk-section-icon">
+              <img src={`${process.env.PUBLIC_URL}/img/icon-sandtimer.png`} />
+            </div>
+            <div className="risk-section-copy">
+              <h2>Misdiagnosis / delayed diagnosis</h2>
+              <p className="lead">
+                HAE is <strong className="accent">under-recognized</strong> and often{' '}
+                <strong className="accent">misdiagnosed</strong>, resulting in significant morbidity and mortality.
+                <sup>2</sup>
+              </p>
+              <p>
+                The <strong className="accent">rarity</strong> and <strong className="accent">variability</strong> of
+                HAE symptoms makes diagnosis challenging among non-HAE specialists.<sup>7</sup> Episodes of swelling
+                involving the skin are frequently mistaken as allergic reactions, and abdominal attacks are mistaken for
+                appendicitis or irritable bowel syndrome.<sup>2</sup> A misdiagnosis can result in{' '}
+                <strong className="accent">
+                  delayed diagnosis, inadequate treatment, and unnecessary surgical procedures
+                </strong>
+                , all of which impact patients’ <strong className="accent">quality of life</strong>.<sup>7</sup>
+              </p>
+            </div>
+          </div>
           <ul>
             <li className="green">
               Many patients experience long delays (over 10 years) between the onset of symptoms and diagnosis
@@ -114,10 +124,7 @@ const Home = () => {
           }
         ]}
         note={
-          <>
-            These are not real patients but actors with prosthetic make-up.
-            <br /> Takeda owns the rights to these images.
-          </>
+          <>These are not real patients but actors with prosthetic make-up. Takeda owns the rights to these images.</>
         }
       >
         <SectionHeader>
