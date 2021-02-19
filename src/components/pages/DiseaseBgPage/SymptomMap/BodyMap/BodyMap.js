@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import {mediaBreakpointUp} from '../../../../../utils/responsive';
+import HotSpot from '../../../../shared/HotSpot';
 import imgDefaultBody from './defaultBody.png';
-import HotSpot from './HotSpot';
 
 const ActiveImg = styled.img`
   left: 0;
@@ -19,14 +20,20 @@ const BaseImg = styled.img`
 
 const Wrapper = styled.div`
   height: 677px;
-  margin: 0 auto;
+  margin: ${props => props.lowestY * -1}px auto 0;
   position: relative;
   width: 280px;
+
+  ${mediaBreakpointUp('lg')} {
+    margin: 0 auto;
+  }
 `;
 
 const BodyMap = ({activeIndex, data, onToggle: handleToggle, ...props}) => {
+  const lowestY = data ? data.reduce((lowest, item) => (item.y < lowest ? item.y : lowest), 0) : 0;
+
   return (
-    <Wrapper {...props}>
+    <Wrapper {...props} lowestY={lowestY}>
       <BaseImg src={imgDefaultBody} />
       {data &&
         data.map((item, index) => (

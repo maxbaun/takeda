@@ -3,11 +3,12 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
+import HotSpot from '../../../shared/HotSpot';
 import BodyMap from './BodyMap';
 import data from './data';
 import _Description from './Description';
 import imgDotPattern from './dot-pattern-symptom-map.png';
-import _Examples from './Examples';
+import Examples from './Examples';
 
 const Content = styled.div`
   margin: 0 0 6rem;
@@ -42,12 +43,69 @@ const Description = styled(_Description)`
   top: 0;
 `;
 
-const DescriptionWrap = styled.div`
-  position: relative;
+const DescriptionTitleWrap = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 2.5rem;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 0 0 4rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    margin: 0 0 2.5rem;
+  }
+
+  button {
+    ${mediaBreakpointUp('lg')} {
+      display: none;
+    }
+  }
 `;
 
-const Examples = styled(_Examples)`
+const DescriptionWrap = styled.div`
+  background-color: #fff;
+  left: 0;
+  padding: 5rem 0;
+  position: absolute;
+  width: 100%;
+  top: 25rem;
+  z-index: 2;
+
+  ${mediaBreakpointUp('sm')} {
+    top: 41rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    top: 0;
+  }
+
+  .container {
+    ${mediaBreakpointUp('lg')} {
+      padding: 0;
+    }
+  }
+`;
+
+const ExamplesMobile = styled.div`
+  margin: 0 0 4.2rem;
+
+  ${mediaBreakpointUp('lg')} {
+    display: none;
+  }
+`;
+
+const ExamplesDesktop = styled.div`
+  display: none;
   margin: 5rem 0 0;
+
+  ${mediaBreakpointUp('lg')} {
+    display: block;
+  }
 `;
 
 const HelpCircle = styled.div`
@@ -77,9 +135,10 @@ const HelpCircle = styled.div`
 const Inner = styled.div`
   align-items: center;
   display: grid;
+
   ${mediaBreakpointUp('lg')} {
     grid-column-gap: 50px;
-    grid-template-columns: 260px auto 24%;
+    grid-template-columns: 260px auto 30%;
   }
 
   ${mediaBreakpointUp('xl')} {
@@ -93,6 +152,7 @@ const Wrapper = styled.div`
   background-position: 100% 100%;
   background-repeat: no-repeat;
   padding: 6.8rem 0 5.7rem;
+  position: relative;
 
   ${mediaBreakpointUp('sm')} {
     padding: 12.8rem 0 17.7rem;
@@ -111,20 +171,24 @@ const SymptomMap = ({children, ...props}) => {
     return activeIndex === index ? setActiveIndex(-1) : setActiveIndex(index);
   };
 
+  const examples = data.map((item, index) => (
+    <Examples
+      images={item.exampleImages}
+      key={index}
+      note={item.exampleNote}
+      style={{
+        display: activeIndex === index ? 'block' : 'none'
+      }}
+    />
+  ));
+
   return (
     <Wrapper {...props}>
       <div className="container">
         <Inner>
           <Content>
             {children}
-            {data.map((item, index) => (
-              <Examples
-                images={item.exampleImages}
-                key={index}
-                note={item.exampleNote}
-                style={{display: activeIndex === index ? 'block' : 'none'}}
-              />
-            ))}
+            <ExamplesDesktop>{examples}</ExamplesDesktop>
           </Content>
           <BodyMap activeIndex={activeIndex} data={data} onToggle={handleToggle} />
           <DescriptionWrap>
@@ -134,9 +198,20 @@ const SymptomMap = ({children, ...props}) => {
                 key={index}
                 image={item.descriptionImage?.src}
                 imageCaption={item.descriptionImage?.caption}
-                title={item.title}
+                // title={item.title}
                 style={{display: activeIndex === index ? 'block' : 'none'}}
               >
+                <ExamplesMobile>{examples}</ExamplesMobile>
+                <DescriptionTitleWrap>
+                  <_Description.Title color={item.color}>{item.title}</_Description.Title>
+                  <HotSpot
+                    isActive
+                    color="red"
+                    onClick={() => setActiveIndex(-1)}
+                    pulsing={false}
+                    style={{position: 'relative'}}
+                  />
+                </DescriptionTitleWrap>
                 {item.description || null}
               </Description>
             ))}

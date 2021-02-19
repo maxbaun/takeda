@@ -16,17 +16,8 @@ const Wrapper = styled.div`
   }
 
   h1 {
-    font-size: 3.56em;
     margin: 0;
     text-align: right;
-
-    ${mediaBreakpointUp('sm')} {
-      font-size: 8rem;
-    }
-
-    ${mediaBreakpointUp('lg')} {
-      font-size: 3.56em;
-    }
   }
 `;
 

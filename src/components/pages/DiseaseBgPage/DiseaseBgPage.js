@@ -25,6 +25,10 @@ import SymptomMap from './SymptomMap';
 import Title from './Title';
 
 const HeroVideoSectionContent = styled(VideoSection.Content)`
+  h2 {
+    max-width: 459px;
+  }
+
   ${mediaBreakpointUp('lg')} {
     max-width: 385px;
   }
@@ -78,11 +82,7 @@ const DiseaseBgPage = props => {
         }
       >
         <HeroVideoSectionContent>
-          <h2>
-            HAE etiology and
-            <br />
-            burden of disease
-          </h2>
+          <h2>HAE etiology and burden of disease</h2>
           <p>
             Hereditary angioedema (HAE) can be divided into three types:{' '}
             <span className="accent">HAE Type I, HAE Type II</span>, and{' '}

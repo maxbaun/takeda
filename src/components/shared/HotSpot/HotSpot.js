@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 
-import {mediaBreakpointUp} from '../../../../../../utils/responsive';
-import Icon from '../../../../../shared/Icon';
+import {mediaBreakpointUp} from '../../../utils/responsive';
+import Icon from '../Icon';
 
 const pulseRing = keyframes`
   0% {
@@ -16,7 +16,7 @@ const pulseRing = keyframes`
 `;
 
 const getBackgroundColor = props => {
-  if (props.isActive) {
+  if (props.isActive && props.theme[`${props.color}--active`]) {
     return props.theme[`${props.color}--active`];
   }
 
@@ -57,8 +57,8 @@ const Wrapper = styled.button`
     background-color: ${props => props.theme[props.color]};
     border-radius: 50%;
     box-sizing: border-box;
-    content: '';
-    display: ${props => (props.isActive ? 'block' : 'none')};
+    content: ' ';
+    display: ${props => (props.isActive && props.pulsing ? 'block' : 'none')};
     height: 200%;
     margin-left: -50%;
     margin-top: -50%;
@@ -82,23 +82,27 @@ const Wrapper = styled.button`
   }
 `;
 
-const HotSpot = ({color, isActive, x, y, ...props}) => {
+const HotSpot = ({color, isActive, pulsing, x, y, style, ...props}) => {
   return (
-    <Wrapper {...props} isActive={isActive} color={color} style={{left: x, top: y}}>
+    <Wrapper {...props} isActive={isActive} pulsing={pulsing} color={color} style={{left: x, top: y, ...style}}>
       <Icon icon={isActive ? 'minus' : 'plus'} />
     </Wrapper>
   );
 };
 
 HotSpot.propTypes = {
+  color: PropTypes.oneOf(['yellow', 'green', 'blue', 'red']),
   isActive: PropTypes.bool,
-  color: PropTypes.oneOf(['yellow', 'green', 'blue']),
+  pulsing: PropTypes.bool,
+  style: PropTypes.object,
   x: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   y: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 HotSpot.defaultProps = {
   color: 'green',
+  pulsing: true,
+  style: {},
   x: 0,
   y: 0
 };
