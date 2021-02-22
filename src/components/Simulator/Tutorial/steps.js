@@ -9,9 +9,7 @@ const steps = [
     image: imgStep1,
     text: (
       <p>
-        Make sure you are facing forward to the camera.
-        <br />
-        Have your face fill up as much of the rectangle as possible.
+        Make sure you are facing forward to the camera. Have your face fill up as much of the rectangle as possible.
       </p>
     )
   },
@@ -19,21 +17,13 @@ const steps = [
     image: imgStep2,
     text: (
       <p>
-        Make sure {`you're`} in a spot with good lighting,
-        <br />
-        no glare and the background {"shouldn't"} be too busy.
+        Make sure {`you're`} in a spot with good lighting, no glare and the background {"shouldn't"} be too busy.
       </p>
     )
   },
   {
     image: imgStep3,
-    text: (
-      <p>
-        Remove glasses and maintain a straight face.
-        <br />
-        Do not smile or show teeth.
-      </p>
-    )
+    text: <p>Remove glasses and maintain a straight face. Do not smile or show teeth.</p>
   }
 ];
 

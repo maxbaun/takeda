@@ -23,6 +23,12 @@ const BtnMain = styled.button`
   position: relative;
   width: 50px;
 
+  ${mediaBreakpointUp('sm')} {
+    height: 124px;
+    font-size: 5rem;
+    width: 124px;
+  }
+
   ${mediaBreakpointUp('lg')} {
     font-size: 4rem;
     height: 83px;
@@ -65,17 +71,26 @@ const BtnMain = styled.button`
 const BtnSecondary = styled.button`
   align-items: center;
   background: none;
-  border: none;
+  border: 1px solid #212d34;
+  border-radius: 40px;
   color: #000;
   display: flex;
   flex-flow: column nowrap;
   grid-row: 2/2;
+  padding: 0.5em 1.6em;
   position: relative;
   text-decoration: none;
+  transition: none !important;
+
+  ${mediaBreakpointUp('sm')} {
+    padding: 1.9rem 3.6rem;
+  }
 
   ${mediaBreakpointUp('lg')} {
+    border: none;
     flex-flow: row nowrap;
     grid-row: initial;
+    padding: 0;
   }
 
   &:not(.btn) {
@@ -83,13 +98,17 @@ const BtnSecondary = styled.button`
   }
 
   &:hover {
+    border-color: ${props => props.theme.red};
+
     .text {
+      color: ${props => props.theme.redDarker};
       text-decoration: underline;
     }
 
     .icon {
       border-color: ${props => props.theme.redDarker};
       color: ${props => props.theme.redDarker};
+      transform: none;
     }
   }
 
@@ -98,7 +117,7 @@ const BtnSecondary = styled.button`
     border: 2px solid ${props => props.theme.redDark};
     border-radius: 50%;
     color: ${props => props.theme.redDark};
-    display: flex;
+    display: none;
     font-size: 2rem;
     height: 30px;
     justify-content: center;
@@ -108,6 +127,7 @@ const BtnSecondary = styled.button`
     width: 30px;
 
     ${mediaBreakpointUp('lg')} {
+      display: flex;
       height: 58px;
       flex: 0 0 58px;
       font-size: 3rem;
@@ -125,15 +145,36 @@ const BtnSecondary = styled.button`
   }
 
   .text {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     line-height: 1.1;
     order: 1;
     text-transform: uppercase;
 
+    ${mediaBreakpointUp('sm')} {
+      font-size: 2.3rem;
+    }
+
     ${mediaBreakpointUp('lg')} {
+      font-size: 1.4rem;
       order: initial;
+    }
+  }
+
+  &.discover-more {
+    grid-column: 1/3;
+
+    ${mediaBreakpointUp('lg')} {
+      grid-column: initial;
+    }
+  }
+
+  &.download {
+    display: none;
+
+    ${mediaBreakpointUp('lg')} {
+      display: flex;
     }
   }
 `;
@@ -142,16 +183,28 @@ const BtnGrid = styled.div`
   align-items: center;
   display: grid;
   grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
+  grid-row-gap: 4rem;
   grid-template-columns: repeat(2, minmax(0, 50%));
   justify-content: center;
   padding: 1rem 0;
   width: 100%;
 
+  ${mediaBreakpointUp('sm')} {
+    grid-row-gap: 4.4.rem;
+  }
+
   ${mediaBreakpointUp('lg')} {
     grid-column-gap: 45px;
     grid-template-columns: 1fr 85px 1fr;
     padding: 2rem 0;
+  }
+`;
+
+const Content = styled.div`
+  margin: 6rem 0 0;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 9.2rem 0 0;
   }
 `;
 
@@ -218,6 +271,7 @@ const Wrapper = styled.div`
 
 const ActionBar = ({
   canDownload,
+  children,
   isDisabled,
   mode,
   onDownloadClick: handleDownloadClick,
@@ -240,14 +294,14 @@ const ActionBar = ({
         {mode === 'result' ? (
           <>
             <BtnGrid>
-              <BtnSecondary as={Link} to={`${routes.HaeDiseaseBg}#symptomMap`}>
+              <BtnSecondary as={Link} className="discover-more" to={`${routes.HaeDiseaseBg}#symptomMap`}>
                 <span className="text">Discover Symptom Map</span>
                 <Icon className="icon" icon="body" />
               </BtnSecondary>
               <BtnMain onClick={handleRedoClick}>
                 <Icon icon="repeat-arrow" />
               </BtnMain>
-              <BtnSecondary disabled={!canDownload} onClick={handleDownloadClick}>
+              <BtnSecondary className="download" disabled={!canDownload} onClick={handleDownloadClick}>
                 <Icon className="icon" icon="download" />
                 <span className="text">Download Photo</span>
               </BtnSecondary>
@@ -255,6 +309,7 @@ const ActionBar = ({
             <RetakeNote onClick={handleRedoClick}>Retake photo</RetakeNote>
           </>
         ) : null}
+        {children ? <Content>{children}</Content> : null}
       </Inner>
     </Wrapper>
   );
@@ -262,6 +317,7 @@ const ActionBar = ({
 
 ActionBar.propTypes = {
   canDownload: PropTypes.bool,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
   isDisabled: PropTypes.bool,
   mode: PropTypes.oneOf(['camera', 'result']),
   onDownloadClick: PropTypes.func,

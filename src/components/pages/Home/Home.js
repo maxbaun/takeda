@@ -94,7 +94,7 @@ const Home = () => {
                   <strong className="accent">
                     lifespan of individuals with undiagnosed HAE who die from laryngeal attacks
                   </strong>{' '}
-                  is on average <strong className="accent">31 years shorter</strong> than undiagnosed patients with HAE
+                  is on average <strong className="accent">~31 years shorter</strong> than undiagnosed patients with HAE
                   who die from other causes<sup>4</sup>
                 </li>
               </ul>

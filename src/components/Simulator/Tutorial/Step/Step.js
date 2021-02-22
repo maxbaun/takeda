@@ -5,9 +5,10 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 
 const Inner = styled.div`
+  max-width: 460px;
+
   ${mediaBreakpointUp('lg')} {
     margin: 0 auto;
-    max-width: 460px;
   }
 `;
 

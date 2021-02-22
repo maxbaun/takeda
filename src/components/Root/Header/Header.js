@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import routes from '../../../routes';
 import {mediaBreakpointUp} from '../../../utils/responsive';
-import Dropdown from '../../shared/Dropdown';
+// import Dropdown from '../../shared/Dropdown';
 import ExternalLink from '../../shared/ExternalLink';
 import _Hamburger from '../../shared/Hamburger';
 import Icon from '../../shared/Icon';
@@ -69,7 +69,7 @@ const Hamburger = styled(_Hamburger)`
   transform: translate3d(0, -50%, 0);
   z-index: 4;
 
-  ${mediaBreakpointUp('lg')} {
+  ${mediaBreakpointUp(1050)} {
     display: none;
   }
 `;
@@ -77,11 +77,13 @@ const Hamburger = styled(_Hamburger)`
 const Tag = styled.span`
   align-items: center;
   display: flex;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   line-height: 1;
   position: relative;
   text-transform: uppercase;
+  white-space: nowrap;
 
   ${mediaBreakpointUp('sm')} {
     font-size: 2.2rem;
@@ -158,7 +160,7 @@ const Header = ({...props}) => {
                 <Icon icon="external-link-alt" />
               </ExternalLink>
             </li>
-            <Dropdown as="li" id="languageSelector">
+            {/* <Dropdown as="li" id="languageSelector">
               <Dropdown.Toggle className="btn" onClick={handleLinkClick} title="Change Language">
                 <span>ENG</span>
                 <Icon icon="chevron-down" />
@@ -170,7 +172,7 @@ const Header = ({...props}) => {
                   </li>
                 </ul>
               </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown> */}
           </ul>
         </Nav>
         <Hamburger onClick={() => setNavOpen(!navOpen)} open={navOpen} />

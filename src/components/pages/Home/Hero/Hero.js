@@ -61,7 +61,7 @@ const Content = styled.div`
 
   h1 {
     color: ${props => props.theme.blackPearl};
-    font-size: 4rem;
+    font-size: 2.5em;
     font-weight: 800;
     line-height: 0.91;
     margin: 0 0 3rem auto;
@@ -297,6 +297,7 @@ const Wrapper = styled.div`
 
   ${mediaBreakpointUp('sm')} {
     background-image: ${() => `url('${DotsMobile}')`};
+    background-position: 120% 100%;
   }
 
   ${mediaBreakpointUp('lg')} {

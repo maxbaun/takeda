@@ -115,7 +115,7 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
 
             &:not(:last-child) {
               ${mediaBreakpointUp('lg')} {
-                margin-right: 0.5rem;
+                margin-right: 2rem;
               }
 
               ${mediaBreakpointUp(1300)} {
@@ -138,7 +138,7 @@ Nav.propTypes = {
 };
 
 Nav.defaultProps = {
-  breakpoint: 'lg'
+  breakpoint: 1050
 };
 
 export default Nav;

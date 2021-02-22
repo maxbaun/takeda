@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import {mediaBreakpointUp} from '../../../utils/responsive';
 import data from './data';
 import Dropdown from './Dropdown';
 
@@ -20,11 +21,21 @@ const Title = styled.span`
 `;
 
 const Wrapper = styled.div`
-  position: absolute;
-  right: 0;
-  top: 2rem;
-  width: 280px;
+  width: 100%;
   z-index: 1;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 0 auto;
+    width: 370px;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 2rem;
+    width: 280px;
+  }
 `;
 
 const LearnMore = ({...props}) => {

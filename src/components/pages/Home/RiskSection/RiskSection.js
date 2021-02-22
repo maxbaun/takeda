@@ -74,11 +74,11 @@ const Content = styled.div`
 
   ul {
     list-style: none;
-    margin: 0 0 4rem 1rem;
+    margin: 0 0 4rem 0;
     padding: 0;
 
     ${mediaBreakpointUp('sm')} {
-      margin: 0 0 7rem 1rem;
+      margin: 0 0 7rem 0;
     }
 
     ${mediaBreakpointUp('lg')} {
@@ -88,11 +88,11 @@ const Content = styled.div`
     li {
       font-size: 0.875em;
       line-height: 1.857;
-      padding-left: 32px;
       position: relative;
-
+      padding-left: 33px;
       ${mediaBreakpointUp('sm')} {
         font-size: 0.7em;
+        padding-left: 67px;
       }
 
       ${mediaBreakpointUp('lg')} {
@@ -250,10 +250,10 @@ const Wrapper = styled.div`
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  padding: 20rem 0 1.5rem 0;
+  padding: 10rem 0 1.5rem 0;
 
   ${mediaBreakpointUp('sm')} {
-    padding: 35rem 0 13rem;
+    padding: 17.5rem 0 13rem;
   }
 
   ${mediaBreakpointUp('lg')} {

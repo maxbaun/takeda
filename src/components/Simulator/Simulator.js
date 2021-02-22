@@ -8,7 +8,7 @@ import Loader from '../shared/Loader';
 import ActionBar from './ActionBar';
 import Camera from './Camera';
 import FaceEffect from './FaceEffect';
-import LearnMore from './LearnMore';
+import _LearnMore from './LearnMore';
 import Tutorial from './Tutorial';
 
 const Inner = styled.div`
@@ -25,6 +25,20 @@ const Inner = styled.div`
 
   ${mediaBreakpointUp('lg')} {
     max-width: 800px;
+  }
+`;
+
+const LearnMoreDesktop = styled(_LearnMore)`
+  display: none;
+
+  ${mediaBreakpointUp('lg')} {
+    display: block;
+  }
+`;
+
+const LearnMoreMobile = styled(_LearnMore)`
+  ${mediaBreakpointUp('lg')} {
+    display: none;
   }
 `;
 
@@ -174,7 +188,7 @@ const Simulator = props => {
           </ViewInner>
         </View>
       </Inner>
-      {mode === 'result' ? <LearnMore /> : null}
+      {mode === 'result' ? <LearnMoreDesktop /> : null}
       <ActionBar
         canDownload={Boolean(downloadUrl)}
         isDisabled={!tutorialComplete}
@@ -182,7 +196,9 @@ const Simulator = props => {
         onDownloadClick={handleDownload}
         onRedoClick={handleRedo}
         onTakeClick={handleTake}
-      />
+      >
+        {mode === 'result' ? <LearnMoreMobile /> : null}
+      </ActionBar>
     </Wrapper>
   );
 };
