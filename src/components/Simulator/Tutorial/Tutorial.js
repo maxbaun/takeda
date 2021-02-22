@@ -29,13 +29,13 @@ const Carousel = styled(_Carousel)`
     display: flex;
     height: auto;
     justify-content: center; //optional
-    padding: 2rem 1.5rem 0;
+    padding: 1.5rem 1.5rem 0;
 
     ${mediaBreakpointUp(320)} {
-      padding: 8rem 1.5rem 0;
+      padding: 6rem 1.5rem 0;
     }
 
-    ${mediaBreakpointUp(500)} {
+    ${mediaBreakpointUp(400)} {
       padding: 10rem 1.5rem 0;
     }
 
@@ -105,6 +105,10 @@ const CarouselControls = styled.div`
   position: absolute;
   right: 0;
 
+  ${mediaBreakpointUp(320)} {
+    bottom: 3rem;
+  }
+
   ${mediaBreakpointUp(400)} {
     bottom: 4rem;
   }
@@ -127,8 +131,16 @@ const CarouselPaging = styled.div`
   justify-content: center;
   margin: 1.5rem 0 0;
 
+  ${mediaBreakpointUp(320)} {
+    margin: 3rem 0 0;
+  }
+
   ${mediaBreakpointUp(400)} {
-    margin: 4rem 0 0;
+    margin: 8rem 0 0;
+  }
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 5rem 0 0;
   }
 
   ${mediaBreakpointUp('lg')} {

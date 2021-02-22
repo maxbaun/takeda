@@ -11,7 +11,13 @@ const Container = styled.div`
   max-width: 1460px;
 `;
 
-const SimulatorWrap = styled.div``;
+const SimulatorWrap = styled.div`
+  padding: 0 1.5rem;
+
+  ${mediaBreakpointUp('lg')} {
+    padding: 0;
+  }
+`;
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.solitude};

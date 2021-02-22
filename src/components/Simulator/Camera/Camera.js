@@ -17,20 +17,45 @@ const Helper = styled.div`
   z-index: 1;
 `;
 
-const HelperNote = styled.div`
-  bottom: 1rem;
+const HelperNote = styled.p`
   color: #fff;
   font-size: 1.4rem;
   font-style: italic;
   left: 0;
   margin: 0 auto;
+  padding: 0 1rem;
   position: absolute;
   text-align: center;
+  top: calc(84% + 28px);
   right: 0;
+  width: 100%;
   z-index: 1;
 
+  ${mediaBreakpointUp(400)} {
+    top: calc(84% + 34px);
+  }
+
   ${mediaBreakpointUp('sm')} {
-    bottom: 3rem;
+    top: calc(84% + 52px);
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    top: calc(84% + 45px);
+  }
+`;
+
+const Inner = styled.div`
+  align-items: center;
+  display: flex;
+  position: relative;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+
+  video {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
   }
 `;
 
@@ -45,31 +70,26 @@ const Overlay = styled.div`
 `;
 
 const Wrapper = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
   position: relative;
-  height: 100%;
-
-  video {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-  }
 `;
 
 const Camera = forwardRef(({onUserMedia, onUserMediaError, showHelper, showOverlay, ...props}, ref) => {
   return (
     <Wrapper {...props}>
-      <Webcam onUserMedia={onUserMedia} onUserMediaError={onUserMediaError} ref={ref} />
+      <Inner>
+        <Webcam onUserMedia={onUserMedia} onUserMediaError={onUserMediaError} ref={ref} />
+        {showHelper ? (
+          <>
+            <Helper />
+          </>
+        ) : null}
+        {showOverlay ? <Overlay /> : null}
+      </Inner>
       {showHelper ? (
         <>
-          <Helper />
           <HelperNote>Please have your face fill up as much of this rectangle as possible</HelperNote>
         </>
       ) : null}
-      {showOverlay ? <Overlay /> : null}
     </Wrapper>
   );
 });

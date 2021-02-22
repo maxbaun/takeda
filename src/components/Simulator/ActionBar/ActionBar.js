@@ -15,13 +15,13 @@ const BtnMain = styled.button`
   color: #fff;
   cursor: pointer;
   display: flex;
-  font-size: 2rem;
-  height: 50px;
+  font-size: 2.8rem;
+  height: 75px;
   justify-content: center;
   grid-column: 1/3;
   margin: 0 auto;
   position: relative;
-  width: 50px;
+  width: 75px;
 
   ${mediaBreakpointUp('sm')} {
     height: 124px;
@@ -201,7 +201,7 @@ const BtnGrid = styled.div`
 `;
 
 const Content = styled.div`
-  margin: 6rem 0 0;
+  margin: 4.5rem 0 0;
 
   ${mediaBreakpointUp('sm')} {
     margin: 9.2rem 0 0;

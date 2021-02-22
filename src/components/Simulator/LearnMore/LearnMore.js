@@ -6,28 +6,44 @@ import data from './data';
 import Dropdown from './Dropdown';
 
 const Toggles = styled.div`
-  max-width: 260px;
+  margin: 0 auto;
+  max-width: 320px;
+
+  ${mediaBreakpointUp('sm')} {
+    max-width: 425px;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    margin: 0;
+    max-width: 260px;
+  }
 `;
 
 const Title = styled.span`
-  background-color: #fff;
-  border-bottom-left-radius: 30px;
-  border-top-left-radius: 30px;
+  font-size: 1.6rem;
   display: block;
-  letter-spacing: 0.1em;
-  line-height: 1.68;
-  padding: 0.5em 2rem;
+  margin: 0 0 3rem;
+  text-align: center;
   width: 100%;
+
+  ${mediaBreakpointUp('sm')} {
+    margin: 0 0 4.3rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    background-color: #fff;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    letter-spacing: 0.1em;
+    line-height: 1.68;
+    padding: 0.5em 2rem;
+    text-align: left;
+  }
 `;
 
 const Wrapper = styled.div`
   width: 100%;
   z-index: 1;
-
-  ${mediaBreakpointUp('sm')} {
-    margin: 0 auto;
-    width: 370px;
-  }
 
   ${mediaBreakpointUp('lg')} {
     margin: 0;

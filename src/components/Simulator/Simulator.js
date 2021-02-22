@@ -61,8 +61,11 @@ const ViewInner = styled.div`
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.blackPearl};
-  box-shadow: -16px 46px 84px 17px rgba(0, 0, 0, 0.13);
   position: relative;
+
+  ${mediaBreakpointUp('lg')} {
+    box-shadow: -16px 46px 84px 17px rgba(0, 0, 0, 0.13);
+  }
 `;
 
 const getPaddingBottomPercentage = viewRatio => {

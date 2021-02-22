@@ -297,7 +297,7 @@ const Wrapper = styled.div`
 
   ${mediaBreakpointUp('sm')} {
     background-image: ${() => `url('${DotsMobile}')`};
-    background-position: 120% 100%;
+    background-position: 80px 100%;
   }
 
   ${mediaBreakpointUp('lg')} {
