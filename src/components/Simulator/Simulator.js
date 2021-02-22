@@ -37,8 +37,11 @@ const LearnMoreDesktop = styled(_LearnMore)`
 `;
 
 const LearnMoreMobile = styled(_LearnMore)`
+  margin: 4.5rem 0 0;
+
   ${mediaBreakpointUp('lg')} {
     display: none;
+    margin: 9.2rem 0 0;
   }
 `;
 

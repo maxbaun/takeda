@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
+import References from '../../shared/References/References';
 import Simulator from '../../Simulator';
 import imgDotPattern from './dot-pattern-simulation.png';
 import Header from './Header';
@@ -25,18 +26,18 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-position: 130% 0;
   background-size: 40% auto;
-  padding: 10rem 0 3rem;
+  padding: 10rem 0 0;
 
   ${mediaBreakpointUp('sm')} {
     background-position: 120% 0;
     background-size: 40% auto;
-    padding: 14.3rem 0 5rem;
+    padding: 14.3rem 0 0;
   }
 
   ${mediaBreakpointUp('lg')} {
     background-position: 100% 0;
     background-size: auto;
-    padding: 13.8rem 0 15.3rem;
+    padding: 13.8rem 0 0;
   }
 `;
 
@@ -64,6 +65,19 @@ const SimulationPage = props => {
           <Simulator />
         </SimulatorWrap>
       </Container>
+      <References hasBorder={false}>
+        1. Lumry WR. <em>Am J Manag Care</em> 2013:19;S103-S110; 2. Banerji A. <em>Ann Allergy Asthma Immunol</em>{' '}
+        2013;111:329–336; 3. Longhurst HJ & Bork K. <em>Br J Hosp Med</em> (Lond) 2019;80:391–398; 4. Bork K, et al.{' '}
+        <em>J Allergy Clin Immunol</em>
+        2012;130:692–697; 5. Agostoni A, et al. <em>J Allergy Clin Immunol</em> 2004;114:S51–S131; 6. Bork K, et al.{' '}
+        <em>Am J Gastroenterol</em> 2006;101:619–627; 7. Zanichelli A, et al. <em>Ann Allergy Asthma Immunol</em>{' '}
+        2016;117:394–39; 8. Banerji A, et al. <em>Allergy Asthma Proc</em> 2018;39:212–223; 9. Schöffl C, et al.{' '}
+        <em>J Dtsch Dermatol Ges</em> 2019;17:416–423; 10. Zanichelli A, et al. <em>Clin Trans Allergy</em> 2018;8:42;
+        11. Grumach AS, et al. <em>J Allergy Clin Immunol Pract</em>
+        2019;7:1078–1080; 12. Betschel S, et al. <em>Allergy Asthma Clin Immunol</em> 2019;15:72; 13. Zuraw BL.{' '}
+        <em>N Engl J Med</em>
+        2008;359:1027–1036.
+      </References>
     </Wrapper>
   );
 };

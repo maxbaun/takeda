@@ -200,13 +200,7 @@ const BtnGrid = styled.div`
   }
 `;
 
-const Content = styled.div`
-  margin: 4.5rem 0 0;
-
-  ${mediaBreakpointUp('sm')} {
-    margin: 9.2rem 0 0;
-  }
-`;
+const Content = styled.div``;
 
 const Inner = styled.div``;
 
