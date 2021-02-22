@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -10,6 +10,8 @@ import _Hamburger from '../../shared/Hamburger';
 import Icon from '../../shared/Icon';
 import Logo from '../../shared/Logo';
 import Nav from './Nav';
+
+const BREAKPOINT = 1050;
 
 const BrandWrap = styled.div`
   align-items: center;
@@ -56,7 +58,7 @@ const Container = styled.div`
   margin: 0 auto;
   max-width: 1505px;
 
-  ${mediaBreakpointUp('lg')} {
+  ${mediaBreakpointUp(BREAKPOINT)} {
     height: 82px;
   }
 `;
@@ -69,7 +71,7 @@ const Hamburger = styled(_Hamburger)`
   transform: translate3d(0, -50%, 0);
   z-index: 4;
 
-  ${mediaBreakpointUp(1050)} {
+  ${mediaBreakpointUp(BREAKPOINT)} {
     display: none;
   }
 `;
@@ -133,6 +135,14 @@ const Header = ({...props}) => {
 
   const handleLinkClick = () => setNavOpen(false);
 
+  useEffect(() => {
+    if (navOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = null;
+    }
+  }, [navOpen]);
+
   return (
     <Wrapper {...props}>
       <Container>
@@ -142,7 +152,7 @@ const Header = ({...props}) => {
           </Link>
           <Tag>HAE Virtual Lab</Tag>
         </BrandWrap>
-        <Nav isOpen={navOpen}>
+        <Nav breakpoint={BREAKPOINT} isOpen={navOpen}>
           <ul>
             <li>
               <NavLink className="has-chevron" onClick={handleLinkClick} to={routes.HaeDiseaseBg}>
@@ -154,6 +164,8 @@ const Header = ({...props}) => {
                 <span>Management of HAE</span>
               </NavLink>
             </li>
+          </ul>
+          <ul>
             <li>
               <ExternalLink className="btn" href="https://google.com" onClick={handleLinkClick}>
                 <span>Back to HAE CONNECT</span>

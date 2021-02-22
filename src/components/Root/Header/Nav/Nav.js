@@ -80,20 +80,24 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
     <Wrapper
       {...props}
       css={`
+        align-items: center;
         background-color: #fff;
-        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        height: calc(100vh - 101px);
+        justify-content: center;
         left: 0;
         opacity: ${isOpen ? 1 : 0};
-        padding-top: 101px;
         position: fixed;
-        top: 0;
+        top: 101px;
         width: 100%;
         transform: ${isOpen ? 'translate3d(0, 0, 0)' : 'translate3d(100%, 0, 0)'};
         transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
         z-index: 3;
 
         ${mediaBreakpointUp(breakpoint)} {
-          display: block;
+          display: flex;
+          flex-flow: row nowrap;
           height: auto;
           opacity: 1;
           padding-top: 0;
@@ -110,16 +114,42 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
             flex-flow: row nowrap;
           }
 
+          &:first-child {
+            flex: 1;
+            justify-content: center;
+
+            ${mediaBreakpointUp(breakpoint)} {
+              flex: initial;
+            }
+          }
+
+          &:last-child {
+            margin: 0 0 5rem;
+
+            ${mediaBreakpointUp(breakpoint)} {
+              margin: 0;
+            }
+          }
+
+          &:not(:last-child),
           > li {
-            margin: 1rem 0;
+            margin: 1.8rem 0;
 
             &:not(:last-child) {
               ${mediaBreakpointUp('lg')} {
-                margin-right: 2rem;
+                margin: 0 2rem 0 0;
               }
 
               ${mediaBreakpointUp(1300)} {
-                margin-right: 4rem;
+                margin: 0 4rem 0 0;
+              }
+            }
+
+            a {
+              font-size: 1.8rem;
+
+              ${mediaBreakpointUp(breakpoint)} {
+                font-size: 1.4rem;
               }
             }
           }
@@ -132,7 +162,7 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
 };
 
 Nav.propTypes = {
-  breakpoint: PropTypes.string,
+  breakpoint: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
   isOpen: PropTypes.bool
 };
