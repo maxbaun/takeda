@@ -107,20 +107,20 @@ const Home = () => {
         ctaUrl={routes.HaeDiseaseBg}
         examples={[
           {
-            after: `${process.env.PUBLIC_URL}/img/patient-examples/1A.jpg`,
-            before: `${process.env.PUBLIC_URL}/img/patient-examples/1B.jpg`
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/1B.jpg`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/1A.jpg`
           },
           {
-            after: `${process.env.PUBLIC_URL}/img/patient-examples/2A.jpg`,
-            before: `${process.env.PUBLIC_URL}/img/patient-examples/2B.jpg`
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/2B.jpg`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/2A.jpg`
           },
           {
-            after: `${process.env.PUBLIC_URL}/img/patient-examples/3A.jpg`,
-            before: `${process.env.PUBLIC_URL}/img/patient-examples/3B.jpg`
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/3B.jpg`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/3A.jpg`
           },
           {
-            after: `${process.env.PUBLIC_URL}/img/patient-examples/4A.jpg`,
-            before: `${process.env.PUBLIC_URL}/img/patient-examples/4B.jpg`
+            after: `${process.env.PUBLIC_URL}/img/patient-examples/4B.jpg`,
+            before: `${process.env.PUBLIC_URL}/img/patient-examples/4A.jpg`
           }
         ]}
         note={
