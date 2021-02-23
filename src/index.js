@@ -8,7 +8,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactModal from 'react-modal';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import {ThemeProvider} from 'styled-components';
+import {StyleSheetManager, ThemeProvider} from 'styled-components';
+import griddie from 'styled-griddie';
 
 import AboutPage from './components/pages/AboutPage';
 import Home from './components/pages/Home';
@@ -24,20 +25,22 @@ import theme from './theme';
 ReactModal.setAppElement('#root');
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <BrowserRouter>
-      <ScrollToTop />
-      <Root>
-        <Switch>
-          <Route exact component={Home} path={routes.Home} />
-          <Route exact component={AboutPage} path={routes.About} />
-          <Route exact component={ManagementPage} path={routes.Management} />
-          <Route exact component={SimulatorPage} path={routes.Simulator} />
-        </Switch>
-      </Root>
-    </BrowserRouter>
-  </ThemeProvider>,
+  <StyleSheetManager stylisPlugins={[griddie]}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Root>
+          <Switch>
+            <Route exact component={Home} path={routes.Home} />
+            <Route exact component={AboutPage} path={routes.About} />
+            <Route exact component={ManagementPage} path={routes.Management} />
+            <Route exact component={SimulatorPage} path={routes.Simulator} />
+          </Switch>
+        </Root>
+      </BrowserRouter>
+    </ThemeProvider>
+  </StyleSheetManager>,
   document.getElementById('root')
 );
 

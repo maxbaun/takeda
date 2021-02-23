@@ -12,6 +12,10 @@ const Buttons = styled.div`
 
   button {
     margin: 0 1.5rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 `;
 
@@ -23,9 +27,14 @@ const Copy = styled.div`
 
 const Inner = styled.div`
   display: grid;
-  grid-gap: 1.5rem;
+  grid-gap: 3rem;
 
   ${mediaBreakpointUp('lg')} {
+    grid-gap: 4rem;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    grid-gap: 1.5rem;
     grid-template-columns: 64% auto;
   }
 `;
@@ -36,10 +45,22 @@ const Wrapper = styled.div`
   bottom: 0;
   font-size: 1.3rem;
   line-height: 1.53;
-  padding: 2rem 0;
+  padding: 3rem 0;
   position: fixed;
   width: 100%;
   z-index: 999;
+
+  ${mediaBreakpointUp('sm')} {
+    font-size: 2.2rem;
+    line-height: 1.53;
+    padding: 5rem 0;
+  }
+
+  ${mediaBreakpointUp('lg')} {
+    font-size: 1.3rem;
+    line-height: 1.53;
+    padding: 2rem 0;
+  }
 `;
 
 const CookieBar = ({children, onAccept: handleAccept, ...props}) => {

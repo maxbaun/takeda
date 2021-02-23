@@ -291,6 +291,7 @@ const ScrollTo = styled.button`
 `;
 
 const Wrapper = styled.div`
+  /* autoprefixer grid: autoplace */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 100% 100%;

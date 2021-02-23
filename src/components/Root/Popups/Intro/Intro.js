@@ -13,16 +13,38 @@ const PopupContent = styled(Popup.Content)`
   }
 `;
 const PopupFooter = styled(Popup.Footer)`
+  grid-column: 1/1;
+
   ${mediaBreakpointUp('lg')} {
     /* padding-left: calc(48% - 170px); */
     grid-column: 2/3;
   }
+
+  p {
+    margin: 0 0 2rem;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 0 0 3rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      margin: 0 0 2rem;
+    }
+  }
 `;
 
 const PopupGrid = styled(Popup.Grid)`
+  grid-template-columns: 1fr;
+
   ${mediaBreakpointUp('lg')} {
     grid-template-columns: auto 1fr;
     max-width: 510px;
+  }
+
+  h2 {
+    ${mediaBreakpointUp('lg')} {
+      max-width: 180px;
+    }
   }
 `;
 
@@ -58,11 +80,7 @@ const Intro = ({onNo: handleNo, onYes: handleYes}) => {
   return (
     <PopupGrid>
       <Popup.Title>
-        <h2>
-          Are you a <br />
-          healthcare <br />
-          provider?
-        </h2>
+        <h2>Are you a healthcare provider?</h2>
       </Popup.Title>
       <PopupContent>
         <p>

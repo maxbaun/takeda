@@ -3,12 +3,31 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
-import CancelConfirm from '../../../shared/CancelConfirm';
+import _CancelConfirm from '../../../shared/CancelConfirm';
 import Popup from '../../../shared/Popup';
+
+const CancelConfirm = styled(_CancelConfirm)`
+  p {
+    margin: 0 0 3rem;
+
+    ${mediaBreakpointUp('sm')} {
+      margin: 0 0 5rem;
+    }
+
+    ${mediaBreakpointUp('lg')} {
+      margin: 0 0 2rem;
+    }
+  }
+`;
 
 const PopupContent = styled(Popup.Content)`
   ${mediaBreakpointUp('lg')} {
     max-width: 320px;
+  }
+
+  a,
+  button {
+    margin: 0 1.5rem 1rem 0;
   }
 `;
 
@@ -19,7 +38,6 @@ const PopupGrid = styled(Popup.Grid)`
 `;
 
 const Leaving = ({confirmProps, onCancel: handleClose}) => {
-  console.log(confirmProps);
   return (
     <PopupGrid>
       <Popup.Title>
