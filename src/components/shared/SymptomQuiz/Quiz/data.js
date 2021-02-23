@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Routes from '../../../../routes';
+import routes from '../../../../routes';
 
 const data = [
   {
@@ -15,7 +15,7 @@ const data = [
     allRequired: true,
     correctOptions: ['Hands', 'Larynx', 'Feet', 'Abdomen', 'Face', 'Genitalia'],
     options: ['Hands', 'Larynx', 'Feet', 'Abdomen', 'Face', 'Genitalia'],
-    readMoreUrl: Routes.HaeDiseaseBg,
+    readMoreUrl: routes.About,
     references: (
       <>
         1. Lumry WR. <em>Am J Manag Care</em> 2013:19;S103-S110; 2. Bygum A, et al. <em>Acta Derm Venereol</em>{' '}
@@ -35,7 +35,7 @@ const data = [
     allRequired: true,
     correctOptions: ['Pain', 'Swelling', 'Asphyxiation'],
     options: ['Pain', 'Numbness', 'Swelling', 'Confusion', 'Asphyxiation'],
-    readMoreUrl: Routes.HaeDiseaseBg,
+    readMoreUrl: routes.About,
     references: (
       <>
         1. Lumry WR. <em>Am J Manag Care</em> 2013:19;S103-S110; 2. Bygum A, et al. <em>Acta Derm Venereol</em>{' '}
@@ -64,7 +64,7 @@ const data = [
       'Medication',
       'Estrogen'
     ],
-    readMoreUrl: Routes.HaeDiseaseBg,
+    readMoreUrl: routes.About,
     references: (
       <>
         1. Lumry WR. <em>Am J Manag Care</em> 2013:19;S103-S110; 2. Bygum A, et al. <em>Acta Derm Venereol</em>{' '}
@@ -87,7 +87,7 @@ const data = [
     allRequired: true,
     correctOptions: ['Psychological', 'Social', 'Socioeconomic'],
     options: ['Psychological', 'Social', 'Fertility', 'Socioeconomic'],
-    readMoreUrl: Routes.HaeDiseaseBg,
+    readMoreUrl: routes.About,
     references: (
       <>
         1. Lumry WR. <em>Am J Manag Care</em> 2013:19;S103-S110; 2. Bygum A, et al. <em>Acta Derm Venereol</em>{' '}

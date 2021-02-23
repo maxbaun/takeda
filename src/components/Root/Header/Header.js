@@ -155,7 +155,7 @@ const Header = ({...props}) => {
         <Nav breakpoint={BREAKPOINT} isOpen={navOpen}>
           <ul>
             <li>
-              <NavLink className="has-chevron" onClick={handleLinkClick} to={routes.HaeDiseaseBg}>
+              <NavLink className="has-chevron" onClick={handleLinkClick} to={routes.About}>
                 <span>HAE Disease Background</span>
               </NavLink>
             </li>

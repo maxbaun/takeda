@@ -288,7 +288,7 @@ const ActionBar = ({
         {mode === 'result' ? (
           <>
             <BtnGrid>
-              <BtnSecondary as={Link} className="discover-more" to={`${routes.HaeDiseaseBg}#symptomMap`}>
+              <BtnSecondary as={Link} className="discover-more" to={`${routes.About}#symptomMap`}>
                 <span className="text">Discover Symptom Map</span>
                 <Icon className="icon" icon="body" />
               </BtnSecondary>

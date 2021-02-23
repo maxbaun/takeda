@@ -8,7 +8,7 @@ import ReactModal from 'react-modal';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {ThemeProvider} from 'styled-components';
 
-import DiseaseBgPage from './components/pages/DiseaseBgPage';
+import AboutPage from './components/pages/AboutPage';
 import Home from './components/pages/Home';
 import ManagementPage from './components/pages/ManagementPage';
 import SimulatorPage from './components/pages/SimulationPage';
@@ -29,7 +29,7 @@ ReactDOM.render(
       <Root>
         <Switch>
           <Route exact component={Home} path={routes.Home} />
-          <Route exact component={DiseaseBgPage} path={routes.HaeDiseaseBg} />
+          <Route exact component={AboutPage} path={routes.About} />
           <Route exact component={ManagementPage} path={routes.Management} />
           <Route exact component={SimulatorPage} path={routes.Simulator} />
         </Switch>

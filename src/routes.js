@@ -1,6 +1,6 @@
 const routes = {
+  About: '/about-hae',
   Home: '/',
-  HaeDiseaseBg: '/hae-disease-bg',
   Management: '/management-of-hae',
   Simulator: '/simulator'
 };

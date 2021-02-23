@@ -36,7 +36,7 @@ const HeroVideoSectionContent = styled(VideoSection.Content)`
 
 const Wrapper = styled.div``;
 
-const DiseaseBgPage = props => {
+const About = props => {
   const location = useLocation();
   useEffect(() => {
     if (location.hash) {
@@ -208,14 +208,14 @@ const DiseaseBgPage = props => {
       <References>
         <>
           1. Betschel S, et al. <em>Allergy Asthma Clin Immunol</em> 2019;15:72; 2. Lumry WR, et al. <em>Pediatr</em>{' '}
-          2013;162:1017–1022; 3. Zuraw BL, et al. <em>J Allergy Clin Immunol Pract</em> 2013;1:458–467; 4.
+          2013;162:1017–1022; 3. Zuraw BL, et al. <em>J Allergy Clin Immunol Pract</em> 2013;1:458–467; 4.{' '}
           Aygören-Pürsün E, et al. <em>Orphanet J Rare Dis</em> 2018;13:73; 5. Banerji A.{' '}
           <em>Ann Allergy Asthma Immunol</em> 2013;111:329–336; 6. Bygum A, et al. <em>Acta Derm Venereol</em>{' '}
           2015;95:706–710; 7. Reshef A, et al. <em>Clinic Rev Allerg Immunol</em> 2016;51:121–139; 8. Kaplan AP & Joseph
           K. <em>Ann Allergy Asthma Immunol</em> 2010;104:193–204; 9. Zuraw BL & Christiansen SC.{' '}
           <em>Clinic Rev Allerg Immunol</em> 2016;51:216–229; 10. Hofman ZLM, et al. <em>J Allergy Clin Immunol</em>{' '}
-          2016;138:359–366; 11. Busse PJ, et al. <em>J Allergy Clin Immunol Pract</em> 2020;S2213–2198:30878–3; 12.
-          Busse PJ & Christiansen SC. <em>N Engl J Med</em> 2020;382:1136–1148; 13. Lumry WR. <em>Am J Manag Care</em>{' '}
+          2016;138:359–366; 11. Busse PJ, et al. <em>J Allergy Clin Immunol Pract</em> 2021;9:132–150; 12. Busse PJ &{' '}
+          Christiansen SC. <em>N Engl J Med</em> 2020;382:1136–1148; 13. Lumry WR. <em>Am J Manag Care</em>{' '}
           2013:19;S103-S110; 14. Ghazi A & Grant JA. <em>Biologics</em> 2013;7:103–113; 15. Gower RG, et al.{' '}
           <em>World Allergy Organ</em> J 2011;4:S9–S21; 16. Maurer M, et al. <em>Allergy</em> 2018;73:1575–1596.
         </>
@@ -224,6 +224,6 @@ const DiseaseBgPage = props => {
   );
 };
 
-DiseaseBgPage.propTypes = {};
+About.propTypes = {};
 
-export default DiseaseBgPage;
+export default About;
