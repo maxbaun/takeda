@@ -18,7 +18,7 @@ const data = [
     readMoreUrl: Routes.HaeDiseaseBg,
     references: (
       <>
-        Lumry WR. <em>Am J Manag Care</em> 2013;19:S111–S118; 2. Bygum A, et al. <em>Acta Derm Venereol</em>{' '}
+        1. Lumry WR. <em>Am J Manag Care</em> 2013:19;S103-S110; 2. Bygum A, et al. <em>Acta Derm Venereol</em>{' '}
         2015;95:706–710; 3. Banerji A. <em>Ann Allergy Asthma Immunol</em> 2013;111:329–336.
       </>
     ),
