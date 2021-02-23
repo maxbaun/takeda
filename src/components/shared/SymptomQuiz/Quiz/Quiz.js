@@ -253,7 +253,11 @@ const Quiz = ({isOpen, onClose: handleClose, ...props}) => {
 
     // ALL answers required
     if (question.allRequired) {
-      if (correctAnswers.length === question.correctOptions.length) {
+      if (
+        // correct answers all selected AND total options selected equals the number of correct answers
+        correctAnswers.length === question.correctOptions.length &&
+        selectedOptions.length === question.correctOptions.length
+      ) {
         return setView('correct');
       }
 
