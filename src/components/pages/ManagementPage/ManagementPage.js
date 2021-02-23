@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Accent from '../../shared/Accent/Accent';
 import HaeConnectCta from '../../shared/HaeConnectCta';
 import References from '../../shared/References';
 import SymptomQuiz from '../../shared/SymptomQuiz';
@@ -84,13 +85,12 @@ const ManagementPage = () => {
                   <strong>Long-term prophylaxis management</strong>
                 </h5>
                 <p>
-                  Long-term prophylaxis (LTP) may be considered for patients with{' '}
-                  <span className="accent">recurrent episodes</span> of angioedema to{' '}
-                  <span className="accent">reduce the frequency</span>,{' '}
-                  <span className="accent">duration and severity of attacks</span>.<sup>2,3</sup> Patients should be{' '}
-                  <span className="accent">evaluated for LTP at every visit</span>, taking disease burden and patient
-                  preference into consideration.<sup>2</sup> The increased availability of LTP is anticipated to shift
-                  the management paradigm towards an <span className="accent">expanded adoption</span> of LTP.
+                  Long-term prophylaxis (LTP) may be considered for patients with <Accent>recurrent episodes</Accent> of
+                  angioedema to <Accent>reduce the frequency</Accent>, <Accent>duration and severity of attacks</Accent>
+                  .<sup>2,3</sup> Patients should be <Accent>evaluated for LTP at every visit</Accent>, taking disease
+                  burden and patient preference into consideration.<sup>2</sup> The{' '}
+                  <Accent>increased availability</Accent> of LTP is anticipated to shift the management paradigm towards
+                  an <Accent>expanded adoption</Accent> of LTP.
                   <sup>1</sup>
                 </p>
               </>
@@ -182,8 +182,8 @@ const ManagementPage = () => {
       <SymptomQuiz />
       <References>
         <>
-          1. Busse PJ, et al. <em>J Allergy Clin Immunol Pract</em> 2020;S2213–2198:30878–3; 2. Maurer M, et al.{' '}
-          <em>Allergy</em> 2018;73:1575–1596; 3. Betschel S, et al. <em>Allergy Asthma Clin Immunol</em> 2019;15:72.
+          1. Busse PJ, et al. <em>J Allergy Clin Immunol Pract</em> 2021;9:132–150; 2. Maurer M, et al. <em>Allergy</em>{' '}
+          2018;73:1575–1596; 3. Betschel S, et al. <em>Allergy Asthma Clin Immunol</em> 2019;15:72.
         </>
       </References>
     </Wrapper>
