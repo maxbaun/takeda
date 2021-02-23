@@ -28,11 +28,11 @@ const ManagementPage = () => {
 
                 <p>
                   As recommended by clinical guidelines, the management of hereditary angioedema (HAE) should be
-                  <strong className="accent"> individualized</strong> with{' '}
-                  <strong className="accent"> treatment tailored</strong> to each patient’s medical needs, life
-                  circumstances, and preferences as well as tolerance of and response to specific medications.
-                  <sup>1,2</sup> Management plans must be <strong className="accent"> adjusted over time</strong> to
-                  address changes in HAE symptoms or other concomitant factors.
+                  <Accent> individualized</Accent> with <Accent> treatment tailored</Accent> to each patient’s medical
+                  needs, life circumstances, and preferences as well as tolerance of and response to specific
+                  medications.
+                  <sup>1,2</sup> Management plans must be <Accent> adjusted over time</Accent> to address changes in HAE
+                  symptoms or other concomitant factors.
                   <sup>1</sup>
                 </p>
               </>
@@ -68,9 +68,8 @@ const ManagementPage = () => {
                   <strong>Short-term prophylaxis</strong>
                 </h5>
                 <p>
-                  Guidelines recommend short-term prophylaxis prior to{' '}
-                  <strong className="accent"> medical procedures</strong> or other{' '}
-                  <strong className="accent">events at high risk of triggering HAE attacks</strong>.<sup>1–3</sup>
+                  Guidelines recommend short-term prophylaxis prior to <Accent> medical procedures</Accent> or other{' '}
+                  <Accent>events at high risk of triggering HAE attacks</Accent>.<sup>1–3</sup>
                 </p>
               </>
             ),
@@ -107,19 +106,16 @@ const ManagementPage = () => {
                 </h5>
                 <p>
                   Guidelines recommend that patients should have access to effective on-demand therapy.{' '}
-                  <span className="accent">Every patient</span> diagnosed with HAE must have{' '}
-                  <span className="accent">constant reliable access to effective acute treatment</span> without
-                  exception due to the <span className="accent">unpredictable and life-threatening nature</span> of HAE
-                  attacks.<sup>1–3</sup>
+                  <Accent>Every patient</Accent> diagnosed with HAE must have{' '}
+                  <Accent> constant reliable access to effective on-demand therapy</Accent> without exception due to the{' '}
+                  <Accent>unpredictable and life-threatening nature</Accent> of HAE attacks.<sup>1–3</sup>
                 </p>
                 <p>
-                  On-demand treatment of attacks is most effective when{' '}
-                  <span className="accent">administered early</span> after attack onset.<sup>1</sup> Early treatment may
-                  result in{' '}
-                  <span className="accent">rapid symptom resolution, reducing the morbidity and mortality</span>{' '}
-                  associated with HAE attacks.<sup>1,3</sup> The key to reducing HAE morbidity is to arrest the
-                  progression of swelling to <span className="accent">prevent disruption to a patient’s life</span>.
-                  <sup>1</sup>
+                  On-demand treatment of attacks is most effective when <Accent>administered early</Accent> after attack{' '}
+                  onset.<sup>1</sup> Early treatment may result in{' '}
+                  <Accent>rapid symptom resolution, reducing the morbidity and mortality</Accent> associated with HAE{' '}
+                  attacks.<sup>1,3</sup> The key to reducing HAE morbidity is to arrest the progression of swelling to{' '}
+                  <Accent>prevent disruption to a patient’s life</Accent>.<sup>1</sup>
                 </p>
               </>
             ),

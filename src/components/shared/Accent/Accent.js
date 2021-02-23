@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.span`
+const Wrapper = styled.strong`
   color: ${props => props.theme.redAccent};
   font-weight: 700;
 `;
