@@ -135,7 +135,7 @@ const CarouselPaging = styled.div`
     margin: 3rem 0 0;
   }
 
-  ${mediaBreakpointUp(400)} {
+  ${mediaBreakpointUp(500)} {
     margin: 8rem 0 0;
   }
 
@@ -143,8 +143,24 @@ const CarouselPaging = styled.div`
     margin: 5rem 0 0;
   }
 
+  ${mediaBreakpointUp(700)} {
+    margin: 8rem 0 0;
+  }
+
+  ${mediaBreakpointUp('md')} {
+    margin: 6rem 0 0;
+  }
+
+  ${mediaBreakpointUp(800)} {
+    margin: 7rem 0 0;
+  }
+
+  ${mediaBreakpointUp(900)} {
+    margin: 9rem 0 0;
+  }
+
   ${mediaBreakpointUp('lg')} {
-    margin: 3rem 0 0;
+    margin: 8.9rem 0 0;
   }
 
   button {
