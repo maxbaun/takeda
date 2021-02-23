@@ -1,3 +1,5 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import 'slick-carousel/slick/slick.css';
 import './styles/index.scss';
