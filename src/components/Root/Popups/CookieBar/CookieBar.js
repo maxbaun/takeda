@@ -52,12 +52,7 @@ const CookieBar = ({children, onAccept: handleAccept, ...props}) => {
               This site uses cookies to provide you with a more responsive and personalized service and to analyze site
               traffic. By using this site, you accept our use of cookies as described in our privacy notice. Please read
               our{' '}
-              <ExternalLink
-                className="privacy"
-                href="http://www.takeda.com/privacy-notice/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <ExternalLink className="privacy" href="http://www.takeda.com/privacy-notice/">
                 privacy notice
               </ExternalLink>{' '}
               for more information on the cookies we use, the processing of your personal data, and how to delete or
@@ -66,12 +61,7 @@ const CookieBar = ({children, onAccept: handleAccept, ...props}) => {
           </Copy>
           <Buttons>
             <ButtonPrimary onClick={handleAccept}>Accept</ButtonPrimary>
-            <ButtonEmpty
-              external
-              href="http://www.takeda.com/privacy-notice/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
+            <ButtonEmpty external href="http://www.takeda.com/privacy-notice/">
               Learn more
             </ButtonEmpty>
           </Buttons>

@@ -16,7 +16,7 @@ const ExternalLink = ({children, href, onClick: handleClick, ...props}) => {
           handleClick();
         }
 
-        openPopup('leaving', {href});
+        openPopup('leaving', {href, ...props});
       }}
     >
       {children}

@@ -68,7 +68,7 @@ const SimulationPage = props => {
         </SimulatorWrap>
       </Container>
       {showReferences ? (
-        <References hasBorder={false}>
+        <References showBorder={false}>
           1. Lumry WR. <em>Am J Manag Care</em> 2013:19;S103-S110; 2. Banerji A. <em>Ann Allergy Asthma Immunol</em>{' '}
           2013;111:329–336; 3. Longhurst HJ & Bork K. <em>Br J Hosp Med</em> (Lond) 2019;80:391–398; 4. Bork K, et al.{' '}
           <em>J Allergy Clin Immunol</em>

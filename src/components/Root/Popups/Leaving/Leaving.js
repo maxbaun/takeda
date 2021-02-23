@@ -19,6 +19,7 @@ const PopupGrid = styled(Popup.Grid)`
 `;
 
 const Leaving = ({confirmProps, onCancel: handleClose}) => {
+  console.log(confirmProps);
   return (
     <PopupGrid>
       <Popup.Title>

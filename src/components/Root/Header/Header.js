@@ -167,7 +167,13 @@ const Header = ({...props}) => {
           </ul>
           <ul>
             <li>
-              <ExternalLink className="btn" href="https://google.com" onClick={handleLinkClick}>
+              <ExternalLink
+                className="btn"
+                href="https://google.com"
+                onClick={handleLinkClick}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <span>Back to HAE CONNECT</span>
                 <Icon icon="external-link-alt" />
               </ExternalLink>

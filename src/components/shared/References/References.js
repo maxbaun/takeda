@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Inner = styled.div`
-  border-top: ${props => (props.hasBorder ? '1px dashed #c5cbcf' : 'none')};
+  border-top: ${props => (props.showBorder ? '1px dashed #c5cbcf' : 'none')};
   padding: 7rem 0;
 `;
 
@@ -17,11 +17,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const References = ({children, hasBorder, ...props}) => {
+const References = ({children, showBorder, ...props}) => {
   return (
     <Wrapper {...props}>
-      <div className="container" hasBorder={hasBorder}>
-        <Inner>
+      <div className="container">
+        <Inner showBorder={showBorder}>
           <p>
             <strong>References: </strong>
             {children}
@@ -34,11 +34,11 @@ const References = ({children, hasBorder, ...props}) => {
 
 References.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
-  hasBorder: PropTypes.bool
+  showBorder: PropTypes.bool
 };
 
 References.defaultProps = {
-  hasBorder: true
+  showBorder: true
 };
 
 export default References;
