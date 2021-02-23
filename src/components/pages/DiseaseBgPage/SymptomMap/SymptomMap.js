@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
-import HotSpot from '../../../shared/HotSpot';
 import BodyMap from './BodyMap';
 import data from './data';
 import _Description from './Description';
@@ -71,14 +70,8 @@ const DescriptionTitleWrap = styled.div`
 
 const DescriptionWrap = styled.div`
   left: 0;
-  position: absolute;
   width: 100%;
-  top: 23rem;
   z-index: 2;
-
-  ${mediaBreakpointUp('sm')} {
-    top: 41rem;
-  }
 
   ${mediaBreakpointUp('lg')} {
     background-color: transparent;
@@ -168,10 +161,24 @@ const Wrapper = styled.div`
 `;
 
 const SymptomMap = ({children, ...props}) => {
+  const elDescription = useRef();
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const handleToggle = index => {
-    return activeIndex === index ? setActiveIndex(-1) : setActiveIndex(index);
+    if (activeIndex === index) {
+      return setActiveIndex(-1);
+    }
+
+    setActiveIndex(index);
+
+    // On mobile, scroll the description element
+    if (window.innerWidth < 992) {
+      elDescription.current.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    // return activeIndex === index ? setActiveIndex(-1) : setActiveIndex(index);
   };
 
   const examples = data.map((item, index) => (
@@ -194,7 +201,7 @@ const SymptomMap = ({children, ...props}) => {
             <ExamplesDesktop>{examples}</ExamplesDesktop>
           </Content>
           <BodyMap activeIndex={activeIndex} data={data} onToggle={handleToggle} />
-          <DescriptionWrap>
+          <DescriptionWrap ref={elDescription}>
             {data.map((item, index) => (
               <Description
                 color={item.color}
@@ -207,13 +214,6 @@ const SymptomMap = ({children, ...props}) => {
                 <ExamplesMobile>{examples}</ExamplesMobile>
                 <DescriptionTitleWrap>
                   <_Description.Title color={item.color}>{item.title}</_Description.Title>
-                  <HotSpot
-                    isActive
-                    color="red"
-                    onClick={() => setActiveIndex(-1)}
-                    pulsing={false}
-                    style={{position: 'relative'}}
-                  />
                 </DescriptionTitleWrap>
                 {item.description || null}
               </Description>
