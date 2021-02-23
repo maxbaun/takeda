@@ -105,7 +105,6 @@ const ManagementPage = () => {
                   <strong>On-demand therapy</strong>
                 </h5>
                 <p>
-                  Guidelines recommend that patients should have access to effective on-demand therapy.{' '}
                   <Accent>Every patient</Accent> diagnosed with HAE must have{' '}
                   <Accent> constant reliable access to effective on-demand therapy</Accent> without exception due to the{' '}
                   <Accent>unpredictable and life-threatening nature</Accent> of HAE attacks.<sup>1–3</sup>
