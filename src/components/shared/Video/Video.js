@@ -70,6 +70,7 @@ const Overlay = styled.div`
 
 const Disclaimer = styled.p`
   color: #fff;
+  font-size: 1.4rem;
 `;
 
 const PlayBtn = styled.button`
