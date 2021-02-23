@@ -14,10 +14,12 @@ const PopupContent = styled(Popup.Content)`
 `;
 const PopupFooter = styled(Popup.Footer)`
   grid-column: 1/1;
+  -ms-grid-row: 3;
 
   ${mediaBreakpointUp('lg')} {
     /* padding-left: calc(48% - 170px); */
     grid-column: 2/3;
+    -ms-grid-column: 3;
   }
 
   p {
@@ -38,6 +40,8 @@ const PopupGrid = styled(Popup.Grid)`
 
   ${mediaBreakpointUp('lg')} {
     grid-template-columns: auto 1fr;
+    -ms-grid-columns: 0.5fr 20px 1fr;
+    -ms-grid-rows: 1fr 20px 1fr;
     max-width: 510px;
   }
 
@@ -92,6 +96,8 @@ const Intro = ({onNo: handleNo, onYes: handleYes}) => {
           you can visit <ExternalLink href="http://www.takeda.com/">Takeda.com</ExternalLink> to learn more about HAE.
         </p> */}
       </PopupContent>
+      <div />
+
       <PopupFooter>
         <Questions>
           <p>

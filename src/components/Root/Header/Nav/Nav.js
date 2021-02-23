@@ -107,6 +107,7 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
           top: 0;
           transform: none;
           width: 100%;
+          z-index: initial;
         }
 
         > ul {
