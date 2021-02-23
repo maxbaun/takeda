@@ -147,7 +147,7 @@ const Note = styled.p`
     font-size: 1.4rem;
     order: 1;
     margin: 0;
-    max-width: 385px;
+    max-width: 405px;
     text-align: right;
   }
 `;

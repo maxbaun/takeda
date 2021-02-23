@@ -176,8 +176,8 @@ const Wrapper = styled.div`
         }
 
         ${mediaBreakpointUp('lg')} {
-          height: 11px;
-          width: 11px;
+          height: 16px;
+          width: 16px;
         }
 
         &:hover {
