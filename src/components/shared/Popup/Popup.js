@@ -39,10 +39,20 @@ const Grid = styled.div`
     grid-column-gap: 40px;
     grid-row-gap: 50px;
     grid-template-columns: repeat(2, minmax(0, 50%));
+    -ms-grid-columns: minmax(0, 50%) 40px minmax(0, 50%);
     margin: 0 auto;
     max-width: 580px;
     min-height: 366px;
     padding: 12rem 0 9rem;
+  }
+
+  > * {
+    &:nth-child(even) {
+      -ms-grid-column: 3;
+    }
+    &:nth-child(odd) {
+      -ms-grid-column: 1;
+    }
   }
 `;
 
@@ -134,7 +144,8 @@ const Popup = ({children, footer, isOpen, onClose: handleClose, title, ...props}
           border: 'none',
           borderRadius: 0,
           margin: '0 auto',
-          maxWidth: 1100,
+          maxWidth: 'calc(100% - 80px)',
+          width: 1100,
           overflow: 'visible',
           padding: 0,
           inset: '60px 25px'

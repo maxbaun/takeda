@@ -11,12 +11,21 @@ const Example = styled.div`
   display: grid;
   grid-gap: 2.2rem;
   grid-template-columns: repeat(2, minmax(0, 50%));
+  -ms-grid-columns: minmax(0px, 50%) 22px minmax(0px, 50%);
 `;
 
 const ExampleBlock = styled.div`
   height: 402px;
   margin-bottom: 10px;
   position: relative;
+
+  &:first-child {
+    -ms-grid-column: 1;
+  }
+
+  &:last-child {
+    -ms-grid-column: 3;
+  }
 
   img {
     height: 100%;

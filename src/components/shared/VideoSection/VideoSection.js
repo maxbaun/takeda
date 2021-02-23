@@ -32,31 +32,54 @@ const Content = styled.div`
   }
 `;
 
-const Grid = styled.div`
-  display: grid;
-
-  ${mediaBreakpointUp('lg')} {
-    align-items: center;
-    grid-column-gap: 50px;
-    grid-template-columns: ${props => (props.size === 'normal' ? '50% auto' : '60% auto')};
-  }
-
-  ${mediaBreakpointUp('xl')} {
-    grid-column-gap: 100px;
-  }
-`;
-
-const GridMediaRight = styled(Grid)`
-  ${mediaBreakpointUp('lg')} {
-    grid-template-columns: ${props => (props.size === 'normal' ? 'auto 50%' : 'auto 60%')};
-  }
-`;
+const ContentWrap = styled.div``;
 
 const VideoWrap = styled.div`
   order: 0;
 
   ${mediaBreakpointUp('lg')} {
     order: initial;
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  -ms-grid-columns: ${props => (props.size === 'normal' ? '50% 50px 1fr' : '60% 50px 1fr')};
+
+  ${mediaBreakpointUp('lg')} {
+    align-items: center;
+    grid-column-gap: 50px;
+    grid-template-columns: ${props => (props.size === 'normal' ? '50% auto' : '60% auto')};
+    -ms-grid-columns: ${props => (props.size === 'normal' ? '50% 50px 1fr' : '60% 50px 1fr')};
+  }
+
+  ${mediaBreakpointUp('xl')} {
+    grid-column-gap: 100px;
+  }
+
+  ${ContentWrap} {
+    -ms-grid-column: 3;
+  }
+
+  ${VideoWrap} {
+    -ms-grid-column: 1;
+  }
+`;
+
+const GridMediaRight = styled(Grid)`
+  -ms-grid-columns: ${props => (props.size === 'normal' ? '1fr 50px 50%' : '1fr 50px 60%')};
+
+  ${mediaBreakpointUp('lg')} {
+    grid-template-columns: ${props => (props.size === 'normal' ? 'auto 50%' : 'auto 60%')};
+    -ms-grid-columns: ${props => (props.size === 'normal' ? '1fr 50px 50%' : '1fr 50px 60%')};
+  }
+
+  ${ContentWrap} {
+    -ms-grid-column: 1;
+  }
+
+  ${VideoWrap} {
+    -ms-grid-column: 3;
   }
 `;
 
@@ -71,11 +94,11 @@ const VideoSection = ({children, media, mediaLeft, size, ...props}) => {
         {mediaLeft ? (
           <>
             <VideoWrap>{media}</VideoWrap>
-            {children}
+            <ContentWrap>{children}</ContentWrap>
           </>
         ) : (
           <>
-            {children}
+            <ContentWrap>{children}</ContentWrap>
             <VideoWrap>{media}</VideoWrap>
           </>
         )}

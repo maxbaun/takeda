@@ -16,7 +16,6 @@ const BREAKPOINT = 1050;
 const BrandWrap = styled.div`
   align-items: center;
   display: flex;
-  width: calc(100% - 50px);
 
   a {
     width: 129px;

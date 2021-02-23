@@ -32,9 +32,11 @@ const Wrapper = styled.button`
   font-size: 2rem;
   height: 50px;
   justify-content: center;
+  overflow: visible;
   position: absolute;
   width: 50px;
   z-index: 2;
+  -ms-flex-pack: center;
 
   &::before {
     background-color: ${props => getBackgroundColor(props)};
@@ -42,7 +44,9 @@ const Wrapper = styled.button`
     border-radius: 50%;
     content: ' ';
     height: 100%;
+    left: 0;
     position: absolute;
+    top: 0;
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
     width: 100%;
     z-index: 0;
@@ -66,7 +70,7 @@ const Wrapper = styled.button`
   }
 
   i {
-    position: absolute;
+    /* position: absolute; */
     z-index: 1;
   }
 

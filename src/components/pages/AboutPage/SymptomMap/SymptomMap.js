@@ -3,15 +3,20 @@ import React, {useRef, useState} from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
-import BodyMap from './BodyMap';
+import _BodyMap from './BodyMap';
 import data from './data';
 import _Description from './Description';
 import imgDotPattern from './dot-pattern-symptom-map.png';
 import Examples from './Examples';
 
+const BodyMap = styled(_BodyMap)`
+  -ms-grid-column: 2;
+`;
+
 const Content = styled.div`
   margin: 0 0 6rem;
   text-align: right;
+  -ms-grid-column: 1;
 
   ${mediaBreakpointUp('sm')} {
     margin: 0 0 12.7rem;
@@ -72,6 +77,7 @@ const DescriptionWrap = styled.div`
   left: 0;
   width: 100%;
   z-index: 2;
+  -ms-grid-column: 3;
 
   ${mediaBreakpointUp('lg')} {
     background-color: transparent;
@@ -135,11 +141,13 @@ const Inner = styled.div`
   ${mediaBreakpointUp('lg')} {
     grid-column-gap: 50px;
     grid-template-columns: 260px auto 30%;
+    -ms-grid-columns: 260px 1fr 30%;
   }
 
   ${mediaBreakpointUp('xl')} {
     grid-column-gap: 80px;
     grid-template-columns: 1fr auto 1fr;
+    -ms-grid-columns: 1fr 2fr 1fr;
     min-height: 725px;
   }
 `;

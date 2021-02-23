@@ -9,6 +9,7 @@ import ExternalLink from '../../../shared/ExternalLink';
 const Buttons = styled.div`
   align-items: center;
   display: flex;
+  -ms-grid-column: 2;
 
   button {
     margin: 0 1.5rem;
@@ -20,6 +21,8 @@ const Buttons = styled.div`
 `;
 
 const Copy = styled.div`
+  -ms-grid-column: 1;
+
   p {
     margin: 0;
   }

@@ -10,6 +10,7 @@ const Content = styled.div`
   order: 0;
   transform: ${props => (props.inView ? 'translate3d(0, 0, 0)' : 'translate3d(20px, 0, 0)')};
   transition: all 0.8s ease-in-out;
+  -ms-grid-column: 3;
 
   ${mediaBreakpointUp('lg')} {
     margin: 0;
@@ -82,17 +83,43 @@ const IconList = styled.div`
   grid-column-gap: 3rem;
   grid-row-gap: 2rem;
   grid-template-columns: repeat(2, minmax(0, 50%));
+  -ms-grid-columns: minmax(0, 50%) 30px minmax(0, 50%);
+  -ms-grid-rows: 1fr 20px 1fr 20px 1fr;
   order: 1;
+  -ms-grid-column: 1;
 
   ${mediaBreakpointUp('sm')} {
     grid-column-gap: 8rem;
     grid-row-gap: 5.1rem;
+    -ms-grid-rows: 1fr 50px 1fr 50px 1fr;
   }
 
   ${mediaBreakpointUp('lg')} {
     grid-column-gap: 5rem;
     grid-row-gap: 3rem;
     order: 0;
+    -ms-grid-rows: 1fr 30px 1fr 30px 1fr;
+  }
+
+  > * {
+    &:nth-child(even) {
+      -ms-grid-column: 3;
+    }
+    &:nth-child(odd) {
+      -ms-grid-column: 1;
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      -ms-grid-row: 1;
+    }
+    &:nth-child(3),
+    &:nth-child(4) {
+      -ms-grid-row: 3;
+    }
+    &:nth-child(5),
+    &:nth-child(6) {
+      -ms-grid-row: 5;
+    }
   }
 `;
 
@@ -108,11 +135,13 @@ const Inner = styled.div`
     align-items: center;
     grid-column-gap: 100px;
     grid-template-columns: auto 50%;
+    -ms-grid-columns: 1fr 100px 50%;
   }
 
   ${mediaBreakpointUp('xl')} {
     grid-column-gap: 200px;
     grid-template-columns: auto 50%;
+    -ms-grid-columns: 1fr 200px 50%;
   }
 `;
 

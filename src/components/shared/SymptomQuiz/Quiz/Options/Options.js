@@ -37,9 +37,43 @@ const Wrapper = styled.div`
       grid-column-gap: 4rem;
       grid-row-gap: 3rem;
       grid-template-columns: repeat(2, minmax(0, 280px));
+      -ms-grid-rows: 1fr 30px 1fr 30px 1fr 30px 1fr;
+      -ms-grid-columns: minmax(0, 280px) 40px minmax(0, 280px);
     }
 
     li {
+      &:nth-child(odd) {
+        -ms-grid-column: 1;
+      }
+      &:nth-child(even) {
+        -ms-grid-column: 3;
+      }
+
+      &:nth-child(1) {
+        -ms-grid-row: 1;
+      }
+      &:nth-child(2) {
+        -ms-grid-row: 1;
+      }
+      &:nth-child(3) {
+        -ms-grid-row: 3;
+      }
+      &:nth-child(4) {
+        -ms-grid-row: 3;
+      }
+      &:nth-child(5) {
+        -ms-grid-row: 5;
+      }
+      &:nth-child(6) {
+        -ms-grid-row: 5;
+      }
+      &:nth-child(7) {
+        -ms-grid-row: 7;
+      }
+      &:nth-child(8) {
+        -ms-grid-row: 7;
+      }
+
       button {
         justify-content: center;
         padding-left: 1.3rem;

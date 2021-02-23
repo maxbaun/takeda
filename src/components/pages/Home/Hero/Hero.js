@@ -25,6 +25,7 @@ const Action = styled.div`
   justify-content: center;
   position: relative;
   min-height: 400px;
+  -ms-grid-column: 2;
 
   ${mediaBreakpointUp('sm')} {
     min-height: 477px;
@@ -46,6 +47,7 @@ const Action = styled.div`
 const Content = styled.div`
   padding: 60px 1.5rem 80px;
   text-align: right;
+  -ms-grid-column: 1;
 
   ${mediaBreakpointUp('sm')} {
     margin-left: auto;
@@ -312,6 +314,7 @@ const Wrapper = styled.div`
   ${mediaBreakpointUp('xl')} {
     grid-gap: 130px;
     grid-template-columns: auto 40%;
+    -ms-grid-columns: 1fr 40%;
   }
 `;
 

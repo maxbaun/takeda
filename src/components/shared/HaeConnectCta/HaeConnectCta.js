@@ -9,6 +9,7 @@ import imgDotPatternMobile from './dot-pattern-hae-connect-cta-mobile.png';
 const CtaWrap = styled.div`
   align-items: center;
   display: flex;
+  -ms-grid-column: 3;
 
   ${mediaBreakpointUp('lg')} {
     justify-content: flex-end;
@@ -26,6 +27,7 @@ const Inner = styled.div`
   ${mediaBreakpointUp('lg')} {
     grid-gap: 3rem;
     grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 30px 1fr;
   }
 `;
 
@@ -53,6 +55,7 @@ const Wrapper = styled.div`
     font-weight: 400;
     line-height: 1.42;
     margin: 0;
+    -ms-grid-column: 1;
 
     ${mediaBreakpointUp('sm')} {
       font-size: 3.8rem;

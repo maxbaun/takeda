@@ -89,9 +89,13 @@ const Close = styled(DialogClose)`
   }
 `;
 
-const ColAnswer = styled.div``;
+const ColAnswer = styled.div`
+  -ms-grid-column: 3;
+`;
 
 const ColQuestion = styled.div`
+  -ms-grid-column: 1;
+
   p {
     color: ${props => props.theme.blackPearl};
     letter-spacing: 0.05em;
@@ -161,6 +165,7 @@ const Inner = styled.div`
     height: 100%;
     grid-column-gap: 60px;
     grid-template-columns: 35% auto;
+    -ms-grid-columns: 35% 60px 1fr;
     max-width: none;
   }
 

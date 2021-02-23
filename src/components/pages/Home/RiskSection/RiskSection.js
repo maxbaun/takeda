@@ -18,6 +18,7 @@ const rotate = keyframes`
 
 const Content = styled.div`
   margin: 0 0 10.8rem;
+  -ms-grid-column: 2;
 
   ${mediaBreakpointUp('md')} {
     margin: 0 0 20.8rem;
@@ -162,6 +163,7 @@ const Image = styled.div`
   margin: 0 auto 8.1rem;
   position: relative;
   text-align: center;
+  -ms-grid-column: 1;
 
   ${mediaBreakpointUp('sm')} {
     margin: 0 auto 13.1rem;
@@ -236,11 +238,13 @@ const Grid = styled.div`
     display: grid;
     grid-gap: 3rem;
     grid-template-columns: auto 50%;
+    -ms-grid-columns: 1fr 50%;
   }
 
   ${mediaBreakpointUp('xl')} {
     grid-gap: 3rem;
     grid-template-columns: auto 40%;
+    -ms-grid-columns: 1fr 40%;
   }
 `;
 

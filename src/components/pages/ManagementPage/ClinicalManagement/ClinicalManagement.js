@@ -12,6 +12,8 @@ const Content = styled.div`
   border: 0px dashed #c5cbcf;
   border-top-width: 1px;
   padding-top: 6.2rem;
+  -ms-grid-column: 3;
+  -ms-grid-row: 3;
 
   ${mediaBreakpointUp('sm')} {
     padding-top: 9.2rem;
@@ -99,6 +101,8 @@ const Inner = styled.div`
     grid-column-gap: 6.5rem;
     grid-template-columns: 420px auto;
     grid-template-rows: auto auto;
+    -ms-grid-rows: 0.3fr 73px 2fr;
+    -ms-grid-columns: 420px 65px 1fr;
   }
 
   ${mediaBreakpointUp('xl')} {
@@ -165,6 +169,8 @@ const Menu__Button = styled.button`
 const Menu = styled.div`
   margin: 0 0 4rem;
   text-align: right;
+  -ms-grid-column: 1;
+  -ms-grid-row: 3;
 
   ${mediaBreakpointUp('sm')} {
     margin: 0 0 5rem;
@@ -199,6 +205,7 @@ const Menu = styled.div`
 
 const PageTitle = styled.div`
   text-align: right;
+  -ms-grid-column: 1;
 
   /* ${mediaBreakpointUp('lg')} {
     padding-right: 6.5rem;
@@ -250,7 +257,7 @@ const ClinicalManagement = ({data, pageTitle, title, ...props}) => {
       <div className="container">
         <Inner>
           <PageTitle>{pageTitle}</PageTitle>
-          <div />
+          <div style={{msGridColumn: 2}} />
           <Menu>
             {title}
             <ul>

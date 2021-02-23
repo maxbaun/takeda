@@ -93,18 +93,20 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
         width: 100%;
         transform: ${isOpen ? 'translate3d(0, 0, 0)' : 'translate3d(100%, 0, 0)'};
         transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        z-index: 3;
+        z-index: 1000;
 
         ${mediaBreakpointUp(breakpoint)} {
+          background-color: transparent;
           display: flex;
           flex-flow: row nowrap;
           height: auto;
+          justify-content: flex-end;
           opacity: 1;
           padding-top: 0;
           position: static;
           top: 0;
           transform: none;
-          width: auto;
+          width: 100%;
         }
 
         > ul {
@@ -120,6 +122,7 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
 
             ${mediaBreakpointUp(breakpoint)} {
               flex: initial;
+              justify-content: flex-end;
             }
           }
 
@@ -127,6 +130,7 @@ const Nav = ({breakpoint, children, isOpen, ...props}) => {
             margin: 0 0 5rem;
 
             ${mediaBreakpointUp(breakpoint)} {
+              justify-content: flex-end;
               margin: 0;
             }
           }

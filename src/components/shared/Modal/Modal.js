@@ -29,7 +29,8 @@ const Modal = ({children, isOpen, onClose: handleClose, ...props}) => {
           border: 'none',
           borderRadius: 0,
           margin: '0 auto',
-          maxWidth: 1000,
+          maxWidth: 'calc(100% - 80px)',
+          width: 1000,
           padding: 0,
           inset: '60px 25px'
         },
