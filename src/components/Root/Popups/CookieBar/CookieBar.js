@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import {ButtonEmpty, ButtonPrimary} from '../../../shared/Button';
+import ExternalLink from '../../../shared/ExternalLink';
 
 const Buttons = styled.div`
   align-items: center;
@@ -51,13 +51,29 @@ const CookieBar = ({children, onAccept: handleAccept, ...props}) => {
             <p>
               This site uses cookies to provide you with a more responsive and personalized service and to analyze site
               traffic. By using this site, you accept our use of cookies as described in our privacy notice. Please read
-              our <Link to="/privacy">privacy notice</Link> for more information on the cookies we use, the processing
-              of your personal data, and how to delete or block the use of cookies.
+              our{' '}
+              <ExternalLink
+                className="privacy"
+                href="http://www.takeda.com/privacy-notice/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                privacy notice
+              </ExternalLink>{' '}
+              for more information on the cookies we use, the processing of your personal data, and how to delete or
+              block the use of cookies.
             </p>
           </Copy>
           <Buttons>
             <ButtonPrimary onClick={handleAccept}>Accept</ButtonPrimary>
-            <ButtonEmpty>Learn more</ButtonEmpty>
+            <ButtonEmpty
+              external
+              href="http://www.takeda.com/privacy-notice/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Learn more
+            </ButtonEmpty>
           </Buttons>
         </Inner>
       </div>
