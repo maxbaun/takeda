@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React, {useEffect, useState} from 'react';
-import {Route, Switch} from 'react-router-dom';
 
 import Context from '../../context';
-import routes from '../../routes';
 import Footer from './Footer';
 import Header from './Header';
 import Popups from './Popups';
@@ -72,12 +70,8 @@ const Root = ({children}) => {
       <div>
         <Header />
         {children}
-        <Switch>
-          <Route path={routes.Simulator} render={() => null} />
-          <Route path="*">
-            <Footer />
-          </Route>
-        </Switch>
+        <Footer />
+
         <Popups />
       </div>
     </Context.Provider>

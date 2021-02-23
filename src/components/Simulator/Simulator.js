@@ -1,4 +1,5 @@
 import * as faceapi from 'face-api.js';
+import PropTypes from 'prop-types';
 import React, {useContext, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 
@@ -8,7 +9,7 @@ import Loader from '../shared/Loader';
 import ActionBar from './ActionBar';
 import Camera from './Camera';
 import FaceEffect from './FaceEffect';
-import _LearnMore from './LearnMore';
+import LearnMore from './LearnMore';
 import Tutorial from './Tutorial';
 
 const Inner = styled.div`
@@ -28,7 +29,7 @@ const Inner = styled.div`
   }
 `;
 
-const LearnMoreDesktop = styled(_LearnMore)`
+const LearnMoreDesktop = styled.div`
   display: none;
 
   ${mediaBreakpointUp('lg')} {
@@ -36,7 +37,7 @@ const LearnMoreDesktop = styled(_LearnMore)`
   }
 `;
 
-const LearnMoreMobile = styled(_LearnMore)`
+const LearnMoreMobile = styled.div`
   margin: 4.5rem 0 0;
 
   ${mediaBreakpointUp('lg')} {
@@ -85,7 +86,7 @@ const getPaddingBottomPercentage = viewRatio => {
   return `${(width / height) * 100}%`;
 };
 
-const Simulator = props => {
+const Simulator = ({onShowReferences: handleShowReferences, ...props}) => {
   const camera = useRef(null);
   // const [imgSrc, setImgSrc] = useState(null);
   const [loaded, setLoaded] = useState(false);
@@ -99,6 +100,7 @@ const Simulator = props => {
   const [videoSize, setVideoSize] = useState(null);
   const [downloadUrl, setDownloadUrl] = useState(null);
   const {openPopup} = useContext(Context);
+  const [activeInfoIndex, setActiveInfoIndex] = useState(-1);
 
   const _mount = async () => {
     await faceapi.nets.ssdMobilenetv1.loadFromUri('/weights');
@@ -156,9 +158,19 @@ const Simulator = props => {
     }
   }, [stream]);
 
+  useEffect(() => {
+    if (mode === 'result' && activeInfoIndex > -1) {
+      handleShowReferences(true);
+    } else {
+      handleShowReferences(false);
+    }
+  }, [mode, activeInfoIndex]);
+
   if (!loaded) {
     return null;
   }
+
+  const elLearnMore = <LearnMore activeIndex={activeInfoIndex} onActiveIndexChange={setActiveInfoIndex} />;
 
   return (
     <Wrapper {...props}>
@@ -194,7 +206,7 @@ const Simulator = props => {
           </ViewInner>
         </View>
       </Inner>
-      {mode === 'result' ? <LearnMoreDesktop /> : null}
+      {mode === 'result' ? <LearnMoreDesktop>{elLearnMore}</LearnMoreDesktop> : null}
       <ActionBar
         canDownload={Boolean(downloadUrl)}
         isDisabled={!tutorialComplete}
@@ -203,10 +215,14 @@ const Simulator = props => {
         onRedoClick={handleRedo}
         onTakeClick={handleTake}
       >
-        {mode === 'result' ? <LearnMoreMobile /> : null}
+        {mode === 'result' ? <LearnMoreMobile>{elLearnMore}</LearnMoreMobile> : null}
       </ActionBar>
     </Wrapper>
   );
+};
+
+Simulator.propTypes = {
+  onShowReferences: PropTypes.func
 };
 
 export default Simulator;

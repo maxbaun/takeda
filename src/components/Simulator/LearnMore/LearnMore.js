@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
@@ -54,9 +55,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const LearnMore = ({...props}) => {
-  const [activeIndex, setActiveIndex] = useState(-1);
-
+const LearnMore = ({activeIndex, onActiveIndexChange: handleActiveIndexChange, ...props}) => {
   return (
     <Wrapper {...props}>
       <Title>Click on “+” to learn more</Title>
@@ -68,7 +67,7 @@ const LearnMore = ({...props}) => {
             <Dropdown
               isOpen={isOpen}
               key={index}
-              onClick={() => (isOpen ? setActiveIndex(-1) : setActiveIndex(index))}
+              onClick={() => (isOpen ? handleActiveIndexChange(-1) : handleActiveIndexChange(index))}
               title={item.title}
             >
               {item.description}
@@ -78,6 +77,11 @@ const LearnMore = ({...props}) => {
       </Toggles>
     </Wrapper>
   );
+};
+
+LearnMore.propTypes = {
+  activeIndex: PropTypes.number,
+  onActiveIndexChange: PropTypes.func
 };
 
 export default LearnMore;
