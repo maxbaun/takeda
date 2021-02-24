@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts start",
-    "build": "AUTOPREFIXER_GRID=autoplace react-scripts build",
+    "build": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

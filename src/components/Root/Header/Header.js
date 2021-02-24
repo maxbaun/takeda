@@ -21,7 +21,6 @@ const BrandWrap = styled.div`
     align-items: center;
     display: flex;
     text-decoration: none;
-    width: 129px;
 
     ${mediaBreakpointUp('sm')} {
       width: auto;
@@ -39,7 +38,7 @@ const BrandWrap = styled.div`
   svg {
     /* height: 54px; */
     max-width: 159px;
-    width: 100%;
+    width: 80px;
 
     ${mediaBreakpointUp('sm')} {
       height: auto;
