@@ -22,7 +22,7 @@ const Wrapper = styled.button.attrs({
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: normal;
-  padding: 0.5em 1.6em;
+  padding: 0.786em 1.6em;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
