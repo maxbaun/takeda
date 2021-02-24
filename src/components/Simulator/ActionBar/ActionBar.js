@@ -220,6 +220,7 @@ const RetakeNote = styled.button`
   border-top-right-radius: 25px;
   display: inline-flex;
   font-size: 1.6rem;
+  font-weight: 400;
   height: 41px;
   justify-content: center;
   left: 0;
