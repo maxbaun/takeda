@@ -178,6 +178,8 @@ const Simulator = ({onShowReferences: handleShowReferences, ...props}) => {
 
   const elLearnMore = <LearnMore activeIndex={activeInfoIndex} onActiveIndexChange={setActiveInfoIndex} />;
 
+  console.log(`paddingBottom: ${getPaddingBottomPercentage(viewRatio)}`);
+
   return (
     <Wrapper {...props}>
       <Tutorial
