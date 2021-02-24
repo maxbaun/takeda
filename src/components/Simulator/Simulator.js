@@ -153,6 +153,9 @@ const Simulator = ({onShowReferences: handleShowReferences, ...props}) => {
     if (camera && camera.current && camera.current.video) {
       const {videoHeight: height, videoWidth: width} = camera.current.video;
 
+      console.log(`width: ${width}`);
+      console.log(`height: ${height}`);
+
       setVideoSize({height, width});
       setViewRatio(`${width}:${height}`);
     }
