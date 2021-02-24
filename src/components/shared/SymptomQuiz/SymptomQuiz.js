@@ -172,9 +172,14 @@ const Wrapper = styled.div`
 
 const SymptomQuiz = ({children, ...props}) => {
   const [quizOpen, setQuizOpen] = useState(false);
+  const [minHeight, setMinHeight] = useState(false);
+
+  const handleQuizUpdate = ({height}) => {
+    setMinHeight(quizOpen ? height : 0);
+  };
 
   return (
-    <Wrapper {...props}>
+    <Wrapper {...props} style={{minHeight}}>
       <Background src={Dots} />
       <div className="container">
         <Content>
@@ -185,7 +190,7 @@ const SymptomQuiz = ({children, ...props}) => {
           <StartQuizBtn onClick={() => setQuizOpen(true)}>Start Quiz</StartQuizBtn>
         </Content>
       </div>
-      <Quiz isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
+      <Quiz isOpen={quizOpen} onClose={() => setQuizOpen(false)} onUpdate={handleQuizUpdate} />
     </Wrapper>
   );
 };

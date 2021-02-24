@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled, {keyframes} from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
@@ -209,10 +209,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const Quiz = ({isOpen, onClose: handleClose, ...props}) => {
+const Quiz = ({isOpen, onClose: handleClose, onUpdate: handleUpdate, ...props}) => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [view, setView] = useState('options');
+  const el = useRef();
 
   const question = data[questionIndex];
 
@@ -272,9 +273,17 @@ const Quiz = ({isOpen, onClose: handleClose, ...props}) => {
     return setView('incorrect');
   };
 
+  useEffect(() => {
+    if (typeof handleUpdate === 'function') {
+      handleUpdate({
+        height: el.current.offsetHeight
+      });
+    }
+  }, [isOpen, view, questionIndex]);
+
   return (
     <Wrapper {...props} isOpen={isOpen}>
-      <Container>
+      <Container ref={el}>
         <Close onClick={_handleClose} />
         <Inner>
           <ColQuestion>
@@ -351,7 +360,8 @@ const Quiz = ({isOpen, onClose: handleClose, ...props}) => {
 
 Quiz.propTypes = {
   isOpen: PropTypes.bool,
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  onUpdate: PropTypes.func
 };
 
 export default Quiz;
