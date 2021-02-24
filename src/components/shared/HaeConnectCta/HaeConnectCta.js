@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import {HAE_CONNECT_URL} from '../../../constants';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import {ButtonPrimary} from '../Button';
 import imgDotPattern from './dot-pattern-hae-connect-cta.png';
@@ -75,7 +76,7 @@ const HaeConnectCta = props => {
         <Inner>
           <h4>Learn more about HAE from experts in the field via the HAE CONNECT platform!</h4>
           <CtaWrap>
-            <ButtonPrimary external href="https://google.com" rel="noreferrer noopener" target="__blank">
+            <ButtonPrimary external href={HAE_CONNECT_URL} rel="noreferrer noopener" target="__blank">
               Return to HAE CONNECT platform
             </ButtonPrimary>
           </CtaWrap>

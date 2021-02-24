@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 
+import {HAE_CONNECT_URL} from '../../../constants';
 import routes from '../../../routes';
 import isUnsupportedBrowser from '../../../utils/isUnsupportedBrowser';
 import {mediaBreakpointUp} from '../../../utils/responsive';
@@ -171,7 +172,7 @@ const Header = ({...props}) => {
             <li>
               <ExternalLink
                 className="btn"
-                href="https://google.com"
+                href={HAE_CONNECT_URL}
                 onClick={handleLinkClick}
                 rel="noopener noreferrer"
                 target="_blank"
