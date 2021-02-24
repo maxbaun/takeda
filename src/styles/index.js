@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     transition: color 0.2s ease-in-out;
 
     &:hover {
-      color: ${props => props.theme.redDark};
+      color: ${props => props.theme.red};
     }
   }
   

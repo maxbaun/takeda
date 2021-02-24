@@ -17,14 +17,22 @@ import UnsupportedBrowser from './UnsupportedBrowser';
 const BREAKPOINT = 1050;
 
 const BrandWrap = styled.div`
-  align-items: center;
-  display: flex;
-
   a {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
     width: 129px;
 
     ${mediaBreakpointUp('sm')} {
       width: auto;
+    }
+
+    &:hover {
+      color: ${props => props.theme.red};
+
+      > span {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -152,8 +160,8 @@ const Header = ({...props}) => {
         <BrandWrap>
           <Link onClick={handleLinkClick} to={routes.Home}>
             <Logo />
+            <Tag>HAE Virtual Lab</Tag>
           </Link>
-          <Tag>HAE Virtual Lab</Tag>
         </BrandWrap>
         <Nav breakpoint={BREAKPOINT} isOpen={navOpen}>
           <ul>
