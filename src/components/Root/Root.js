@@ -2,11 +2,9 @@ import PropTypes from 'prop-types';
 import React, {useEffect, useState} from 'react';
 
 import Context from '../../context';
-import isUnsupportedBrowser from '../../utils/isUnsupportedBrowser';
 import Footer from './Footer';
 import Header from './Header';
 import Popups from './Popups';
-import UnsupportedBrowser from './UnsupportedBrowser/UnsupportedBrowser';
 
 const Root = ({children}) => {
   const [popups, setPopups] = useState({
@@ -70,14 +68,6 @@ const Root = ({children}) => {
   return (
     <Context.Provider value={{popups, openPopup, closePopup}}>
       <div>
-        {isUnsupportedBrowser() ? (
-          <UnsupportedBrowser>
-            <p>
-              <b>Unsupported Browser!</b> This website will offer limited functionality in this browser. We only support
-              the recent versions of major browsers like Chrome, Firefox, Safari, and Edge.
-            </p>
-          </UnsupportedBrowser>
-        ) : null}
         <Header />
         {children}
         <Footer />

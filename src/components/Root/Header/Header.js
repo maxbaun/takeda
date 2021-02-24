@@ -3,6 +3,7 @@ import {Link, NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 
 import routes from '../../../routes';
+import isUnsupportedBrowser from '../../../utils/isUnsupportedBrowser';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 // import Dropdown from '../../shared/Dropdown';
 import ExternalLink from '../../shared/ExternalLink';
@@ -10,6 +11,7 @@ import _Hamburger from '../../shared/Hamburger';
 import Icon from '../../shared/Icon';
 import Logo from '../../shared/Logo';
 import Nav from './Nav';
+import UnsupportedBrowser from './UnsupportedBrowser';
 
 const BREAKPOINT = 1050;
 
@@ -37,7 +39,7 @@ const BrandWrap = styled.div`
 
     ${mediaBreakpointUp('lg')} {
       height: auto;
-      width: 10vw;
+      width: 100px;
     }
 
     ${mediaBreakpointUp('xl')} {
@@ -116,7 +118,7 @@ const Tag = styled.span`
     }
 
     ${mediaBreakpointUp('lg')} {
-      margin: 0 1vw;
+      margin: 0 1rem;
     }
 
     ${mediaBreakpointUp('xl')} {
@@ -127,6 +129,7 @@ const Tag = styled.span`
 
 const Wrapper = styled.header`
   background-color: #fff;
+  position: relative;
 `;
 
 const Header = ({...props}) => {
@@ -194,6 +197,14 @@ const Header = ({...props}) => {
         </Nav>
         <Hamburger onClick={() => setNavOpen(!navOpen)} open={navOpen} />
       </Container>
+      {isUnsupportedBrowser() ? (
+        <UnsupportedBrowser>
+          <p>
+            <strong>UNSUPPORTED BROWSER.</strong> This website will offer limited functionality in the browser. We only
+            support the recent versions of major browsers like Chrome, Firefox, Safari, and Edge.
+          </p>
+        </UnsupportedBrowser>
+      ) : null}
     </Wrapper>
   );
 };
