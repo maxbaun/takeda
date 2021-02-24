@@ -151,7 +151,10 @@ const Simulator = ({onShowReferences: handleShowReferences, ...props}) => {
 
   useEffect(() => {
     if (camera && camera.current && camera.current.video) {
-      const {videoHeight: height, videoWidth: width} = camera.current.video;
+      const {offsetHeight, offsetWidth, videoHeight, videoWidth} = camera.current.video;
+
+      const height = videoHeight || offsetHeight;
+      const width = videoWidth || offsetWidth;
 
       console.log(`width: ${width}`);
       console.log(`height: ${height}`);
