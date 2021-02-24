@@ -156,9 +156,6 @@ const Simulator = ({onShowReferences: handleShowReferences, ...props}) => {
       const height = videoHeight || offsetHeight;
       const width = videoWidth || offsetWidth;
 
-      console.log(`width: ${width}`);
-      console.log(`height: ${height}`);
-
       setVideoSize({height, width});
       setViewRatio(`${width}:${height}`);
     }
@@ -178,8 +175,6 @@ const Simulator = ({onShowReferences: handleShowReferences, ...props}) => {
 
   const elLearnMore = <LearnMore activeIndex={activeInfoIndex} onActiveIndexChange={setActiveInfoIndex} />;
 
-  console.log(`paddingBottom: ${getPaddingBottomPercentage(viewRatio)}`);
-
   return (
     <Wrapper {...props}>
       <Tutorial
@@ -188,8 +183,7 @@ const Simulator = ({onShowReferences: handleShowReferences, ...props}) => {
         }}
         style={{display: tutorialComplete ? 'none' : 'block'}}
       />
-      <Inner>
-        {/* <Inner style={{maxWidth: videoSize?.width ? videoSize.width : null}}> */}
+      <Inner style={{maxWidth: videoSize?.width ? videoSize.width : null}}>
         <View style={{paddingBottom: getPaddingBottomPercentage(viewRatio)}}>
           <ViewInner>
             <Loader loading={rendering} />
