@@ -17,9 +17,13 @@ const Wrapper = styled.div`
   right: 0;
   top: 0;
   width: 100%;
+
+  canvas {
+    max-width: 100%;
+  }
 `;
 
-const FaceEffect = ({onComplete: handleComplete, snapshot, version, ...props}) => {
+const FaceEffect = ({height, onComplete: handleComplete, snapshot, version, width, ...props}) => {
   const canvas = useRef();
   const pixiCanvas = useRef();
 
@@ -31,7 +35,7 @@ const FaceEffect = ({onComplete: handleComplete, snapshot, version, ...props}) =
     const image = new window.Image();
 
     image.onload = async () => {
-      const {height, width} = image;
+      // const {height, width} = image;
 
       canvas.current.width = width;
       canvas.current.height = height;
@@ -158,9 +162,11 @@ const FaceEffect = ({onComplete: handleComplete, snapshot, version, ...props}) =
 };
 
 FaceEffect.propTypes = {
+  height: PropTypes.number,
   onComplete: PropTypes.func,
   snapshot: PropTypes.string,
-  version: PropTypes.number
+  version: PropTypes.number,
+  width: PropTypes.number
 };
 
 export default FaceEffect;

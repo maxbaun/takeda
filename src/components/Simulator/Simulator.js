@@ -203,12 +203,14 @@ const Simulator = ({onShowReferences: handleShowReferences, ...props}) => {
 
             {mode === 'result' ? (
               <FaceEffect
+                height={videoSize?.height}
                 onComplete={url => {
                   setRendering(false);
                   setDownloadUrl(url);
                 }}
                 snapshot={snapshot}
                 version={version}
+                width={videoSize?.width}
               />
             ) : null}
           </ViewInner>
