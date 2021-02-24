@@ -71,7 +71,9 @@ const Overlay = styled.div`
 `;
 
 const Wrapper = styled.div`
+  height: 100%;
   position: relative;
+  width: 100%;
 `;
 
 const Camera = forwardRef(({onUserMedia, onUserMediaError, showHelper, showOverlay, ...props}, ref) => {
