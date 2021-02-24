@@ -31,12 +31,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .ReactModal__Content {
-    inset: 80px 25px !important;
+    inset: 0 !important;
+    padding: 80px 15px !important;
     opacity: 0;
     transition: opacity 300ms 200ms ease-in-out;
 
     @media screen and (max-height: 1000px) {
-      inset: 60px 25px !important;
+      /* inset: 160px 25px !important; */
+      padding: 60px 15px;
     }
   }
 
