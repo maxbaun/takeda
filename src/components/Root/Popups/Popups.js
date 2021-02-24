@@ -22,11 +22,12 @@ const Popups = () => {
         <Leaving
           confirmProps={{
             ...popups.leaving.data,
+            className: null,
             href: popups.leaving.data?.href || null,
             external: true,
-            renderAs: 'a'
-            // rel: 'noopener noreferrer',
-            // target: '__blank'
+            renderAs: 'a',
+            rel: 'noopener noreferrer',
+            target: '__blank'
           }}
           onCancel={() => closePopup('leaving')}
         />

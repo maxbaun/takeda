@@ -44,7 +44,7 @@ const Leaving = ({confirmProps, onCancel: handleClose}) => {
         <h2>You are now leaving HAEvirtualLab.com</h2>
       </Popup.Title>
       <PopupContent>
-        <CancelConfirm confirmProps={confirmProps} onCancel={handleClose}>
+        <CancelConfirm confirmProps={confirmProps} onCancel={handleClose} onConfirm={handleClose}>
           <p>
             We do not review or control the content of external websites and this hyperlink does not constitute an
             endorsement of the site’s content.{' '}

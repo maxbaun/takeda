@@ -103,7 +103,7 @@ const Intro = ({onNo: handleNo, onYes: handleYes}) => {
           <p>
             <span>I am a HCP outside of the US and UK</span>
           </p>
-          <ButtonGray external href="http://takeda.com" onClick={handleNo}>
+          <ButtonGray external href="http://takeda.com" onClick={handleNo} rel="noopener noreferrer">
             No
           </ButtonGray>
           <ButtonBlue onClick={handleYes}>Yes</ButtonBlue>
