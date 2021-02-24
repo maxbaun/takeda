@@ -188,7 +188,8 @@ const Simulator = ({onShowReferences: handleShowReferences, ...props}) => {
         }}
         style={{display: tutorialComplete ? 'none' : 'block'}}
       />
-      <Inner style={{maxWidth: videoSize?.width ? videoSize.width : null}}>
+      <Inner>
+        {/* <Inner style={{maxWidth: videoSize?.width ? videoSize.width : null}}> */}
         <View style={{paddingBottom: getPaddingBottomPercentage(viewRatio)}}>
           <ViewInner>
             <Loader loading={rendering} />

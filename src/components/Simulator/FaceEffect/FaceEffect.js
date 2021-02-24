@@ -35,7 +35,9 @@ const FaceEffect = ({height, onComplete: handleComplete, snapshot, version, widt
     const image = new window.Image();
 
     image.onload = async () => {
-      // const {height, width} = image;
+      const {height: imageHeight, width: imageWidth} = image;
+
+      console.log(imageHeight, imageWidth);
 
       canvas.current.width = width;
       canvas.current.height = height;
