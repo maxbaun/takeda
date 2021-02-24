@@ -96,7 +96,7 @@ const Home = () => {
                   </strong>{' '}
                   is on average{' '}
                   <strong className="accent">
-                    <span style={{fontWeight: 900}}>~</span>31 years shorter
+                    <span style={{fontWeight: 800}}>~</span>31 years shorter
                   </strong>{' '}
                   than undiagnosed patients with HAE who die from other causes<sup>4</sup>
                 </li>

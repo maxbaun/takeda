@@ -30,7 +30,7 @@ const data = [
           <strong>Impact:</strong>The lifespan of individuals with <span className="accent">undiagnosed HAE</span> who
           die from laryngeal attacks is on average{' '}
           <span className="accent">
-            <span style={{fontWeight: 900}}>~</span>31 years shorter
+            <span style={{fontWeight: 800}}>~</span>31 years shorter
           </span>{' '}
           than undiagnosed patients who die from other causes.<sup>4</sup>
         </p>
