@@ -47,8 +47,8 @@ const data = [
   {
     answer: (
       <p>
-        The following can trigger a HAE attack: genetics, accident/injury/trauma, disease/illness, physical
-        activity/exercise, stress, pregnancy, certain medications (including hormone therapy), anxiety, and fear.
+        The following can trigger a HAE attack: accident/injury/trauma, disease/illness, physical activity/exercise,
+        stress, pregnancy, certain medications (including hormone therapy), anxiety, and fear.
         <sup>2</sup>
         Additionally, there may be no known trigger (idiopathic).<sup>2</sup>
       </p>
