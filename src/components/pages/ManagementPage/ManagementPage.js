@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Accent from '../../shared/Accent/Accent';
 import HaeConnectCta from '../../shared/HaeConnectCta';
+import InViewSection from '../../shared/InViewSection';
 import References from '../../shared/References';
 import SymptomQuiz from '../../shared/SymptomQuiz';
 import Video from '../../shared/Video';
@@ -138,42 +139,46 @@ const ManagementPage = () => {
       />
       <HaeConnectCta />
 
-      <ImpactOnLife>
-        <VideoSection
-          media={
-            <Video
-              caption="Assessment of QoL in patients with HAE: unmet needs"
-              circleColor="blue"
-              circlePosition="bottom-right"
-              circleSize="lg"
-              disclaimer={
-                <>
-                  Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the
-                  Takeda logo are registered trademarks of Takeda Pharmaceutical Company Limited.
-                </>
-              }
-              id="video-2"
-              src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232484369001"
-              thumbnail={imgVideoThumb}
-              thumbnailRatio="853:528"
-            />
-          }
-        >
-          <VideoSection.Content>
-            <h2>Impact on quality of life</h2>
-            <p>
-              If poorly managed, patients may report a significant impact on quality of life (QoL); a{' '}
-              <strong className="accent">better understanding</strong> of these impairments may{' '}
-              <strong className="accent">aid the clinical management</strong> of patients with HAE.<sup>1</sup>
-            </p>
+      <InViewSection>
+        <ImpactOnLife>
+          <VideoSection
+            media={
+              <Video
+                caption="Assessment of QoL in patients with HAE: unmet needs"
+                circleColor="blue"
+                circlePosition="bottom-right"
+                circleSize="lg"
+                className="fade-in-media"
+                disclaimer={
+                  <>
+                    Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the
+                    Takeda logo are registered trademarks of Takeda Pharmaceutical Company Limited.
+                  </>
+                }
+                id="video-2"
+                src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232484369001"
+                thumbnail={imgVideoThumb}
+                thumbnailRatio="853:528"
+              />
+            }
+          >
+            <VideoSection.Content className="fade-in-content bottom">
+              <h2>Impact on quality of life</h2>
+              <p>
+                If poorly managed, patients may report a significant impact on quality of life (QoL); a{' '}
+                <strong className="accent">better understanding</strong> of these impairments may{' '}
+                <strong className="accent">aid the clinical management</strong> of patients with HAE.<sup>1</sup>
+              </p>
 
-            <p>
-              Healthcare providers should <strong className="accent">routinely assess QoL</strong> in patients with HAE
-              using validated tools to optimize HAE management.<sup>3</sup>
-            </p>
-          </VideoSection.Content>
-        </VideoSection>
-      </ImpactOnLife>
+              <p>
+                Healthcare providers should <strong className="accent">routinely assess QoL</strong> in patients with
+                HAE using validated tools to optimize HAE management.<sup>3</sup>
+              </p>
+            </VideoSection.Content>
+          </VideoSection>
+        </ImpactOnLife>
+      </InViewSection>
+
       <SymptomQuiz />
       <References>
         <>

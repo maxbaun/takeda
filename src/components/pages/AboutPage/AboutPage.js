@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../utils/responsive';
 import scrollToElement from '../../../utils/scrollToElement';
 import HaeConnectCta from '../../shared/HaeConnectCta';
+import InViewSection from '../../shared/InViewSection';
 import References from '../../shared/References';
 import SymptomQuiz from '../../shared/SymptomQuiz';
 import Video from '../../shared/Video/Video';
@@ -53,129 +54,140 @@ const About = props => {
 
   return (
     <Wrapper {...props}>
-      <Hero
-        media={
-          <Video
-            caption="Video 1: introduction to hereditary angioedema"
-            circlePosition="bottom-right"
-            circleSize="lg"
-            disclaimer={
-              <>
-                Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the Takeda
-                logo are registered trademarks of Takeda Pharmaceutical Company Limited.
-              </>
-            }
-            id="video-1"
-            src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232483060001"
-            thumbnail={imgVideo1}
-            thumbnailRatio="853:528"
-          />
-        }
-        title={
-          <Title>
-            <h1>
-              About
-              <br />
-              HAE
-            </h1>
-          </Title>
-        }
-      >
-        <HeroVideoSectionContent>
-          <h2>HAE etiology and burden of disease</h2>
-          <p>
-            Hereditary angioedema (HAE) can be divided into three types:{' '}
-            <span className="accent">HAE Type I, HAE Type II</span>, and{' '}
-            <span className="accent">HAE with normal C1 inhibitor</span> (HAE-nC1-INH).<sup>1</sup>{' '}
-            <span className="accent">HAE-nC1-INH is much less prevalent</span> than HAE Type I and HAE Type II and has
-            many <span className="accent">confirmed and potential variants</span>.<sup>1</sup>
-          </p>
-          <p>
-            The estimated prevalence of HAE is 1:50,000 globally but is likely to be higher due to delayed
-            diagnosis/misdiagnosis.<sup>2–4</sup>
-          </p>
-          <p>
-            HAE is a debilitating illness that can have <span className="accent">long-term effects</span> and
-            substantially impact a patient’s <span className="accent">quality of life</span>.<sup>5,6</sup>
-          </p>
-          <p>Please watch video 1 to learn more about HAE!</p>
-        </HeroVideoSectionContent>
-      </Hero>
-      <PhysiologySection>
-        <h2>Pathophysiology of HAE</h2>
-        <VideoSection
+      <InViewSection>
+        <Hero
           media={
             <Video
-              caption="Video 2: the role of C1 inhibitor in HAE"
-              circleColor="yellow"
-              circlePosition="bottom-left"
-              disclaimer={
-                <>
-                  Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the
-                  Takeda logo are registered trademarks of Takeda Pharmaceutical Company Limited.
-                </>
-              }
-              id="video-2"
-              src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232482387001"
-              thumbnail={imgVideo2}
-            />
-          }
-        >
-          <VideoSection.Content>
-            <p>
-              <strong className="accent">C1-INH</strong> is a naturally occurring protein that inhibits plasma
-              kallikrein, a key mediator of inflammation.
-              <sup>7–10</sup>
-            </p>
-
-            <p>
-              C1-INH deficiency results in uncontrolled kallikrein activity, leading to increased generation of the
-              vasoactive peptide bradykinin.<sup>7–10</sup>
-            </p>
-
-            <p>
-              Decreased or dysfunctional C1-INH impacts the <strong className="accent">kallikrein–kinin system</strong>.
-              <sup>7–10</sup>
-            </p>
-
-            <p>Please watch video 2 to learn about the role of C1-INH in more detail!</p>
-          </VideoSection.Content>
-        </VideoSection>
-        <VideoSection
-          media={
-            <Video
-              caption="Video 3: the role of plasma kallikrein in HAE"
-              circleColor="blue"
+              caption="Video 1: introduction to hereditary angioedema"
               circlePosition="bottom-right"
+              circleSize="lg"
+              className="fade-in-media"
               disclaimer={
                 <>
                   Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the
                   Takeda logo are registered trademarks of Takeda Pharmaceutical Company Limited.
                 </>
               }
-              id="video-3"
-              src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232479654001"
-              thumbnail={imgVideo3}
+              id="video-1"
+              src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232483060001"
+              thumbnail={imgVideo1}
+              thumbnailRatio="853:528"
             />
           }
-          mediaLeft={false}
+          title={
+            <Title>
+              <h1>
+                About
+                <br />
+                HAE
+              </h1>
+            </Title>
+          }
         >
-          <VideoSection.Content>
+          <HeroVideoSectionContent className="fade-in-content bottom">
+            <h2>HAE etiology and burden of disease</h2>
             <p>
-              Cleavage of high molecular weight kininogen by plasma kallikrein results in generation of bradykinin.
-              <sup>11</sup>
+              Hereditary angioedema (HAE) can be divided into three types:{' '}
+              <span className="accent">HAE Type I, HAE Type II</span>, and{' '}
+              <span className="accent">HAE with normal C1 inhibitor</span> (HAE-nC1-INH).<sup>1</sup>{' '}
+              <span className="accent">HAE-nC1-INH is much less prevalent</span> than HAE Type I and HAE Type II and has
+              many <span className="accent">confirmed and potential variants</span>.<sup>1</sup>
             </p>
-
             <p>
-              <strong className="accent">Bradykinin</strong> has been shown to be{' '}
-              <strong className="accent">elevated</strong> during <strong className="accent">HAE attacks</strong> and is
-              responsible for edema formation and the related clinical signs and symptoms of swelling and pain.
-              <sup>12</sup>
+              The estimated prevalence of HAE is 1:50,000 globally but is likely to be higher due to delayed
+              diagnosis/misdiagnosis.<sup>2–4</sup>
             </p>
+            <p>
+              HAE is a debilitating illness that can have <span className="accent">long-term effects</span> and
+              substantially impact a patient’s <span className="accent">quality of life</span>.<sup>5,6</sup>
+            </p>
+            <p>Please watch video 1 to learn more about HAE!</p>
+          </HeroVideoSectionContent>
+        </Hero>
+      </InViewSection>
+      <PhysiologySection>
+        <InViewSection>
+          <h2 className="fade-in-content bottom">Pathophysiology of HAE</h2>
+        </InViewSection>
+        <InViewSection>
+          <VideoSection
+            media={
+              <Video
+                caption="Video 2: the role of C1 inhibitor in HAE"
+                circleColor="yellow"
+                circlePosition="bottom-left"
+                className="fade-in-media"
+                disclaimer={
+                  <>
+                    Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the
+                    Takeda logo are registered trademarks of Takeda Pharmaceutical Company Limited.
+                  </>
+                }
+                id="video-2"
+                src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232482387001"
+                thumbnail={imgVideo2}
+              />
+            }
+          >
+            <VideoSection.Content className="fade-in-content bottom">
+              <p>
+                <strong className="accent">C1-INH</strong> is a naturally occurring protein that inhibits plasma
+                kallikrein, a key mediator of inflammation.
+                <sup>7–10</sup>
+              </p>
 
-            <p>Please watch video 3 for further information about the role of plasma kallikrein in HAE!</p>
-          </VideoSection.Content>
-        </VideoSection>
+              <p>
+                C1-INH deficiency results in uncontrolled kallikrein activity, leading to increased generation of the
+                vasoactive peptide bradykinin.<sup>7–10</sup>
+              </p>
+
+              <p>
+                Decreased or dysfunctional C1-INH impacts the{' '}
+                <strong className="accent">kallikrein–kinin system</strong>.<sup>7–10</sup>
+              </p>
+
+              <p>Please watch video 2 to learn about the role of C1-INH in more detail!</p>
+            </VideoSection.Content>
+          </VideoSection>
+        </InViewSection>
+        <InViewSection>
+          <VideoSection
+            media={
+              <Video
+                caption="Video 3: the role of plasma kallikrein in HAE"
+                circleColor="blue"
+                circlePosition="bottom-right"
+                className="fade-in-media"
+                disclaimer={
+                  <>
+                    Copyright &copy; 2021 Takeda Pharmaceutical Company Limited. All rights reserved. Takeda and the
+                    Takeda logo are registered trademarks of Takeda Pharmaceutical Company Limited.
+                  </>
+                }
+                id="video-3"
+                src="https://players.brightcove.net/2299575749001/RxN6OjUic_default/index.html?videoId=6232479654001"
+                thumbnail={imgVideo3}
+              />
+            }
+            mediaLeft={false}
+          >
+            <VideoSection.Content className="fade-in-content bottom">
+              <p>
+                Cleavage of high molecular weight kininogen by plasma kallikrein results in generation of bradykinin.
+                <sup>11</sup>
+              </p>
+
+              <p>
+                <strong className="accent">Bradykinin</strong> has been shown to be{' '}
+                <strong className="accent">elevated</strong> during <strong className="accent">HAE attacks</strong> and
+                is responsible for edema formation and the related clinical signs and symptoms of swelling and pain.
+                <sup>12</sup>
+              </p>
+
+              <p>Please watch video 3 for further information about the role of plasma kallikrein in HAE!</p>
+            </VideoSection.Content>
+          </VideoSection>
+        </InViewSection>
       </PhysiologySection>
       <SymptomMap id="symptomMap">
         <h2>Symptom map</h2>

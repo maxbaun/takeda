@@ -3,6 +3,7 @@ import React, {useRef, useState} from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
+import InViewSection from '../../../shared/InViewSection';
 import _BodyMap from './BodyMap';
 import data from './data';
 import _Description from './Description';
@@ -201,39 +202,41 @@ const SymptomMap = ({children, ...props}) => {
   ));
 
   return (
-    <Wrapper {...props}>
-      <div className="container">
-        <Inner>
-          <Content>
-            {children}
-            <ExamplesDesktop>{examples}</ExamplesDesktop>
-          </Content>
-          <BodyMap activeIndex={activeIndex} data={data} onToggle={handleToggle} />
-          <DescriptionWrap ref={elDescription}>
-            {data.map((item, index) => (
-              <Description
-                color={item.color}
-                key={index}
-                image={item.descriptionImage?.src}
-                imageCaption={item.descriptionImage?.caption}
-                // title={item.title}
-                style={{display: activeIndex === index ? 'block' : 'none'}}
-              >
-                <ExamplesMobile>{examples}</ExamplesMobile>
-                <DescriptionTitleWrap>
-                  <_Description.Title color={item.color}>{item.title}</_Description.Title>
-                </DescriptionTitleWrap>
-                {item.description || null}
-              </Description>
-            ))}
-            <HelpCircle>
-              Click on “+”
-              <br /> to learn more
-            </HelpCircle>
-          </DescriptionWrap>
-        </Inner>
-      </div>
-    </Wrapper>
+    <InViewSection>
+      <Wrapper {...props}>
+        <div className="container">
+          <Inner>
+            <Content className="fade-in-content bottom">
+              {children}
+              <ExamplesDesktop>{examples}</ExamplesDesktop>
+            </Content>
+            <BodyMap activeIndex={activeIndex} className="fade-in-media" data={data} onToggle={handleToggle} />
+            <DescriptionWrap ref={elDescription}>
+              {data.map((item, index) => (
+                <Description
+                  color={item.color}
+                  key={index}
+                  image={item.descriptionImage?.src}
+                  imageCaption={item.descriptionImage?.caption}
+                  // title={item.title}
+                  style={{display: activeIndex === index ? 'block' : 'none'}}
+                >
+                  <ExamplesMobile>{examples}</ExamplesMobile>
+                  <DescriptionTitleWrap>
+                    <_Description.Title color={item.color}>{item.title}</_Description.Title>
+                  </DescriptionTitleWrap>
+                  {item.description || null}
+                </Description>
+              ))}
+              <HelpCircle>
+                Click on “+”
+                <br /> to learn more
+              </HelpCircle>
+            </DescriptionWrap>
+          </Inner>
+        </div>
+      </Wrapper>
+    </InViewSection>
   );
 };
 

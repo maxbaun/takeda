@@ -20,7 +20,10 @@ const BrandWrap = styled.div`
   a {
     align-items: center;
     display: flex;
-    text-decoration: none;
+
+    &:not(.btn) {
+      text-decoration: none;
+    }
 
     ${mediaBreakpointUp('sm')} {
       width: auto;

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import {ButtonPrimary} from '../../../shared/Button';
 import Carousel from '../../../shared/Carousel/Carousel';
-import InViewSection from '../../../shared/InViewSection/InViewSection';
+import InViewSection from '../../../shared/InViewSection';
 import SeparatorImg from './example-separator.png';
 
 const Example = styled.div`
