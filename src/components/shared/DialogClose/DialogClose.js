@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import {mediaBreakpointUp} from '../../../utils/responsive';
+
 const Wrapper = styled.button.attrs({
   ariaLabel: 'Close (Press escape to close)',
   className: 'ReactModal__Close',
@@ -14,11 +16,16 @@ const Wrapper = styled.button.attrs({
   height: 50px;
   opacity: 1;
   position: fixed;
-  right: 20px;
-  top: 20px;
+  right: 0;
+  top: 0;
   width: 50px;
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
+
+  ${mediaBreakpointUp('lg')} {
+    right: 20px;
+    top: 20px;
+  }
 
   &:focus,
   &:hover {

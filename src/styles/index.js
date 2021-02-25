@@ -1,5 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 
+import {mediaBreakpointUp} from '../utils/responsive';
+
 const GlobalStyle = createGlobalStyle`
   .accent {
     color: ${props => props.theme.redAccent};
@@ -32,11 +34,19 @@ const GlobalStyle = createGlobalStyle`
 
   .ReactModal__Content {
     inset: 0 !important;
-    padding: 80px 15px !important;
+    max-width: calc(100% - 30px) !important;
+    padding: 60px 0 20px !important;
     opacity: 0;
     transition: opacity 300ms 200ms ease-in-out;
 
-    @media screen and (max-height: 1000px) {
+    ${mediaBreakpointUp('lg')} {
+      max-width: calc(100% - 80px) !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+      padding-top: 80px !important;
+    }
+
+    @media screen and (min-height: 1000px) {
       /* inset: 160px 25px !important; */
       padding: 60px 15px;
     }
