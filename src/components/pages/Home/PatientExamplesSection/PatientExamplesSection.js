@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import {ButtonPrimary} from '../../../shared/Button';
 import Carousel from '../../../shared/Carousel/Carousel';
+import InViewSection from '../../../shared/InViewSection/InViewSection';
 import SeparatorImg from './example-separator.png';
 
 const Example = styled.div`
@@ -176,49 +177,52 @@ const Wrapper = styled.div`
 
 const PatientExamplesSection = ({children, ctaText, ctaUrl, examples, note, ...props}) => {
   return (
-    <Wrapper {...props}>
-      <div className="container">
-        <Header>{children}</Header>
-        <Examples
-          slickOptions={{
-            infinite: false,
-            slidesToShow: 2,
-            responsive: [
-              {
-                breakpoint: 992,
-                settings: {
-                  slidesToShow: 1
+    <InViewSection>
+      <Wrapper {...props}>
+        <div className="container">
+          <Header className="fade-in-content left">{children}</Header>
+          <Examples
+            className="fade-in-media"
+            slickOptions={{
+              infinite: false,
+              slidesToShow: 2,
+              responsive: [
+                {
+                  breakpoint: 992,
+                  settings: {
+                    slidesToShow: 1
+                  }
                 }
-              }
-            ]
-          }}
-        >
-          {examples?.map((example, index) => (
-            <div key={index}>
-              <Example>
-                <ExampleBlock before>
-                  <img src={example.before} />
-                  <span>Before HAE Attack</span>
-                </ExampleBlock>
-                <ExampleBlock after>
-                  <img src={example.after} />
-                  <span>
-                    <span>After HAE Attack</span>
-                  </span>
-                  <ExampleSeparator />
-                </ExampleBlock>
-              </Example>
-            </div>
-          ))}
-        </Examples>
-        <Footer>
-          <ButtonPrimary href={ctaUrl} icon="chevron-right">
-            {ctaText}
-          </ButtonPrimary>
-          <Note>{note}</Note>
-        </Footer>
-      </div>
-    </Wrapper>
+              ]
+            }}
+          >
+            {examples?.map((example, index) => (
+              <div key={index}>
+                <Example>
+                  <ExampleBlock before>
+                    <img src={example.before} />
+                    <span>Before HAE Attack</span>
+                  </ExampleBlock>
+                  <ExampleBlock after>
+                    <img src={example.after} />
+                    <span>
+                      <span>After HAE Attack</span>
+                    </span>
+                    <ExampleSeparator />
+                  </ExampleBlock>
+                </Example>
+              </div>
+            ))}
+          </Examples>
+          <Footer>
+            <ButtonPrimary href={ctaUrl} icon="chevron-right">
+              {ctaText}
+            </ButtonPrimary>
+            <Note>{note}</Note>
+          </Footer>
+        </div>
+      </Wrapper>
+    </InViewSection>
   );
 };
 

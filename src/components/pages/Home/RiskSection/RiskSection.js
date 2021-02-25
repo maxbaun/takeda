@@ -3,6 +3,7 @@ import React from 'react';
 import styled, {keyframes} from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../../utils/responsive';
+import InViewSection from '../../../shared/InViewSection/InViewSection';
 import Dots from './dot-pattern-risk-of-misdiagnosis.png';
 import imgBodyCircle from './line-pattern-animate.png';
 import imgBodyDots from './person-static.png';
@@ -266,26 +267,29 @@ const Wrapper = styled.div`
   }
 `;
 
-const RiskSection = ({children, ...props}) => {
+const RiskSection = ({children, inView, ...props}) => {
   return (
-    <Wrapper {...props}>
-      {/* <div className="container"> */}
-      <Grid>
-        <Image>
-          <ImgBodyCircle src={imgBodyCircle} />
-          <ImgBodyDots src={imgBodyDots} />
-        </Image>
-        <Content>
-          <div className="container">{children}</div>
-        </Content>
-      </Grid>
-      {/* </div> */}
-    </Wrapper>
+    <InViewSection>
+      <Wrapper {...props}>
+        {/* <div className="container"> */}
+        <Grid>
+          <Image className="fade-in-media">
+            <ImgBodyCircle src={imgBodyCircle} />
+            <ImgBodyDots src={imgBodyDots} />
+          </Image>
+          <Content className="fade-in-content right">
+            <div className="container">{children}</div>
+          </Content>
+        </Grid>
+        {/* </div> */}
+      </Wrapper>
+    </InViewSection>
   );
 };
 
 RiskSection.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)])
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+  inView: PropTypes.bool
 };
 
 export default RiskSection;

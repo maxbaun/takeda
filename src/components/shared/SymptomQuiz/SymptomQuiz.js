@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import {mediaBreakpointUp} from '../../../utils/responsive';
+import InViewSection from '../InViewSection/InViewSection';
 import SectionHeader from '../SectionHeader';
 import Dots from './dot-pattern-quiz.png';
 import Quiz from './Quiz';
@@ -179,19 +180,23 @@ const SymptomQuiz = ({children, ...props}) => {
   };
 
   return (
-    <Wrapper {...props} style={{minHeight}}>
-      <Background src={Dots} />
-      <div className="container">
-        <Content>
-          <SectionHeader>
-            <h2>Symptom Quiz</h2>
-            <h3>Test your knowledge on HAE!</h3>
-          </SectionHeader>
-          <StartQuizBtn onClick={() => setQuizOpen(true)}>Start Quiz</StartQuizBtn>
-        </Content>
-      </div>
-      <Quiz isOpen={quizOpen} onClose={() => setQuizOpen(false)} onUpdate={handleQuizUpdate} />
-    </Wrapper>
+    <InViewSection>
+      <Wrapper {...props} style={{minHeight}}>
+        <Background src={Dots} />
+        <div className="container">
+          <Content className="fade-in-content right">
+            <SectionHeader>
+              <h2>Symptom Quiz</h2>
+              <h3>Test your knowledge on HAE!</h3>
+            </SectionHeader>
+            <StartQuizBtn className="fade-in-media bottom" onClick={() => setQuizOpen(true)}>
+              Start Quiz
+            </StartQuizBtn>
+          </Content>
+        </div>
+        <Quiz isOpen={quizOpen} onClose={() => setQuizOpen(false)} onUpdate={handleQuizUpdate} />
+      </Wrapper>
+    </InViewSection>
   );
 };
 
