@@ -11,15 +11,15 @@ const Wrapper = styled.div`
     will-change: opacity, visibility;
 
     &.right {
-      transform: translate3d(2vw, 0, 0);
+      transform: translate3d(10%, 0, 0);
     }
 
     &.left {
-      transform: translate3d(-2vw, 0, 0);
+      transform: translate3d(-10%, 0, 0);
     }
 
     &.bottom {
-      transform: translate3d(0, 10vh, 0);
+      transform: translate3d(0, 10%, 0);
     }
   }
 
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
     will-change: opacity, visibility;
 
     &.bottom {
-      transform: translate3d(0, 2vh, 0);
+      transform: translate3d(0, 10%, 0);
     }
   }
 

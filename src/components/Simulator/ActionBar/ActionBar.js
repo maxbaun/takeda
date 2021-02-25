@@ -53,6 +53,8 @@ const BtnMain = styled.button`
     left: 0;
     position: absolute;
     right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 1;
   }
 

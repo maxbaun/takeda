@@ -25,7 +25,7 @@ const Action = styled.div`
   justify-content: center;
   position: relative;
   min-height: 400px;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
 
   ${mediaBreakpointUp('sm')} {
     min-height: 477px;
@@ -294,7 +294,7 @@ const ScrollTo = styled.button`
 
 const Wrapper = styled.div`
   /* autoprefixer grid: autoplace */
-  background-size: contain;
+  background-size: 85% auto;
   background-repeat: no-repeat;
   background-position: 100% 100%;
 
@@ -305,16 +305,18 @@ const Wrapper = styled.div`
 
   ${mediaBreakpointUp('lg')} {
     background-image: ${() => `url('${Dots}')`};
-    background-position: 100% 0;
+    background-position: 110px 0;
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 1fr minmax(380px, 45%);
+    -ms-grid-columns: 1fr 30px 40%;
   }
 
   ${mediaBreakpointUp('xl')} {
+    background-position: 100% 0;
     grid-gap: 130px;
     grid-template-columns: auto 40%;
-    -ms-grid-columns: 1fr 40%;
+    -ms-grid-columns: 1fr 130px 40%;
   }
 `;
 
