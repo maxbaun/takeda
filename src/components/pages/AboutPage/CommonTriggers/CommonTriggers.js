@@ -6,12 +6,12 @@ import styled from 'styled-components';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 
 const Content = styled.div`
-  opacity: ${props => (props.inView ? 1 : 0)};
+  /* opacity: ${props => (props.inView ? 1 : 0)}; */
   order: 0;
-  transform: ${props => (props.inView ? 'translate3d(0, 0, 0)' : 'translate3d(0, 10vh, 0)')};
-  transition: opacity 0.4s ease-out, transform 0.8s ease-out;
-  visibility: ${props => (props.inView ? 'visible' : 'hidden')};
-  will-change: opacity, visibility;
+  /* transform: ${props => (props.inView ? 'translate3d(0, 0, 0)' : 'translate3d(0, 10vh, 0)')}; */
+  /* transition: opacity 0.4s ease-out, transform 0.8s ease-out; */
+  /* visibility: ${props => (props.inView ? 'visible' : 'hidden')}; */
+  /* will-change: opacity, visibility; */
   -ms-grid-column: 3;
 
   ${mediaBreakpointUp('lg')} {
