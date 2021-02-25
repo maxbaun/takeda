@@ -283,14 +283,9 @@ const ClinicalManagement = ({data, pageTitle, title, ...props}) => {
                   centered={item.centered}
                   key={index}
                   style={{
-                    // display: index === activeIndex ? (item.centered ? 'flex' : 'block') : 'none',
-                    opacity: index === activeIndex ? 1 : 0,
-                    height: item.centered ? '100%' : 'auto',
-                    left: 0,
-                    position: 'absolute',
-                    top: 0,
-                    transform: index === activeIndex ? 'translate3d(0, 0, 0)' : 'translate3d(0, 2vh, 0)',
-                    transition: 'transform 0.4s, opacity 0.2s'
+                    display: index === activeIndex ? (item.centered ? 'flex' : 'block') : 'none',
+                    // opacity: index === activeIndex ? 1 : 0,
+                    height: item.centered ? '100%' : 'auto'
                   }}
                 >
                   <div>
