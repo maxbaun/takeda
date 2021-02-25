@@ -302,7 +302,7 @@ const Quiz = ({isOpen, onClose: handleClose, onUpdate: handleUpdate, ...props}) 
               actions={
                 <ul>
                   <li>
-                    <ButtonEmpty className="read-more" href={question.readMoreUrl}>
+                    <ButtonEmpty className="read-more" href={question.readMoreUrl} renderAs="a">
                       Read More
                     </ButtonEmpty>
                   </li>
@@ -332,7 +332,7 @@ const Quiz = ({isOpen, onClose: handleClose, onUpdate: handleUpdate, ...props}) 
                     </ButtonPrimary>
                   </li>
                   <li>
-                    <ButtonEmpty className="read-more" href={question.readMoreUrl}>
+                    <ButtonEmpty className="read-more" href={question.readMoreUrl} renderAs="a">
                       Read More
                     </ButtonEmpty>
                   </li>
