@@ -180,7 +180,7 @@ const PatientExamplesSection = ({children, ctaText, ctaUrl, examples, note, ...p
     <InViewSection>
       <Wrapper {...props}>
         <div className="container">
-          <Header className="fade-in-content left">{children}</Header>
+          <Header className="fade-in-content bottom">{children}</Header>
           <Examples
             className="fade-in-media"
             slickOptions={{

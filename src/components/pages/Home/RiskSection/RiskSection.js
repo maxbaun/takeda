@@ -277,7 +277,7 @@ const RiskSection = ({children, inView, ...props}) => {
             <ImgBodyCircle src={imgBodyCircle} />
             <ImgBodyDots src={imgBodyDots} />
           </Image>
-          <Content className="fade-in-content right">
+          <Content className="fade-in-content bottom">
             <div className="container">{children}</div>
           </Content>
         </Grid>

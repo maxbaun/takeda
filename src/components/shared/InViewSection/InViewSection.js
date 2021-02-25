@@ -17,6 +17,10 @@ const Wrapper = styled.div`
     &.left {
       transform: translate3d(-2vw, 0, 0);
     }
+
+    &.bottom {
+      transform: translate3d(0, 10vh, 0);
+    }
   }
 
   .fade-in-media {
@@ -52,7 +56,7 @@ const InViewSection = ({children, ...props}) => {
   useEffect(() => {
     const handleResize = () => {
       if (ref.current) {
-        setOffset(ref.current.offsetHeight / 2);
+        setOffset(ref.current.offsetHeight / 3);
       }
     };
 
