@@ -162,13 +162,23 @@ const Footer = ({...props}) => {
     <Wrapper {...props}>
       <div className="container">
         <Nav>
-          <ExternalLink className="terms" href="http://www.takeda.com/terms-of-use/">
+          <ExternalLink
+            className="terms"
+            href="http://www.takeda.com/terms-of-use/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Terms of Use
           </ExternalLink>
           <Link className="logo" to={routes.Home}>
             <Logo />
           </Link>
-          <ExternalLink className="privacy" href="http://www.takeda.com/privacy-notice/">
+          <ExternalLink
+            className="privacy"
+            href="http://www.takeda.com/privacy-notice/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Privacy Notice
           </ExternalLink>
         </Nav>

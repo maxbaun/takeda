@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
 
+import Context from '../../../../context';
 import {mediaBreakpointUp} from '../../../../utils/responsive';
 import _CancelConfirm from '../../../shared/CancelConfirm';
 import Popup from '../../../shared/Popup';
@@ -38,13 +39,15 @@ const PopupGrid = styled(Popup.Grid)`
 `;
 
 const Leaving = ({confirmProps, onCancel: handleClose}) => {
+  const {isAuthorized} = useContext(Context);
+
   return (
     <PopupGrid>
       <Popup.Title>
         <h2>You are now leaving HAEvirtualLab.com</h2>
       </Popup.Title>
       <PopupContent>
-        <CancelConfirm confirmProps={confirmProps} onCancel={handleClose} onConfirm={handleClose}>
+        <CancelConfirm confirmProps={confirmProps} onCancel={isAuthorized ? handleClose : null} onConfirm={handleClose}>
           <p>
             We do not review or control the content of external websites and this hyperlink does not constitute an
             endorsement of the site’s content.{' '}

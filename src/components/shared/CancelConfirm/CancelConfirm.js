@@ -32,9 +32,11 @@ const CancelConfirm = ({
         <ButtonBlue {...confirmProps} onClick={handleConfirm}>
           OK
         </ButtonBlue>
-        <ButtonGray {...cancelProps} onClick={handleCancel}>
-          Cancel
-        </ButtonGray>
+        {handleCancel ? (
+          <ButtonGray {...cancelProps} onClick={handleCancel}>
+            Cancel
+          </ButtonGray>
+        ) : null}
       </Buttons>
     </Wrapper>
   );

@@ -8,7 +8,7 @@ import Leaving from './Leaving';
 import NoCamera from './NoCamera';
 
 const Popups = () => {
-  const {popups, closePopup} = useContext(Context);
+  const {popups, closePopup, setIsAuthorized} = useContext(Context);
 
   return (
     <>
@@ -16,7 +16,10 @@ const Popups = () => {
         <NoCamera />
       </Popup>
       <Popup isOpen={popups.intro.open} onClose={() => closePopup('noCamera')}>
-        <Intro onNo={() => closePopup('intro')} onYes={() => closePopup('intro')} />
+        <Intro
+          // onNo={() => closePopup('intro')}
+          onYes={() => setIsAuthorized(true)}
+        />
       </Popup>
       <Popup isOpen={popups.leaving.open}>
         <Leaving
@@ -25,9 +28,7 @@ const Popups = () => {
             className: null,
             href: popups.leaving.data?.href || null,
             external: true,
-            renderAs: 'a',
-            rel: 'noopener noreferrer',
-            target: '__blank'
+            renderAs: 'a'
           }}
           onCancel={() => closePopup('leaving')}
         />

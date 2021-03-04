@@ -1,6 +1,5 @@
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 
-import Context from '../../../context';
 import routes from '../../../routes';
 import scrollToElement from '../../../utils/scrollToElement';
 import References from '../../shared/References/References';
@@ -12,17 +11,6 @@ import PatientExamplesSection from './PatientExamplesSection';
 import RiskSection from './RiskSection';
 
 const Home = () => {
-  const {openPopup} = useContext(Context);
-
-  useEffect(() => {
-    const introViewed = localStorage.getItem('takeda_intro_viewed');
-
-    if (!introViewed) {
-      openPopup('intro');
-      localStorage.setItem('takeda_intro_viewed', 1);
-    }
-  }, []);
-
   return (
     <div>
       <Hero

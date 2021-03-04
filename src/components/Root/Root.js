@@ -7,6 +7,7 @@ import Header from './Header';
 import Popups from './Popups';
 
 const Root = ({children}) => {
+  const [isAuthorized, _setIsAuthorized] = useState(Boolean(localStorage.getItem('takeda_authorized')));
   const [popups, setPopups] = useState({
     cookieBar: {
       open: false,
@@ -56,6 +57,21 @@ const Root = ({children}) => {
     }));
   };
 
+  const setIsAuthorized = isAuthorized => {
+    localStorage.setItem('takeda_authorized', Boolean(isAuthorized));
+    _setIsAuthorized(isAuthorized);
+  };
+
+  useEffect(() => {
+    if (isAuthorized) {
+      document.body.style.overflow = null;
+      closePopup('intro');
+    } else {
+      document.body.style.overflow = 'hidden';
+      openPopup('intro');
+    }
+  }, [isAuthorized]);
+
   useEffect(() => {
     // If cookie bar has not been viewed, open it
     const cookieBarViewed = localStorage.getItem('takeda_cookieBar_viewed');
@@ -66,12 +82,11 @@ const Root = ({children}) => {
   }, []);
 
   return (
-    <Context.Provider value={{popups, openPopup, closePopup}}>
+    <Context.Provider value={{isAuthorized, popups, openPopup, closePopup, setIsAuthorized}}>
       <div>
         <Header />
         {children}
         <Footer />
-
         <Popups />
       </div>
     </Context.Provider>

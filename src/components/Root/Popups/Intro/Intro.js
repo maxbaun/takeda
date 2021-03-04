@@ -91,10 +91,6 @@ const Intro = ({onNo: handleNo, onYes: handleYes}) => {
           This site is intended for use by healthcare professionals outside the US and UK who are registered for HAE
           CONNECT.
         </p>
-        {/* <p>
-          This site is only intended for use by healthcare professionals outside the US and UK. If you are a patient,
-          you can visit <ExternalLink href="http://www.takeda.com/">Takeda.com</ExternalLink> to learn more about HAE.
-        </p> */}
       </PopupContent>
       <div />
 
@@ -103,7 +99,7 @@ const Intro = ({onNo: handleNo, onYes: handleYes}) => {
           <p>
             <span>I am a HCP outside of the US and UK</span>
           </p>
-          <ButtonGray external href="http://takeda.com" onClick={handleNo} rel="noopener noreferrer">
+          <ButtonGray external href="http://takeda.com" onClick={handleNo}>
             No
           </ButtonGray>
           <ButtonBlue onClick={handleYes}>Yes</ButtonBlue>
