@@ -7,7 +7,8 @@ import Header from './Header';
 import Popups from './Popups';
 
 const Root = ({children}) => {
-  const [isAuthorized, _setIsAuthorized] = useState(Boolean(localStorage.getItem('takeda_authorized')));
+  // const [isAuthorized, _setIsAuthorized] = useState(Boolean(localStorage.getItem('takeda_authorized')));
+  const [isAuthorized, _setIsAuthorized] = useState(false);
   const [popups, setPopups] = useState({
     cookieBar: {
       open: false,
@@ -58,7 +59,7 @@ const Root = ({children}) => {
   };
 
   const setIsAuthorized = isAuthorized => {
-    localStorage.setItem('takeda_authorized', Boolean(isAuthorized));
+    // localStorage.setItem('takeda_authorized', Boolean(isAuthorized));
     _setIsAuthorized(isAuthorized);
   };
 
